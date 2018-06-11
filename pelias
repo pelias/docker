@@ -1,0 +1,22 @@
+#!/bin/bash
+set -e
+
+# OSX comes bundled with versions of readlink, sed, parallel etc which are not
+# compatible with the linux tools. Force OSX users to install the GNU
+# compatible versions (prefixed with 'g', such as 'greadlink', 'gsed' etc.).
+export CMD_READLINK='readlink'
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  if [ -x "$(command -v greadlink)" ]; then
+    CMD_READLINK='greadlink';
+  else
+    2>&1 echo 'OSX: you must install the gnu standard tooling using:'
+    2>&1 echo 'brew install coreutils'
+  fi
+fi
+
+# resolve path to this file (following symlinks) and load libs
+BASEDIR=$( dirname $( ${CMD_READLINK} -f "${BASH_SOURCE[0]}" ) )
+for f in ${BASEDIR}/lib/* ${BASEDIR}/cmd/*; do source $f; done
+
+# cli runner
+cli "$@"

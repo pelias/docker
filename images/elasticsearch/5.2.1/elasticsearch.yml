@@ -1,0 +1,6 @@
+xpack.security.enabled: false
+bootstrap.memory_lock: true
+network.host: 0.0.0.0
+http.port: 9200
+node.master: true
+node.data: true
