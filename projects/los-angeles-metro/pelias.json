@@ -1,0 +1,77 @@
+{
+  "logger": {
+    "level": "info",
+    "timestamp": false
+  },
+  "esclient": {
+    "hosts": [
+      { "host": "elasticsearch" }
+    ]
+  },
+  "elasticsearch": {
+    "settings": {
+      "index": {
+        "refresh_interval": "10s",
+        "number_of_replicas": "0",
+        "number_of_shards": "1"
+      }
+    }
+  },
+  "api": {
+    "textAnalyzer": "libpostal",
+    "services": {
+      "pip": { "url": "http://pip-service:4200" },
+      "libpostal": { "url": "http://libpostal:8080" },
+      "placeholder": { "url": "http://placeholder:4100" },
+      "interpolation": { "url": "http://interpolation:4300" }
+    },
+    "defaultParameters": {
+      "focus.point.lat": 34.05,
+      "focus.point.lon": -118.24
+    }
+  },
+  "imports": {
+    "adminLookup": {
+      "enabled": true
+    },
+    "geonames": {
+      "datapath": "/data/geonames",
+      "countryCode": "ALL"
+    },
+    "openstreetmap": {
+      "download": [
+        { "sourceURL": "https://s3.amazonaws.com/metro-extracts.nextzen.org/los-angeles_california.osm.pbf" }
+      ],
+      "leveldbpath": "/tmp",
+      "datapath": "/data/openstreetmap",
+      "import": [{
+        "filename": "los-angeles_california.osm.pbf"
+      }]
+    },
+    "openaddresses": {
+      "datapath": "/data/openaddresses",
+      "files": [
+        "us/ca/los_angeles.csv"
+      ]
+    },
+    "polyline": {
+      "datapath": "/data/polylines",
+      "files": [ "extract.0sv" ]
+    },
+    "whosonfirst": {
+      "datapath": "/data/whosonfirst",
+      "importVenues": false,
+      "importPostalcodes": true
+    },
+    "interpolation": {
+      "download": {
+        "tiger": {
+          "datapath": "/data/tiger",
+          "states": [
+            { "state_code": 6, "county_code": 37, "name": "Los Angeles County, CA" }
+          ]
+        }
+      }
+    }
+  }
+}
