@@ -66,6 +66,42 @@
         "102086957"
       ]
     },
+    "transit": {
+      "datapath": "/data/transit",
+      "feeds": [
+        {
+          "layerId": "bikeshare",
+          "url": "https://bikeshare.metro.net/stations/json/",
+          "filename": "metrobikeshare.json",
+          "agencyId": "Metro-Bikeshare",
+          "agencyName": "MetroBikeshare",
+          "layerName": "bikeshare"
+        },
+        {
+          "layerId": "stops",
+          "url": "https://gitlab.com/LACMTA/gtfs_bus/raw/master/gtfs_bus.zip",
+          "filename": "stops.txt",
+          "agencyId": "LA Metro",
+          "agencyName": "LA Metro",
+          "layerName": "Stop"
+        },
+        {
+          "layerId": "stops",
+          "url": "https://gitlab.com/LACMTA/gtfs_bus/raw/master/gtfs_rail.zip",
+          "filename": "stops.txt",
+          "agencyId": "LA Metro",
+          "agencyName": "LA Metro",
+          "layerName": "Stop"
+        },
+        {
+          "layerId": "stops",
+          "url": "http://lacitydot.com/gtfs/administrator/gtfszip/ladotgtfs.zip",
+          "filename": "stops.txt",
+          "agencyId": "LADOT",
+          "agencyName": "LADOT",
+          "layerName": "Stop"
+        },
+      ]
     "interpolation": {
       "download": {
         "tiger": {
