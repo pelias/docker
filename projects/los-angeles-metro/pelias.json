@@ -61,7 +61,10 @@
     "whosonfirst": {
       "datapath": "/data/whosonfirst",
       "importVenues": false,
-      "importPostalcodes": true
+      "importPostalcodes": true,
+      "importPlace": [
+        "102086957"
+      ]
     },
     "interpolation": {
       "download": {
