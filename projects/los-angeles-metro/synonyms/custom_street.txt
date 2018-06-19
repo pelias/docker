@@ -1,18 +1,8 @@
-
-Tualatin Valley Hwy,TV Hwy,TVH,TVHWY
-Beaverton Hillsdale HWY,Beaverton-Hillsdale HWY,BH HYW,BHH
-Beaverton Hillsdale,Beaverton-Hillsdale,BH
-Martin Luther King,ML King,M L King,MLK
-Doernbecher,Dornbecher,Doernbecker,Dornbecker,Dornbecka
 Native American Youth => NAYA
 Transit Center => TC
 Park Ride => PR
 Park & Ride => PR
 Park and Ride => PR
-caeser,cesar,chavez,39th
-metro,portland
-oregon,or
-carshare,car2go,Zipcar,Flexcar,GetAround,ucarshare,uhaul,hertz,wecar,enterprise
 ticket,fare,outlet,store,retail
 dmv,motor,vehicles
 court house => courthouse
