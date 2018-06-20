@@ -100,8 +100,9 @@
           "agencyId": "LADOT",
           "agencyName": "LADOT",
           "layerName": "Stop"
-        },
-      ]
+        }
+       ]
+      },
     "interpolation": {
       "download": {
         "tiger": {
