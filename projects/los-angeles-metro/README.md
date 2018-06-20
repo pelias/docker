@@ -1,7 +1,7 @@
 
-# Portland Metro Area
+# Los Angeles Metro Area
 
-This project is configured to download/prepare/build a complete Pelias installation for Portland, Oregon.
+This project is configured to download/prepare/build a complete Pelias installation for Los Angeles, California.
 
 It is intended as an example for other projects, feel free to copy->paste these files to a new project directory to kick-start your own project.
 
@@ -32,4 +32,4 @@ pelias compose up
 
 You can now make queries against your new Pelias build:
 
-http://localhost:4000/v1/search?text=pdx
+http://localhost:4000/v1/search?text=LAX
