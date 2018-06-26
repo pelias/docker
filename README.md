@@ -226,6 +226,14 @@ pelias system env                      display environment variables
 pelias system update                   update the pelias command by pulling the latest version
 ```
 
+### Test command
+
+The test command runs the [fuzzy-tester](https://github.com/pelias/fuzzy-tester) tests against any test cases in your project.
+
+```bash
+test      run                      run fuzzy-tester test cases
+```
+
 ## Generic build workflow
 
 The following shell script can be used to automate a build:
@@ -261,6 +269,9 @@ pelias download all
 pelias prepare all
 pelias import all
 pelias compose up
+
+# optionally run tests
+pelias test run
 ```
 
 ## View status of running containers

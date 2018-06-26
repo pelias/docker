@@ -112,3 +112,11 @@ services:
         soft: 65536
         hard: 65536
     cap_add: [ "IPC_LOCK" ]
+  fuzzy-tester:
+    image: pelias/fuzzy-tester:master
+    container_name: pelias_fuzzy_tester
+    restart: "no"
+    command: "--help"
+    volumes:
+      - "./pelias.json:/code/pelias.json"
+      - "./test_cases:/code/pelias/fuzzy-tester/test_cases"

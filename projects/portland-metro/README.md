@@ -26,6 +26,7 @@ pelias download all
 pelias prepare all
 pelias import all
 pelias compose up
+pelias test run
 ```
 
 # Make an Example Query
