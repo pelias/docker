@@ -36,7 +36,7 @@
     },
     "geonames": {
       "datapath": "/data/geonames",
-      "countryCode": "ALL"
+      "countryCode": "FR"
     },
     "openstreetmap": {
       "download": [
