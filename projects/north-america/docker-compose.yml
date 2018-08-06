@@ -1,0 +1,122 @@
+version: '3'
+networks:
+  default:
+    driver: bridge
+volumes:
+  libpostaldata:
+    driver: local
+services:
+  libpostal_baseimage:
+    image: pelias/libpostal_baseimage
+    container_name: pelias_libpostal_baseimage
+  libpostal:
+    image: pelias/go-whosonfirst-libpostal
+    container_name: pelias_libpostal
+    restart: always
+    ports: [ "8080:8080" ]
+  schema:
+    image: pelias/schema:portland-synonyms
+    container_name: pelias_schema
+    volumes:
+      - "./pelias.json:/code/pelias.json"
+      - "./synonyms/custom_name.txt:/code/pelias/schema/synonyms/custom_name.txt"
+      - "./synonyms/custom_street.txt:/code/pelias/schema/synonyms/custom_street.txt"
+  api:
+    image: pelias/api:master
+    container_name: pelias_api
+    restart: always
+    environment: [ "PORT=4000" ]
+    ports: [ "4000:4000" ]
+    volumes:
+      - "./pelias.json:/code/pelias.json"
+      - "libpostaldata:/usr/share/libpostal"
+  placeholder:
+    image: pelias/placeholder:master
+    container_name: pelias_placeholder
+    restart: always
+    environment: [ "PORT=4100" ]
+    ports: [ "4100:4100" ]
+    volumes:
+      - "./pelias.json:/code/pelias.json"
+      - "${DATA_DIR}:/data"
+  whosonfirst:
+    image: pelias/whosonfirst:master
+    container_name: pelias_whosonfirst
+    volumes:
+      - "./pelias.json:/code/pelias.json"
+      - "${DATA_DIR}:/data"
+  openstreetmap:
+    image: pelias/openstreetmap:master
+    container_name: pelias_openstreetmap
+    volumes:
+      - "./pelias.json:/code/pelias.json"
+      - "${DATA_DIR}:/data"
+  openaddresses:
+    image: pelias/openaddresses:master
+    container_name: pelias_openaddresses
+    volumes:
+      - "./pelias.json:/code/pelias.json"
+      - "${DATA_DIR}:/data"
+  transit:
+    image: pelias/transit:master
+    container_name: pelias_transit
+    volumes:
+      - "./pelias.json:/code/pelias.json"
+      - "${DATA_DIR}:/data"
+  polylines:
+    image: pelias/polylines:master
+    container_name: pelias_polylines
+    volumes:
+      - "./pelias.json:/code/pelias.json"
+      - "${DATA_DIR}:/data"
+  interpolation:
+    depends_on: [ "libpostal_baseimage" ]
+    image: pelias/interpolation:master
+    container_name: pelias_interpolation
+    restart: always
+    environment: [ "PORT=4300" ]
+    ports: [ "4300:4300" ]
+    volumes:
+      - "./pelias.json:/code/pelias.json"
+      - "libpostaldata:/usr/share/libpostal"
+      - "${DATA_DIR}:/data"
+  pip:
+    image: pelias/pip-service:master
+    container_name: pelias_pip-service
+    restart: always
+    environment: [ "PORT=4200" ]
+    ports: [ "4200:4200" ]
+    volumes:
+      - "./pelias.json:/code/pelias.json"
+      - "${DATA_DIR}:/data"
+  document-service:
+    image: pelias/document-service:master
+    container_name: pelias_document-service
+    restart: always
+    ports: [ "5000:5000" ]
+    volumes:
+      - "./pelias.json:/code/pelias.json"
+      - "${DATA_DIR}:/data"
+  elasticsearch:
+    image: pelias/elasticsearch
+    container_name: pelias_elasticsearch
+    restart: always
+    ports: [ "9200:9200", "9300:9300" ]
+    volumes:
+      - "${DATA_DIR}/elasticsearch:/usr/share/elasticsearch/data"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+      nofile:
+        soft: 65536
+        hard: 65536
+    cap_add: [ "IPC_LOCK" ]
+  fuzzy-tester:
+    image: pelias/fuzzy-tester:master
+    container_name: pelias_fuzzy_tester
+    restart: "no"
+    command: "--help"
+    volumes:
+      - "./pelias.json:/code/pelias.json"
+      - "./test_cases:/code/pelias/fuzzy-tester/test_cases"
