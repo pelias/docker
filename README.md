@@ -11,7 +11,7 @@ We recommend you start with the `portland-metro` example as a first-time user; o
 
 ## Not suitable for large geographies
 
-We do not recommend running large extracts (anything larger than a US State) inside Docker, the scripts are **not suitable** for full planet builds. If you require global coverage, please see our [install documentation](https://pelias.io/install.html) or consider using the [geocode.earth](https://geocode.earth/) services hosted by members of our core team.
+We do not recommend running large extracts (anything larger than a US State) inside Docker, the scripts are **not suitable** for full planet builds. If you require global coverage, please see our [install documentation](https://github.com/pelias/documentation/blob/master/getting_started_install.md) or consider using the [geocode.earth](https://geocode.earth/) services hosted by members of our core team.
 
 ## Prerequisites
 
