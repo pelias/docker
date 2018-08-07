@@ -15,8 +15,6 @@ services:
     user: "${DOCKER_USER}"
     volumes:
       - "./pelias.json:/code/pelias.json"
-      - "./synonyms/custom_name.txt:/code/pelias/schema/synonyms/custom_name.txt"
-      - "./synonyms/custom_street.txt:/code/pelias/schema/synonyms/custom_street.txt"
   api:
     image: pelias/api:master
     container_name: pelias_api
