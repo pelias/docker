@@ -15,7 +15,7 @@ services:
     restart: always
     ports: [ "8080:8080" ]
   schema:
-    image: pelias/schema:portland-synonyms
+    image: pelias/schema:build-2018-08
     container_name: pelias_schema
     volumes:
       - "./pelias.json:/code/pelias.json"
@@ -40,13 +40,13 @@ services:
       - "./pelias.json:/code/pelias.json"
       - "${DATA_DIR}:/data"
   whosonfirst:
-    image: pelias/whosonfirst:master
+    image: pelias/whosonfirst:build-2018-08
     container_name: pelias_whosonfirst
     volumes:
       - "./pelias.json:/code/pelias.json"
       - "${DATA_DIR}:/data"
   openstreetmap:
-    image: pelias/openstreetmap:master
+    image: pelias/openstreetmap:build-2018-08
     container_name: pelias_openstreetmap
     volumes:
       - "./pelias.json:/code/pelias.json"
@@ -81,7 +81,7 @@ services:
       - "libpostaldata:/usr/share/libpostal"
       - "${DATA_DIR}:/data"
   pip:
-    image: pelias/pip-service:master
+    image: pelias/pip-service:nodejs10
     container_name: pelias_pip-service
     restart: always
     environment: [ "PORT=4200" ]
