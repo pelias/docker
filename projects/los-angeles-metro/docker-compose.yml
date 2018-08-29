@@ -3,12 +3,7 @@ networks:
   default:
     driver: bridge
 volumes:
-  libpostaldata:
-    driver: local
 services:
-  libpostal_baseimage:
-    image: pelias/libpostal_baseimage
-    container_name: pelias_libpostal_baseimage
   libpostal:
     image: pelias/go-whosonfirst-libpostal
     container_name: pelias_libpostal
@@ -29,7 +24,6 @@ services:
     ports: [ "4000:4000" ]
     volumes:
       - "./pelias.json:/code/pelias.json"
-      - "libpostaldata:/usr/share/libpostal"
   placeholder:
     image: pelias/placeholder:master
     container_name: pelias_placeholder
@@ -70,7 +64,6 @@ services:
       - "./pelias.json:/code/pelias.json"
       - "${DATA_DIR}:/data"
   interpolation:
-    depends_on: [ "libpostal_baseimage" ]
     image: pelias/interpolation:master
     container_name: pelias_interpolation
     restart: always
@@ -78,7 +71,6 @@ services:
     ports: [ "4300:4300" ]
     volumes:
       - "./pelias.json:/code/pelias.json"
-      - "libpostaldata:/usr/share/libpostal"
       - "${DATA_DIR}:/data"
   pip:
     image: pelias/pip-service:master
