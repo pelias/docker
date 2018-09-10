@@ -81,14 +81,6 @@ services:
     volumes:
       - "./pelias.json:/code/pelias.json"
       - "${DATA_DIR}:/data"
-  document-service:
-    image: pelias/document-service:master
-    container_name: pelias_document-service
-    restart: always
-    ports: [ "5000:5000" ]
-    volumes:
-      - "./pelias.json:/code/pelias.json"
-      - "${DATA_DIR}:/data"
   elasticsearch:
     image: pelias/elasticsearch
     container_name: pelias_elasticsearch
