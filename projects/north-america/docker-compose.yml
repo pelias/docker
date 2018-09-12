@@ -2,25 +2,17 @@ version: '3'
 networks:
   default:
     driver: bridge
-volumes:
-  libpostaldata:
-    driver: local
 services:
-  libpostal_baseimage:
-    image: pelias/libpostal_baseimage
-    container_name: pelias_libpostal_baseimage
   libpostal:
-    image: pelias/go-whosonfirst-libpostal
+    image: pelias/libpostal-service
     container_name: pelias_libpostal
     restart: always
-    ports: [ "8080:8080" ]
+    ports: [ "4400:4400" ]
   schema:
-    image: pelias/schema:build-2018-08
+    image: pelias/schema:master
     container_name: pelias_schema
     volumes:
       - "./pelias.json:/code/pelias.json"
-      - "./synonyms/custom_name.txt:/code/pelias/schema/synonyms/custom_name.txt"
-      - "./synonyms/custom_street.txt:/code/pelias/schema/synonyms/custom_street.txt"
   api:
     image: pelias/api:master
     container_name: pelias_api
@@ -29,7 +21,6 @@ services:
     ports: [ "4000:4000" ]
     volumes:
       - "./pelias.json:/code/pelias.json"
-      - "libpostaldata:/usr/share/libpostal"
   placeholder:
     image: pelias/placeholder:master
     container_name: pelias_placeholder
@@ -46,7 +37,7 @@ services:
       - "./pelias.json:/code/pelias.json"
       - "${DATA_DIR}:/data"
   openstreetmap:
-    image: pelias/openstreetmap:build-2018-08
+    image: pelias/openstreetmap:master
     container_name: pelias_openstreetmap
     volumes:
       - "./pelias.json:/code/pelias.json"
@@ -70,7 +61,6 @@ services:
       - "./pelias.json:/code/pelias.json"
       - "${DATA_DIR}:/data"
   interpolation:
-    depends_on: [ "libpostal_baseimage" ]
     image: pelias/interpolation:master
     container_name: pelias_interpolation
     restart: always
@@ -78,22 +68,13 @@ services:
     ports: [ "4300:4300" ]
     volumes:
       - "./pelias.json:/code/pelias.json"
-      - "libpostaldata:/usr/share/libpostal"
       - "${DATA_DIR}:/data"
   pip:
-    image: pelias/pip-service:nodejs10
+    image: pelias/pip-service:master
     container_name: pelias_pip-service
     restart: always
     environment: [ "PORT=4200" ]
     ports: [ "4200:4200" ]
-    volumes:
-      - "./pelias.json:/code/pelias.json"
-      - "${DATA_DIR}:/data"
-  document-service:
-    image: pelias/document-service:master
-    container_name: pelias_document-service
-    restart: always
-    ports: [ "5000:5000" ]
     volumes:
       - "./pelias.json:/code/pelias.json"
       - "${DATA_DIR}:/data"
