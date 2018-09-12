@@ -4,7 +4,6 @@
     "timestamp": false
   },
   "esclient": {
-    "log": "trace",
     "hosts": [
       { "host": "elasticsearch" }
     ]
