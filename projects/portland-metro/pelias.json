@@ -52,7 +52,7 @@
       "download": [
         { "sourceURL": "https://s3.amazonaws.com/metro-extracts.nextzen.org/portland_oregon.osm.pbf" }
       ],
-      "leveldbpath": "/tmp",
+      "leveldbpath": "/data/tmp",
       "datapath": "/data/openstreetmap",
       "import": [{
         "filename": "portland_oregon.osm.pbf"
