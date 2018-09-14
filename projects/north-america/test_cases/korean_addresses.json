@@ -1,0 +1,216 @@
+{
+  "name": "Korean address (new format)",
+  "priorityThresh": 1,
+  "tests": [
+    {
+      "id": 1,
+      "status": "fail",
+      "user": "Diana",
+      "description": "existing address, new format, with postalcode",
+      "issue": "waiting for Seoul rename to be published",
+      "in": {
+        "text": "3047 서울특별시 청운동 종로구 자하문로 94",
+        "lang": "ko"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "address",
+            "street": "자하문로",
+            "county": "종로구",
+            "locality": "서울",
+            "region": "서울특별시",
+            "country": "한국",
+            "country_a": "KOR",
+            "label": "한국 서울특별시 종로구 자하문로 94"
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "status": "fail",
+      "user": "Hanbyul",
+      "description": "",
+      "in": {
+        "text": "모세로 27",
+        "lang": "ko"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "address",
+            "street": "모세로",
+            "county": "광명시",
+            "region": "경기도",
+            "country": "한국",
+            "country_a": "KOR",
+            "label": "한국 경기도 광명시 모세로 27"
+          }
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "status": "fail",
+      "user": "Hanbyul",
+      "description": "existing address",
+      "issue": "waiting for Seoul and Gangseo-gu rename to be published",
+      "in": {
+        "text": "서울시 강서구 허준로 139",
+        "lang": "ko"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "address",
+            "street": "허준로",
+            "county": "강서구",
+            "region": "서울특별시",
+            "country": "한국",
+            "country_a": "KOR",
+            "label": "한국 서울특별시 강서구 허준로 139"
+          }
+        ]
+      },
+      "unexpected": {
+        "properties": [
+          {
+            "county": "Gangseo-gu"
+          }
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "status": "fail",
+      "user": "Hanbyul",
+      "description": "building name after housenumber is not in data, but should not screw up search",
+      "issue": "waiting for Seoul rename to be published",
+      "in": {
+        "text": "마포구 서강로9길 12 한솔빌라트",
+        "lang": "ko"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "address",
+            "street": "서강로9길",
+            "county": "마포구",
+            "region": "서울특별시",
+            "country": "한국",
+            "country_a": "KOR",
+            "label": "한국 서울특별시 마포구 서강로9길 12"
+          }
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "status": "fail",
+      "user": "Hanbyul",
+      "description": "new format address",
+      "issue": "check if data exists",
+      "in": {
+        "text": "제주시 중앙로 236",
+        "lang": "ko"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "address",
+            "street": "중앙로",
+            "county": "제주시",
+            "region": "제주특별자치도",
+            "country": "한국",
+            "country_a": "KOR",
+            "label": "한국 제주특별자치도 제주시 중앙로 236"
+          }
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "status": "fail",
+      "user": "Diana",
+      "description": "existing address in new format",
+      "issue": "waiting for Seoul rename to be published",
+      "in": {
+        "text": "독서당로39길 22",
+        "lang": "ko"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "address",
+            "street": "독서당로39길",
+            "housenumber": "22",
+            "county": "용산구",
+            "region": "서울특별시",
+            "country": "한국",
+            "country_a": "KOR",
+            "label": "한국 서울특별시 용산구 독서당로39길 22"
+          }
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "status": "fail",
+      "user": "Hanbyul",
+      "description": "old format",
+      "issue": "no street name but neighbourhood instead",
+      "in": {
+        "text": "방배동 13-8",
+        "lang": "ko"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "address",
+            "housenumber": "13-8",
+            "neighbourhood": "방배동",
+            "county": "서초구",
+            "region": "서울특별시",
+            "country": "한국",
+            "country_a": "KOR",
+            "label": "한국 서울특별시 서초구 방배동 13-8"
+          }
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "status": "fail",
+      "user": "Hanbyul",
+      "description": "new format",
+      "issue": "possibly missing the data for this address, also no korean name for county",
+      "in": {
+        "text": "의정부 시민로 122번길 9",
+        "lang": "ko"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "address",
+            "housenumber": "9",
+            "street": "시민로122번길",
+            "neighbourhood": "의정부동",
+            "county": "의정부시",
+            "region": "경기도",
+            "country": "한국",
+            "country_a": "KOR",
+            "label": "한국 경기도 의정부시 시민로122번길 9"
+          }
+        ]
+      },
+      "unexpected": {
+        "properties": [
+          {
+            "county": "Uijeongbu-si"
+          }
+        ]
+      }
+    }
+  ]
+}

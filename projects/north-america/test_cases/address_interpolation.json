@@ -1,0 +1,203 @@
+{
+  "name": "address interpolation",
+  "endpoint": "search",
+  "priorityThresh": 1,
+  "distanceThresh": 50,
+  "tests": [
+    {
+      "id": 1,
+      "user": "missinglink",
+      "status": "pass",
+      "in": {
+        "text": "475f west 26th street, new york"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "address",
+            "source": "mixed",
+            "housenumber": "475",
+            "street": "West 26th Street",
+            "match_type": "interpolated",
+            "accuracy": "point"
+          }
+        ],
+        "coordinates": [
+          [ -74.0026336, 40.7495275 ]
+        ]
+      }
+    },
+    {
+      "id": "1a",
+      "user": "missinglink",
+      "status": "pass",
+      "description": "fails when specifying size param",
+      "issue": "https://github.com/pelias/pelias/issues/562",
+      "in": {
+        "text": "475f west 26th street, new york",
+        "size": 1
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "address",
+            "source": "mixed",
+            "housenumber": "475",
+            "street": "West 26th Street",
+            "match_type": "interpolated",
+            "accuracy": "point"
+          }
+        ],
+        "coordinates": [
+          [ -74.0026336, 40.7495275 ]
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "status": "pass",
+      "user": "missinglink",
+      "description": "interpolated address (between two different datasets)",
+      "in": {
+        "text": "257 west 26th street, new york"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "address",
+            "source": "mixed",
+            "housenumber": "257",
+            "street": "West 26th Street",
+            "match_type": "interpolated",
+            "accuracy": "point"
+          }
+        ],
+        "coordinates": [
+          [ -73.996716, 40.7470427 ]
+        ]
+      }
+    },
+    {
+      "id": "2a",
+      "user": "missinglink",
+      "status": "fail",
+      "description": "interpolation service not queried when admin info omittted",
+      "issue": "https://github.com/pelias/api/issues/897",
+      "in": {
+        "text": "257 west 26th street"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "address",
+            "source": "mixed",
+            "housenumber": "257",
+            "street": "West 26th Street",
+            "match_type": "interpolated",
+            "accuracy": "point"
+          }
+        ],
+        "coordinates": [
+          [ -73.996716, 40.7470427 ]
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "status": "pass",
+      "user": "missinglink",
+      "in": {
+        "text": "rigaer strasse 11, berlin"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "address",
+            "source": "mixed",
+            "housenumber": "11",
+            "street": "Rigaer Straße",
+            "match_type": "interpolated",
+            "accuracy": "point"
+          }
+        ],
+        "coordinates": [
+          [ 13.4568939, 52.5178399 ]
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "user": "missinglink",
+      "status": "fail",
+      "description": [
+        "test passes when hitting the interpolation service directly",
+        "but fails when accessed via pelias/api"
+      ],
+      "in": {
+        "text": "6 potsdamer platz, berlin"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "address",
+            "source": "mixed",
+            "housenumber": "6",
+            "street": "Potsdamer Platz",
+            "match_type": "interpolated",
+            "accuracy": "point"
+          }
+        ],
+        "coordinates": [
+          [ 13.375818, 52.509349 ]
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "status": "pass",
+      "user": "missinglink",
+      "description": [ "must not interpolate in center of park" ],
+      "in": {
+        "text": "49 nevern square, london"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "address",
+            "source": "mixed",
+            "housenumber": "49",
+            "street": "Nevern Square",
+            "match_type": "interpolated",
+            "accuracy": "point"
+          }
+        ],
+        "coordinates": [
+          [ -0.1971474, 51.4920998 ]
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "status": "pass",
+      "user": "missinglink",
+      "in": {
+        "text": "19 glasgow street, wellington"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "address",
+            "source": "mixed",
+            "housenumber": "19",
+            "street": "Glasgow Street",
+            "match_type": "interpolated",
+            "accuracy": "point"
+          }
+        ],
+        "coordinates": [
+          [ 174.767101, -41.2887933 ]
+        ]
+      }
+    }
+  ]
+}

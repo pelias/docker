@@ -1,0 +1,769 @@
+{
+  "name": "Sorting rules for admin-only placeholder responses",
+  "priorityThresh": 1,
+  "tests": [
+    {
+      "id": 1,
+      "status": "pass",
+      "endpoint": "search",
+      "description": "megacities should rank higher than everything else",
+      "in": {
+        "text": "Paris"
+      },
+      "expected": {
+        "properties": [
+          {
+            "gid": "whosonfirst:locality:101751119",
+            "name": "Paris"
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "status": "pass",
+      "endpoint": "search",
+      "description": "megacities should rank higher than everything else",
+      "in": {
+        "text": "Moscow"
+      },
+      "expected": {
+        "properties": [
+          {
+            "gid": "whosonfirst:locality:102003033",
+            "name": "Moscow"
+          }
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "status": "pass",
+      "endpoint": "search",
+      "description": "megacities should rank higher than everything else",
+      "in": {
+        "text": "Sydney"
+      },
+      "expected": {
+        "properties": [
+          {
+            "gid": "whosonfirst:locality:101932003",
+            "name": "Sydney"
+          }
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "status": "pass",
+      "endpoint": "search",
+      "description": "Paris, France should rank higher than Paris, TX even with focus.point on Paris, TX",
+      "in": {
+        "text": "Paris",
+        "focus.point.lat": "33.675",
+        "focus.point.lon": "-95.601"
+      },
+      "expected": {
+        "properties": [
+          {
+            "gid": "whosonfirst:locality:101751119",
+            "name": "Paris"
+          }
+        ]
+      }
+    },
+    {
+      "id": 100,
+      "status": "pass",
+      "endpoint": "search",
+      "description": "continent should rank above everything else",
+      "in": {
+        "text": "Asia"
+      },
+      "expected": {
+        "properties": [
+          {
+            "gid": "whosonfirst:continent:102191569",
+            "name": "Asia"
+          }
+        ]
+      }
+    },
+    {
+      "id": 101,
+      "status": "pass",
+      "endpoint": "search",
+      "description": "continent should rank above everything else",
+      "in": {
+        "text": "africa"
+      },
+      "expected": {
+        "properties": [
+          {
+            "gid": "whosonfirst:continent:102191573",
+            "name": "Africa"
+          }
+        ]
+      }
+    },
+    {
+      "id": 102,
+      "status": "pass",
+      "endpoint": "search",
+      "description": "alt-name continent should rank above everything else",
+      "in": {
+        "text": "Europa"
+      },
+      "expected": {
+        "properties": [
+          {
+            "gid": "whosonfirst:continent:102191581",
+            "name": "Europe"
+          }
+        ]
+      }
+    },
+    {
+      "id": 200,
+      "status": "pass",
+      "endpoint": "search",
+      "description": "the country Luxembourg should rank higher than cities of the same name",
+      "in": {
+        "text": "Belgium"
+      },
+      "expected": {
+        "properties": [
+          {
+            "gid": "whosonfirst:country:85632997",
+            "name": "Belgium"
+          }
+        ]
+      }
+    },
+    {
+      "id": 201,
+      "status": "pass",
+      "endpoint": "search",
+      "description": "the country Luxembourg should rank higher than cities and regions of the same name",
+      "in": {
+        "text": "Luxembourg"
+      },
+      "expected": {
+        "properties": [
+          {
+            "gid": "whosonfirst:country:85633275",
+            "name": "Luxembourg"
+          }
+        ]
+      }
+    },
+    {
+      "id": 203,
+      "status": "pass",
+      "endpoint": "search",
+      "description": "country code input should find country and rank higher than cities",
+      "in": {
+        "text": "RUS"
+      },
+      "expected": {
+        "properties": [
+          {
+            "gid": "whosonfirst:country:85632685",
+            "name": "Russia"
+          }
+        ]
+      }
+    },
+    {
+      "id": 300,
+      "status": "pass",
+      "endpoint": "search",
+      "description": "dependency input should find and rank higher than cities",
+      "in": {
+        "text": "new caledonia"
+      },
+      "expected": {
+        "properties": [
+          {
+            "gid": "whosonfirst:dependency:85632473",
+            "name": "New Caledonia"
+          }
+        ]
+      }
+    },
+    {
+      "id": 301,
+      "status": "pass",
+      "endpoint": "search",
+      "description": "dependency input should find and rank higher than cities",
+      "in": {
+        "text": "Montserrat"
+      },
+      "expected": {
+        "properties": [
+          {
+            "gid": "whosonfirst:dependency:85632677",
+            "name": "Montserrat"
+          }
+        ]
+      }
+    },
+    {
+      "id": 302,
+      "status": "pass",
+      "endpoint": "search",
+      "description": "dependency abbreviation input should find and rank higher than cities",
+      "in": {
+        "text": "GIB"
+      },
+      "expected": {
+        "properties": [
+          {
+            "gid": "whosonfirst:dependency:85633167",
+            "name": "Gibraltar"
+          }
+        ]
+      }
+    },
+    {
+      "id": 303,
+      "status": "pass",
+      "endpoint": "search",
+      "description": "dependency altnam input should find and rank higher than cities",
+      "in": {
+        "text": "Bermudy"
+      },
+      "expected": {
+        "properties": [
+          {
+            "gid": "whosonfirst:dependency:85632731",
+            "name": "Bermuda"
+          }
+        ]
+      }
+    },
+    {
+      "id": 400,
+      "status": "pass",
+      "endpoint": "search",
+      "description": "large cities should rank higher than medium and small cities",
+      "in": {
+        "text": "Albuquerque"
+      },
+      "expected": {
+        "properties": [
+          {
+            "gid": "whosonfirst:locality:85976715",
+            "name": "Albuquerque"
+          }
+        ]
+      }
+    },
+    {
+      "id": 401,
+      "status": "pass",
+      "endpoint": "search",
+      "description": "large cities should rank higher than medium and small cities",
+      "in": {
+        "text": "Marseille"
+      },
+      "expected": {
+        "properties": [
+          {
+            "gid": "whosonfirst:locality:101749199",
+            "name": "Marseille"
+          }
+        ]
+      }
+    },
+    {
+      "id": 402,
+      "status": "pass",
+      "endpoint": "search",
+      "description": "large cities should rank higher than medium and small cities",
+      "in": {
+        "text": "San Francisco"
+      },
+      "expected": {
+        "properties": [
+          {
+            "gid": "whosonfirst:locality:85922583",
+            "name": "San Francisco"
+          }
+        ]
+      }
+    },
+    {
+      "id": 500,
+      "status": "pass",
+      "endpoint": "search",
+      "description": "macroregions should rank higher than medium and small cities",
+      "in": {
+        "text": "Sardinia"
+      },
+      "expected": {
+        "properties": [
+          {
+            "gid": "whosonfirst:macroregion:404227535",
+            "name": "Sardinia"
+          }
+        ]
+      }
+    },
+    {
+      "id": 501,
+      "status": "pass",
+      "endpoint": "search",
+      "description": "macroregions should rank higher than medium and small cities",
+      "in": {
+        "text": "Andalucía"
+      },
+      "expected": {
+        "properties": [
+          {
+            "gid": "whosonfirst:macroregion:404227361",
+            "name": "Andalusia"
+          }
+        ]
+      }
+    },
+    {
+      "id": 502,
+      "status": "pass",
+      "endpoint": "search",
+      "description": "Scotland, GB should outrank counties and cities",
+      "in": {
+        "text": "Scotland"
+      },
+      "expected": {
+        "properties": [
+          {
+            "gid": "whosonfirst:macroregion:404227471",
+            "name": "Scotland"
+          }
+        ]
+      }
+    },
+    {
+      "id": 600,
+      "status": "pass",
+      "endpoint": "search",
+      "description": "regions should rank higher than medium and small cities",
+      "in": {
+        "text": "New Mexico"
+      },
+      "expected": {
+        "properties": [
+          {
+            "gid": "whosonfirst:region:85688493",
+            "name": "New Mexico"
+          }
+        ]
+      }
+    },
+    {
+      "id": 601,
+      "status": "pass",
+      "endpoint": "search",
+      "description": "regions should rank higher than medium and small cities",
+      "in": {
+        "text": "British Columbia"
+      },
+      "expected": {
+        "properties": [
+          {
+            "gid": "whosonfirst:region:85682117",
+            "name": "British Columbia"
+          }
+        ]
+      }
+    },
+    {
+      "id": 602,
+      "status": "pass",
+      "endpoint": "search",
+      "description": "regions should rank higher than medium and small cities",
+      "in": {
+        "text": "California"
+      },
+      "expected": {
+        "properties": [
+          {
+            "gid": "whosonfirst:region:85688637",
+            "name": "California"
+          }
+        ]
+      }
+    },
+    {
+      "id": 603,
+      "status": "pass",
+      "endpoint": "search",
+      "description": "region should outrank mid-size city",
+      "in": {
+        "text": "Ontario, CA"
+      },
+      "expected": {
+        "properties": [
+          {
+            "gid": "whosonfirst:region:85682057",
+            "name": "Ontario"
+          }
+        ]
+      }
+    },
+    {
+      "id": 700,
+      "status": "pass",
+      "endpoint": "search",
+      "description": "borough should rank higher than mid-size city",
+      "in": {
+        "text": "Manhattan"
+      },
+      "expected": {
+        "properties": [
+          {
+            "gid": "whosonfirst:borough:421205771",
+            "name": "Manhattan"
+          }
+        ]
+      }
+    },
+    {
+      "id": 701,
+      "status": "fail",
+      "endpoint": "search",
+      "description": "borough should rank higher than county",
+      "issue": "https://github.com/pelias/placeholder/issues/55",
+      "in": {
+        "text": "Queens"
+      },
+      "expected": {
+        "properties": [
+          {
+            "gid": "whosonfirst:borough:421205767",
+            "name": "Queens"
+          }
+        ]
+      }
+    },
+    {
+      "id": 800,
+      "status": "pass",
+      "endpoint": "search",
+      "description": "very popular neighbourhood should rank higher than mid-size city",
+      "in": {
+        "text": "Chelsea"
+      },
+      "expected": {
+        "properties": [
+          {
+            "gid": "whosonfirst:neighbourhood:85810589",
+            "name": "Chelsea"
+          }
+        ]
+      }
+    },
+    {
+      "id": 900,
+      "status": "pass",
+      "endpoint": "search",
+      "description": "mid-size city should rank higher than county",
+      "in": {
+        "text": "Socorro, NM"
+      },
+      "expected": {
+        "properties": [
+          {
+            "gid": "whosonfirst:locality:85976677",
+            "name": "Socorro"
+          }
+        ]
+      }
+    },
+    {
+      "id": 901,
+      "status": "pass",
+      "endpoint": "search",
+      "description": "mid-size cities should be ordered by descending population",
+      "in": {
+        "text": "Lancaster"
+      },
+      "expected": {
+        "properties": [
+          {
+            "gid": "whosonfirst:locality:85923547",
+            "name": "Lancaster"
+          }
+        ]
+      }
+    },
+    {
+      "id": 902,
+      "status": "pass",
+      "endpoint": "search",
+      "description": "mid-size cities should be ordered by distance to center point",
+      "in": {
+        "text": "Lancaster",
+        "focus.point.lat": 54.153467,
+        "focus.point.lon": -4.599907
+      },
+      "expected": {
+        "properties": [
+          {
+            "gid": "whosonfirst:locality:101873271",
+            "name": "Lancaster"
+          }
+        ]
+      }
+    },
+    {
+      "id": 1000,
+      "status": "pass",
+      "endpoint": "search",
+      "description": "macrocounty",
+      "in": {
+        "text": "Mittelfranken"
+      },
+      "expected": {
+        "properties": [
+          {
+            "gid": "whosonfirst:macrocounty:404227565",
+            "name": "Mittelfranken"
+          }
+        ]
+      }
+    },
+    {
+      "id": 1100,
+      "status": "pass",
+      "endpoint": "search",
+      "description": "county",
+      "in": {
+        "text": "Maui"
+      },
+      "expected": {
+        "properties": [
+          {
+            "gid": "whosonfirst:county:102085577",
+            "name": "Maui County"
+          }
+        ]
+      }
+    },
+    {
+      "id": 1101,
+      "status": "fail",
+      "endpoint": "search",
+      "description": "county. failed because of space temporarily at the end of the name",
+      "in": {
+        "text": "Nordsachsen"
+      },
+      "expected": {
+        "properties": [
+          {
+            "gid": "whosonfirst:county:102064235",
+            "name": "Nordsachsen"
+          }
+        ]
+      }
+    },
+    {
+      "id": 1200,
+      "status": "pass",
+      "endpoint": "search",
+      "description": "macrohood",
+      "in": {
+        "text": "San Fernando Valley"
+      },
+      "expected": {
+        "properties": [
+          {
+            "gid": "whosonfirst:macrohood:1108692439",
+            "name": "San Fernando Valley"
+          }
+        ]
+      }
+    },
+    {
+      "id": 1201,
+      "status": "pass",
+      "endpoint": "search",
+      "description": "macrohood",
+      "in": {
+        "text": "Suutarila"
+      },
+      "expected": {
+        "properties": [
+          {
+            "gid": "whosonfirst:macrohood:890537277",
+            "name": "Suutarila"
+          }
+        ]
+      }
+    },
+    {
+      "id": 1201,
+      "status": "pass",
+      "endpoint": "search",
+      "description": "macrohood > popular neighbourhood",
+      "in": {
+        "text": "Mission District"
+      },
+      "expected": {
+        "properties": [
+          {
+            "gid": "whosonfirst:macrohood:1108830809",
+            "name": "Mission District"
+          }
+        ]
+      }
+    },
+    {
+      "id": 1300,
+      "status": "pass",
+      "endpoint": "search",
+      "description": "popular neighbourhood > non-popular neighbourhood",
+      "in": {
+        "text": "Flatiron District"
+      },
+      "expected": {
+        "properties": [
+          {
+            "gid": "whosonfirst:neighbourhood:85869245",
+            "name": "Flatiron District"
+          }
+        ]
+      }
+    },
+    {
+      "id": 1301,
+      "status": "pass",
+      "endpoint": "search",
+      "description": "popular neighbourhood > small cities",
+      "in": {
+        "text": "Brockley"
+      },
+      "expected": {
+        "properties": [
+          {
+            "gid": "whosonfirst:neighbourhood:85860571",
+            "name": "Brockley"
+          }
+        ]
+      }
+    },
+    {
+      "id": 1302,
+      "status": "pass",
+      "endpoint": "search",
+      "description": "popular neighbourhood > small cities",
+      "in": {
+        "text": "Haight Ashbury"
+      },
+      "expected": {
+        "properties": [
+          {
+            "gid": "whosonfirst:neighbourhood:85823479",
+            "name": "Haight-Ashbury"
+          }
+        ]
+      }
+    },
+    {
+      "id": 1303,
+      "status": "pass",
+      "endpoint": "search",
+      "description": "unambiguous neighbourhood in Paris",
+      "in": {
+        "text": "Le Marais"
+      },
+      "expected": {
+        "properties": [
+          {
+            "gid": "whosonfirst:neighbourhood:420782743",
+            "name": "Le Marais"
+          }
+        ]
+      }
+    },
+    {
+      "id": 1304,
+      "status": "pass",
+      "endpoint": "search",
+      "description": "popular neighbourhood > small city > non-popular neighbourhood",
+      "in": {
+        "text": "Les Halles"
+      },
+      "expected": {
+        "properties": [
+          {
+            "gid": "whosonfirst:neighbourhood:85873785",
+            "name": "Les Halles"
+          }
+        ]
+      }
+    },
+    {
+      "id": 1400,
+      "status": "pass",
+      "endpoint": "search",
+      "description": "small cities should be found and ordered by population descending",
+      "in": {
+        "boundary.country": "USA",
+        "text": "Felton"
+      },
+      "expected": {
+        "priorityThresh": 3,
+        "properties": [
+          {
+            "gid": "whosonfirst:locality:85924297"
+          },
+          {
+            "gid": "whosonfirst:locality:85931491"
+          },
+          {
+            "gid": "whosonfirst:locality:101717257"
+          }
+        ]
+      }
+    },
+    {
+      "id": 1500,
+      "status": "pass",
+      "endpoint": "search",
+      "description": "non-popular neighbourhoods should be found",
+      "in": {
+        "text": "Getz"
+      },
+      "expected": {
+        "properties": [
+          {
+            "gid": "whosonfirst:neighbourhood:85821441",
+            "name": "Getz"
+          }
+        ]
+      }
+    },
+    {
+      "id": 1600,
+      "status": "fail",
+      "endpoint": "search",
+      "description": "county should be after locality generally",
+      "issue": [
+        "https://github.com/pelias/placeholder/issues/55"
+      ],
+      "in": {
+        "text": "pärnu, estonia"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "Parnu",
+            "layer": "locality"
+          }
+        ]
+      }
+    }
+  ]
+}

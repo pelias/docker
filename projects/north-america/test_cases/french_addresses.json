@@ -1,0 +1,220 @@
+{
+  "name": "French addresses",
+  "priorityThresh": 1,
+  "endpoint": "search",
+  "normalizers": {
+    "street": [
+      "toUpperCase"
+    ]
+  },
+  "tests": [
+    {
+      "id": 1,
+      "status": "pass",
+      "user": "adefarge",
+      "type": "france",
+      "in": {
+        "text": "7 Rue Pointeau du Ronceray Rennes"
+      },
+      "expected": {
+        "properties": [
+          {
+            "housenumber": "7",
+            "street": "Rue Pointeau Du Ronceray",
+            "locality": "Rennes",
+            "country_a": "FRA"
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "status": "pass",
+      "user": "adefarge",
+      "type": "france",
+      "in": {
+        "text": "20 Boulevard Saint-Martin, Paris"
+      },
+      "expected": {
+        "properties": [
+          {
+            "housenumber": "20",
+            "street": "Boulevard Saint-martin",
+            "locality": "Paris",
+            "country_a": "FRA"
+          }
+        ]
+      }
+    },
+    {
+      "id": "2-abbrev",
+      "status": "fail",
+      "user": "adefarge",
+      "type": "france",
+      "issue": "Missing synonyms",
+      "in": {
+        "text": "20 bd saint-martin paris"
+      },
+      "expected": {
+        "properties": [
+          {
+            "housenumber": "20",
+            "street": "Boulevard Saint-martin",
+            "locality": "Paris",
+            "country_a": "FRA"
+          }
+        ]
+      }
+    },
+    {
+      "id": "2-abbrev-hyphen",
+      "status": "fail",
+      "user": "adefarge",
+      "type": "france",
+      "issue": "Missing synonyms and split on hyphen",
+      "in": {
+        "text": "20 bd st martin paris"
+      },
+      "expected": {
+        "properties": [
+          {
+            "housenumber": "20",
+            "street": "Boulevard Saint-martin",
+            "locality": "Paris",
+            "country_a": "FRA"
+          }
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "status": "pass",
+      "user": "adefarge",
+      "type": "france",
+      "in": {
+        "text": "Avenue du Maine Paris"
+      },
+      "expected": {
+        "properties": [
+          {
+            "street": "Avenue du Maine",
+            "locality": "Paris",
+            "country_a": "FRA"
+          }
+        ]
+      }
+    },
+    {
+      "id": "3-abbrev",
+      "status": "fail",
+      "user": "adefarge",
+      "type": "france",
+      "issue": "Missing synonyms",
+      "in": {
+        "text": "av du maine paris"
+      },
+      "expected": {
+        "properties": [
+          {
+            "street": "Avenue du Maine",
+            "locality": "Paris",
+            "country_a": "FRA"
+          }
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "status": "pass",
+      "user": "adefarge",
+      "type": "france",
+      "in": {
+        "text": "Boulevard de la Liberte, Rennes"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "Boulevard de la Liberté",
+            "locality": "Rennes",
+            "country_a": "FRA"
+          }
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "status": "pass",
+      "user": "adefarge",
+      "type": "france",
+      "in": {
+        "text": "st germain les arpajon"
+      },
+      "expected": {
+        "properties": [
+          {
+            "locality": "Saint-Germain-lès-Arpajon",
+            "country_a": "FRA"
+          }
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "status": "pass",
+      "user": "adefarge",
+      "type": "france",
+      "in": {
+        "text": "14 impasse du parc st germain les arpajon "
+      },
+      "expected": {
+        "properties": [
+          {
+            "housenumber": "14",
+            "street": "Impasse Du Parc",
+            "locality": "Saint-Germain-lès-Arpajon",
+            "country_a": "FRA"
+          }
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "status": "fail",
+      "user": "adefarge",
+      "type": "france",
+      "issue": "Missing synonyms",
+      "in": {
+        "text": "6 r de bellevue mur de bretagne"
+      },
+      "expected": {
+        "properties": [
+          {
+            "housenumber": "6",
+            "street": "Rue De Bellevue",
+            "locality": "Mûr-de-Bretagne",
+            "country_a": "FRA"
+          }
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "status": "fail",
+      "user": "adefarge",
+      "type": "france",
+      "issue": "Missing synonyms and split on hyphen",
+      "in": {
+        "text": "r gay lussac paris"
+      },
+      "expected": {
+        "properties": [
+          {
+            "street": "Rue Gay-Lussac",
+            "locality": "Paris",
+            "country_a": "FRA"
+          }
+        ]
+      }
+    }
+  ]
+}

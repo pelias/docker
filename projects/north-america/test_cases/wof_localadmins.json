@@ -1,0 +1,75 @@
+{
+  "name": "Who's on First localadmins",
+  "priorityThresh": 1,
+  "tests": [
+    {
+      "id": 1,
+      "status": "fail",
+      "user": "Stephen",
+      "description": "chosen for diacriticals. space at the end of the name",
+      "in": {
+        "text": "Villares De Órbigo, Spain",
+        "sources": "wof",
+        "layers": "localadmin"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "localadmin",
+            "name": "Villares De Órbigo",
+            "region": "Leon",
+            "macroregion": "Castile and Leon",
+            "country": "Spain",
+            "country_a": "ESP"
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "status": "pass",
+      "user": "Stephen",
+      "in": {
+        "text": "Norwood Young America, Minnesota, US",
+        "sources": "wof",
+        "layers": "localadmin"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "localadmin",
+            "name": "Norwood Young America",
+            "county": "Carver County",
+            "region": "Minnesota",
+            "region_a": "MN",
+            "country": "United States",
+            "country_a": "USA"
+          }
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "status": "pass",
+      "user": "Stephen",
+      "in": {
+        "text": "Zickrick, SD",
+        "sources": "wof"
+      },
+      "expected": {
+        "priorityThresh": 1,
+        "properties": [
+          {
+            "layer": "localadmin",
+            "name": "Zickrick",
+            "region": "South Dakota",
+            "region_a": "SD",
+            "country": "United States",
+            "country_a": "USA"
+          }
+        ]
+      }
+    }
+
+  ]
+}

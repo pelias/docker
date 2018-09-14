@@ -1,0 +1,57 @@
+{
+  "name": "search sources",
+  "endpoint": "search",
+  "priorityThresh": 9,
+  "tests": [
+    {
+      "id": 1,
+      "status": "pass",
+      "endpoint": "search",
+      "description": "Admin-only query with undefined `sources` should return WhosOnFirst",
+      "in": {
+        "text": "Lusaka, Zambia"
+      },
+      "expected": {
+        "properties": [
+          {
+            "source": "whosonfirst"
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "status": "pass",
+      "endpoint": "search",
+      "description": "Admin-only query requesting Geonames returns only Geonames",
+      "in": {
+        "text": "Kathmandu, Nepal",
+        "sources": "geonames"
+      },
+      "expected": {
+        "properties": [
+          {
+            "source": "geonames"
+          }
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "status": "pass",
+      "endpoint": "search",
+      "description": "Admin-only query requesting WhosOnFirst returns only WhosOnFirst",
+      "in": {
+        "text": "Yangon, Myanmar",
+        "sources": "whosonfirst"
+      },
+      "expected": {
+        "properties": [
+          {
+            "source": "whosonfirst"
+          }
+        ]
+      }
+    }
+  ]
+}
