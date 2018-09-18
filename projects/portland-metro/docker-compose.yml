@@ -80,6 +80,7 @@ services:
     container_name: pelias_polylines
     user: "${DOCKER_USER}"
     read_only: true
+    environment: [ "TMPDIR=/data/tmp" ]
     volumes:
       - "./pelias.json:/code/pelias.json"
       - "${DATA_DIR}:/data"
@@ -89,7 +90,7 @@ services:
     user: "${DOCKER_USER}"
     read_only: true
     restart: always
-    environment: [ "PORT=4300" ]
+    environment: [ "PORT=4300", "TMPDIR=/data/tmp"  ]
     ports: [ "4300:4300" ]
     volumes:
       - "./pelias.json:/code/pelias.json"
