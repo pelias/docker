@@ -25,10 +25,10 @@
   "api": {
     "textAnalyzer": "libpostal",
     "services": {
-      "pip": { "url": "http://pip:4200" },
-      "libpostal": { "url": "http://libpostal:8080" },
       "placeholder": { "url": "http://placeholder:4100" },
-      "interpolation": { "url": "http://interpolation:4300" }
+      "pip": { "url": "http://pip:4200" },
+      "interpolation": { "url": "http://interpolation:4300" },
+      "libpostal": { "url": "http://libpostal:4400" }
     },
     "defaultParameters": {
       "focus.point.lat": 45.52,

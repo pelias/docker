@@ -5,10 +5,10 @@ networks:
 volumes:
 services:
   libpostal:
-    image: pelias/go-whosonfirst-libpostal
+    image: pelias/libpostal-service
     container_name: pelias_libpostal
     restart: always
-    ports: [ "8080:8080" ]
+    ports: [ "4400:4400" ]
   schema:
     image: pelias/schema:master
     container_name: pelias_schema
