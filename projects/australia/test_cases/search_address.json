@@ -1,0 +1,16 @@
+{
+  "name": "/v1/search address",
+  "description": "addresses in Portland, OR",
+  "priorityThresh": 1,
+  "normalizers": {
+    "name": [
+      "toUpperCase",
+      "removeOrdinals",
+      "stripPunctuation",
+      "abbreviateDirectionals",
+      "abbreviateStreetSuffixes"
+    ]
+  },
+  "tests": [
+  ]
+}
