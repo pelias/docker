@@ -7970,15 +7970,15 @@
     },
     {
       "id": 468,
-      "status": "pass",
+      "status": "fail",
       "in": {
-        "text": "309 SE 129TH AVE Portland Oregon"
+        "text": "309 SE 129TH AVE Oak Grove Oregon"
       },
       "expected": {
         "properties": [
           {
             "name": "309 SE 129TH AVE",
-            "locality": "Portland",
+            "locality": "Oak Grove",
             "region": "Oregon",
             "region_a": "OR"
           }
@@ -7989,13 +7989,13 @@
       "id": 469,
       "status": "pass",
       "in": {
-        "text": "2817 SE PARK AVE, Portland, OR"
+        "text": "2817 SE PARK AVE, Oak Grove, OR"
       },
       "expected": {
         "properties": [
           {
             "name": "2817 SE PARK AVE",
-            "locality": "Portland",
+            "locality": "Oak Grove",
             "region": "Oregon",
             "region_a": "OR"
           }
@@ -8006,13 +8006,13 @@
       "id": 470,
       "status": "pass",
       "in": {
-        "text": "2817 SE PARK AVE, Portland, Oregon"
+        "text": "2817 SE PARK AVE, Oak Grove, Oregon"
       },
       "expected": {
         "properties": [
           {
             "name": "2817 SE PARK AVE",
-            "locality": "Portland",
+            "locality": "Oak Grove",
             "region": "Oregon",
             "region_a": "OR"
           }
@@ -8023,13 +8023,13 @@
       "id": 471,
       "status": "pass",
       "in": {
-        "text": "2817 SE PARK AVE Portland OR"
+        "text": "2817 SE PARK AVE Oak Grove OR"
       },
       "expected": {
         "properties": [
           {
             "name": "2817 SE PARK AVE",
-            "locality": "Portland",
+            "locality": "Oak Grove",
             "region": "Oregon",
             "region_a": "OR"
           }
@@ -8040,13 +8040,13 @@
       "id": 472,
       "status": "pass",
       "in": {
-        "text": "2817 SE PARK AVE Portland Oregon"
+        "text": "2817 SE PARK AVE Oak Grove Oregon"
       },
       "expected": {
         "properties": [
           {
             "name": "2817 SE PARK AVE",
-            "locality": "Portland",
+            "locality": "Oak Grove",
             "region": "Oregon",
             "region_a": "OR"
           }
