@@ -9,7 +9,7 @@ services:
     restart: always
     ports: [ "4400:4400" ]
   schema:
-    image: pelias/schema:master
+    image: pelias/schema:disable_fielddata
     container_name: pelias_schema
     volumes:
       - "./pelias.json:/code/pelias.json"
