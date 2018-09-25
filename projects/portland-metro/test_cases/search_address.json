@@ -6967,7 +6967,7 @@
     },
     {
       "id": 409,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "10647 SW RIVER DR, Portland, OR"
       },
@@ -6984,7 +6984,7 @@
     },
     {
       "id": 410,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "10647 SW RIVER DR, Portland, Oregon"
       },
@@ -7001,7 +7001,7 @@
     },
     {
       "id": 411,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "10647 SW RIVER DR Portland OR"
       },
@@ -7382,7 +7382,7 @@
       "expected": {
         "properties": [
           {
-            "name": "1000 SW BROADWAY ST",
+            "name": "1000 SW BROADWAY",
             "locality": "Portland",
             "region": "Oregon",
             "region_a": "OR"
@@ -7399,7 +7399,7 @@
       "expected": {
         "properties": [
           {
-            "name": "1000 SW BROADWAY ST",
+            "name": "1000 SW BROADWAY",
             "locality": "Portland",
             "region": "Oregon",
             "region_a": "OR"
@@ -7416,7 +7416,7 @@
       "expected": {
         "properties": [
           {
-            "name": "1000 SW BROADWAY ST",
+            "name": "1000 SW BROADWAY",
             "locality": "Portland",
             "region": "Oregon",
             "region_a": "OR"
@@ -7433,7 +7433,7 @@
       "expected": {
         "properties": [
           {
-            "name": "1000 SW BROADWAY ST",
+            "name": "1000 SW BROADWAY",
             "locality": "Portland",
             "region": "Oregon",
             "region_a": "OR"
