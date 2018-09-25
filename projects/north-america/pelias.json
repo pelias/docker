@@ -1839,7 +1839,10 @@
     "interpolation": {
       "download": {
         "tiger": {
-          "datapath": "/data/tiger"
+          "datapath": "/data/tiger",
+          "states": [
+            { "state_code": 41, "county_code": 67, "name": "Washington County, OR" }
+          ]
         }
       }
     }
