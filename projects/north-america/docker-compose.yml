@@ -31,7 +31,7 @@ services:
       - "./pelias.json:/code/pelias.json"
       - "${DATA_DIR}:/data"
   whosonfirst:
-    image: pelias/whosonfirst:build-2018-08
+    image: pelias/whosonfirst:master
     container_name: pelias_whosonfirst
     volumes:
       - "./pelias.json:/code/pelias.json"
