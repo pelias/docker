@@ -5,7 +5,7 @@
   "tests": [
     {
       "id": 1,
-      "status": "pass",
+      "status": "fail",
       "notes": "portland international should come up for PDX",
       "in": {
         "text": "pdx"
@@ -26,7 +26,7 @@
     },
     {
       "id": 2,
-      "status": "pass",
+      "status": "fail",
       "notes": "portland international should come up for PDX",
       "in": {
         "text": "pdx airport"

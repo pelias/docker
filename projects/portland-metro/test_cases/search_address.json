@@ -242,7 +242,7 @@
       "expected": {
         "properties": [
           {
-            "name": "4004 SW BH Hwy",
+            "name": "4004 SW BEAVERTON HILLSDALE Hwy",
             "locality": "Portland",
             "region": "Oregon",
             "region_a": "OR"
@@ -259,7 +259,7 @@
       "expected": {
         "properties": [
           {
-            "name": "4004 SW BH Hwy",
+            "name": "4004 SW BEAVERTON HILLSDALE Hwy",
             "locality": "Portland",
             "region": "Oregon",
             "region_a": "OR"
@@ -276,7 +276,7 @@
       "expected": {
         "properties": [
           {
-            "name": "4004 SW BH Hwy",
+            "name": "4004 SW BEAVERTON HILLSDALE Hwy",
             "locality": "Portland",
             "region": "Oregon",
             "region_a": "OR"
@@ -293,7 +293,7 @@
       "expected": {
         "properties": [
           {
-            "name": "4004 SW BH Hwy",
+            "name": "4004 SW BEAVERTON HILLSDALE Hwy",
             "locality": "Portland",
             "region": "Oregon",
             "region_a": "OR"
@@ -378,7 +378,7 @@
       "expected": {
         "properties": [
           {
-            "name": "4004 SW Beaverton-Hillsdale Hwy",
+            "name": "4004 SW Beaverton Hillsdale Hwy",
             "locality": "Portland",
             "region": "Oregon",
             "region_a": "OR"
@@ -395,7 +395,7 @@
       "expected": {
         "properties": [
           {
-            "name": "4004 SW Beaverton-Hillsdale Hwy",
+            "name": "4004 SW BEAVERTON HILLSDALE Hwy",
             "locality": "Portland",
             "region": "Oregon",
             "region_a": "OR"
@@ -412,7 +412,7 @@
       "expected": {
         "properties": [
           {
-            "name": "4004 SW Beaverton-Hillsdale Hwy",
+            "name": "4004 SW BEAVERTON HILLSDALE Hwy",
             "locality": "Portland",
             "region": "Oregon",
             "region_a": "OR"
@@ -429,7 +429,7 @@
       "expected": {
         "properties": [
           {
-            "name": "4004 SW Beaverton-Hillsdale Hwy",
+            "name": "4004 SW BEAVERTON HILLSDALE Hwy",
             "locality": "Portland",
             "region": "Oregon",
             "region_a": "OR"
@@ -582,7 +582,7 @@
       "expected": {
         "properties": [
           {
-            "name": "17175 SW TUALATIN VALLEY HWY",
+            "name": "17175 SW TUALATIN VALLEY HIGHWAY",
             "locality": "Aloha",
             "region": "Oregon",
             "region_a": "OR"
@@ -599,7 +599,7 @@
       "expected": {
         "properties": [
           {
-            "name": "17175 SW TUALATIN VALLEY HWY",
+            "name": "17175 SW TUALATIN VALLEY HIGHWAY",
             "locality": "Aloha",
             "region": "Oregon",
             "region_a": "OR"
@@ -616,7 +616,7 @@
       "expected": {
         "properties": [
           {
-            "name": "17175 SW TUALATIN VALLEY HWY",
+            "name": "17175 SW TUALATIN VALLEY HIGHWAY",
             "locality": "Aloha",
             "region": "Oregon",
             "region_a": "OR"
@@ -633,7 +633,7 @@
       "expected": {
         "properties": [
           {
-            "name": "17175 SW TUALATIN VALLEY HWY",
+            "name": "17175 SW TUALATIN VALLEY HIGHWAY",
             "locality": "Aloha",
             "region": "Oregon",
             "region_a": "OR"
@@ -650,7 +650,7 @@
       "expected": {
         "properties": [
           {
-            "name": "17175 SW TUALATIN VALLEY HWY",
+            "name": "17175 SW TUALATIN VALLEY HIGHWAY",
             "locality": "Aloha",
             "region": "Oregon",
             "region_a": "OR"
@@ -667,7 +667,7 @@
       "expected": {
         "properties": [
           {
-            "name": "17175 SW TUALATIN VALLEY HWY",
+            "name": "17175 SW TUALATIN VALLEY HIGHWAY",
             "locality": "Aloha",
             "region": "Oregon",
             "region_a": "OR"
@@ -684,7 +684,7 @@
       "expected": {
         "properties": [
           {
-            "name": "17175 SW TUALATIN VALLEY HWY",
+            "name": "17175 SW TUALATIN VALLEY HIGHWAY",
             "locality": "Aloha",
             "region": "Oregon",
             "region_a": "OR"
@@ -701,7 +701,7 @@
       "expected": {
         "properties": [
           {
-            "name": "17175 SW TUALATIN VALLEY HWY",
+            "name": "17175 SW TUALATIN VALLEY HIGHWAY",
             "locality": "Aloha",
             "region": "Oregon",
             "region_a": "OR"
@@ -718,7 +718,7 @@
       "expected": {
         "properties": [
           {
-            "name": "17175 SW TUALATIN VALLEY HWY",
+            "name": "17175 SW TUALATIN VALLEY HIGHWAY",
             "locality": "Aloha",
             "region": "Oregon",
             "region_a": "OR"
@@ -735,7 +735,7 @@
       "expected": {
         "properties": [
           {
-            "name": "17175 SW TUALATIN VALLEY HWY",
+            "name": "17175 SW TUALATIN VALLEY HIGHWAY",
             "locality": "Aloha",
             "region": "Oregon",
             "region_a": "OR"
@@ -752,7 +752,7 @@
       "expected": {
         "properties": [
           {
-            "name": "17175 SW TUALATIN VALLEY HWY",
+            "name": "17175 SW TUALATIN VALLEY HIGHWAY",
             "locality": "Aloha",
             "region": "Oregon",
             "region_a": "OR"
@@ -769,7 +769,7 @@
       "expected": {
         "properties": [
           {
-            "name": "17175 SW TUALATIN VALLEY HWY",
+            "name": "17175 SW TUALATIN VALLEY HIGHWAY",
             "locality": "Aloha",
             "region": "Oregon",
             "region_a": "OR"
@@ -1119,7 +1119,7 @@
     },
     {
       "id": 65,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "14587 SW DAUER CT, Portland, OR"
       },
@@ -1136,7 +1136,7 @@
     },
     {
       "id": 66,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "14587 SW DAUER CT, Portland, Oregon"
       },
@@ -1153,7 +1153,7 @@
     },
     {
       "id": 67,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "14587 SW DAUER CT Portland OR"
       },
@@ -1170,7 +1170,7 @@
     },
     {
       "id": 68,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "14587 SW DAUER CT Portland Oregon"
       },
@@ -2003,7 +2003,7 @@
     },
     {
       "id": 117,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "4015 N ALBINA ST, Portland, OR"
       },
@@ -2020,7 +2020,7 @@
     },
     {
       "id": 118,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "4015 N ALBINA ST, Portland, Oregon"
       },
@@ -2037,7 +2037,7 @@
     },
     {
       "id": 119,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "4015 N ALBINA ST Portland OR"
       },
@@ -2054,7 +2054,7 @@
     },
     {
       "id": 120,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "4015 N ALBINA ST Portland Oregon"
       },
@@ -4451,7 +4451,7 @@
     },
     {
       "id": 261,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "4105 SE INTERNATIONAL WAY, Portland, OR"
       },
@@ -4468,7 +4468,7 @@
     },
     {
       "id": 262,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "4105 SE INTERNATIONAL WAY, Portland, Oregon"
       },
@@ -4485,7 +4485,7 @@
     },
     {
       "id": 263,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "4105 SE INTERNATIONAL WAY Portland OR"
       },
@@ -4502,7 +4502,7 @@
     },
     {
       "id": 264,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "4105 SE INTERNATIONAL WAY Portland Oregon"
       },
@@ -4798,7 +4798,7 @@
       "expected": {
         "properties": [
           {
-            "name": "1231 NE BROADWAY ST",
+            "name": "1231 NE BROADWAY",
             "locality": "Portland",
             "region": "Oregon",
             "region_a": "OR"
@@ -4815,7 +4815,7 @@
       "expected": {
         "properties": [
           {
-            "name": "1231 NE BROADWAY ST",
+            "name": "1231 NE BROADWAY",
             "locality": "Portland",
             "region": "Oregon",
             "region_a": "OR"
@@ -4832,7 +4832,7 @@
       "expected": {
         "properties": [
           {
-            "name": "1231 NE BROADWAY ST",
+            "name": "1231 NE BROADWAY",
             "locality": "Portland",
             "region": "Oregon",
             "region_a": "OR"
@@ -4849,7 +4849,7 @@
       "expected": {
         "properties": [
           {
-            "name": "1231 NE BROADWAY ST",
+            "name": "1231 NE BROADWAY",
             "locality": "Portland",
             "region": "Oregon",
             "region_a": "OR"
@@ -4995,7 +4995,7 @@
     },
     {
       "id": 293,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "10955 SE JENNIFER ST, Portland, OR"
       },
@@ -5012,7 +5012,7 @@
     },
     {
       "id": 294,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "10955 SE JENNIFER ST, Portland, Oregon"
       },
@@ -5029,7 +5029,7 @@
     },
     {
       "id": 295,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "10955 SE JENNIFER ST Portland OR"
       },
@@ -5046,7 +5046,7 @@
     },
     {
       "id": 296,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "10955 SE JENNIFER ST Portland Oregon"
       },
@@ -5138,7 +5138,7 @@
       "expected": {
         "properties": [
           {
-            "name": "2716 SW BEAVERTON-HILLSDALE HWY",
+            "name": "2716 SW BEAVERTON HILLSDALE HIGHWAY",
             "locality": "Portland",
             "region": "Oregon",
             "region_a": "OR"
@@ -5155,7 +5155,7 @@
       "expected": {
         "properties": [
           {
-            "name": "2716 SW BEAVERTON-HILLSDALE HWY",
+            "name": "2716 SW BEAVERTON HILLSDALE HIGHWAY",
             "locality": "Portland",
             "region": "Oregon",
             "region_a": "OR"
@@ -5172,7 +5172,7 @@
       "expected": {
         "properties": [
           {
-            "name": "2716 SW BEAVERTON-HILLSDALE HWY",
+            "name": "2716 SW BEAVERTON HILLSDALE HIGHWAY",
             "locality": "Portland",
             "region": "Oregon",
             "region_a": "OR"
@@ -5189,7 +5189,7 @@
       "expected": {
         "properties": [
           {
-            "name": "2716 SW BEAVERTON-HILLSDALE HWY",
+            "name": "2716 SW BEAVERTON HILLSDALE HIGHWAY",
             "locality": "Portland",
             "region": "Oregon",
             "region_a": "OR"
@@ -5403,7 +5403,7 @@
     },
     {
       "id": 317,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "16317 SE 82ND DR, Portland, OR"
       },
@@ -5420,7 +5420,7 @@
     },
     {
       "id": 318,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "16317 SE 82ND DR, Portland, Oregon"
       },
@@ -5437,7 +5437,7 @@
     },
     {
       "id": 319,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "16317 SE 82ND DR Portland OR"
       },
@@ -5454,7 +5454,7 @@
     },
     {
       "id": 320,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "16317 SE 82ND DR Portland Oregon"
       },
@@ -5471,7 +5471,7 @@
     },
     {
       "id": 321,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "14255 SW 6TH ST, Portland, OR"
       },
@@ -5488,7 +5488,7 @@
     },
     {
       "id": 322,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "14255 SW 6TH ST, Portland, Oregon"
       },
@@ -5505,7 +5505,7 @@
     },
     {
       "id": 323,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "14255 SW 6TH ST Portland OR"
       },
@@ -5522,7 +5522,7 @@
     },
     {
       "id": 324,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "14255 SW 6TH ST Portland Oregon"
       },
@@ -5607,7 +5607,7 @@
     },
     {
       "id": 329,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "12133 SE 8OTH AVE MILWAUKIE, Portland, OR"
       },
@@ -5624,7 +5624,7 @@
     },
     {
       "id": 330,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "12133 SE 8OTH AVE MILWAUKIE, Portland, Oregon"
       },
@@ -5641,7 +5641,7 @@
     },
     {
       "id": 331,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "12133 SE 8OTH AVE MILWAUKIE Portland OR"
       },
@@ -5658,7 +5658,7 @@
     },
     {
       "id": 332,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "12133 SE 8OTH AVE MILWAUKIE Portland Oregon"
       },
@@ -6559,7 +6559,7 @@
     },
     {
       "id": 385,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "3073 SE 20TH AVE, Portland, OR"
       },
@@ -6576,7 +6576,7 @@
     },
     {
       "id": 386,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "3073 SE 20TH AVE, Portland, Oregon"
       },
@@ -6593,7 +6593,7 @@
     },
     {
       "id": 387,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "3073 SE 20TH AVE Portland OR"
       },
@@ -6610,7 +6610,7 @@
     },
     {
       "id": 388,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "3073 SE 20TH AVE Portland Oregon"
       },
@@ -6933,7 +6933,7 @@
     },
     {
       "id": 407,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "OREGON ZOO Portland OR"
       },
@@ -6950,7 +6950,7 @@
     },
     {
       "id": 408,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "OREGON ZOO Portland Oregon"
       },
@@ -6967,7 +6967,7 @@
     },
     {
       "id": 409,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "10647 SW RIVER DR, Portland, OR"
       },
@@ -6984,7 +6984,7 @@
     },
     {
       "id": 410,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "10647 SW RIVER DR, Portland, Oregon"
       },
@@ -7001,7 +7001,7 @@
     },
     {
       "id": 411,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "10647 SW RIVER DR Portland OR"
       },
@@ -7018,7 +7018,7 @@
     },
     {
       "id": 412,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "10647 SW RIVER DR Portland Oregon"
       },
@@ -7382,7 +7382,7 @@
       "expected": {
         "properties": [
           {
-            "name": "1000 SW BROADWAY ST",
+            "name": "1000 SW BROADWAY",
             "locality": "Portland",
             "region": "Oregon",
             "region_a": "OR"
@@ -7399,7 +7399,7 @@
       "expected": {
         "properties": [
           {
-            "name": "1000 SW BROADWAY ST",
+            "name": "1000 SW BROADWAY",
             "locality": "Portland",
             "region": "Oregon",
             "region_a": "OR"
@@ -7416,7 +7416,7 @@
       "expected": {
         "properties": [
           {
-            "name": "1000 SW BROADWAY ST",
+            "name": "1000 SW BROADWAY",
             "locality": "Portland",
             "region": "Oregon",
             "region_a": "OR"
@@ -7433,7 +7433,7 @@
       "expected": {
         "properties": [
           {
-            "name": "1000 SW BROADWAY ST",
+            "name": "1000 SW BROADWAY",
             "locality": "Portland",
             "region": "Oregon",
             "region_a": "OR"
@@ -7970,15 +7970,15 @@
     },
     {
       "id": 468,
-      "status": "pass",
+      "status": "fail",
       "in": {
-        "text": "309 SE 129TH AVE Portland Oregon"
+        "text": "309 SE 129TH AVE Oak Grove Oregon"
       },
       "expected": {
         "properties": [
           {
             "name": "309 SE 129TH AVE",
-            "locality": "Portland",
+            "locality": "Oak Grove",
             "region": "Oregon",
             "region_a": "OR"
           }
@@ -7989,13 +7989,13 @@
       "id": 469,
       "status": "pass",
       "in": {
-        "text": "2817 SE PARK AVE, Portland, OR"
+        "text": "2817 SE PARK AVE, Oak Grove, OR"
       },
       "expected": {
         "properties": [
           {
             "name": "2817 SE PARK AVE",
-            "locality": "Portland",
+            "locality": "Oak Grove",
             "region": "Oregon",
             "region_a": "OR"
           }
@@ -8006,13 +8006,13 @@
       "id": 470,
       "status": "pass",
       "in": {
-        "text": "2817 SE PARK AVE, Portland, Oregon"
+        "text": "2817 SE PARK AVE, Oak Grove, Oregon"
       },
       "expected": {
         "properties": [
           {
             "name": "2817 SE PARK AVE",
-            "locality": "Portland",
+            "locality": "Oak Grove",
             "region": "Oregon",
             "region_a": "OR"
           }
@@ -8023,13 +8023,13 @@
       "id": 471,
       "status": "pass",
       "in": {
-        "text": "2817 SE PARK AVE Portland OR"
+        "text": "2817 SE PARK AVE Oak Grove OR"
       },
       "expected": {
         "properties": [
           {
             "name": "2817 SE PARK AVE",
-            "locality": "Portland",
+            "locality": "Oak Grove",
             "region": "Oregon",
             "region_a": "OR"
           }
@@ -8040,13 +8040,13 @@
       "id": 472,
       "status": "pass",
       "in": {
-        "text": "2817 SE PARK AVE Portland Oregon"
+        "text": "2817 SE PARK AVE Oak Grove Oregon"
       },
       "expected": {
         "properties": [
           {
             "name": "2817 SE PARK AVE",
-            "locality": "Portland",
+            "locality": "Oak Grove",
             "region": "Oregon",
             "region_a": "OR"
           }
