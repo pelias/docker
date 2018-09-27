@@ -81,6 +81,7 @@ Then use your text editor to modify the `.env` file to reflect your new path, it
 ```bash
 COMPOSE_PROJECT_NAME=pelias
 DATA_DIR=/tmp/pelias
+DOCKER_USER=1000
 ```
 
 You can then list the environment variables to ensure they have been correctly set:
@@ -94,6 +95,12 @@ pelias system env
 The compose variables are optional and are documented here: https://docs.docker.com/compose/env-file/
 
 Note: changing the `COMPOSE_PROJECT_NAME` variable is not advisable unless you know what you are doing. If you are migrating from the deprecated `pelias/dockerfiles` repository then you can set `COMPOSE_PROJECT_NAME=dockerfiles` to enable backwards compatibility with containers created using that repository.
+
+### Variable: DOCKER_USER
+
+All processes in Pelias containers are run as non-root users. By default, the UID of the processes will be `1000`, which is the first user ID on _most_ Linux systems and is likely to be a good option. However, if restricting file permissions in your data directory to a different user or group is important, this can be overridden by setting the `DOCKER_USER` variable.
+
+This variable can take just a UID or a UID:GID combination such as `1000:1000`. See the [docker-compose](https://docs.docker.com/compose/compose-file/#domainname-hostname-ipc-mac_address-privileged-read_only-shm_size-stdin_open-tty-user-working_dir) and [docker run](https://docs.docker.com/engine/reference/run/#user) documentation on controlling Docker container users for more information.
 
 ## CLI commands
 
