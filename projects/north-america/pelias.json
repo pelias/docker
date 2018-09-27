@@ -13,7 +13,7 @@
       "index": {
         "refresh_interval": "10s",
         "number_of_replicas": "0",
-        "number_of_shards": "5"
+        "number_of_shards": "4"
       }
     }
   },
