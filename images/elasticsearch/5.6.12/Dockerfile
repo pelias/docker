@@ -9,6 +9,7 @@ ENV ES_JAVA_OPTS '-Xms512m -Xmx512m'
 ENV xpack.security.enabled 'false'
 ENV xpack.monitoring.enabled 'false'
 ENV cluster.name 'pelias-dev'
+ENV discovery.type 'single-node'
 ENV bootstrap.memory_lock 'true'
 RUN echo 'vm.max_map_count=262144' >> /etc/sysctl.conf
 
