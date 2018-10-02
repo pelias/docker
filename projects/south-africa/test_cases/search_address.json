@@ -1,6 +1,6 @@
 {
   "name": "/v1/search address",
-  "description": "addresses in Portland, OR",
+  "description": "addresses in South Africa",
   "priorityThresh": 1,
   "normalizers": {
     "name": [

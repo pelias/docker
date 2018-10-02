@@ -118,3 +118,10 @@ services:
     volumes:
       - "./pelias.json:/code/pelias.json"
       - "./test_cases:/code/pelias/fuzzy-tester/test_cases"
+  acceptance-tests:
+    container_name: pelias_acceptance_tests
+    build: ../../images/acceptance-tests
+    user: "${DOCKER_USER}"
+    restart: "no"
+    volumes:
+      - "./pelias.json:/code/pelias.json"

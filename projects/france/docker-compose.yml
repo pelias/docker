@@ -100,3 +100,10 @@ services:
     cap_add: [ "IPC_LOCK" ]
     security_opt:
       - seccomp=unconfined
+  acceptance-tests:
+    container_name: pelias_acceptance_tests
+    build: ../../images/acceptance-tests
+    user: "${DOCKER_USER}"
+    restart: "no"
+    volumes:
+      - "./pelias.json:/code/pelias.json"

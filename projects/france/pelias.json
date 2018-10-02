@@ -18,6 +18,11 @@
       }
     }
   },
+  "acceptance-tests": {
+    "endpoints": {
+      "docker": "http://api:4000/v1/"
+    }
+  },
   "api": {
     "textAnalyzer": "libpostal",
     "services": {
