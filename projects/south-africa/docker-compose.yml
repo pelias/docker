@@ -10,7 +10,7 @@ services:
     restart: always
     ports: [ "4400:4400" ]
   schema:
-    image: pelias/schema:master
+    image: pelias/schema:support_both_es2_and_es5
     container_name: pelias_schema
     user: "${DOCKER_USER}"
     volumes:
@@ -123,3 +123,10 @@ services:
     volumes:
       - "./pelias.json:/code/pelias.json"
       - "./test_cases:/code/pelias/fuzzy-tester/test_cases"
+  valhalla:
+    container_name: pelias_valhalla
+    build: ../../images/valhalla
+    restart: "no"
+    volumes:
+      - "./pelias.json:/code/pelias.json"
+      - "${DATA_DIR}:/data"

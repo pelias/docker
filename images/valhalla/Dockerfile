@@ -1,25 +1,35 @@
 # base image
-FROM pelias/baseimage
+FROM ubuntu:16.04
 
-# grab all of the valhalla software from ppa
-RUN apt-get update && \
-    apt-get install -y software-properties-common python-software-properties && \
-    add-apt-repository -y ppa:kevinkreiser/prime-server && \
-    add-apt-repository -y ppa:valhalla-routing/valhalla && \
-    apt-get update && \
-    apt-get install -y valhalla-bin && \
-    rm -rf /var/lib/apt/lists/*;
+# configure env
+ENV DEBIAN_FRONTEND 'noninteractive'
 
-# change working dir
-RUN mkdir -p /code/valhalla
-WORKDIR /code/valhalla
+RUN apt-get update && apt-get install -y locales apt-utils iputils-ping curl wget git-core autoconf automake libtool pkg-config python
 
-# generate config
+RUN apt-get install -y software-properties-common && \
+    apt-get update
+
+RUN add-apt-repository -y ppa:valhalla-core/valhalla && \
+    apt-get update
+
+RUN apt-get install -y valhalla-bin
+
+# configure volumes
+VOLUME "/data"
+
+
+# generate valhalla config
 RUN valhalla_build_config \
-  --mjolnir-tile-dir '/data/valhalla' \
-  --mjolnir-tile-extract '/data/valhalla.tar' \
-  --mjolnir-timezone '/data/valhalla/timezones.sqlite' \
-  --mjolnir-admin '/data/valhalla/admins.sqlite' > valhalla.json
+  --mjolnir-tile-dir '/data/valhalla/valhalla_tiles' \
+  --mjolnir-tile-extract '/data/valhalla/valhalla_tiles.tar' \
+  --mjolnir-timezone '/data/valhalla/valhalla_tiles/timezones.sqlite' \
+  --mjolnir-admin '/data/valhalla/valhalla_tiles/admins.sqlite' > valhalla.json
 
-# build script
-RUN echo 'valhalla_build_tiles -c valhalla.json /data/openstreetmap/*.osm.pbf; valhalla_export_edges --config valhalla.json > /data/polylines/pbf_extract.polyline;' > ./docker_build.sh
+# build script to build tiles and export polyline data.
+RUN echo 'mkdir -p /data/valhalla/valhalla_tiles\n' \
+         'touch /data/valhalla/valhalla_tiles/timezones.sqlite\n' \
+         'touch /data/valhalla/valhalla_tiles/admins.sqlite\n' \
+         'mkdir -p /data/polylines\n' \
+         'valhalla_build_tiles -c valhalla.json /data/openstreetmap/*.osm.pbf;\n' \
+         'find /data/valhalla/valhalla_tiles | sort -n | tar cf /data/valhalla/valhalla_tiles.tar --no-recursion -T - \n' \
+         'valhalla_export_edges --config valhalla.json >> /data/polylines/extract.0sv;' > ./docker_build.sh
