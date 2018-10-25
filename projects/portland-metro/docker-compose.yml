@@ -95,7 +95,7 @@ services:
       - "./pelias.json:/code/pelias.json"
       - "${DATA_DIR}:/data"
   elasticsearch:
-    image: pelias/elasticsearch
+    image: pelias/elasticsearch:5.6.12
     container_name: pelias_elasticsearch
     restart: always
     ports: [ "9200:9200", "9300:9300" ]
