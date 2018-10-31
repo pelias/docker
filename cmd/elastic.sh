@@ -3,7 +3,7 @@ set -e;
 
 function elastic_schema_drop(){ compose_run 'schema' node scripts/drop_index "$@" || true; }
 function elastic_schema_create(){ compose_run 'schema' node scripts/create_index; }
-function elastic_start(){ compose_exec up -d elasticsearch; }
+function elastic_start(){ mkdir -p $DATA_DIR/elasticsearch; compose_exec up -d elasticsearch; }
 function elastic_stop(){ compose_exec kill elasticsearch; }
 
 register 'elastic' 'drop' 'delete elasticsearch index & all data' elastic_schema_drop
