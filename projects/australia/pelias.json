@@ -68,11 +68,6 @@
         "85632793"
       ]
     },
-    "transit": {
-      "datapath": "/data/transit",
-      "feeds": [
-      ]
-    },
     "interpolation": {
       "download": {
         "tiger": {
