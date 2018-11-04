@@ -121,14 +121,6 @@
         },
         {
           "layerId": "stops",
-          "url": "http://cherriots.org/developer/gtfs.zip",
-          "filename": "CHERRIOTS-stops.txt",
-          "agencyId": "CHERRIOTS",
-          "agencyName": "Cherriots",
-          "layerName": "Stop"
-        },
-        {
-          "layerId": "stops",
           "url": "http://oregon-gtfs.com/gtfs_data/sandy-or-us/sandy-or-us.zip",
           "filename": "SAM-stops.txt",
           "agencyId": "SAM",
