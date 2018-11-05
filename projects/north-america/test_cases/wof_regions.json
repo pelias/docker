@@ -1,0 +1,198 @@
+{
+  "name": "Who's on First regions",
+  "priorityThresh": 1,
+  "tests": [
+    {
+      "id": 1,
+      "status": "pass",
+      "user": "Stephen",
+      "description": "",
+      "in": {
+        "text": "Pennsylvania",
+        "sources": "wof"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "region",
+            "name": "Pennsylvania",
+            "region": "Pennsylvania",
+            "region_a": "PA",
+            "country": "United States",
+            "country_a": "USA"
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "status": "pass",
+      "user": "Stephen",
+      "description": "",
+      "in": {
+        "text": "New Mexico",
+        "sources": "wof"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "region",
+            "name": "New Mexico",
+            "region": "New Mexico",
+            "region_a": "NM",
+            "country": "United States",
+            "country_a": "USA"
+          }
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "status": "pass",
+      "user": "Stephen",
+      "description": "",
+      "in": {
+        "text": "Newfoundland and Labrador",
+        "sources": "wof"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "region",
+            "name": "Newfoundland and Labrador",
+            "region": "Newfoundland and Labrador",
+            "region_a": "NL",
+            "country": "Canada",
+            "country_a": "CAN"
+          }
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "status": "pass",
+      "user": "Stephen",
+      "description": "",
+      "in": {
+        "text": "Prince Edward Island",
+        "sources": "wof"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "region",
+            "name": "Prince Edward Island",
+            "region": "Prince Edward Island",
+            "region_a": "PE",
+            "country": "Canada",
+            "country_a": "CAN"
+          }
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "status": "pass",
+      "user": "Stephen",
+      "description": "",
+      "in": {
+        "text": "Dadra and Nagar Haveli, IN",
+        "sources": "wof"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "region",
+            "name": "Dadra and Nagar Haveli",
+            "region": "Dadra and Nagar Haveli",
+            "country": "India",
+            "country_a": "IND"
+          }
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "status": "pass",
+      "user": "Stephen",
+      "description": "chosen for diacriticals",
+      "in": {
+        "text": "Centar župa",
+        "sources": "wof"
+      },
+      "expected": {
+        "properties": [
+          {
+            "gid": "whosonfirst:region:85674385",
+            "name": "Centar Zupa Municipality"
+          }
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "status": "pass",
+      "user": "Stephen",
+      "description": "included for length",
+      "in": {
+        "text": "Tajura' wa an Nawahi al Arba, LY",
+        "sources": "wof"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "region",
+            "name": "Tajura' wa an Nawahi al Arba",
+            "region": "Tajura' wa an Nawahi al Arba",
+            "country": "Libya",
+            "country_a": "LBY"
+          }
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "status": "fail",
+      "user": "Stephen",
+      "description": "",
+      "notes": "libpostal identifies this as a city/country even though it's a WOF region",
+      "in": {
+        "text": "Xaçmaz, Azerbaijan",
+        "sources": "wof"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "region",
+            "name": "Xaçmaz",
+            "region": "Xaçmaz",
+            "country": "Azerbaijan",
+            "country_a": "AZE"
+          }
+        ]
+      }
+    },
+    {
+      "id": 9,
+      "status": "fail",
+      "user": "Stephen",
+      "description": "fails since placeholder indexes 'Democratic Republic of Congo' but not 'Congo'",
+      "in": {
+        "text": "Kasaï-Oriental, Congo",
+        "sources": "wof"
+      },
+      "expected": {
+        "properties": [
+          {
+            "gid": "whosonfirst:region:85670011",
+            "layer": "region",
+            "name": "Kasaï-Oriental",
+            "region": "Kasaï-Oriental",
+            "country": "Democratic Republic of the Congo",
+            "country_a": "COD"
+          }
+        ]
+      }
+    }
+  ]
+}

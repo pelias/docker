@@ -1,0 +1,45 @@
+{
+  "name": "search",
+  "priorityThresh": 5,
+  "tests": [
+    {
+      "id": 1,
+      "status": "fail",
+      "issue": "https://github.com/pelias/pelias/issues/737",
+      "user": "julian",
+      "in": {
+        "text": "412 Saint Patrick St, donaldsonville, la"
+      },
+      "expected": {
+        "properties": [
+          {
+             "layer": "address",
+             "housenumber": "412",
+             "street": "St Patrick St",
+             "locality": "Donaldsonville",
+             "region": "Louisiana"
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "status": "pass",
+      "user": "julian",
+      "in": {
+        "text": "412 St Patrick St, donaldsonville, la"
+      },
+      "expected": {
+        "properties": [
+          {
+             "layer": "address",
+             "housenumber": "412",
+             "street": "St Patrick St",
+             "locality": "Donaldsonville",
+             "region": "Louisiana"
+          }
+        ]
+      }
+    }
+  ]
+}

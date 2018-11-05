@@ -1,0 +1,621 @@
+{
+  "name": "Placeholder alt names",
+  "priorityThresh": 2,
+  "tests": [
+    {
+      "id": 0,
+      "status": "pass",
+      "user": "lily",
+      "description": [
+        "admin area only",
+        "input: Chinese",
+        "lang: korean"
+      ],
+      "in": {
+        "text": "灣仔, 香港",
+        "lang": "ko"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "완쯔",
+            "country": "홍콩",
+            "country_a": "HKG"
+          }
+        ]
+      }
+    },
+    {
+      "id": 1,
+      "status": "pass",
+      "user": "lily",
+      "description": [
+        "address",
+        "lang: spanish"
+      ],
+      "in": {
+        "text": "553 s main st red lion pa usa",
+        "lang": "es"
+      },
+      "expected": {
+        "properties": [
+          {
+            "region": "Pensilvania",
+            "country": "Estados Unidos"
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "status": "pass",
+      "user": "lily",
+      "description": [
+        "address in French",
+        "lang: japanese"
+      ],
+      "in": {
+        "text": "37 Rue Des Remparts d’Ainay, Lyon",
+        "lang": "ja"
+      },
+      "expected": {
+        "properties": [
+          {
+            "locality": "リヨン",
+            "country": "フランス"
+          }
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "status": "pass",
+      "user": "lily",
+      "description": [
+        "address in French with admin info in Japanese",
+        "lang: Chinese"
+      ],
+      "in": {
+        "text": "3632 Rue Notre-Dame Ouest モントリオール",
+        "lang": "zh"
+      },
+      "expected": {
+        "properties": [
+          {
+            "locality": "蒙特利尔",
+            "country": "加拿大"
+          }
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "status": "pass",
+      "user": "lily",
+      "description": [
+        "Yasnaya Polyana (venue) in Russian with admin info in English",
+        "lang: bengali"
+      ],
+      "in": {
+        "text": "Я́сная Поля́на, Russia",
+        "lang": "bn"
+      },
+      "expected": {
+        "properties": [
+          {
+            "country": "রাশিয়া"
+          }
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "status": "pass",
+      "user": "lily",
+      "description": [
+        "interpolated address",
+        "lang: italian"
+      ],
+      "in": {
+        "text": "3 forest street, cape town, south africa",
+        "lang": "it"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "3 Forest Street",
+            "locality": "Città del Capo",
+            "country": "Sud Africa"
+          }
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "status": "fail",
+      "user": "lily",
+      "endpoint": "autocomplete",
+      "description": [
+        "autocomplete",
+        "input text and lang in German",
+        "autocomplete is not yet capable of _searching_ on non-default names"
+      ],
+      "in": {
+        "text": "Österreic",
+        "lang": "de"
+      },
+      "expected": {
+        "properties": [
+          {
+            "country": "Österreich"
+          }
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "status": "pass",
+      "user": "lily",
+      "endpoint": "search/structured",
+      "description": [
+        "structured address for 1 world trade center",
+        "lang: polish"
+      ],
+      "in": {
+        "address": "285 Fulton St",
+        "borough": "Manhattan",
+        "locality": "New York",
+        "region": "NY",
+        "postalcode": "10007",
+        "lang": "pl"
+      },
+      "expected": {
+        "properties": [
+          {
+            "locality": "Nowy Jork",
+            "country": "Stany Zjednoczone"
+          }
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "status": "pass",
+      "user": "lily",
+      "endpoint": "reverse",
+      "description": [
+        "reverse geocoding. address for 1 World Trade Center, New York",
+        "lang: portuguese"
+      ],
+      "in": {
+        "point.lon": "-74.013296",
+        "point.lat": "40.712748",
+        "lang": "pt"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "285 Fulton St",
+            "locality": "Nova Iorque",
+            "country": "Estados Unidos"
+          }
+        ]
+      }
+    },
+    {
+      "id": 9,
+      "status": "pass",
+      "user": "lily",
+      "endpoint": "reverse",
+      "description": [
+        "coarse reverse geocoding. address for 1 World Trade Center, New York",
+        "lang: portuguese"
+      ],
+      "in": {
+        "point.lon": "-74.013296",
+        "point.lat": "40.712748",
+        "layers": "coarse",
+        "lang": "pt"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "neighbourhood",
+            "name": "Financial District",
+            "locality": "Nova Iorque",
+            "country": "Estados Unidos"
+          }
+        ]
+      }
+    },
+    {
+      "id": 10,
+      "status": "fail",
+      "user": "lily",
+      "endpoint": "nearby",
+      "description": [
+        "nearby search",
+        "lang: portuguese"
+      ],
+      "in": {
+        "point.lon": "-74.013296",
+        "point.lat": "40.712748",
+        "lang": "pt"
+      },
+      "expected": {
+        "properties": [
+          {
+            "locality": "Nova Iorque",
+            "country": "Estados Unidos"
+          }
+        ]
+      }
+    },
+    {
+      "id": 11,
+      "status": "pass",
+      "user": "lily",
+      "description": [
+        "address in Estonian, locality (Tallinn) in Finnish, region in English"
+      ],
+      "in": {
+        "text": "Akadeemia tee 15b Tallinna, Harjumaa"
+      },
+      "expected": {
+        "properties": [
+          {
+            "region": "Harjumaa",
+            "locality": "Tallinn",
+            "country": "Estonia"
+          }
+        ]
+      }
+    },
+    {
+      "id": 12,
+      "status": "pass",
+      "user": "lily",
+      "description": [
+        "search with boundary circle parameter",
+        "lang: spanish"
+      ],
+      "in": {
+        "boundary.circle.lat": "31.030974",
+        "boundary.circle.lon": "-98.326329",
+        "boundary.circle.radius": 125,
+        "text": "beverly hills",
+        "lang": "es"
+      },
+      "expected": {
+        "properties": [
+          {
+            "country": "Estados Unidos"
+          }
+        ]
+      }
+    },
+    {
+      "id": 13,
+      "status": "pass",
+      "user": "lily",
+      "description": [
+        "search with boundary rect parameter",
+        "lang: serbian"
+      ],
+      "in": {
+        "boundary.rect.min_lon": "-106.645646",
+        "boundary.rect.min_lat": "25.837164",
+        "boundary.rect.max_lon": "-93.508039",
+        "boundary.rect.max_lat": "36.500704",
+        "text": "beverly hills",
+        "lang": "sr"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "Беверли Хилс",
+            "region": "Тексас",
+            "country": "Сједињене Америчке Државе"
+          }
+        ]
+      }
+    },
+    {
+      "id": 14,
+      "status": "pass",
+      "user": "lily",
+      "description": [
+        "search with focus point parameter",
+        "lang: russian"
+      ],
+      "in": {
+        "text": "springfield",
+        "focus.point.lon": "-82.985586",
+        "focus.point.lat": "39.98072",
+        "lang": "ru"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "Спрингфилд",
+            "region": "Огайо",
+            "country": "Соединённые Штаты Америки"
+          }
+        ]
+      }
+    },
+    {
+      "id": 15,
+      "status": "pass",
+      "user": "lily",
+      "description": [
+        "search with layers parameter",
+        "search for a town in tennessee",
+        "lang: arabic"
+      ],
+      "in": {
+        "text": "Lebanon",
+        "layers": "locality",
+        "lang": "ar"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "لبنان",
+            "region": "تينيسي",
+            "country": "الولايات المتحدة"
+          }
+        ]
+      }
+    },
+    {
+      "id": 16,
+      "status": "pass",
+      "user": "lily",
+      "description": [
+        "search with sources parameter",
+        "Greek input",
+        "St. Petersburg",
+        "returns unrelated results in Greek",
+        "lang: greek"
+      ],
+      "in": {
+        "text": "Αγία Πετρούπολη",
+        "sources": "wof",
+        "lang": "el"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "Αγία Πετρούπολη",
+            "gid": "whosonfirst:locality:85931833"
+          }
+        ]
+      }
+    },
+    {
+      "id": 17,
+      "status": "pass",
+      "user": "lily",
+      "endpoint": "place",
+      "description": [
+        "place id search",
+        "lang: hungarian"
+      ],
+      "in": {
+        "ids": "whosonfirst:locality:102031307",
+        "lang": "hu"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "Tokió",
+            "country": "Japán"
+          }
+        ]
+      }
+    },
+    {
+      "id": 18,
+      "status": "pass",
+      "user": "lily",
+      "description": [
+        "search with boundary country param",
+        "lang: bulgarian"
+      ],
+      "in": {
+        "text": "damascus",
+        "boundary.country": "US",
+        "lang": "bg"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "Дамаскъс",
+            "region": "Орегон",
+            "country": "Съединени американски щати"
+          }
+        ]
+      }
+    },
+    {
+      "id": 19,
+      "status": "fail",
+      "user": "lily",
+      "endpoint": "reverse",
+      "description": [
+        "reverse with boundary country",
+        "point is at border of Vatican City and Italy",
+        "lang: swedish"
+      ],
+      "issue": "https://github.com/pelias/pelias/issues/686",
+      "in": {
+        "point.lon": "12.457532",
+        "point.lat": "41.903966",
+        "boundary.country": "VA",
+        "lang": "sv"
+      },
+      "expected": {
+        "properties": [
+          {
+            "locality": "Vatikanstaten",
+            "region": "Vatikanen",
+            "country": "Vatikanstaten"
+          }
+        ]
+      }
+    },
+    {
+      "id": 20,
+      "status": "fail",
+      "user": "lily",
+      "endpoint": "search/structured",
+      "description": [
+        "locality in Estonian and country in Latvian",
+        "city of Valga/Valka is split between Latvia and Estonia"
+      ],
+      "in": {
+        "locality": "Valga",
+        "country": "Igaunija"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "Valga",
+            "country": "Estonia"
+          }
+        ]
+      }
+    },
+
+    {
+      "id": 21,
+      "status": "pass",
+      "user": "lily",
+      "endpoint": "autocomplete",
+      "description": [
+        "lang: russian"
+      ],
+      "in": {
+        "text": "Mooselookmegu",
+        "lang": "ru"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "Mooselookmeguntic",
+            "region": "Мэн",
+            "country": "Соединённые Штаты Америки"
+          }
+        ]
+      }
+    },
+
+    {
+      "id": 22,
+      "status": "pass",
+      "user": "lily",
+      "endpoint": "autocomplete",
+      "description": [
+        "autocomplete with only admin info that has translation",
+        "lang: russian"
+      ],
+      "in": {
+        "text": "Germa",
+        "lang": "ru"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "Германия",
+            "country_a": "DEU"
+          }
+        ]
+      }
+    },
+
+    {
+      "id": 23,
+      "status": "pass",
+      "user": "stephen",
+      "endpoint": "search",
+      "description": "spanish spelling of New York",
+      "in": {
+        "text": "30 west 26th street, nueva york, ny"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "address",
+            "housenumber": "30",
+            "street": "W 26 St",
+            "postalcode": "10010"
+          }
+        ]
+      }
+    },
+    {
+      "id": 24,
+      "status": "pass",
+      "user": "stephen",
+      "endpoint": "search",
+      "description": "Kazakh for Socorro, French for New Mexico",
+      "in": {
+        "text": "1220 calle de lago Сокорро Nouveau-Mexique"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "address",
+            "housenumber": "1220",
+            "street": "Calle De Lago",
+            "locality": "Socorro",
+            "region_a": "NM",
+            "country_a": "USA"
+          }
+        ]
+      }
+    },
+    {
+      "id": 25,
+      "status": "pass",
+      "user": "stephen",
+      "endpoint": "search",
+      "description": "Bengali for Toronto, Japanese for Ontario, Farsi/Persian for Canada",
+      "in": {
+        "text": "280 Bloor Street West টরোন্টো オンタリオ州 کانادا"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "address",
+            "housenumber": "280",
+            "street": "Bloor Street West",
+            "locality": "Toronto",
+            "region_a": "ON",
+            "country_a": "CAN"
+          }
+        ]
+      }
+    },
+    {
+      "id": 26,
+      "status": "pass",
+      "user": "julian",
+      "description": "from mapillary home page",
+      "in": {
+        "text": "malmo",
+        "lang": "sv"
+      },
+      "expected": {
+        "priorityThresh": 1,
+        "properties": [
+          {
+            "name": "Malmö",
+            "country": "Sverige"
+          }
+        ]
+      }
+    }
+  ]
+}

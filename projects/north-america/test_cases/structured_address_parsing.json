@@ -1,0 +1,57 @@
+{
+  "name": "structured address parsing",
+  "priorityThresh": 1,
+  "endpoint": "search/structured",
+  "tests": [
+    {
+      "id": 1,
+      "status": "pass",
+      "user": "diana",
+      "notes": "address with highway number should not result in 500 error",
+      "in": {
+        "address": "1396 Dual 40 Hwy",
+        "locality": "Hagerstown",
+        "region": "MD",
+        "postalcode": "21740",
+        "country": "United States"
+      },
+      "expected": {
+        "properties": [
+          {
+            "country_a": "USA",
+            "country": "United States",
+            "region": "Maryland",
+            "region_a": "MD",
+            "locality": "Hagerstown"
+          }
+        ]
+      }
+    },
+    {
+      "id": 1.1,
+      "status": "fail",
+      "user": "diana",
+      "in": {
+        "address": "1396 Dual 40 Hwy",
+        "locality": "Hagerstown",
+        "region": "MD",
+        "postalcode": "21740",
+        "country": "United States"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "address",
+            "housenumber": "1396",
+            "street": "Dual Highway",
+            "country_a": "USA",
+            "country": "United States",
+            "region": "Maryland",
+            "region_a": "MD",
+            "locality": "Hagerstown"
+          }
+        ]
+      }
+    }
+  ]
+}

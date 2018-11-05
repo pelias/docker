@@ -1,0 +1,266 @@
+{
+  "name": "Korean venues",
+  "priorityThresh": 1,
+  "tests": [
+    {
+      "id": 1,
+      "status": "fail",
+      "user": "Diana",
+      "description": "Seoul Starbucks, make sure the top result is in Seoul and not another city",
+      "issue": "libpostal doesn't recognize Seoul as city when it comes first in the query",
+      "in": {
+        "text": "서울 스타벅스",
+        "lang": "ko",
+        "size": "1"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "venue",
+            "name": "스타벅스",
+            "locality": "서울",
+            "county": "종로구",
+            "region": "서울",
+            "country": "한국",
+            "country_a": "KOR",
+            "label": "한국 서울특별시 종로구 스타벅스"
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "status": "fail",
+      "user": "Hanbyul",
+      "description": [
+        "input text is `Sangam World Cup Park 2 complex` as the text",
+        "expected result should be as follows:",
+        "new format: 서울특별시 마포구 월드컵북로47길 46",
+        "old format: 상암동, 상암월드컵파크 2단지"
+      ],
+      "in": {
+        "text": "마포구 상암동 월드컵파크 2단지",
+        "lang": "ko"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "address",
+            "street": "월드컵북로47길",
+            "county": "마포구",
+            "region": "서울특별시",
+            "country": "한국",
+            "neighbourhood": "상암동",
+            "country_a": "KOR",
+            "label": "한국 서울특별시 상암동 상암월드컵파크 2단지"
+          }
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "status": "fail",
+      "user": "Hanbyul",
+      "description": "input is Gyeongbuk Pohang-si Nam-gu Jigok-ro, Pohang University of Science and Technology",
+      "issue": "county admin lookup seems to be incorrect",
+      "in": {
+        "text": "경북 포항시 남구 효자동 포항공과대학교 기계실험동",
+        "lang": "ko"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "venue",
+            "street": "서강로9길",
+            "county": "포항시",
+            "region": "경상북도",
+            "country": "한국",
+            "country_a": "KOR",
+            "label": "한국 경상북도 포항시 포항공과대학교 기계실험동"
+          }
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "status": "fail",
+      "user": "Hanbyul",
+      "description": "input is Galleria Department Store",
+      "issue": "waiting on county names in Korean to be moved from unk_x_variant to kor_x_preferred",
+      "in": {
+        "text": "갤러리아 타임월드",
+        "lang": "ko"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "venue",
+            "region": "대전광역시",
+            "county": "서구",
+            "locality": "대전",
+            "country": "한국",
+            "country_a": "KOR",
+            "label": "한국 대전광역시 서구 갤러리아 타임월드점"
+          }
+        ]
+      },
+      "unexpected": {
+        "properties": [
+          {
+            "county": "Seo-gu"
+          }
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "status": "fail",
+      "user": "Hanbyul",
+      "description": "input is Gwangmyeong Sung Ae Hospital",
+      "issue": "name should not have the english version in ()",
+      "in": {
+        "text": "광명성애병원",
+        "lang": "ko"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "venue",
+            "name": "광명성애병원",
+            "country": "한국",
+            "country_a": "KOR",
+            "region": "경기도",
+            "county": "광명시",
+            "label": "한국 경기도 광명시 광명성애병원"
+          }
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "status": "pass",
+      "user": "Hanbyul",
+      "description": "input is Youngpoong Book, it's a chain so just check for venue layer and name",
+      "in": {
+        "text": "영풍문고",
+        "lang": "ko"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "venue",
+            "name": "영풍문고",
+            "country": "한국",
+            "country_a": "KOR"
+          }
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "status": "fail",
+      "user": "Hanbyul",
+      "description": "input is Chosun University",
+      "issue": "waiting on Seoul renaming to be published",
+      "in": {
+        "text": "조선대학교",
+        "lang": "ko"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "venue",
+            "name": "조선대학교",
+            "country": "한국",
+            "country_a": "KOR",
+            "region": "광주광역시",
+            "county": "동구",
+            "locality": "광주광역시",
+            "label": "한국 광주광역시 동구 조선대학교"
+          }
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "status": "fail",
+      "user": "Hanbyul",
+      "description": "input is Seoul Metropolitan Government Library",
+      "issue": "waiting on Seoul renaming to be published",
+      "in": {
+        "text": "서울특별시립정독도서관",
+        "lang": "ko"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "venue",
+            "name": "서울특별시립정독도서관",
+            "country": "한국",
+            "country_a": "KOR",
+            "region": "서울특별시",
+            "county": "종로구",
+            "locality": "서울",
+            "label": "한국 서울특별시 종로구 서울특별시립정독도서관"
+          }
+        ]
+      }
+    },
+    {
+      "id": 9,
+      "status": "fail",
+      "user": "Hanbyul",
+      "description": [
+        "input is Pohangjukdo Market (it's a supermarket)",
+        "when it's one word the record is found, but when there is a space",
+        "between the two words we can't find it"
+      ],
+      "in": {
+        "text": "포항죽도시장",
+        "lang": "ko"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "venue",
+            "name": "포항죽도시장",
+            "country": "한국",
+            "country_a": "KOR",
+            "region": "경북",
+            "county": "포항시",
+            "locality": "북구",
+            "label": "한국 경북 포항시 포항죽도시장"
+          }
+        ]
+      }
+    },
+    {
+      "id": 9.1,
+      "status": "fail",
+      "user": "Hanbyul",
+      "description": [
+        "input is Pohangjukdo Market (it's a supermarket)",
+        "when it's one word the record is found, but when there is a space",
+        "between the two words we can't find it"
+      ],
+      "in": {
+        "text": "포항 죽도시장",
+        "lang": "ko"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "venue",
+            "name": "포항죽도시장",
+            "country": "한국",
+            "country_a": "KOR",
+            "region": "경북",
+            "county": "포항시",
+            "locality": "북구",
+            "label": "한국 경북 포항시 포항죽도시장"
+          }
+        ]
+      }
+    }
+  ]
+}

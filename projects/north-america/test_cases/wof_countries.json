@@ -1,0 +1,208 @@
+{
+  "name": "Who's on First countries",
+  "priorityThresh": 1,
+  "tests": [
+    {
+      "id": 1,
+      "status": "pass",
+      "user": "Stephen",
+      "description": "",
+      "in": {
+        "text": "United States",
+        "sources": "wof"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "country",
+            "name": "United States",
+            "country": "United States",
+            "country_a": "USA"
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "status": "pass",
+      "user": "Stephen",
+      "description": "",
+      "in": {
+        "text": "Canada",
+        "sources": "wof"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "country",
+            "name": "Canada",
+            "country": "Canada",
+            "country_a": "CAN"
+          }
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "status": "pass",
+      "user": "Stephen",
+      "description": "",
+      "in": {
+        "text": "Netherlands",
+        "sources": "wof"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "country",
+            "name": "Netherlands",
+            "country": "Netherlands",
+            "country_a": "NLD"
+          }
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "status": "pass",
+      "user": "Stephen",
+      "description": "",
+      "in": {
+        "text": "Burkina Faso",
+        "sources": "wof"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "country",
+            "name": "Burkina Faso",
+            "country": "Burkina Faso",
+            "country_a": "BFA"
+          }
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "status": "pass",
+      "user": "Stephen",
+      "issue": "https://github.com/pelias/pelias/issues/263",
+      "description": "placeholder supports alpha3 and alpha2 country codes",
+      "in": {
+        "text": "DEU",
+        "sources": "wof"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "country",
+            "name": "Germany",
+            "country": "Germany",
+            "country_a": "DEU"
+          }
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "status": "pass",
+      "user": "Stephen",
+      "issue": "https://github.com/pelias/pelias/issues/263",
+      "description": "placeholder supports alpha3 and alpha2 country codes",
+      "in": {
+        "text": "USA",
+        "sources": "wof"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "country",
+            "name": "United States",
+            "country": "United States",
+            "country_a": "USA"
+          }
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "status": "pass",
+      "user": "Stephen",
+      "issue": "https://github.com/pelias/pelias/issues/263",
+      "description": "placeholder supports alpha3 and alpha2 country codes",
+      "in": {
+        "text": "LUX",
+        "sources": "wof"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "country",
+            "name": "Luxembourg",
+            "country": "Luxembourg",
+            "country_a": "LUX"
+          }
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "status": "pass",
+      "user": "Stephen",
+      "issue": "https://github.com/pelias/pelias/issues/263",
+      "description": "placeholder supports alpha3 and alpha2 country codes",
+      "in": {
+        "text": "BOL",
+        "sources": "wof"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "country",
+            "name": "Bolivia",
+            "country": "Bolivia",
+            "country_a": "BOL"
+          }
+        ]
+      }
+    },
+    {
+      "id": 9,
+      "status": "pass",
+      "user": "Diana",
+      "description": "https://github.com/pelias/api/issues/166",
+      "in": {
+        "text": "Sweden"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "country",
+            "name": "Sweden",
+            "country": "Sweden",
+            "country_a": "SWE"
+          }
+        ]
+      }
+    },
+    {
+      "id": 10,
+      "status": "pass",
+      "user": "Diana",
+      "description": "https://github.com/pelias/api/issues/166",
+      "in": {
+        "text": "Finland"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "country",
+            "name": "Finland",
+            "country": "Finland",
+            "country_a": "FIN"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "name": "Korean admin",
+  "priorityThresh": 1,
+  "tests": [
+    {
+      "id": 1,
+      "status": "fail",
+      "user": "Diana",
+      "description": "Seoul (locality, region)",
+      "issue": "waiting on Seoul renaming to be published",
+      "in": {
+        "text": "서울",
+        "lang": "ko"
+      },
+      "expected": {
+        "priorityThresh": 2,
+        "properties": [
+          {
+            "layer": "locality",
+            "locality": "서울",
+            "region": "서울특별시",
+            "country": "한국",
+            "country_a": "KOR",
+            "label": "한국 서울특별시 서울"
+          },
+          {
+            "layer": "region",
+            "region": "서울특별시",
+            "country": "한국",
+            "country_a": "KOR",
+            "label": "한국 서울특별시"
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "status": "fail",
+      "user": "Diana",
+      "description": "Yongsan-gu (county)",
+      "issue": "waiting on Seoul renaming to be published",
+      "in": {
+        "text": "용산구",
+        "lang": "ko"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "용산구",
+            "country": "한국",
+            "country_a": "KOR",
+            "region": "서울특별시",
+            "county": "용산구",
+            "label": "한국 서울특별시 용산구"
+          }
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "status": "fail",
+      "user": "Diana",
+      "description": "Pohang (localadmin)",
+      "issue": "wrong county admin lookup",
+      "in": {
+        "text": "포항시",
+        "lang": "ko"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "포항시",
+            "country": "한국",
+            "country_a": "KOR",
+            "region": "경상북도",
+            "county": "경북",
+            "localadmin": "포항시",
+            "label": "한국 경상북도 포항시"
+          }
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "status": "fail",
+      "user": "Diana",
+      "description": "Goyang-Si (locality)",
+      "issue": "not sure what the label and hierarchy should be for this",
+      "in": {
+        "text": "고양시",
+        "lang": "ko"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "locality",
+            "name": "고양시",
+            "country": "한국",
+            "country_a": "KOR",
+            "region": "경기도",
+            "locality": "고양시",
+            "label": "한국 경기도 고양시"
+          }
+        ]
+      }
+    },
+    {
+      "id": 4.1,
+      "status": "fail",
+      "user": "Diana",
+      "description": "Counties missing native names",
+      "in": {
+        "text": "Goyangsiilsandonggu",
+        "lang": "ko"
+      },
+      "unexpected": {
+        "properties": [
+          {
+            "county": "Goyangsiilsandonggu"
+          }
+        ]}
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "name": "locality geodisambiguation",
+  "description": [
+    "Counties and boroughs are often labeled locality in sturctured search or libpostal results.",
+    "This leads to us not finding the expected result eventhough it exists in the index."
+  ],
+  "priorityThresh": 1,
+  "tests": [
+    {
+      "id": 1,
+      "status": "pass",
+      "user": "Diana",
+      "in": {
+        "text": "Bichlachweg 83, 6370 Kitzbühel, Austria"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "address",
+            "name": "83 Bichlachweg",
+            "county": "Kitzbühel"
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "status": "pass",
+      "user": "Diana",
+      "endpoint": "search/structured",
+      "in": {
+        "address": "Bichlachweg 83",
+        "locality": "Kitzbühel",
+        "country": "Austria"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "address",
+            "name": "83 Bichlachweg",
+            "county": "Kitzbühel"
+          }
+        ]
+      }
+    }
+  ]
+}
+    

@@ -1,0 +1,42 @@
+{
+  "name": "Placeholder should obey geometric filters",
+  "priorityThresh": 1,
+  "tests": [
+    {
+      "id": 1,
+      "status": "pass",
+      "endpoint": "search",
+      "description": "Should obey geometric filter",
+      "in": {
+        "text": "57, ROUTE DE POITIERS 79300 SAINT SAUVEUR",
+        "boundary.country": "FR"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "Saint-Sauveur",
+            "country_a": "FRA"
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "status": "pass",
+      "endpoint": "search",
+      "description": "Fallback query should obey geometric filter",
+      "in": {
+        "text": "2000 main st, berlin",
+        "boundary.country": "CA"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "2000 Main St",
+            "country_a": "CAN"
+          }
+        ]
+      }
+    }
+  ]
+}

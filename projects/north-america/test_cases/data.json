@@ -1,0 +1,25 @@
+{
+  "name": "data issues",
+  "description": "Tests intended to confirm that certain data is present and correct",
+  "priorityThresh": 1,
+  "tests": [
+    {
+      "id": "1",
+      "status": "pass",
+      "user": "julian",
+      "description": "WOF once said that all of Copenhagen was within Sweden",
+      "in": {
+        "text": "Copenhagen"
+      },
+      "expected": {
+        "properties": [
+          {
+            "country_a": "DNK",
+            "country": "Denmark",
+            "name": "Copenhagen"
+          }
+        ]
+      }
+    }
+  ]
+}
