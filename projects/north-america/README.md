@@ -1,9 +1,12 @@
+# North America Project
 
-# Portland Metro Area
+This project is configured to download/prepare/build a complete Pelias installation for North America.
 
-This project is configured to download/prepare/build a complete Pelias installation for Portland, Oregon.
+As a fairly large build, this will require significant resources to complete quickly. It can still run on a personal computer with 8GB+ RAM, but will take a while. It will require 300GB or so of disk space.
 
-It is intended as an example for other projects, feel free to copy->paste these files to a new project directory to kick-start your own project.
+Running an interpolation build of this side would also take many days
+
+Additionally, it requires a polylines file generated with [Valhalla](https://github.com/valhalla).
 
 # Setup
 
@@ -23,7 +26,7 @@ pelias elastic start
 pelias elastic wait
 pelias elastic create
 pelias download all
-pelias prepare all
+pelias prepare placeholder
 pelias import all
 pelias compose up
 pelias test run
@@ -33,4 +36,4 @@ pelias test run
 
 You can now make queries against your new Pelias build:
 
-http://localhost:4000/v1/search?text=pdx
+[http://localhost:4000/v1/search?text=empire state building](http://localhost:4000/v1/search?text=empire state building)
