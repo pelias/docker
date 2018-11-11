@@ -5,6 +5,7 @@ set -e;
 function download_wof(){ compose_run 'whosonfirst' './bin/download'; }
 function download_oa(){ compose_run 'openaddresses' './bin/download'; }
 function download_osm(){ compose_run 'openstreetmap' './bin/download'; }
+function download_geonames(){ compose_run 'geonames' './bin/download'; }
 function download_tiger(){ compose_run 'interpolation' './bin/download-tiger'; }
 function download_transit(){ compose_run 'transit' './bin/download'; }
 
@@ -19,6 +20,11 @@ function download_all(){
   download_wof &
   download_oa &
   download_osm &
+
+  if [[ "$ENABLE_GEONAMES" == "true" ]]; then
+    download_geonames &
+  fi
+
   download_tiger &
   download_transit &
   wait
