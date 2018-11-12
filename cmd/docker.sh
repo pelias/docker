@@ -16,7 +16,7 @@ register 'compose' 'top' 'display the running processes of a container' compose_
 function compose_exec(){ docker-compose $@; }
 register 'compose' 'exec' 'execute an arbitrary docker-compose command' compose_exec
 
-function compose_run(){ docker-compose run -T --rm $@; }
+function compose_run(){ docker-compose run --rm $@; }
 register 'compose' 'run' 'execute a docker-compose run command' compose_run
 
 function compose_up(){ docker-compose up -d $@; }
