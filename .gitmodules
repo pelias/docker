@@ -1,0 +1,3 @@
+[submodule "projects/planet/acceptance-tests"]
+	path = projects/planet/acceptance-tests
+	url = https://github.com/pelias/acceptance-tests.git
