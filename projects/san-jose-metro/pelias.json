@@ -57,11 +57,11 @@
     "openaddresses": {
       "datapath": "/data/openaddresses",
       "files": [
-        "us/ca/city_of_san_jose.csv"
-		"us/ca/city_of_san_jose2.csv"
-		"us/ca/city_of_cupertino.csv"
-		"us/ca/city_of_mountain_view.csv"
-		"us/ca/city_of_palo_alto.csv"
+        "us/ca/city_of_san_jose.csv",
+		"us/ca/city_of_san_jose2.csv",
+		"us/ca/city_of_cupertino.csv",
+		"us/ca/city_of_mountain_view.csv",
+		"us/ca/city_of_palo_alto.csv",
 		"us/ca/city_of_sunnyvale.csv"		
       ]
     },
