@@ -51,7 +51,7 @@
       "leveldbpath": "/tmp",
       "datapath": "/data/openstreetmap",
       "import": [{
-        "filename": "san-jose_california.osm.pbf"
+        "filename": "san-francisco-bay_california.osm.pbf"
       }]
     },
     "openaddresses": {
