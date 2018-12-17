@@ -96,8 +96,7 @@
           "agencyId": "VTA",
           "agencyName": "VTA",
           "layerName": "Stop"
-        },
-             
+        } 
        ]
       },
     "interpolation": {
