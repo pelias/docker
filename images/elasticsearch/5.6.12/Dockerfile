@@ -21,5 +21,20 @@ RUN /usr/share/elasticsearch/bin/elasticsearch-plugin install repository-s3
 ADD elasticsearch.yml /usr/share/elasticsearch/config/
 RUN chown elasticsearch:elasticsearch config/elasticsearch.yml
 
+## set permissions so any user can run elasticsearch
+# add read permissions to all files in dir
+RUN chmod go+r /usr/share/elasticsearch -R
+# add write permissions to config dir
+RUN chmod go+w /usr/share/elasticsearch \
+    /usr/share/elasticsearch/config
+# add list permissions to directorys
+RUN chmod go+x /usr/share/elasticsearch \
+    /usr/share/elasticsearch/config \
+	/usr/share/elasticsearch/config/ingest-geoip \
+	/usr/share/elasticsearch/config/x-pack \
+	/usr/share/elasticsearch/config/repository-s3
+# add execute permissions to bins
+RUN chmod go+x /usr/share/elasticsearch/bin/*
+
 # run as elasticsearch user
 USER elasticsearch
