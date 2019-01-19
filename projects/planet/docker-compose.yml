@@ -34,6 +34,7 @@ services:
     volumes:
       - "./pelias.json:/code/pelias.json"
       - "${DATA_DIR}:/data"
+      - "./blacklist/:/data/blacklist"
   whosonfirst:
     image: pelias/whosonfirst:master
     container_name: pelias_whosonfirst
