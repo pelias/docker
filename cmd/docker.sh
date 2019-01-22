@@ -1,6 +1,10 @@
 #!/bin/bash
 set -e;
 
+function net_init(){
+  docker network create ${COMPOSE_PROJECT_NAME}_default >/dev/null || true
+}
+
 function compose_pull(){ compose_exec pull; }
 register 'compose' 'pull' 'update all docker images' compose_pull
 
@@ -16,7 +20,7 @@ register 'compose' 'top' 'display the running processes of a container' compose_
 function compose_exec(){ docker-compose $@; }
 register 'compose' 'exec' 'execute an arbitrary docker-compose command' compose_exec
 
-function compose_run(){ docker-compose run --rm $@; }
+function compose_run(){ net_init; docker-compose run --rm $@; }
 register 'compose' 'run' 'execute a docker-compose run command' compose_run
 
 function compose_up(){ docker-compose up -d $@; }
