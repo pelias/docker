@@ -2,7 +2,7 @@
 set -e;
 
 function net_init(){
-  docker network create ${COMPOSE_PROJECT_NAME}_default >/dev/null || true
+  docker network create ${COMPOSE_PROJECT_NAME}_default &>/dev/null || true
 }
 
 function compose_pull(){ compose_exec pull; }
