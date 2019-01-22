@@ -8,12 +8,14 @@ function download_osm(){ compose_run 'openstreetmap' './bin/download'; }
 function download_geonames(){ compose_run 'geonames' './bin/download'; }
 function download_tiger(){ compose_run 'interpolation' './bin/download-tiger'; }
 function download_transit(){ compose_run 'transit' './bin/download'; }
+function download_csv(){ compose_run 'csv-importer' './bin/download'; }
 
 register 'download' 'wof' '(re)download whosonfirst data' download_wof
 register 'download' 'oa' '(re)download openaddresses data' download_oa
 register 'download' 'osm' '(re)download openstreetmap data' download_osm
 register 'download' 'tiger' '(re)download TIGER data' download_tiger
 register 'download' 'transit' '(re)download transit data' download_transit
+register 'download' 'csv' '(re)download csv data' download_csv
 
 # download all the data to be used by imports
 function download_all(){
@@ -27,6 +29,7 @@ function download_all(){
 
   download_tiger &
   download_transit &
+  download_csv &
   wait
 }
 
