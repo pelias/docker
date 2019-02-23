@@ -1,0 +1,111 @@
+version: '3'
+networks:
+  default:
+    driver: bridge
+services:
+  libpostal:
+    image: pelias/libpostal-service
+    container_name: pelias_libpostal
+    user: "${DOCKER_USER}"
+    restart: always
+    ports: [ "4400:4400" ]
+  schema:
+    image: pelias/schema:master
+    container_name: pelias_schema
+    user: "${DOCKER_USER}"
+    volumes:
+      - "./pelias.json:/code/pelias.json"
+  api:
+    image: pelias/api:master
+    container_name: pelias_api
+    user: "${DOCKER_USER}"
+    restart: always
+    environment: [ "PORT=4000" ]
+    ports: [ "4000:4000" ]
+    volumes:
+      - "./pelias.json:/code/pelias.json"
+  placeholder:
+    image: pelias/placeholder:master
+    container_name: pelias_placeholder
+    user: "${DOCKER_USER}"
+    restart: always
+    environment: [ "PORT=4100" ]
+    ports: [ "4100:4100" ]
+    volumes:
+      - "./pelias.json:/code/pelias.json"
+      - "${DATA_DIR}:/data"
+      - "./blacklist/:/data/blacklist"
+  whosonfirst:
+    image: pelias/whosonfirst:master
+    container_name: pelias_whosonfirst
+    user: "${DOCKER_USER}"
+    volumes:
+      - "./pelias.json:/code/pelias.json"
+      - "${DATA_DIR}:/data"
+  openstreetmap:
+    image: pelias/openstreetmap:master
+    container_name: pelias_openstreetmap
+    user: "${DOCKER_USER}"
+    volumes:
+      - "./pelias.json:/code/pelias.json"
+      - "${DATA_DIR}:/data"
+  openaddresses:
+    image: pelias/openaddresses:master
+    container_name: pelias_openaddresses
+    user: "${DOCKER_USER}"
+    volumes:
+      - "./pelias.json:/code/pelias.json"
+      - "${DATA_DIR}:/data"
+  csv-importer:
+    image: pelias/csv-importer:master
+    container_name: pelias_csv_importer
+    user: "${DOCKER_USER}"
+    volumes:
+      - "./pelias.json:/code/pelias.json"
+      - "${DATA_DIR}:/data"
+      - "./blacklist/:/data/blacklist"
+  polylines:
+    image: pelias/polylines:master
+    container_name: pelias_polylines
+    user: "${DOCKER_USER}"
+    volumes:
+      - "./pelias.json:/code/pelias.json"
+      - "${DATA_DIR}:/data"
+  interpolation:
+    image: pelias/interpolation:master
+    container_name: pelias_interpolation
+    user: "${DOCKER_USER}"
+    restart: always
+    environment: [ "PORT=4300" ]
+    ports: [ "4300:4300" ]
+    volumes:
+      - "./pelias.json:/code/pelias.json"
+      - "${DATA_DIR}:/data"
+  pip:
+    image: pelias/pip-service:master
+    container_name: pelias_pip-service
+    user: "${DOCKER_USER}"
+    restart: always
+    environment: [ "PORT=4200" ]
+    ports: [ "4200:4200" ]
+    volumes:
+      - "./pelias.json:/code/pelias.json"
+      - "${DATA_DIR}:/data"
+  elasticsearch:
+    image: pelias/elasticsearch:5.6.12
+    container_name: pelias_elasticsearch
+    restart: always
+    ports: [ "9200:9200", "9300:9300" ]
+    volumes:
+      - "./elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro"
+      - "${DATA_DIR}/elasticsearch:/usr/share/elasticsearch/data"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+      nofile:
+        soft: 65536
+        hard: 65536
+    cap_add: [ "IPC_LOCK" ]
+    security_opt:
+      - seccomp=unconfined
