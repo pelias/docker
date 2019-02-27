@@ -4,3 +4,6 @@ network.host: 0.0.0.0
 http.port: 9200
 node.master: true
 node.data: true
+thread_pool:
+  bulk:
+    queue_size: 1000
