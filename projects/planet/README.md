@@ -4,8 +4,8 @@
 This project is configured to download/prepare/build a complete Pelias installation for the entire planet.
 
 ### Requirements:
-* >600GB Disk
-* >16GB RAM
+* 600GB Disk
+* 16GB RAM
 * 16+ CPU cores or a lot of patience
 
 ## Setup
