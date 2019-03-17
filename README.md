@@ -7,11 +7,9 @@ This repository contains a framework for downloading/preparing and building the 
 
 Example projects are included in the [projects](https://github.com/pelias/docker/tree/master/projects) directory.
 
-We recommend you start with the `portland-metro` example as a first-time user; once you have successfully completed a build you can use this as a base to create your own projects.
+We recommend you start with the `portland-metro` example as a first-time user: it has lower disk and time requirements and can be used to help you familiarize yourself with the process.
 
-## Not suitable for large geographies
-
-We do not recommend running large extracts (anything larger than a US State) inside Docker, the scripts are **not suitable** for full planet builds. If you require global coverage, please see our [install documentation](https://github.com/pelias/documentation/blob/master/getting_started_install.md) or consider using the [geocode.earth](https://geocode.earth/) services hosted by members of our core team.
+Once you have successfully completed a small build you can use this as a base to create your own projects or move on to larger projects.
 
 ## Prerequisites
 
