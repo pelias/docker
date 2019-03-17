@@ -3,10 +3,22 @@
 
 This project is configured to download/prepare/build a complete Pelias installation for the entire planet.
 
-### Requirements:
+### Minimum Requirements
 * 600GB Disk
 * 16GB RAM
 * 16+ CPU cores or a lot of patience
+
+### Recommended requirements:
+
+* 600GB fast disk (such as NVMe SSD)
+* 48GB RAM
+* 36 CPU cores
+
+## Time requirements
+
+With a 36 CPU machine and fast network connection, full planet builds can take as little as 16 hours.
+
+It's not recommended to run full planet builds on consumer hardware (such as a standard 8 core, 16GB RAM laptop or desktop) unless you are willing to wait up to 72 hours.
 
 ## Setup
 
