@@ -17,11 +17,15 @@ We do not recommend running large extracts (anything larger than a US State) ins
 
 You will need to have `docker` and `docker-compose` installed before continuing. If you are not using the latest version, please mention that in any bugs reports.
 
-For Mac OSX platform :
-- You should additionally install `brew install coreutils`.
-- Max-out the computing resources( `Memory-RAM and CPUs-Cores` ) dedicated to Docker in `Docker > Preferences > Advanced`. 
+## Requirements for Mac OSX:
+- install GNU coreutils with [Homebrew](https://brew.sh/): `brew install coreutils`.
+- Max-out Docker computing resources( `Memory-RAM and CPUs-Cores` ) dedicated to Docker in `Docker > Preferences > Advanced`.
+
+## System requirements
 
 Scripts can easily download tens of GB of geographic data, so ensure you have enough free disk space!
+
+At least 8GB RAM is required.
 
 ## Installing the Pelias command
 
