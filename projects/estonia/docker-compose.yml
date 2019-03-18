@@ -10,7 +10,7 @@ services:
     restart: always
     ports: [ "4400:4400" ]
   schema:
-    image: pelias/schema:master
+    image: pelias/schema:portland-synonyms
     container_name: pelias_schema
     user: "${DOCKER_USER}"
     volumes:
@@ -34,7 +34,6 @@ services:
     volumes:
       - "./pelias.json:/code/pelias.json"
       - "${DATA_DIR}:/data"
-      - "./blacklist/:/data/blacklist"
   whosonfirst:
     image: pelias/whosonfirst:master
     container_name: pelias_whosonfirst
@@ -56,14 +55,6 @@ services:
     volumes:
       - "./pelias.json:/code/pelias.json"
       - "${DATA_DIR}:/data"
-  csv-importer:
-    image: pelias/csv-importer:master
-    container_name: pelias_csv_importer
-    user: "${DOCKER_USER}"
-    volumes:
-      - "./pelias.json:/code/pelias.json"
-      - "${DATA_DIR}:/data"
-      - "./blacklist/:/data/blacklist"
   polylines:
     image: pelias/polylines:master
     container_name: pelias_polylines
