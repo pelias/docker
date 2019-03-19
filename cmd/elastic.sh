@@ -32,7 +32,7 @@ function elastic_wait(){
   i=1
   while [[ "$i" -le "$retry_count" ]]; do
     if [[ $(elastic_status) -eq 200 ]]; then
-      echo
+      echo "Elasticsearch up!"
       exit 0
     fi
     sleep 2
