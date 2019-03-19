@@ -38,7 +38,7 @@
     },
     "geonames": {
       "datapath": "/data/geonames",
-      "countryCode": "AU"
+      "countryCode": "JM"
     },
     "openstreetmap": {
       "download": [
@@ -68,7 +68,5 @@
         "85632215"
       ]
     },
-    "interpolation": {
-      }
   }
 }

@@ -3,7 +3,6 @@
 
 This project is configured to download/prepare/build a complete Pelias installation for the country of Jamaica.
 
-It's designed to be a larger example of using Pelias.
 
 # Setup
 
