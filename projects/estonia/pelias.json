@@ -62,19 +62,19 @@
       "importVenues": false,
       "importPostalcodes": true,
       "importPlace": [ "85633135" ]
+    },
+    "transit": {
+      "datapath": "/data/transit",
+      "feeds": [
+        {
+          "layerId": "stops",
+          "url": "http://peatus.ee/gtfs/gtfs.zip",
+          "filename": "stops.txt",
+          "agencyId": "Eesti",
+          "agencyName": "Eesti",
+          "layerName": "Stop"
+        }
+      ]
     }
-  },
-  "transit": {
-    "datapath": "/data/transit",
-    "feeds": [
-      {
-        "layerId": "stops",
-        "url": "http://peatus.ee/gtfs/gtfs.zip",
-        "filename": "stops.txt",
-        "agencyId": "Eesti",
-        "agencyName": "Eesti",
-        "layerName": "Stop"
-      }
-    ]
   }
 }
