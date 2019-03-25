@@ -15,6 +15,8 @@ Please ensure that's all working fine before continuing.
 To run a complete build, execute the following commands:
 
 ```bash
+mkdir -p /tmp/pelias/estonia/tiger/shapefiles/
+
 pelias compose pull
 pelias elastic start
 pelias elastic wait
