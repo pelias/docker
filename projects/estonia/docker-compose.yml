@@ -55,6 +55,13 @@ services:
     volumes:
       - "./pelias.json:/code/pelias.json"
       - "${DATA_DIR}:/data"
+  transit:
+    image: pelias/transit:master
+    container_name: pelias_transit
+    user: "${DOCKER_USER}"
+    volumes:
+      - "./pelias.json:/code/pelias.json"
+      - "${DATA_DIR}:/data"
   polylines:
     image: pelias/polylines:master
     container_name: pelias_polylines
