@@ -67,10 +67,7 @@
     "interpolation": {
       "download": {
         "tiger": {
-          "datapath": "/data/tiger",
-          "states": [
-            { "state_code": 53, "county_code": 11, "name": "Clark County, WA" }
-          ]
+          "datapath": "/data/tiger"
         }
       }
     }
