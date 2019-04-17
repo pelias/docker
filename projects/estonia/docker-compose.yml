@@ -16,7 +16,7 @@ services:
     volumes:
       - "./pelias.json:/code/pelias.json"
   api:
-    image: pelias/api:master
+    image: dolmit/pelias-api:latest
     container_name: pelias_api
     user: "${DOCKER_USER}"
     restart: always
