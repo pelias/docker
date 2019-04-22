@@ -1,2 +1,3 @@
 FROM dolmit/pelias-api:latest
 COPY ./docker-pelias.json /code/pelias.json
+USER 996:993
