@@ -1,2 +1,2 @@
 FROM dolmit/pelias-api:latest
-COPY ./pelias.json /code/pelias.json
+COPY ./docker-pelias.json /code/pelias.json
