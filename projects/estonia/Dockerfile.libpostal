@@ -1,3 +1,13 @@
 FROM pelias/libpostal-service
 COPY ./docker-pelias.json /opt/pelias/api/pelias.json
-
+COPY ./whosonfirst /data/whosonfirst
+COPY ./placeholder /data/placeholder
+COPY ./openstreetmap /data/openstreetmap
+COPY ./openaddresses /data/openaddresses
+COPY ./tiger /data/tiger
+COPY ./interpolation /data/interpolation
+COPY ./polylines /data/polylines
+COPY ./transit /data/transit
+USER 0:0 
+RUN chown 1000:1000 -R /data
+USER 1000:1000
