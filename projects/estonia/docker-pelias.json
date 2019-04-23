@@ -5,6 +5,8 @@
   },
   "esclient": {
     "apiVersion": "5.6",
+    "keepAlive": true,
+    "requestTimeout": "20000",
     "hosts": [
       { "host": "pelias-data-container" }
     ]
@@ -21,10 +23,10 @@
   "api": {
     "textAnalyzer": "libpostal",
     "services": {
-      "pip": { "url": "http://pip:4200" },
-      "libpostal": { "url": "http://libpostal:4400" },
-      "placeholder": { "url": "http://placeholder:4100" },
-      "interpolation": { "url": "http://interpolation:4300" }
+      "pip": { "url": "http://pelias-pip:4200" },
+      "libpostal": { "url": "http://pelias-libpostal:4400" },
+      "placeholder": { "url": "http://pelias-placeholder:4100" },
+      "interpolation": { "url": "http://pelias-interpolation:4300" }
     },
     "defaultParameters": {
       "focus.point.lat": 58.671392,
