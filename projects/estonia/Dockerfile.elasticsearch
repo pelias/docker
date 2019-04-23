@@ -1,4 +1,6 @@
 FROM pelias/elasticsearch:5.6.12
 COPY elasticsearch.yml /usr/share/elasticsearch/config/elasticsearch.yml
 COPY ./elasticsearch /usr/share/elasticsearch/data
+USER 0:0
 RUN chown 1000:1000 -R /usr/share/elasticsearch/data
+USER 1000:1000
