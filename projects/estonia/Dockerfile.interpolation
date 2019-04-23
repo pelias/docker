@@ -1,10 +1,7 @@
 FROM pelias/interpolation:master
-COPY ./docker-pelias.json /code/pelias.json
-COPY ./openstreetmap /data/openstreetmap
-COPY ./openaddresses /data/openaddresses
-COPY ./tiger /data/tiger
-COPY ./interpolation /data/interpolation
-COPY ./polylines /data/polylines
-USER 0:0 
-RUN chown 1000:1000 -R /data
-USER 1000:1000
+COPY --chown=1000:1000 ./docker-pelias.json /code/pelias.json
+COPY --chown=1000:1000 ./openstreetmap /data/openstreetmap
+COPY --chown=1000:1000 ./openaddresses /data/openaddresses
+COPY --chown=1000:1000 ./tiger /data/tiger
+COPY --chown=1000:1000 ./interpolation /data/interpolation
+COPY --chown=1000:1000 ./polylines /data/polylines
