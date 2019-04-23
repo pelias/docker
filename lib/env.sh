@@ -37,6 +37,8 @@ function env_load_stream(){
 # ensure locale is correctly set?
 # export LC_ALL=en_US.UTF-8
 
+# warn if DATA_DIR is already set
+[[ -n $DATA_DIR ]] && printf "DATA_DIR is already set to '$DATA_DIR' - this may cause the DATA_DIR specified in the .env to be ignored\n"
 # load DATA_DIR and other vars from docker-compose .env file
 # note: strips comments and empty lines
 [ -f .env ] && env_load_stream < <(grep -v '^$\|^\s*$\#' .env)
