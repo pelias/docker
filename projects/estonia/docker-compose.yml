@@ -107,3 +107,13 @@ services:
     cap_add: [ "IPC_LOCK" ]
     security_opt:
       - seccomp=unconfined
+  pelias-gtfs:
+    image: dolmit/pelias-gtfs:latest
+    container_name: pelias_gtfs
+    user: "${DOCKER_USER}"
+    restart: on-failure
+    environment: [ "GTFS_URL=http://peatus.ee/gtfs/gtfs.zip", "PREFIX=estonia", "PELIAS_CONFIG=/code/pelias.json" ]
+    volumes:
+      - "./pelias.json:/code/pelias.json"
+    depends_on:
+      - elasticsearch
