@@ -1,0 +1,82 @@
+{
+  "logger": {
+    "level": "debug",
+    "timestamp": false
+  },
+  "esclient": {
+    "apiVersion": "5.6",
+    "keepAlive": true,
+    "requestTimeout": "20000",
+    "hosts": [
+      { "host": "pelias-data-container" }
+    ]
+  },
+  "elasticsearch": {
+    "settings": {
+      "index": {
+        "refresh_interval": "10s",
+        "number_of_replicas": "0",
+        "number_of_shards": "1"
+      }
+    }
+  },
+  "api": {
+    "textAnalyzer": "libpostal",
+    "services": {
+      "pip": { "url": "http://pelias-pip:4200" },
+      "libpostal": { "url": "http://pelias-libpostal:4400" },
+      "placeholder": { "url": "http://pelias-placeholder:4100" },
+      "interpolation": { "url": "http://pelias-interpolation:4300" }
+    },
+    "defaultParameters": {
+      "focus.point.lat": 58.671392,
+      "focus.point.lon": 25.54665
+    }
+  },
+  "imports": {
+    "adminLookup": {
+      "enabled": true
+    },
+    "geonames": {
+      "datapath": "/data/geonames",
+      "countryCode": "EE"
+    },
+    "openstreetmap": {
+      "download": [
+        { "sourceURL": "http://download.geofabrik.de/europe/estonia-latest.osm.pbf" }
+      ],
+      "leveldbpath": "/tmp",
+      "datapath": "/data/openstreetmap",
+      "import": [{
+        "filename": "estonia-latest.osm.pbf"
+      }]
+    },
+    "openaddresses": {
+      "datapath": "/data/openaddresses",
+      "files": ["ee/countrywide.csv"]
+    },
+    "polyline": {
+      "datapath": "/data/polylines",
+      "files": [ "extract.0sv" ]
+    },
+    "whosonfirst": {
+      "datapath": "/data/whosonfirst",
+      "importVenues": false,
+      "importPostalcodes": true,
+      "importPlace": [ "85633135" ]
+    },
+    "transit": {
+      "datapath": "/data/transit",
+      "feeds": [
+        {
+          "layerId": "stops",
+          "url": "http://peatus.ee/gtfs/gtfs.zip",
+          "filename": "stops.txt",
+          "agencyId": "Eesti",
+          "agencyName": "Eesti",
+          "layerName": "Stop"
+        }
+      ]
+    }
+  }
+}
