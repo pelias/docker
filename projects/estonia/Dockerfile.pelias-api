@@ -1,3 +1,0 @@
-FROM dolmit/pelias-api:latest
-COPY --chown=1000:1000 ./docker-pelias.json /opt/pelias/api/pelias.json
-
