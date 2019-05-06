@@ -24,6 +24,7 @@ function env_check(){
 # loads environment vars from a stream (such as a file)
 # example: env_load_stream < .env
 function env_load_stream(){
+  [[ -n $DATA_DIR ]] && printf "DATA_DIR is already set to '$DATA_DIR' - this may cause the DATA_DIR specified in the .env to be ignored\n"
   while IFS='=' read -r key value; do
     ([ -z $key ] || [ -z $value ]) && printf 'Invalid environment var "%s=%s"\n' $key $value && exit 1
     if [ -z ${!key} ]; then
