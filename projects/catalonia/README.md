@@ -1,4 +1,4 @@
-# France area
+# Catalonia
 
 This project is configured to download/prepare/build a complete Pelias installation for Catalonia, Spain.
 
