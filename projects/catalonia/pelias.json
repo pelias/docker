@@ -29,10 +29,6 @@
       "libpostal": { "url": "http://libpostal:4400" },
       "placeholder": { "url": "http://placeholder:4100" },
       "interpolation": { "url": "http://interpolation:4300" }
-    },
-    "defaultParameters": {
-      "focus.point.lat": 46.61,
-      "focus.point.lon": 2.45
     }
   },
   "imports": {
@@ -41,11 +37,11 @@
     },
     "geonames": {
       "datapath": "/data/geonames",
-      "countryCode": "FR"
+      "countryCode": "ES"
     },
     "openstreetmap": {
       "download": [
-        { "sourceURL": "http://download.geofabrik.de/europe/france-latest.osm.pbf" }
+        { "sourceURL": "" }
       ],
       "leveldbpath": "/tmp",
       "datapath": "/data/openstreetmap",
