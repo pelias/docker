@@ -31,14 +31,14 @@ If you haven't done so already, you will need to ensure the `pelias` command is 
 
 You can find the `pelias` file in the root of this repository.
 
-Advanced users may have a preferance how this is done on their system, but a basic example would be to do something like:
+Advanced users may have a preference how this is done on their system, but a basic example would be to do something like:
 
 ```bash
 git clone https://github.com/pelias/docker.git ~/pelias
 ln -s ~/pelias/pelias /usr/local/bin/pelias
 ```
 
-Once the command is correctly installed you should be able to run the following command to confim the pelias command is available on your path:
+Once the command is correctly installed you should be able to run the following command to confirm the pelias command is available on your path:
 
 ```bash
 which pelias
