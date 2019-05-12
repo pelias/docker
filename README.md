@@ -15,7 +15,7 @@ Once you have successfully completed a small build you can use this as a base to
 
 You will need to have `docker` and `docker-compose` installed before continuing. If you are not using the latest version, please mention that in any bugs reports.
 
-## Requirements for Mac OSX:
+## Requirements for Mac OSX
 - install GNU coreutils with [Homebrew](https://brew.sh/): `brew install coreutils`.
 - Max-out Docker computing resources( `Memory-RAM and CPUs-Cores` ) dedicated to Docker in `Docker > Preferences > Advanced`.
 
