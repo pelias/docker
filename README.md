@@ -25,7 +25,9 @@ Scripts can easily download tens of GB of geographic data, so ensure you have en
 
 At least 8GB RAM is required.
 
-## Installing the Pelias command
+## Installing the Pelias helper script
+
+This repository makes use of a helper script to make basic management of the Pelias Docker images easy.
 
 If you haven't done so already, you will need to ensure the `pelias` command is available on your path.
 
