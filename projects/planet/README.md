@@ -28,6 +28,10 @@ The minimum configuration required in order to run this project are [installing 
 
 Please ensure that's all working fine before continuing.
 
+## Acceptance tests
+
+This project uses [git submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules) to pull in the [pelias/acceptance-test](https://github.com/pelias/acceptance-tests/) repository to allow testing full planet builds.
+
 ### Caveats
 
 A full planet build will require a street polylines file generated with Valhalla. Please see [the documentation](https://github.com/pelias/polylines/wiki/Generating-polylines-from-Valhalla) on how to perform that build.
@@ -37,6 +41,9 @@ A full planet build will require a street polylines file generated with Valhalla
 To run a complete build, execute the following commands:
 
 ```bash
+git submodule init
+git submodule update
+
 pelias compose pull
 pelias elastic start
 pelias elastic wait
@@ -45,6 +52,7 @@ pelias download all
 pelias prepare all
 pelias import all
 pelias compose up
+
 pelias test run
 ```
 
