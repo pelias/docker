@@ -15,7 +15,7 @@ Once you have successfully completed a small build you can use this as a base to
 
 You will need to have `docker` and `docker-compose` installed before continuing. If you are not using the latest version, please mention that in any bugs reports.
 
-## Requirements for Mac OSX:
+## Requirements for Mac OSX
 - install GNU coreutils with [Homebrew](https://brew.sh/): `brew install coreutils`.
 - Max-out Docker computing resources( `Memory-RAM and CPUs-Cores` ) dedicated to Docker in `Docker > Preferences > Advanced`.
 
@@ -25,20 +25,22 @@ Scripts can easily download tens of GB of geographic data, so ensure you have en
 
 At least 8GB RAM is required.
 
-## Installing the Pelias command
+## Installing the Pelias helper script
+
+This repository makes use of a helper script to make basic management of the Pelias Docker images easy.
 
 If you haven't done so already, you will need to ensure the `pelias` command is available on your path.
 
 You can find the `pelias` file in the root of this repository.
 
-Advanced users may have a preferance how this is done on their system, but a basic example would be to do something like:
+Advanced users may have a preference how this is done on their system, but a basic example would be to do something like:
 
 ```bash
 git clone https://github.com/pelias/docker.git ~/pelias
 ln -s ~/pelias/pelias /usr/local/bin/pelias
 ```
 
-Once the command is correctly installed you should be able to run the following command to confim the pelias command is available on your path:
+Once the command is correctly installed you should be able to run the following command to confirm the pelias command is available on your path:
 
 ```bash
 which pelias

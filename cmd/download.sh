@@ -13,6 +13,7 @@ function download_csv(){ compose_run 'csv-importer' './bin/download'; }
 register 'download' 'wof' '(re)download whosonfirst data' download_wof
 register 'download' 'oa' '(re)download openaddresses data' download_oa
 register 'download' 'osm' '(re)download openstreetmap data' download_osm
+register 'download' 'geonames' '(re)download geonames data' download_geonames
 register 'download' 'tiger' '(re)download TIGER data' download_tiger
 register 'download' 'transit' '(re)download transit data' download_transit
 register 'download' 'csv' '(re)download csv data' download_csv

@@ -61,7 +61,7 @@
       "datapath": "/data/whosonfirst",
       "importVenues": false,
       "importPostalcodes": true,
-      "importPlace": [ "136253037" ]
+      "importPlace": [ "136253037", "85633147" ]
     }
   }
 }
