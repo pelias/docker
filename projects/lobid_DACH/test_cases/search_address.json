@@ -1,0 +1,57 @@
+{
+   "name" : "/v1/search",
+   "tests" : [
+      {
+         "status" : "fail",
+         "in" : {
+            "layers" : "address",
+            "text" : "Juelicher Str. 6 50674 Koeln"
+         },
+         "id" : 1,
+         "expected" : {
+            "geometry" : {
+               "coordinates" : [
+                  6.93549,
+                  50.93410
+               ]
+            },
+            "properties" : {
+               "name" : "cologne",
+               "region" : "Nordrhein-Westfalen"
+            }
+         }
+      },
+      {
+         "status" : "pass",
+         "in" : {
+            "layers" : "address",
+            "text" : "Gleueler Str. 50 50931 Koeln"
+         },
+         "id" : 1,
+         "expected" : {
+            "geometry" : {
+               "coordinates" : [
+                  6.9165482,
+                  50.9259726
+               ]
+            },
+            "properties" : {
+               "name" : "GLEUELER STRAE 50",
+               "region" : "Nordrhein-Westfalen"
+            }
+         }
+      }
+
+   ],
+   "description" : "addresses in Germany",
+   "normalizers" : {
+      "name" : [
+         "toUpperCase",
+         "removeOrdinals",
+         "stripPunctuation",
+         "abbreviateDirectionals",
+         "abbreviateStreetSuffixes"
+      ]
+   },
+   "priorityThresh" : 1
+}
