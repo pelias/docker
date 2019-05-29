@@ -103,6 +103,7 @@ services:
   elasticsearch:
     image: pelias/elasticsearch:5.6.12
     container_name: pelias_elasticsearch
+    user: "${DOCKER_USER}"
     restart: always
     ports: [ "9200:9200", "9300:9300" ]
     volumes:
