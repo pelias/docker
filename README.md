@@ -136,16 +136,16 @@ Usage: pelias [command] [action] [options]
   elastic   stop                     stop elasticsearch server
   elastic   status                   HTTP status code of the elasticsearch service
   elastic   wait                     wait for elasticsearch to start up
+  prepare   polylines                export road network from openstreetmap into polylines format
+  prepare   interpolation            build interpolation sqlite databases
+  prepare   placeholder              build placeholder sqlite databases
+  prepare   all                      build all services which have a prepare step
   import    wof                      (re)import whosonfirst data
   import    oa                       (re)import openaddresses data
   import    osm                      (re)import openstreetmap data
   import    polylines                (re)import polylines data
   import    transit                  (re)import transit data
   import    all                      (re)import all data
-  prepare   polylines                export road network from openstreetmap into polylines format
-  prepare   interpolation            build interpolation sqlite databases
-  prepare   placeholder              build placeholder sqlite databases
-  prepare   all                      build all services which have a prepare step
   system    check                    ensure the system is correctly configured
   system    env                      display environment variables
   system    update                   update the pelias command by pulling the latest version
