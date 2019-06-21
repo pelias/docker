@@ -1,0 +1,6 @@
+# Ignore everything
+**
+
+# Allow files and directories
+!/elasticsearch.yml
+!/elasticsearch/**

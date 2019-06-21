@@ -1,0 +1,2 @@
+FROM pelias/libpostal-service
+COPY --chown=1000:1000 ./docker-pelias.json /opt/pelias/api/pelias.json
