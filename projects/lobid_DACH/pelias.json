@@ -36,6 +36,9 @@
       "focus.point.lon": 6.95428
     }
   },
+  "logger": {
+    "level": "debug"
+  },
   "imports": {
     "adminLookup": {
       "enabled": true
@@ -80,11 +83,14 @@
     },
     "whosonfirst": {
 	  "datapath": "/data/whosonfirst/",
-      "importVenues": false,
+      "importVenues": true,
       "importPostalcodes": true
     },
-	 "interpolation": {
+    "services": {
+      "pip": { "url": "http://pip:4200" }
+    },
+	"interpolation": {
         "datapath": "/data/interpolation/"
   	}
-   }
+  }
 }
