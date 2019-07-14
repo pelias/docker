@@ -290,6 +290,28 @@ pelias compose up
 pelias test run
 ```
 
+## Optionally cleanup temporary files
+
+Once the build is complete, you can cleanup temporary files that are no longer useful. The numbers in this snippet below are rough estimates for a full planet build.
+
+```
+# These folders can be entirely deleted after the import into elastic search
+rm -rf /data/openaddresses #(~43GB)
+rm -rf /data/tiger #(~13GB)
+rm -rf /data/openstreetmap #(~46GB)
+rm -rf /data/polylines #(~2.7GB)
+
+# Within the content of the "interpolation" folder (~176GB) we must
+# preserve "street.db" (~7GB) and "address.db" (~25GB), the rest can be deleted
+cd /data/interpolation
+rm -rf -- !("street.db"|"address.db")
+
+# Within the content of the "placeholder" folder (~1.4GB), we must
+# preserve the "store.sqlite3" (~0.9GB) file, the rest can be deleted
+cd /data/placeholder
+rm -rf -- !("store.sqlite3")
+```
+
 ## View status of running containers
 
 Once the build is complete, you can view the current status and port mappings of the Pelias docker containers:
