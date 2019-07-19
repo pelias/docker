@@ -25,6 +25,52 @@ Scripts can easily download tens of GB of geographic data, so ensure you have en
 
 At least 8GB RAM is required.
 
+## Quickstart build script
+
+The following shell script can be used to quickly get started with a Pelias build.
+
+Feel free to modify the code and data locations to suit your needs.
+
+```bash
+#!/bin/bash
+set -x
+
+# create directories
+mkdir /code /data
+
+# set proper permissions. make sure the user matches your `DOCKER_USER` setting in `.env`
+chown 1000:1000 /code /data
+
+# clone repo
+cd /code
+git clone https://github.com/pelias/docker.git
+cd docker
+
+# install pelias script
+ln -s "$(pwd)/pelias" /usr/local/bin/pelias
+
+# cwd
+cd projects/portland-metro
+
+# configure environment
+sed -i '/DATA_DIR/d' .env
+echo 'DATA_DIR=/data' >> .env
+
+# run build
+pelias compose pull
+pelias elastic start
+pelias elastic wait
+pelias elastic create
+pelias download all
+pelias prepare all
+pelias import all
+pelias compose up
+
+# optionally run tests
+pelias test run
+```
+
+
 ## Installing the Pelias helper script
 
 This repository makes use of a helper script to make basic management of the Pelias Docker images easy.
@@ -109,6 +155,8 @@ All processes in Pelias containers are run as non-root users. By default, the UI
 This variable can take just a UID or a UID:GID combination such as `1000:1000`. See the [docker-compose](https://docs.docker.com/compose/compose-file/#domainname-hostname-ipc-mac_address-privileged-read_only-shm_size-stdin_open-tty-user-working_dir) and [docker run](https://docs.docker.com/engine/reference/run/#user) documentation on controlling Docker container users for more information.
 
 ## CLI commands
+
+The following is a list of all supported CLI commands.
 
 ```bash
 $ pelias 
@@ -245,49 +293,6 @@ The test command runs the [fuzzy-tester](https://github.com/pelias/fuzzy-tester)
 
 ```bash
 test      run                      run fuzzy-tester test cases
-```
-
-## Generic build workflow
-
-The following shell script can be used to automate a build:
-
-```bash
-#!/bin/bash
-set -x
-
-# create directories
-mkdir /code /data
-
-# set proper permissions. make sure the user matches your `DOCKER_USER` setting in `.env`
-chown 1000:1000 /code /data
-
-# clone repo
-cd /code
-git clone https://github.com/pelias/docker.git
-cd docker
-
-# install pelias script
-ln -s "$(pwd)/pelias" /usr/local/bin/pelias
-
-# cwd
-cd projects/portland-metro
-
-# configure environment
-sed -i '/DATA_DIR/d' .env
-echo 'DATA_DIR=/data' >> .env
-
-# run build
-pelias compose pull
-pelias elastic start
-pelias elastic wait
-pelias elastic create
-pelias download all
-pelias prepare all
-pelias import all
-pelias compose up
-
-# optionally run tests
-pelias test run
 ```
 
 ## Optionally cleanup temporary files
