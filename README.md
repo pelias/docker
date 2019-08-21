@@ -335,9 +335,9 @@ You can inspect the container logs for errors by running:
 pelias compose logs
 ```
 
-## Make an example query
+## Example queries
 
-You can now make queries against your new Pelias build:
+Once all the importers have completed and the Pelias services are running, you can make queries against your new Pelias build:
 
 ### API
 
