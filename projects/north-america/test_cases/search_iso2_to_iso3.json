@@ -27,47 +27,6 @@
       }
     },
     {
-      "id": 2,
-      "status": "pass",
-      "user": "trescube",
-      "type": "dev",
-      "in": {
-        "text": "grolmanstraße 51, berlin, de"
-      },
-      "expected": {
-        "properties": [
-          {
-            "layer": "address",
-            "country_a": "DEU",
-            "locality": "Berlin",
-            "street": "Grolmanstraße",
-            "housenumber": "51"
-          }
-        ]
-      }
-    },
-    {
-      "id": 3,
-      "status": "pass",
-      "user": "trescube",
-      "type": "dev",
-      "in": {
-        "text": "23 Avenue Duquesne, 75007 Paris, Fr"
-      },
-      "expected": {
-        "priorityThresh": 1,
-        "properties": [
-          {
-            "layer": "address",
-            "country_a": "FRA",
-            "locality": "Paris",
-            "street": "Avenue Duquesne",
-            "housenumber": "23"
-          }
-        ]
-      }
-    },
-    {
       "id": 4,
       "status": "pass",
       "user": "trescube",

@@ -16,11 +16,11 @@
       "expected": {
         "properties": [
           {
-            "gid": "openstreetmap:venue:node:2562438641",
+            "gid": "openstreetmap:venue:node/2562438641",
             "layer": "venue",
             "source": "openstreetmap",
-            "id": "node:2562438641",
-            "source_id": "node:2562438641"
+            "id": "node/2562438641",
+            "source_id": "node/2562438641"
           }
         ]
       }
@@ -58,11 +58,11 @@
       "expected": {
         "properties": [
           {
-            "gid": "openstreetmap:venue:way:248143769",
+            "gid": "openstreetmap:venue:way/248143769",
             "layer": "venue",
-            "id": "way:248143769",
+            "id": "way/248143769",
             "source": "openstreetmap",
-            "source_id": "way:248143769",
+            "source_id": "way/248143769",
             "name": "Flatiron Hotel"
           }
         ]

@@ -142,10 +142,7 @@
       "expected": {
         "properties": [
           {
-            "label": "London, Greater London, United Kingdom"
-          },
-          {
-            "label": "London, Middlesex, Canada"
+            "label": "London, ON, Canada"
           }
         ]
       }
@@ -180,50 +177,11 @@
       "expected": {
         "properties": [
           {
-            "region": "Victoria",
-            "country": "Australia",
-            "layer": "region"
-          },
-          {
             "locality": "Victoria",
             "region": "British Columbia",
             "country": "Canada",
             "layer": "locality"
 
-          }
-        ]
-      }
-    },
-    {
-      "id": 7,
-      "status": "fail",
-      "issue": "https://github.com/pelias/geonames/issues/49",
-      "description": "geonames types are not properly mapped",
-      "user": "missinglink",
-      "in": {
-        "text": "wales"
-      },
-      "expected": {
-        "priorityThresh": 1,
-        "properties": [
-          {
-            "label": "Wales, United Kingdom"
-          }
-        ]
-      }
-    },
-    {
-      "id": 8,
-      "status": "pass",
-      "user": "missinglink",
-      "in": {
-        "text": "new south wales"
-      },
-      "expected": {
-        "priorityThresh": 3,
-        "properties": [
-          {
-            "label": "New South Wales, Australia"
           }
         ]
       }
@@ -240,111 +198,6 @@
         "properties": [
           {
             "label": "California, USA"
-          }
-        ]
-      }
-    },
-    {
-      "id": 10,
-      "status": "pass",
-      "user": "missinglink",
-      "in": {
-        "text": "west bengal"
-      },
-      "expected": {
-        "priorityThresh": 1,
-        "properties": [
-          {
-            "label": "West Bengal, India"
-          }
-        ]
-      }
-    },
-    {
-      "id": 11,
-      "status": "pass",
-      "issue": "https://github.com/pelias/geonames/pull/43",
-      "description": "geonames types are not properly mapped",
-      "user": "missinglink",
-      "in": {
-        "text": "madrid"
-      },
-      "expected": {
-        "properties": [
-          {
-            "locality": "Madrid",
-            "region": "Madrid",
-            "country": "Spain",
-            "layer": "locality"
-
-
-          }
-        ]
-      }
-    },
-    {
-      "id": 12,
-      "status": "pass",
-      "user": "missinglink",
-      "notes": [ "from mapillary home page" ],
-      "in": {
-        "text": "malmo"
-      },
-      "expected": {
-        "priorityThresh": 1,
-        "properties": [
-          {
-            "name": "Malmo",
-            "country": "Sweden"
-          }
-        ]
-      }
-    },
-    {
-      "id": 13,
-      "status": "pass",
-      "user": "missinglink",
-      "in": {
-        "text": "Singarpuram"
-      },
-      "expected": {
-        "properties": [
-          {
-            "label": "Singarpuram, Madurai, India"
-          }
-        ]
-      }
-    },
-    {
-      "id": 14,
-      "status": "pass",
-      "user": "missinglink",
-      "description": "partially complete major city name",
-      "issue": "https://github.com/pelias/pelias/issues/143",
-      "in": {
-        "text": "Pari"
-      },
-      "expected": {
-        "properties": [
-          {
-            "label": "Paris, France"
-          }
-        ]
-      }
-    },
-    {
-      "id": 15,
-      "status": "pass",
-      "user": "missinglink",
-      "description": "partially complete major city name",
-      "issue": "https://github.com/pelias/pelias/issues/143",
-      "in": {
-        "text": "Londo"
-      },
-      "expected": {
-        "properties": [
-          {
-            "label": "London, England, United Kingdom"
           }
         ]
       }

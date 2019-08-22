@@ -23,7 +23,7 @@
       "expected": {
         "properties": [
           {
-            "name": "Brother's pizza",
+            "name": "Jule's Thin Crust",
             "region_a": "PA"
           }
         ]
@@ -47,32 +47,8 @@
         "properties": [
           {
             "name": "Wells Fargo",
-            "localadmin": "Newtown",
+            "localadmin": "Newtown Township",
             "region_a": "PA"
-          }
-        ]
-      }
-    },
-    {
-      "id": "maps_service_search_place_by_address",
-      "status": "pass",
-      "user": "dianashk",
-      "endpoint": "search",
-      "in": {
-        "text": "Roosevelt",
-        "point.lon": -73.99875,
-        "point.lat": 40.722880,
-        "boundary.rect.min_lat": 40.707710007867334,
-        "boundary.rect.min_lon": -74.01763916015625,
-        "boundary.rect.max_lat": 40.759220487652186,
-        "boundary.rect.max_lon": -73.97300720214844,
-        "categories": "education"
-      },
-      "expected": {
-        "properties": [
-          {
-            "name": "Eleanor Roosevelt High School",
-            "region_a": "NY"
           }
         ]
       }
@@ -96,7 +72,7 @@
         "properties": [
           {
             "name": "Wells Fargo",
-            "localadmin": "Newtown",
+            "localadmin": "Newtown Township",
             "region_a": "PA"
           }
         ]
@@ -105,15 +81,15 @@
     {
       "id": "maps_service_get_place_details",
       "status": "fail",
-      "user": "dianashk",
+      "user": "mievans",
       "endpoint": "place",
       "in": {
-        "ids": "openstreetmap:venue:node:357621540"
+        "ids": "openstreetmap:venue:node:223078192"
       },
       "expected": {
         "properties": [
           {
-            "name": "Eleanor Roosevelt High School"
+            "name": "Mounds View High School"
           }
         ]
       }

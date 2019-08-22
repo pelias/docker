@@ -14,9 +14,9 @@
       "expected": {
         "properties": [
           {
-            "name": "1 W 72 St",
+            "name": "1 West 72nd Street",
             "housenumber": "1",
-            "street": "W 72 St",
+            "street": "West 72nd Street",
             "country_a": "USA",
             "postalcode": "10023",
             "confidence": 1

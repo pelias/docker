@@ -24,24 +24,6 @@
       }
     },
     {
-      "id": "structuredpostal-2",
-      "status": "pass",
-      "user": "diana",
-      "in": {
-        "postalcode": "LA1 1DL"
-      },
-      "expected": {
-        "properties": [
-          {
-            "layer": "postalcode",
-            "name": "LA1 1DL",
-            "locality": "Lancaster",
-            "country": "United Kingdom"
-          }
-        ]
-      }
-    },
-    {
       "id": "structuredpostal-3",
       "status": "fail",
       "issue": "https://github.com/pelias/pelias/issues/692",

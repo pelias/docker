@@ -18,7 +18,7 @@
         "properties": [
           {
             "layer": "address",
-            "name": "1090 N Charlotte St",
+            "name": "1090 N Charlotte Street",
             "country_a": "USA",
             "country": "United States",
             "region": "Pennsylvania",
@@ -26,7 +26,7 @@
             "county": "Lancaster County",
             "locality": "Lancaster",
             "housenumber": "1090",
-            "street": "N Charlotte St"
+            "street": "N Charlotte Street"
           }
         ]
       }
@@ -135,28 +135,6 @@
             "region": "California",
             "region_a": "CA",
             "locality": "San Francisco"
-          }
-        ]
-      }
-    },
-    {
-      "id": 6,
-      "status": "pass",
-      "user": "trescube",
-      "type": "dev",
-      "notes": "libpostal parses as house_number/road, non-US address",
-      "in": {
-        "address": "Grolmanstrasse 51",
-        "locality": "Berlin"
-      },
-      "expected": {
-        "properties": [
-          {
-            "layer": "address",
-            "name": "Grolmanstraße 51",
-            "country_a": "DEU",
-            "country": "Germany",
-            "locality": "Berlin"
           }
         ]
       }
@@ -398,73 +376,6 @@
       }
     },
     {
-      "id": 302,
-      "status": "pass",
-      "user": "trescube",
-      "type": "dev",
-      "notes": "",
-      "in": {
-        "locality": "Paris",
-        "country": "France"
-      },
-      "expected": {
-        "properties": [
-          {
-            "layer": "locality",
-            "name": "Paris",
-            "country_a": "FRA",
-            "country": "France",
-            "locality": "Paris"
-          }
-        ]
-      }
-    },
-    {
-      "id": 303,
-      "status": "pass",
-      "user": "trescube",
-      "type": "dev",
-      "notes": "",
-      "in": {
-        "locality": "Beijing",
-        "country": "China"
-      },
-      "expected": {
-        "properties": [
-          {
-            "layer": "locality",
-            "name": "Beijing",
-            "country_a": "CHN",
-            "country": "China",
-            "locality": "Beijing"
-          }
-        ]
-      }
-    },
-
-    {
-      "id": 400,
-      "status": "pass",
-      "user": "trescube",
-      "type": "dev",
-      "notes": "ambiguous localadmin",
-      "in": {
-        "sources": "wof",
-        "locality": "Zickrick"
-      },
-      "expected": {
-        "properties": [
-          {
-            "layer": "localadmin",
-            "name": "Zickrick",
-            "country_a": "USA",
-            "country": "United States",
-            "localadmin": "Zickrick"
-          }
-        ]
-      }
-    },
-    {
       "id": 401,
       "status": "pass",
       "user": "trescube",
@@ -478,10 +389,10 @@
         "properties": [
           {
             "layer": "localadmin",
-            "name": "Zumbehl",
+            "name": "Zumbehl Township",
             "country_a": "USA",
             "country": "United States",
-            "localadmin": "Zumbehl"
+            "localadmin": "Zumbehl Township"
           }
         ]
       }
@@ -501,12 +412,12 @@
         "properties": [
           {
             "layer": "localadmin",
-            "name": "Aastad",
+            "name": "Aastad Township",
             "country_a": "USA",
             "country": "United States",
             "region_a": "MN",
             "region": "Minnesota",
-            "localadmin": "Aastad"
+            "localadmin": "Aastad Township"
           }
         ]
       }
@@ -526,18 +437,16 @@
         "properties": [
           {
             "layer": "localadmin",
-            "name": "Bloominggrove",
+            "name": "Bloominggrove Township",
             "country_a": "USA",
             "country": "United States",
             "region_a": "OH",
             "region": "Ohio",
-            "localadmin": "Bloominggrove"
+            "localadmin": "Bloominggrove Township"
           }
         ]
       }
     },
-
-
     {
       "id": 500,
       "status": "fail",
@@ -594,117 +503,6 @@
       }
     },
     {
-      "id": 502,
-      "status": "pass",
-      "user": "trescube",
-      "type": "dev",
-      "notes": "unambiguous county",
-      "in": {
-        "county": "L'Hermenault"
-      },
-      "expected": {
-        "properties": [
-          {
-            "layer": "county",
-            "name": "L'Hermenault",
-            "country_a": "FRA",
-            "country": "France",
-            "region": "Vendée"
-          }
-        ]
-      }
-    },
-    {
-      "id": 503,
-      "status": "pass",
-      "user": "trescube",
-      "type": "dev",
-      "notes": "unambiguous county",
-      "in": {
-        "county": "Chongqing",
-        "country": "China"
-      },
-      "expected": {
-        "properties": [
-          {
-            "layer": "county",
-            "name": "Chongqing Shi",
-            "country_a": "CHN",
-            "country": "China",
-            "region": "Chongqing",
-            "county": "Chongqing Shi"
-          }
-        ]
-      }
-    },
-
-    {
-      "id": 600,
-      "status": "pass",
-      "user": "trescube",
-      "type": "dev",
-      "notes": "macrocounty should be queried with county input",
-      "in": {
-        "county": "Gießen"
-      },
-      "expected": {
-        "properties": [
-          {
-            "layer": "macrocounty",
-            "name": "Gießen",
-            "country_a": "DEU",
-            "country": "Germany",
-            "macrocounty": "Gießen"
-          }
-        ]
-      }
-    },
-    {
-      "id": 601,
-      "status": "pass",
-      "user": "trescube",
-      "type": "dev",
-      "notes": "macrocounty should be queried with county input",
-      "in": {
-        "county": "Mittelfranken",
-        "country": "Germany"
-      },
-      "expected": {
-        "properties": [
-          {
-            "layer": "macrocounty",
-            "name": "Mittelfranken",
-            "country_a": "DEU",
-            "country": "Germany",
-            "macrocounty": "Mittelfranken"
-          }
-        ]
-      }
-    },
-    {
-      "id": 602,
-      "status": "pass",
-      "user": "trescube",
-      "type": "dev",
-      "notes": "macrocounty should be queried with county input",
-      "in": {
-        "county": "Arnsberg"
-      },
-      "expected": {
-        "properties": [
-          {
-            "layer": "macrocounty",
-            "name": "Arnsberg",
-            "country_a": "DEU",
-            "country": "Germany",
-            "macrocounty": "Arnsberg"
-          }
-        ]
-      }
-    },
-
-
-    {
       "id": 700,
       "status": "pass",
       "user": "trescube",
@@ -748,177 +546,6 @@
         ]
       }
     },
-    {
-      "id": 702,
-      "status": "pass",
-      "user": "trescube",
-      "type": "dev",
-      "notes": "non-US region",
-      "in": {
-        "region": "Kakheti"
-      },
-      "expected": {
-        "properties": [
-          {
-            "layer": "region",
-            "name": "Kakheti",
-            "country_a": "GEO",
-            "country": "Georgia",
-            "region": "Kakheti"
-          }
-        ]
-      }
-    },
-    {
-      "id": 703,
-      "status": "pass",
-      "user": "Stephen",
-      "description": "",
-      "notes": "similar to wof_regions/#8 but uses structured geocoding to show that region works",
-      "in": {
-        "region": "Xaçmaz",
-        "country": "Azerbaijan",
-        "sources": "wof"
-      },
-      "expected": {
-        "priorityThresh": 2,
-        "properties": [
-          {
-            "layer": "region",
-            "name": "Xacmaz",
-            "region": "Xacmaz",
-            "country": "Azerbaijan",
-            "country_a": "AZE"
-          }
-        ]
-      }
-    },
-
-    {
-      "id": 800,
-      "status": "pass",
-      "user": "trescube",
-      "type": "dev",
-      "notes": "macroregion should be queried with state input",
-      "in": {
-        "region": "Marche"
-      },
-      "expected": {
-        "properties": [
-          {
-            "layer": "macroregion",
-            "name": "Marche",
-            "country_a": "ITA",
-            "country": "Italy",
-            "macroregion": "Marche"
-          }
-        ]
-      }
-    },
-    {
-      "id": 801,
-      "status": "pass",
-      "user": "trescube",
-      "type": "dev",
-      "notes": "macroregion should be queried with state input",
-      "in": {
-        "region": "Marche"
-      },
-      "expected": {
-        "properties": [
-          {
-            "layer": "macroregion",
-            "name": "Marche",
-            "country_a": "ITA",
-            "country": "Italy",
-            "macroregion": "Marche"
-          }
-        ]
-      }
-    },
-    {
-      "id": 802,
-      "status": "pass",
-      "user": "trescube",
-      "type": "dev",
-      "notes": "macroregion should be queried with state input",
-      "in": {
-        "region": "Northern Finland",
-        "country": "Finland"
-      },
-      "expected": {
-        "properties": [
-          {
-            "layer": "macroregion",
-            "name": "Northern Finland",
-            "country_a": "FIN",
-            "country": "Finland",
-            "macroregion": "Northern Finland"
-          }
-        ]
-      }
-    },
-
-
-    {
-      "id": 900,
-      "status": "pass",
-      "user": "trescube",
-      "type": "dev",
-      "notes": "dependency-only",
-      "in": {
-        "country": "United States Virgin Islands"
-      },
-      "expected": {
-        "properties": [
-          {
-            "layer": "dependency",
-            "name": "US Virgin Islands",
-            "dependency": "US Virgin Islands"
-          }
-        ]
-      }
-    },
-    {
-      "id": 901,
-      "status": "pass",
-      "user": "trescube",
-      "type": "dev",
-      "notes": "country name with dependency layer",
-      "in": {
-        "country": "United States",
-        "layers": "dependency"
-      },
-      "expected": {
-        "properties": [
-          {
-            "layer": "dependency",
-            "name": "US Virgin Islands",
-            "dependency": "US Virgin Islands"
-          }
-        ]
-      }
-    },
-    {
-      "id": 902,
-      "status": "pass",
-      "user": "trescube",
-      "type": "dev",
-      "notes": "british dependency",
-      "in": {
-        "country": "Bermuda"
-      },
-      "expected": {
-        "properties": [
-          {
-            "layer": "dependency",
-            "name": "Bermuda",
-            "dependency": "Bermuda"
-          }
-        ]
-      }
-    },
-
     {
       "id": 1000,
       "status": "pass",
@@ -979,69 +606,6 @@
         ]
       }
     },
-    {
-      "id": 1003,
-      "status": "pass",
-      "user": "trescube",
-      "type": "dev",
-      "notes": "country-only",
-      "in": {
-        "country": "THA",
-        "sources": "whosonfirst"
-      },
-      "expected": {
-        "properties": [
-          {
-            "layer": "country",
-            "name": "Thailand",
-            "country_a": "THA",
-            "country": "Thailand"
-          }
-        ]
-      }
-    },
-    {
-      "id": 1004,
-      "status": "pass",
-      "user": "trescube",
-      "type": "dev",
-      "notes": "country-only",
-      "in": {
-        "country": "FR"
-      },
-      "expected": {
-        "properties": [
-          {
-            "layer": "country",
-            "name": "France",
-            "country_a": "FRA",
-            "country": "France"
-          }
-        ]
-      }
-    },
-    {
-      "id": 1005,
-      "status": "pass",
-      "user": "trescube",
-      "type": "dev",
-      "notes": "country-only",
-      "in": {
-        "country": "Australia",
-        "sources": "whosonfirst"
-      },
-      "expected": {
-        "properties": [
-          {
-            "layer": "country",
-            "name": "Australia",
-            "country_a": "AUS",
-            "country": "Australia"
-          }
-        ]
-      }
-    },
-
     {
       "id": 1100,
       "status": "pass",
@@ -1128,7 +692,7 @@
           {
             "layer": "address",
             "housenumber": "1090",
-            "street": "N Charlotte St",
+            "street": "N Charlotte Street",
             "locality": "Lancaster",
             "region_a": "PA"
           }
@@ -1175,26 +739,6 @@
             "layer": "locality",
             "locality": "Lancaster",
             "region_a": "PA"
-          }
-        ]
-      }
-    },
-    {
-      "id": 1201,
-      "status": "pass",
-      "user": "julian",
-      "notes": "saint should be handled when not-abbreviated",
-      "issue": "https://github.com/pelias/api/issues/1077",
-      "in": {
-        "locality": "saint-pavace",
-        "country": "France"
-      },
-      "expected": {
-        "properties": [
-          {
-            "layer": "locality",
-            "locality": "Saint-Pavace",
-            "country": "France"
           }
         ]
       }

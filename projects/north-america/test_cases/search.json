@@ -79,7 +79,7 @@
         "text": "new york, new york"
       },
       "expected": {
-        "priorityThresh": 2,
+        "priorityThresh": 3,
         "properties": [
           {
             "gid": "whosonfirst:locality:85977539",
@@ -272,65 +272,6 @@
       }
     },
     {
-      "id": "1425586777012:3",
-      "status": "pass",
-      "user": "feedback-app",
-      "in": {
-        "text": "paris"
-      },
-      "expected": {
-        "properties": [
-          {
-            "name": "Paris",
-            "country": "France"
-          }
-        ]
-      }
-    },
-    {
-      "id": "1425586777012:4",
-      "status": "pass",
-      "notes": [
-        "the quattroshapes data contains entries for 'France' in",
-        "French Guiana (GUF), not sure of the politics behind this"
-      ],
-      "user": "feedback-app",
-      "in": {
-        "text": "france"
-      },
-      "expected": {
-        "properties": [
-          {
-            "name": "France"
-          }
-        ]
-      }
-    },
-    {
-      "id": "1425586777012:6",
-      "status": "fail",
-      "issue": "https://github.com/pelias/pelias/issues/293",
-      "description": "data issue",
-      "user": "feedback-app",
-      "type": "dev",
-      "in": {
-        "text": "london"
-      },
-      "expected": {
-        "properties": [
-          {
-            "label": "London, Greater London, United Kingdom"
-          },
-          {
-            "label": "London, Middlesex, Canada"
-          },
-          {
-            "label": "London, United Kingdom"
-          }
-        ]
-      }
-    },
-    {
       "id": 10,
       "status": "pass",
       "user": "hkrishna",
@@ -367,25 +308,6 @@
             "borough": "Manhattan",
             "region_a": "NY",
             "country_a": "USA"
-          }
-        ]
-      }
-    },
-    {
-      "id": "1426085141587:0",
-      "status": "fail",
-      "issue": "https://github.com/pelias/api/issues/151",
-      "user": "feedback-app",
-      "in": {
-        "text": "perugia airport"
-      },
-      "expected": {
-        "priorityThresh": 10,
-        "properties": [
-          {
-            "name": "Perugia San Francesco d'Assisi – Umbria International Airport",
-            "region": "Perugia",
-            "country_a": "ITA"
           }
         ]
       }
@@ -436,38 +358,6 @@
       }
     },
     {
-      "id": "1427414405152:3",
-      "user": "sevko",
-      "in": {
-        "text": "7 Simon-Dach-Straße"
-      },
-      "expected": {
-        "properties": [
-          {
-            "housenumber": "7",
-            "street": "Simon-Dach-Straße"
-          }
-        ]
-      },
-      "status": "pass"
-    },
-    {
-      "id": "1427414405152:4",
-      "user": "sevko",
-      "in": {
-        "text": "Simon-Dach-Straße 7"
-      },
-      "expected": {
-        "properties": [
-          {
-            "housenumber": "7",
-            "street": "Simon-Dach-Straße"
-          }
-        ]
-      },
-      "status": "pass"
-    },
-    {
       "id": 19,
       "status": "pass",
       "user": "Diana",
@@ -504,26 +394,6 @@
       "user": "orangejulius",
       "in": {
         "text": "statue of liberty",
-        "boundary.country": "USA"
-      },
-      "expected": {
-        "properties": [{
-          "name": "Statue of Liberty",
-          "country_a": "USA",
-          "region": "New York"
-        }]
-      },
-      "unexpected": {
-        "properties": [{
-          "country_a": "FRA"
-        }]
-      }
-    },
-    {
-      "id": 20,
-      "user": "orangejulius",
-      "in": {
-        "text": "statue of liberty",
         "boundary.country": "FRA"
       },
       "expected": {
@@ -543,7 +413,7 @@
       "id": "1426636804303:51",
       "user": "feedback-app",
       "in": {
-        "text": "4th and King"
+        "text": "4th and King san francisco"
       },
       "expected": {
         "properties": [

@@ -85,7 +85,8 @@
       "user": "Harish",
       "type": "dev",
       "in": {
-        "text": "450 37th st, new york, ny 11232"
+        "text": "450 37th st, new york, ny 11232",
+        "size": "1"
       },
       "expected": {
         "properties": [

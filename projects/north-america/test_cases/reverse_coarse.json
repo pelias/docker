@@ -54,55 +54,6 @@
       }
     },
     {
-      "id": 3,
-      "status": "pass",
-      "user": "trescube",
-      "description": "layers=coarse should search all coarse layers (includes dependency)",
-      "type": "dev",
-      "in": {
-        "point.lat": 18.406523,
-        "point.lon": -66.063914,
-        "layers": "coarse"
-      },
-      "expected": {
-        "properties": [
-          {
-            "layer": "locality",
-            "locality": "San Juan",
-            "county": "San Juan",
-            "region": "Puerto Rico",
-            "dependency": "Puerto Rico",
-            "label": "San Juan, Puerto Rico"
-          }
-        ]
-      }
-    },
-    {
-      "id": 4,
-      "status": "pass",
-      "user": "trescube",
-      "description": "layers=coarse should search all coarse layers (includes macrocounty/macroregion)",
-      "type": "dev",
-      "in": {
-        "point.lat": 45.525755,
-        "point.lon": 3.70626,
-        "layers": "coarse"
-      },
-      "expected": {
-        "properties": [
-          {
-            "layer": "localadmin",
-            "localadmin": "Saint-Ferreol-Des-Cotes",
-            "county": "Ambert",
-            "macrocounty": "Ambert",
-            "region": "Puy-de-Dôme",
-            "macroregion": "Auvergne-Rhone-Alpes",
-            "country": "France"
-          }
-        ]
-      }
-    },
-    {
       "id": 5,
       "status": "pass",
       "user": "trescube",
@@ -124,7 +75,6 @@
         ]
       }
     },
-
     {
       "id": 10,
       "status": "pass",
@@ -246,29 +196,6 @@
       }
     },
     {
-      "id": 15,
-      "status": "pass",
-      "user": "trescube",
-      "description": "more granular results should be ignored when layers don't specify them",
-      "type": "dev",
-      "in": {
-        "point.lat": 45.525755,
-        "point.lon": 3.70626,
-        "layers": "macrocounty"
-      },
-      "expected": {
-        "properties": [
-          {
-            "layer": "macrocounty",
-            "macrocounty": "Ambert",
-            "region": "Puy-de-Dôme",
-            "macroregion": "Auvergne-Rhone-Alpes",
-            "country": "France"
-          }
-        ]
-      }
-    },
-    {
       "id": 16,
       "status": "pass",
       "user": "trescube",
@@ -285,47 +212,6 @@
             "layer": "region",
             "region": "New York",
             "country": "United States"
-          }
-        ]
-      }
-    },
-    {
-      "id": 17,
-      "status": "pass",
-      "user": "trescube",
-      "description": "more granular results should be ignored when layers don't specify them",
-      "type": "dev",
-      "in": {
-        "point.lat": 45.525755,
-        "point.lon": 3.70626,
-        "layers": "macroregion"
-      },
-      "expected": {
-        "properties": [
-          {
-            "layer": "macroregion",
-            "macroregion": "Auvergne-Rhone-Alpes",
-            "country": "France"
-          }
-        ]
-      }
-    },
-    {
-      "id": 18,
-      "status": "pass",
-      "user": "trescube",
-      "description": "more granular results should be ignored when layers don't specify them",
-      "type": "dev",
-      "in": {
-        "point.lat": 18.406523,
-        "point.lon": -66.063914,
-        "layers": "dependency"
-      },
-      "expected": {
-        "properties": [
-          {
-            "layer": "dependency",
-            "dependency": "Puerto Rico"
           }
         ]
       }
@@ -370,124 +256,6 @@
       }
     },
     {
-      "id": 21,
-      "status": "pass",
-      "user": "trescube",
-      "description": "address/venue/street not found should fallback to coarse reverse (no layers specified)",
-      "type": "dev",
-      "in": {
-        "point.lat": 57.672717,
-        "point.lon": 36.002802
-      },
-      "expected": {
-        "properties": [
-          {
-            "gid": "whosonfirst:county:1108735021",
-            "name": "Maksatikhinskiy"
-          }
-        ]
-      }
-    },
-    {
-      "id": 22,
-      "status": "pass",
-      "user": "trescube",
-      "description": "https://github.com/pelias/pelias/issues/585, should fallback to coarse",
-      "type": "dev",
-      "in": {
-        "point.lat": 38.260674,
-        "point.lon": -8.5448
-      },
-      "expected": {
-        "properties": [
-          {
-            "gid": "whosonfirst:region:85687359",
-            "name": "Setúbal District"
-          }
-        ]
-      }
-    },
-    {
-      "id": 23,
-      "status": "pass",
-      "user": "trescube",
-      "description": "only look for empires",
-      "type": "dev",
-      "in": {
-        "point.lat": 54.709749,
-        "point.lon": 20.514126,
-        "layers": "empire"
-      },
-      "expected": {
-        "properties": [
-          {
-            "gid": "whosonfirst:empire:874393555",
-            "name": "Russia"
-          }
-        ]
-      }
-    },
-    {
-      "id": 24,
-      "status": "pass",
-      "user": "trescube",
-      "description": "only look for empires",
-      "type": "dev",
-      "in": {
-        "point.lat": 36.129463,
-        "point.lon": -5.3467,
-        "layers": "empire"
-      },
-      "expected": {
-        "properties": [
-          {
-            "gid": "whosonfirst:empire:136253055",
-            "name": "United Kingdom"
-          }
-        ]
-      }
-    },
-    {
-      "id": 25,
-      "status": "pass",
-      "user": "trescube",
-      "description": "only look for continents",
-      "type": "dev",
-      "in": {
-        "point.lat": 12.264674,
-        "point.lon": -3.311809,
-        "layers": "continent"
-      },
-      "expected": {
-        "properties": [
-          {
-            "gid": "whosonfirst:continent:102191573",
-            "name": "Africa"
-          }
-        ]
-      }
-    },
-    {
-      "id": 26,
-      "status": "pass",
-      "user": "trescube",
-      "description": "only look for continents",
-      "type": "dev",
-      "in": {
-        "point.lat": -77.335330,
-        "point.lon": -1.681634,
-        "layers": "continent"
-      },
-      "expected": {
-        "properties": [
-          {
-            "gid": "whosonfirst:continent:102191579",
-            "name": "Antarctica"
-          }
-        ]
-      }
-    },
-    {
       "id": 27,
       "status": "pass",
       "user": "trescube",
@@ -503,66 +271,6 @@
           {
             "gid": "whosonfirst:marinearea:404528937",
             "name": "Chesapeake Bay"
-          }
-        ]
-      }
-    },
-    {
-      "id": 28,
-      "status": "pass",
-      "user": "trescube",
-      "description": "only look for marineareas",
-      "type": "dev",
-      "in": {
-        "point.lat": 73.313889,
-        "point.lon": 158.845395,
-        "layers": "marinearea"
-      },
-      "expected": {
-        "properties": [
-          {
-            "gid": "whosonfirst:marinearea:404528973",
-            "name": "East Siberian Sea"
-          }
-        ]
-      }
-    },
-    {
-      "id": 29,
-      "status": "pass",
-      "user": "trescube",
-      "description": "only look for oceans",
-      "type": "dev",
-      "in": {
-        "point.lat": -23.175327,
-        "point.lon": -20.666009,
-        "layers": "ocean"
-      },
-      "expected": {
-        "properties": [
-          {
-            "gid": "whosonfirst:ocean:404528719",
-            "name": "South Atlantic Ocean"
-          }
-        ]
-      }
-    },
-    {
-      "id": 30,
-      "status": "pass",
-      "user": "trescube",
-      "description": "only look for oceans",
-      "type": "dev",
-      "in": {
-        "point.lat": 2.041589,
-        "point.lon": 87.221323,
-        "layers": "ocean"
-      },
-      "expected": {
-        "properties": [
-          {
-            "gid": "whosonfirst:ocean:404528717",
-            "name": "Indian Ocean"
           }
         ]
       }

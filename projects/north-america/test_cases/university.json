@@ -149,49 +149,6 @@
       }
     },
     {
-      "id": 7,
-      "status": "fail",
-      "user": "Lily",
-      "type": "dev",
-      "description": [
-        "english translation of russian university name",
-        "OSM record is a relation. Returns places in St. Petersburg, FL",
-        "Geonames record exists: http://www.geonames.org/search.html?q=Saint+Petersburg+State+University&country=RU",
-        "test passes if search for name in Russian https://github.com/pelias/api/issues/127"
-      ],
-      "in": {
-        "text": "Saint Petersburg State University"
-      },
-      "expected": {
-        "properties": [
-          {
-            "name": "Saint Petersburg State University",
-            "country": "Russia"
-          }
-        ]
-      }
-    },
-    {
-      "id": 8,
-      "status": "pass",
-      "user": "Lily",
-      "type": "dev",
-      "description": [
-        "Russian university in Russian"
-      ],
-      "in": {
-        "text": "Санкт-Петербургский Государственный Университет"
-      },
-      "expected": {
-        "properties": [
-          {
-            "name": "Санкт-Петербургский Государственный Университет",
-            "country": "Russia"
-          }
-        ]
-      }
-    },
-    {
       "id": 9,
       "status": "pass",
       "user": "Lily",

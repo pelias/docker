@@ -4,60 +4,6 @@
   "endpoint": "search",
   "tests": [
     {
-      "id": 1,
-      "status": "pass",
-      "user": "missinglink",
-      "issue": "https://github.com/pelias/openstreetmap/issues/28",
-      "in": {
-        "sources": "osm",
-        "layers": "street",
-        "text": "rushendon furlong, england"
-      },
-      "expected": {
-        "coordinates": [ -0.636911, 51.83567 ],
-        "properties": [
-          {
-            "country_a": "GBR",
-            "name": "Rushendon Furlong",
-            "street": "Rushendon Furlong",
-            "layer": "street",
-            "source": "openstreetmap"
-          }
-        ]
-      }
-    },{
-      "id": 2,
-      "status": "pass",
-      "user": "missinglink",
-      "description": "road segement divided in the middle by a park",
-      "notes": [
-        "there should be two records, returned as result 1 & 2",
-        "the testing framework doesn't support this type of test"
-      ],
-      "in": {
-        "sources": "osm",
-        "layers": "street",
-        "text": "grolmanstr, berlin"
-      },
-      "expected": {
-        "coordinates": [ 13.324042, 52.503915 ],
-        "properties": [
-          {
-            "country_a": "DEU",
-            "name": "Grolmanstraße",
-            "street": "Grolmanstraße",
-            "layer": "street",
-            "source": "openstreetmap"
-          },{
-            "country_a": "DEU",
-            "name": "Grolmanstraße",
-            "street": "Grolmanstraße",
-            "layer": "street",
-            "source": "openstreetmap"
-          }
-        ]
-      }
-    },{
       "id": 3,
       "status": "pass",
       "user": "missinglink",
@@ -75,69 +21,6 @@
             "country_a": "USA",
             "name": "West 26th Street",
             "street": "West 26th Street",
-            "layer": "street",
-            "source": "openstreetmap"
-          }
-        ]
-      }
-    },{
-      "id": 4,
-      "status": "pass",
-      "user": "missinglink",
-      "in": {
-        "sources": "osm",
-        "layers": "street",
-        "text": "glen rd, kelburn"
-      },
-      "expected": {
-        "coordinates": [ 174.76323, -41.287732 ],
-        "properties": [
-          {
-            "country_a": "NZL",
-            "name": "Glen Road",
-            "street": "Glen Road",
-            "layer": "street",
-            "source": "openstreetmap"
-          }
-        ]
-      }
-    },{
-      "id": 5,
-      "status": "pass",
-      "user": "missinglink",
-      "in": {
-        "sources": "osm",
-        "layers": "street",
-        "text": "dionysiou areopagitou, athens"
-      },
-      "expected": {
-        "coordinates": [ 23.726606, 37.969645 ],
-        "properties": [
-          {
-            "country_a": "GRC",
-            "name": "Dionysiou Areopagitou",
-            "street": "Dionysiou Areopagitou",
-            "layer": "street",
-            "source": "openstreetmap"
-          }
-        ]
-      }
-    },{
-      "id": 6,
-      "status": "pass",
-      "user": "missinglink",
-      "in": {
-        "sources": "osm",
-        "layers": "street",
-        "text": "혜화로, seoul"
-      },
-      "expected": {
-        "coordinates": [ 127.000552, 37.586582 ],
-        "properties": [
-          {
-            "country_a": "KOR",
-            "name": "혜화로",
-            "street": "혜화로",
             "layer": "street",
             "source": "openstreetmap"
           }

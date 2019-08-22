@@ -3,29 +3,6 @@
   "priorityThresh": 2,
   "tests": [
     {
-      "id": 0,
-      "status": "pass",
-      "user": "lily",
-      "description": [
-        "admin area only",
-        "input: Chinese",
-        "lang: korean"
-      ],
-      "in": {
-        "text": "灣仔, 香港",
-        "lang": "ko"
-      },
-      "expected": {
-        "properties": [
-          {
-            "name": "완쯔",
-            "country": "홍콩",
-            "country_a": "HKG"
-          }
-        ]
-      }
-    },
-    {
       "id": 1,
       "status": "pass",
       "user": "lily",
@@ -42,112 +19,6 @@
           {
             "region": "Pensilvania",
             "country": "Estados Unidos"
-          }
-        ]
-      }
-    },
-    {
-      "id": 2,
-      "status": "pass",
-      "user": "lily",
-      "description": [
-        "address in French",
-        "lang: japanese"
-      ],
-      "in": {
-        "text": "37 Rue Des Remparts d’Ainay, Lyon",
-        "lang": "ja"
-      },
-      "expected": {
-        "properties": [
-          {
-            "locality": "リヨン",
-            "country": "フランス"
-          }
-        ]
-      }
-    },
-    {
-      "id": 3,
-      "status": "pass",
-      "user": "lily",
-      "description": [
-        "address in French with admin info in Japanese",
-        "lang: Chinese"
-      ],
-      "in": {
-        "text": "3632 Rue Notre-Dame Ouest モントリオール",
-        "lang": "zh"
-      },
-      "expected": {
-        "properties": [
-          {
-            "locality": "蒙特利尔",
-            "country": "加拿大"
-          }
-        ]
-      }
-    },
-    {
-      "id": 4,
-      "status": "pass",
-      "user": "lily",
-      "description": [
-        "Yasnaya Polyana (venue) in Russian with admin info in English",
-        "lang: bengali"
-      ],
-      "in": {
-        "text": "Я́сная Поля́на, Russia",
-        "lang": "bn"
-      },
-      "expected": {
-        "properties": [
-          {
-            "country": "রাশিয়া"
-          }
-        ]
-      }
-    },
-    {
-      "id": 5,
-      "status": "pass",
-      "user": "lily",
-      "description": [
-        "interpolated address",
-        "lang: italian"
-      ],
-      "in": {
-        "text": "3 forest street, cape town, south africa",
-        "lang": "it"
-      },
-      "expected": {
-        "properties": [
-          {
-            "name": "3 Forest Street",
-            "locality": "Città del Capo",
-            "country": "Sud Africa"
-          }
-        ]
-      }
-    },
-    {
-      "id": 6,
-      "status": "fail",
-      "user": "lily",
-      "endpoint": "autocomplete",
-      "description": [
-        "autocomplete",
-        "input text and lang in German",
-        "autocomplete is not yet capable of _searching_ on non-default names"
-      ],
-      "in": {
-        "text": "Österreic",
-        "lang": "de"
-      },
-      "expected": {
-        "properties": [
-          {
-            "country": "Österreich"
           }
         ]
       }
@@ -195,7 +66,7 @@
       "expected": {
         "properties": [
           {
-            "name": "285 Fulton St",
+            "name": "1 World Trade Center",
             "locality": "Nova Iorque",
             "country": "Estados Unidos"
           }
@@ -247,26 +118,6 @@
           {
             "locality": "Nova Iorque",
             "country": "Estados Unidos"
-          }
-        ]
-      }
-    },
-    {
-      "id": 11,
-      "status": "pass",
-      "user": "lily",
-      "description": [
-        "address in Estonian, locality (Tallinn) in Finnish, region in English"
-      ],
-      "in": {
-        "text": "Akadeemia tee 15b Tallinna, Harjumaa"
-      },
-      "expected": {
-        "properties": [
-          {
-            "region": "Harjumaa",
-            "locality": "Tallinn",
-            "country": "Estonia"
           }
         ]
       }
@@ -345,77 +196,6 @@
       }
     },
     {
-      "id": 15,
-      "status": "pass",
-      "user": "lily",
-      "description": [
-        "search with layers parameter",
-        "search for a town in tennessee",
-        "lang: arabic"
-      ],
-      "in": {
-        "text": "Lebanon",
-        "layers": "locality",
-        "lang": "ar"
-      },
-      "expected": {
-        "properties": [
-          {
-            "name": "لبنان",
-            "region": "تينيسي",
-            "country": "الولايات المتحدة"
-          }
-        ]
-      }
-    },
-    {
-      "id": 16,
-      "status": "pass",
-      "user": "lily",
-      "description": [
-        "search with sources parameter",
-        "Greek input",
-        "St. Petersburg",
-        "returns unrelated results in Greek",
-        "lang: greek"
-      ],
-      "in": {
-        "text": "Αγία Πετρούπολη",
-        "sources": "wof",
-        "lang": "el"
-      },
-      "expected": {
-        "properties": [
-          {
-            "name": "Αγία Πετρούπολη",
-            "gid": "whosonfirst:locality:85931833"
-          }
-        ]
-      }
-    },
-    {
-      "id": 17,
-      "status": "pass",
-      "user": "lily",
-      "endpoint": "place",
-      "description": [
-        "place id search",
-        "lang: hungarian"
-      ],
-      "in": {
-        "ids": "whosonfirst:locality:102031307",
-        "lang": "hu"
-      },
-      "expected": {
-        "properties": [
-          {
-            "name": "Tokió",
-            "country": "Japán"
-          }
-        ]
-      }
-    },
-    {
       "id": 18,
       "status": "pass",
       "user": "lily",
@@ -439,102 +219,6 @@
       }
     },
     {
-      "id": 19,
-      "status": "fail",
-      "user": "lily",
-      "endpoint": "reverse",
-      "description": [
-        "reverse with boundary country",
-        "point is at border of Vatican City and Italy",
-        "lang: swedish"
-      ],
-      "issue": "https://github.com/pelias/pelias/issues/686",
-      "in": {
-        "point.lon": "12.457532",
-        "point.lat": "41.903966",
-        "boundary.country": "VA",
-        "lang": "sv"
-      },
-      "expected": {
-        "properties": [
-          {
-            "locality": "Vatikanstaten",
-            "region": "Vatikanen",
-            "country": "Vatikanstaten"
-          }
-        ]
-      }
-    },
-    {
-      "id": 20,
-      "status": "fail",
-      "user": "lily",
-      "endpoint": "search/structured",
-      "description": [
-        "locality in Estonian and country in Latvian",
-        "city of Valga/Valka is split between Latvia and Estonia"
-      ],
-      "in": {
-        "locality": "Valga",
-        "country": "Igaunija"
-      },
-      "expected": {
-        "properties": [
-          {
-            "name": "Valga",
-            "country": "Estonia"
-          }
-        ]
-      }
-    },
-
-    {
-      "id": 21,
-      "status": "pass",
-      "user": "lily",
-      "endpoint": "autocomplete",
-      "description": [
-        "lang: russian"
-      ],
-      "in": {
-        "text": "Mooselookmegu",
-        "lang": "ru"
-      },
-      "expected": {
-        "properties": [
-          {
-            "name": "Mooselookmeguntic",
-            "region": "Мэн",
-            "country": "Соединённые Штаты Америки"
-          }
-        ]
-      }
-    },
-
-    {
-      "id": 22,
-      "status": "pass",
-      "user": "lily",
-      "endpoint": "autocomplete",
-      "description": [
-        "autocomplete with only admin info that has translation",
-        "lang: russian"
-      ],
-      "in": {
-        "text": "Germa",
-        "lang": "ru"
-      },
-      "expected": {
-        "properties": [
-          {
-            "name": "Германия",
-            "country_a": "DEU"
-          }
-        ]
-      }
-    },
-
-    {
       "id": 23,
       "status": "pass",
       "user": "stephen",
@@ -548,7 +232,7 @@
           {
             "layer": "address",
             "housenumber": "30",
-            "street": "W 26 St",
+            "street": "West 26th Street",
             "postalcode": "10010"
           }
         ]
@@ -594,25 +278,6 @@
             "locality": "Toronto",
             "region_a": "ON",
             "country_a": "CAN"
-          }
-        ]
-      }
-    },
-    {
-      "id": 26,
-      "status": "pass",
-      "user": "julian",
-      "description": "from mapillary home page",
-      "in": {
-        "text": "malmo",
-        "lang": "sv"
-      },
-      "expected": {
-        "priorityThresh": 1,
-        "properties": [
-          {
-            "name": "Malmö",
-            "country": "Sverige"
           }
         ]
       }

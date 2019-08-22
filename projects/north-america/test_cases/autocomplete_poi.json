@@ -112,24 +112,6 @@
           }
         ]
       }
-    },
-    {
-      "id": "3",
-      "status": "pass",
-      "user": "feedback-app",
-      "note": "migrated this test from /search to /autocomplete",
-      "in": {
-        "text": "perugia air"
-      },
-      "expected": {
-        "properties": [
-          {
-            "name": "Perugia San Francesco d'Assisi – Umbria International Airport",
-            "region": "Perugia",
-            "country_a": "ITA"
-          }
-        ]
-      }
     }
   ]
 }

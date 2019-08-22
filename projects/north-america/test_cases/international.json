@@ -8,118 +8,6 @@
   },
   "tests": [
     {
-      "id": 0,
-      "status": "pass",
-      "user": "lily",
-      "in": {
-        "text": "553 St. Kilda Road Melbourne 3004",
-        "boundary.country": "AUS"
-      },
-      "expected": {
-        "properties": [
-          {
-            "name": "553 St Kilda Road",
-            "locality": "Melbourne",
-            "country_a": "AUS"
-          }
-        ]
-      }
-    },
-    {
-      "id": 1,
-      "status": "pass",
-      "user": "lily",
-      "issue": "https://github.com/pelias/pelias/issues/603",
-      "description": [
-        "match is found by removing neighborhood (WOF locality) Chácara Santo Antônio and "
-      ],
-      "in": {
-        "text": "Rua Henri Dunant 500 04709-110 São Paulo",
-        "boundary.country": "BRA"
-      },
-      "expected": {
-        "properties": [
-          {
-            "name": "500 Rua Henri Dunant",
-            "locality": "São Paulo",
-            "country_a": "BRA"
-          }
-        ]
-      }
-    },
-    {
-      "id": 2,
-      "status": "pass",
-      "user": "lily",
-      "in": {
-        "text": "Clayallee 170 14191 Berlin",
-        "boundary.country": "DEU"
-      },
-      "expected": {
-        "properties": [
-          {
-            "name": "Clayallee 170",
-            "locality": "Berlin",
-            "country_a": "DEU"
-          }
-        ]
-      }
-    },
-    {
-      "id": 3,
-      "status": "pass",
-      "user": "lily",
-      "in": {
-        "text": "Calle de Serrano 75 28006 Madrid",
-        "boundary.country": "ESP"
-      },
-      "expected": {
-        "properties": [
-          {
-            "name": "75 Calle de Serrano",
-            "locality": "Madrid",
-            "country_a": "ESP"
-          }
-        ]
-      }
-    },
-    {
-      "id": 4,
-      "status": "pass",
-      "user": "lily",
-      "in": {
-        "text": "2 avenue Gabriel 75008 Paris",
-        "boundary.country": "FRA"
-      },
-      "expected": {
-        "properties": [
-          {
-            "name": "2 avenue Gabriel",
-            "locality": "Paris",
-            "country_a": "FRA"
-          }
-        ]
-      }
-    },
-    {
-      "id": 5,
-      "status": "pass",
-      "user": "lily",
-      "in": {
-        "text": "via Vittorio Veneto 121 00187 Roma",
-        "boundary.country": "ITA"
-      },
-      "expected": {
-        "properties": [
-          {
-            "name": "121 via Vittorio Veneto",
-            "locality": "Rome",
-            "country_a": "ITA"
-          }
-        ]
-      }
-    },
-    {
       "id": 6,
       "status": "pass",
       "user": "lily",
@@ -138,24 +26,6 @@
       }
     },
     {
-      "id": 7,
-      "status": "pass",
-      "user": "lily",
-      "in": {
-        "text": "24 Grosvenor Square London W1K 6AH",
-        "boundary.country": "GBR"
-      },
-      "expected": {
-        "properties": [
-          {
-            "name": "24 Grosvenor Square",
-            "locality": "London",
-            "country_a": "GBR"
-          }
-        ]
-      }
-    },
-    {
       "id": 8,
       "status": "pass",
       "user": "lily",
@@ -169,28 +39,6 @@
             "name": "150 Prolongacion Avenida Alfonso Reyes",
             "locality": "Ciudad Santa Catarina",
             "country_a": "MEX"
-          }
-        ]
-      }
-    },
-    {
-      "id": 9,
-      "status": "fail",
-      "user": "lily",
-      "description": [
-        "Russian street name in native langauge passes"
-      ],
-      "issue": "https://github.com/pelias/pelias/issues/685",
-      "in": {
-        "text": "15 Фурштатская улица Saint Petersburg 191028",
-        "boundary.country": "RUS"
-      },
-      "expected": {
-        "properties": [
-          {
-            "name": "15 Фурштатская улица",
-            "locality": "Saint Petersburg",
-            "country_a": "RUS"
           }
         ]
       }
@@ -218,28 +66,6 @@
       }
     },
     {
-      "id": 11,
-      "status": "fail",
-      "user": "lily",
-      "description": [
-        "fallsback to street centroid",
-        "Brazilian addresses generally fail because they are composed of street intersections"
-      ],
-      "in": {
-        "text": "Rua Gonçalves Maia 163 – Boa Vista 50070-060 Recife",
-        "boundary.country": "BRA"
-      },
-      "expected": {
-        "properties": [
-          {
-            "name": "Rua Gonçalves Maia 163",
-            "locality": "Recife",
-            "country_a": "BRA"
-          }
-        ]
-      }
-    },
-    {
       "id": 12,
       "status": "pass",
       "user": "lily",
@@ -256,27 +82,6 @@
             "name": "615 MacLeod Tr SE",
             "locality": "Calgary",
             "country_a": "CAN"
-          }
-        ]
-      }
-    },
-    {
-      "id": 13,
-      "status": "fail",
-      "user": "lily",
-      "description": [
-        "Eliminate abbreviation in parens. Gets neighborhood, Kurla East, instead of a venue"
-      ],
-      "in": {
-        "text": "Bandra Kurla Complex Mumbai 400051",
-        "boundary.country": "IND"
-      },
-      "expected": {
-        "properties": [
-          {
-            "name": "Bandra Kurla Complex (BKC)",
-            "locality": "Mumbai",
-            "country_a": "IND"
           }
         ]
       }
@@ -321,49 +126,6 @@
             "name": "Progreso 175",
             "locality": "Guadalajara",
             "country_a": "MEX"
-          }
-        ]
-      }
-    },
-    {
-      "id": 16,
-      "status": "fail",
-      "user": "lily",
-      "issue": "https://github.com/pelias/api/issues/127",
-      "description": [
-        "Russian street name does not exist in English"
-      ],
-      "in": {
-        "text": "32 Pushkinskaya St. Vladivostok 690001",
-        "boundary.country": "RUS"
-      },
-      "expected": {
-        "properties": [
-          {
-            "name": "32 Pushkinskaya St.",
-            "locality": "Vladivostok",
-            "country_a": "RUS"
-          }
-        ]
-      }
-    },
-    {
-      "id": 17,
-      "status": "fail",
-      "user": "lily",
-      "description": [
-        "housenumber has a slash. Falls back to street centroid. The building next to it has housenumber 2"
-      ],
-      "in": {
-        "text": "via Principe Amedeo 2/10 20121 MILANO",
-        "boundary.country": "ITA"
-      },
-      "expected": {
-        "properties": [
-          {
-            "name": "via Principe Amedeo 2/10",
-            "locality": "Milano",
-            "country_a": "ITA"
           }
         ]
       }
