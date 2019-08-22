@@ -25,12 +25,6 @@
             "locality": "New York",
             "region_a": "NY",
             "country_a": "USA"
-          },
-          {
-            "name": "Chelsea",
-            "layer": "neighbourhood",
-            "locality": "London",
-            "country_a": "GBR"
           }
         ]
       }

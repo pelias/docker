@@ -17,7 +17,7 @@
         "priorityThresh": 2,
         "properties": [
           {
-            "layer": "localadmin",
+            "layer": "locality",
             "name": "Aliquippa",
             "region": "Pennsylvania",
             "region_a": "PA",

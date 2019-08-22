@@ -183,42 +183,6 @@
       }
     },
     {
-      "id": 11,
-      "status": "pass",
-      "endpoint": "search",
-      "description": "GB counties with 'County' prefixed should be found",
-      "in": {
-        "text": "County Durham, GB"
-      },
-      "expected": {
-        "properties": [
-          {
-            "gid": "whosonfirst:region:85684523",
-            "confidence": 0.3,
-            "name": "County Durham"
-          }
-        ]
-      }
-    },
-    {
-      "id": 12,
-      "status": "pass",
-      "endpoint": "search",
-      "description": "GB counties without 'County' prefixed should be found",
-      "in": {
-        "text": "Durham, GB"
-      },
-      "expected": {
-        "properties": [
-          {
-            "gid": "whosonfirst:region:85684523",
-            "confidence": 0.3,
-            "name": "County Durham"
-          }
-        ]
-      }
-    },
-    {
       "id": 13,
       "status": "pass",
       "endpoint": "search",

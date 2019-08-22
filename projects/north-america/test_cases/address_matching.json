@@ -23,23 +23,6 @@
       }
     },
     {
-      "id": 2,
-      "status": "pass",
-      "user": "dianashk",
-      "type": "dev",
-      "in": {
-        "text": "507 hackney rd"
-      },
-      "expected": {
-        "properties": [
-          {
-            "housenumber": "507",
-            "street": "Hackney Road"
-          }
-        ]
-      }
-    },
-    {
       "id": 3,
       "status": "pass",
       "issue": "https://github.com/pelias/pelias/issues/296",
@@ -47,7 +30,8 @@
       "user": "dianashk",
       "type": "dev",
       "in": {
-        "text": "49 Kay Street"
+        "text": "49 Kay Street",
+        "size": "1"
       },
       "expected": {
         "properties": [

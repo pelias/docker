@@ -142,10 +142,7 @@
       "expected": {
         "properties": [
           {
-            "label": "London, Greater London, United Kingdom"
-          },
-          {
-            "label": "London, Middlesex, Canada"
+            "label": "London, ON, Canada"
           }
         ]
       }
@@ -179,11 +176,6 @@
       },
       "expected": {
         "properties": [
-          {
-            "region": "Victoria",
-            "country": "Australia",
-            "layer": "region"
-          },
           {
             "locality": "Victoria",
             "region": "British Columbia",

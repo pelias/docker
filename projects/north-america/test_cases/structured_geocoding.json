@@ -18,7 +18,7 @@
         "properties": [
           {
             "layer": "address",
-            "name": "1090 N Charlotte St",
+            "name": "1090 N Charlotte Street",
             "country_a": "USA",
             "country": "United States",
             "region": "Pennsylvania",
@@ -26,7 +26,7 @@
             "county": "Lancaster County",
             "locality": "Lancaster",
             "housenumber": "1090",
-            "street": "N Charlotte St"
+            "street": "N Charlotte Street"
           }
         ]
       }
@@ -389,10 +389,10 @@
         "properties": [
           {
             "layer": "localadmin",
-            "name": "Zumbehl",
+            "name": "Zumbehl Township",
             "country_a": "USA",
             "country": "United States",
-            "localadmin": "Zumbehl"
+            "localadmin": "Zumbehl Township"
           }
         ]
       }
@@ -412,12 +412,12 @@
         "properties": [
           {
             "layer": "localadmin",
-            "name": "Aastad",
+            "name": "Aastad Township",
             "country_a": "USA",
             "country": "United States",
             "region_a": "MN",
             "region": "Minnesota",
-            "localadmin": "Aastad"
+            "localadmin": "Aastad Township"
           }
         ]
       }
@@ -437,12 +437,12 @@
         "properties": [
           {
             "layer": "localadmin",
-            "name": "Bloominggrove",
+            "name": "Bloominggrove Township",
             "country_a": "USA",
             "country": "United States",
             "region_a": "OH",
             "region": "Ohio",
-            "localadmin": "Bloominggrove"
+            "localadmin": "Bloominggrove Township"
           }
         ]
       }
@@ -692,7 +692,7 @@
           {
             "layer": "address",
             "housenumber": "1090",
-            "street": "N Charlotte St",
+            "street": "N Charlotte Street",
             "locality": "Lancaster",
             "region_a": "PA"
           }

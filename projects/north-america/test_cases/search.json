@@ -79,7 +79,7 @@
         "text": "new york, new york"
       },
       "expected": {
-        "priorityThresh": 2,
+        "priorityThresh": 3,
         "properties": [
           {
             "gid": "whosonfirst:locality:85977539",
@@ -394,26 +394,6 @@
       "user": "orangejulius",
       "in": {
         "text": "statue of liberty",
-        "boundary.country": "USA"
-      },
-      "expected": {
-        "properties": [{
-          "name": "Statue of Liberty",
-          "country_a": "USA",
-          "region": "New York"
-        }]
-      },
-      "unexpected": {
-        "properties": [{
-          "country_a": "FRA"
-        }]
-      }
-    },
-    {
-      "id": 20,
-      "user": "orangejulius",
-      "in": {
-        "text": "statue of liberty",
         "boundary.country": "FRA"
       },
       "expected": {
@@ -433,7 +413,7 @@
       "id": "1426636804303:51",
       "user": "feedback-app",
       "in": {
-        "text": "4th and King"
+        "text": "4th and King san francisco"
       },
       "expected": {
         "properties": [

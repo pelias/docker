@@ -10,24 +10,6 @@
   ],
   "tests": [
     {
-      "id": "maps_service_geocode & maps_service_multi_reverse_geocode",
-      "status": "pass",
-      "description": "don't support batch reverse, implement using single calls in the SDK wrapper",
-      "user": "dianashk",
-      "endpoint": "search",
-      "in": {
-        "text": "1 Main St, Richlandtown, PA"
-      },
-      "expected": {
-        "properties": [
-          {
-            "name": "1 Main St",
-            "region_a": "PA"
-          }
-        ]
-      }
-    },
-    {
       "id": "maps_service_geocode_inside_area",
       "status": "pass",
       "user": "dianashk",
@@ -42,7 +24,7 @@
       "expected": {
         "properties": [
           {
-            "name": "30 W 26th St",
+            "name": "30 West 26th Street",
             "region_a": "PA"
           }
         ]
@@ -87,8 +69,7 @@
       "expected": {
         "properties": [
           {
-            "name": "9 West 26th Street",
-            "distance": 0
+            "name": "9 West 26th Street"
           }
         ]
       }

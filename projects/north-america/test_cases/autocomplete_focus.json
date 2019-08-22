@@ -62,26 +62,6 @@
       }
     },
     {
-      "id": 4,
-      "status": "pass",
-      "user": "missinglink",
-      "notes": [ "Berlin hard rock cafe more important when focussed on Berlin" ],
-      "type": "dev",
-      "in": {
-        "focus.point.lat": 52.5070540,
-        "focus.point.lon": 13.3217140,
-        "text": "hard rock cafe"
-      },
-      "expected": {
-        "priorityThresh": 1,
-        "properties": [
-          {
-            "label": "Hard Rock Cafe Berlin, Berlin, Germany"
-          }
-        ]
-      }
-    },
-    {
       "id": 5,
       "status": "pass",
       "user": "missinglink",
@@ -139,14 +119,6 @@
             "layer": "address",
             "housenumber": "1",
             "street": "Madison Avenue",
-            "region": "New York",
-            "borough": "Manhattan",
-            "locality": "New York"
-          },
-          {
-            "layer": "address",
-            "housenumber": "1",
-            "street": "Madison Ave",
             "region": "New York",
             "borough": "Manhattan",
             "locality": "New York"

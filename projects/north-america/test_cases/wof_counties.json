@@ -19,8 +19,8 @@
         "properties": [
           {
             "layer": "county",
-            "name": "Potter",
-            "county": "Potter",
+            "name": "Potter County",
+            "county": "Potter County",
             "region": "Pennsylvania",
             "region_a": "PA",
             "country": "United States",

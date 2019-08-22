@@ -21,22 +21,6 @@
       }
     },
     {
-      "id": "2",
-      "status": "pass",
-      "user": "missinglink",
-      "priorityThresh": 5,
-      "in": {
-        "text": "242 hackney road"
-      },
-      "expected": {
-        "properties": [
-          {
-            "name": "242 Hackney Road"
-          }
-        ]
-      }
-    },
-    {
       "id": "3",
       "status": "pass",
       "user": "missinglink",

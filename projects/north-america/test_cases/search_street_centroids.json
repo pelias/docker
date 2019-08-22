@@ -26,28 +26,6 @@
           }
         ]
       }
-    },
-    {
-      "id": 4,
-      "status": "pass",
-      "user": "missinglink",
-      "in": {
-        "sources": "osm",
-        "layers": "street",
-        "text": "glen rd, kelburn"
-      },
-      "expected": {
-        "coordinates": [ 174.76323, -41.287732 ],
-        "properties": [
-          {
-            "country_a": "NZL",
-            "name": "Glen Road",
-            "street": "Glen Road",
-            "layer": "street",
-            "source": "openstreetmap"
-          }
-        ]
-      }
     }
   ]
 }

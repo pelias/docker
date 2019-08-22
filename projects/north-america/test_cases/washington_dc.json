@@ -17,13 +17,6 @@
           {
             "layer": "address",
             "housenumber": "1705",
-            "street": "P Street NW",
-            "locality": "Washington",
-            "region": "District of Columbia"
-          },
-          {
-            "layer": "address",
-            "housenumber": "1705",
             "street": "P Street Northwest",
             "locality": "Washington",
             "region": "District of Columbia"
@@ -43,13 +36,6 @@
       "expected": {
         "priorityThresh": 2,
         "properties": [
-          {
-            "layer": "address",
-            "housenumber": "1705",
-            "street": "P Street NW",
-            "locality": "Washington",
-            "region": "District of Columbia"
-          },
           {
             "layer": "address",
             "housenumber": "1705",
@@ -94,7 +80,7 @@
           {
             "layer": "address",
             "housenumber": "641",
-            "street": "S Street NW",
+            "street": "S Street Northwest",
             "locality": "Washington",
             "region": "District of Columbia"
           }
