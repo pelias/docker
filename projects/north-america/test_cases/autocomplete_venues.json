@@ -18,68 +18,6 @@
           }
         ]
       }
-    },
-    {
-      "id": 2,
-      "status": "pass",
-      "user": "missinglink",
-      "in": {
-        "text": "hackney city farm"
-      },
-      "expected": {
-        "properties": [
-          {
-            "label": "Hackney City Farm, London, England, United Kingdom"
-          }
-        ]
-      }
-    },
-    {
-      "id": 3,
-      "status": "pass",
-      "user": "missinglink",
-      "in": {
-        "text": "1 Grolmanstrasse"
-      },
-      "expected": {
-        "properties": [
-          {
-            "housenumber": "1",
-            "street": "Grolmanstraße",
-            "country": "Germany"
-          }
-        ]
-      }
-    },
-    {
-      "id": 4,
-      "status": "pass",
-      "user": "missinglink",
-      "in": {
-        "text": "Beach Bablyon"
-      },
-      "expected": {
-        "properties": [
-          {
-            "label": "Beach Bablyon, Wellington, New Zealand"
-          }
-        ]
-      }
-    },
-    {
-      "id": 5,
-      "status": "pass",
-      "user": "missinglink",
-      "in": {
-        "text": "Waiotapu"
-      },
-      "expected": {
-        "properties": [
-          {
-            "label": "Waiotapu, New Zealand"
-          }
-        ]
-      }
     }
   ]
 }

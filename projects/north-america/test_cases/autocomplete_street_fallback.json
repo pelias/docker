@@ -8,28 +8,6 @@
   ],
   "tests": [
     {
-      "id": 1,
-      "status": "pass",
-      "user": "missinglink",
-      "issue": "https://github.com/pelias/openstreetmap/issues/28",
-      "in": {
-        "text": "grolmanstr, berlin"
-      },
-      "expected": {
-        "coordinates": [ 13.324042, 52.503915 ],
-        "properties": [
-          {
-            "country_a": "DEU",
-            "street": "Grolmanstraße",
-            "layer": "street"
-          },{
-            "country_a": "DEU",
-            "street": "Grolmanstraße",
-            "layer": "address"
-          }
-        ]
-      }
-    },{
       "id": 2,
       "status": "pass",
       "user": "missinglink",

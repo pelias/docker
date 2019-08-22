@@ -51,54 +51,6 @@
           }
         ]
       }
-    },
-    {
-      "id": 4,
-      "status": "pass",
-      "user": "Stephen",
-      "description": "chosen because France and complicated hierarchy",
-      "in": {
-        "text": "Arzacq-Arraziguet",
-        "sources": "wof"
-      },
-      "expected": {
-        "priorityThresh": 2,
-        "properties": [
-          {
-            "layer": "county",
-            "name": "Arzacq-Arraziguet",
-            "county": "Arzacq-Arraziguet",
-            "macrocounty": "Pau",
-            "region": "Pyrénées-Atlantiques",
-            "macroregion": "New Aquitaine",
-            "country": "France",
-            "country_a": "FRA"
-          }
-        ]
-      }
-    },
-    {
-      "id": 5,
-      "status": "pass",
-      "issue": "https://github.com/pelias/pelias/issues/548",
-      "user": "Stephen",
-      "description": "works with switch to placeholder",
-      "in": {
-        "text": "KoÅobrzeski, Poland",
-        "sources": "wof"
-      },
-      "expected": {
-        "properties": [
-          {
-            "layer": "county",
-            "name": "KoÅobrzeski",
-            "county": "KoÅobrzeski",
-            "region": "Zachodniopomorskie",
-            "country": "Poland",
-            "country_a": "POL"
-          }
-        ]
-      }
     }
   ]
 }

@@ -3,30 +3,6 @@
   "priorityThresh": 5,
   "tests": [
     {
-      "id": "1",
-      "status": "pass",
-      "user": "sevko",
-      "endpoint": "reverse",
-      "in": {
-        "point.lat": 46.65132155014943,
-        "point.lon": 14.61353302001953
-      },
-      "expected": {
-        "properties": [
-          {
-            "county": "Völkermarkt"
-          }
-        ]
-      },
-      "unexpected": {
-        "properties": [
-          {
-            "county": "Vã¶lkermarkt"
-          }
-        ]
-      }
-    },
-    {
       "id": "2",
       "status": "pass",
       "issue": "https://github.com/pelias/api/issues/150",
@@ -84,54 +60,6 @@
         "properties": [
           {
             "county": "Circular Head (m)"
-          }
-        ]
-      }
-    },
-    {
-      "id": "5",
-      "status": "fail",
-      "issue": "https://github.com/pelias/pelias/issues/297",
-      "description": "not sure it's an actual failure. needs discussion",
-      "endpoint": "reverse",
-      "type": "dev",
-      "in": {
-        "point.lat": 51.515049,
-        "point.lon": -0.093229
-      },
-      "expected": {
-        "properties": [
-          {
-            "region": "London"
-          }
-        ]
-      },
-      "unexpected": {
-        "properties": [
-          {
-            "region": "City and County of the City of London"
-          }
-        ]
-      }
-    },
-    {
-      "id": "6",
-      "status": "pass",
-      "type": "dev",
-      "in": {
-        "layers": "neighbourhood",
-        "text": "hoboken"
-      },
-      "expected": {
-        "priorityThresh": 2,
-        "properties": [
-          {
-            "gid": "whosonfirst:neighbourhood:85801273",
-            "name": "Hoboken"
-          },
-          {
-            "gid": "whosonfirst:neighbourhood:420509993",
-            "name": "Hoboken"
           }
         ]
       }
@@ -210,97 +138,6 @@
         "properties": [
           {
             "label": "Palo Alto, CA, USA"
-          }
-        ]
-      }
-    },
-    {
-      "id": "10",
-      "status": "pass",
-      "endpoint": "reverse",
-      "in": {
-        "point.lat": 51.47945855891035,
-        "point.lon": -3.2018280029296875
-      },
-      "expected": {
-        "properties": [
-          {
-            "region": "Cardiff"
-          }
-        ]
-      },
-      "unexpected": {
-        "properties": [
-          {
-            "region": "Caerdydd#Cardiff"
-          }
-        ]
-      }
-    },
-    {
-      "id": "15",
-      "status": "pass",
-      "in": {
-        "text": "cardiff, gbr",
-        "layers": "coarse"
-      },
-      "expected": {
-        "properties": [
-          {
-            "region": "Cardiff"
-          }
-        ]
-      },
-      "unexpected": {
-        "properties": [
-          {
-            "region": "Caerdydd#Cardiff"
-          }
-        ]
-      }
-    },
-    {
-      "id": "11",
-      "status": "pass",
-      "endpoint": "reverse",
-      "in": {
-        "point.lat": 51.52754263322114,
-        "point.lon": -3.115997314453125
-      },
-      "expected": {
-        "properties": [
-          {
-            "region": "Cardiff"
-          }
-        ]
-      },
-      "unexpected": {
-        "properties": [
-          {
-            "region": "Caerdydd#Cardiff"
-          }
-        ]
-      }
-    },
-    {
-      "id": "12",
-      "status": "pass",
-      "endpoint": "reverse",
-      "in": {
-        "point.lat": 53.08654986822245,
-        "point.lon": -3.393487930297851
-      },
-      "expected": {
-        "properties": [
-          {
-            "region": "Denbighshire"
-          }
-        ]
-      },
-      "unexpected": {
-        "properties": [
-          {
-            "county": "Sir Ddinbych#Denbighshire"
           }
         ]
       }
@@ -394,57 +231,6 @@
       }
     },
     {
-      "id": "16",
-      "status": "pass",
-      "type": "dev",
-      "in": {
-        "text": "Cardiff, GBR",
-        "layers": "coarse"
-      },
-      "expected": {
-        "properties": [
-          {
-            "country_a": "GBR",
-            "country": "United Kingdom",
-            "region": "Cardiff"
-          }
-        ]
-      },
-      "unexpected": {
-        "properties": [
-          {
-            "region": "Caerdydd#cardiff"
-          }
-        ]
-      }
-    },
-    {
-      "id": "17",
-      "status": "pass",
-      "type": "dev",
-      "in": {
-        "text": "ringland",
-        "layers": "neighbourhood"
-      },
-      "expected": {
-        "properties": [
-          {
-            "country_a": "GBR",
-            "country": "United Kingdom",
-            "region": "Newport"
-          }
-        ]
-      },
-      "unexpected": {
-        "properties": [
-          {
-            "region": "Casnewydd#Newport",
-            "county": "Newport"
-          }
-        ]
-      }
-    },
-    {
       "id": "18",
       "status": "pass",
       "type": "dev",
@@ -485,31 +271,6 @@
             "country_a": "CAN",
             "country": "Canada",
             "locality": "Vancouver"
-          }
-        ]
-      }
-    },
-    {
-      "id": "20",
-      "status": "pass",
-      "in": {
-        "text": "1 Hämeenkatu, Tampere, Finland"
-      },
-      "description": [
-        "waiting on libpostal to fix diacritical issues"
-      ],
-      "issue": "https://github.com/pelias/pelias/issues/425",
-      "expected": {
-        "properties": [
-          {
-            "housenumber": "1",
-            "street": "Hämeenkatu",
-            "name": "Hämeenkatu 1",
-            "locality": "Tampere",
-            "region": "Pirkanmaa",
-            "macroregion": "West Finland",
-            "country": "Finland",
-            "country_a": "FIN"
           }
         ]
       }

@@ -20,54 +20,6 @@
           }
         ]
       }
-    },
-    {
-      "id": 2,
-      "status": "pass",
-      "endpoint": "search",
-      "description": "make sure that results return the appropriate accents on results",
-      "notes": "https://github.com/pelias/api/issues/731",
-      "in": {
-        "lang": "et",
-        "text": "pärnu, estonia"
-      },
-      "expected": {
-        "priorityThresh": 2,
-        "properties": [
-          {
-            "name": "Pärnu maakond",
-            "region": "Pärnu maakond",
-            "country": "Eesti"
-          }
-        ]
-      }
-    },
-    {
-      "id": 3,
-      "status": "pass",
-      "endpoint": "search",
-      "issue": [
-        "https://github.com/pelias/api/issues/600",
-        "https://github.com/pelias/pelias/issues/426"
-      ],
-      "description": [
-        "the Chambéry accent issue, with the accented e represented as 1 character",
-        "waiting for libpostal to address diacriticals"
-      ],
-      "in":{
-        "text": "Chambéry"
-      },
-      "expected": {
-        "properties": [
-          {
-            "name": "Chambéry",
-            "macroregion": "Auvergne-Rhone-Alpes",
-            "locality": "Chambéry",
-            "label": "Chambéry, France",
-            "country": "France"
-          }
-        ]
-      }
     }
   ]
 }

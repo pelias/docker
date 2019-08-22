@@ -72,27 +72,6 @@
       }
     },
     {
-      "id": 4,
-      "status": "pass",
-      "user": "Stephen",
-      "in": {
-        "text": "Shanghai, China",
-        "sources": "wof"
-      },
-      "expected": {
-        "properties": [
-          {
-            "layer": "locality",
-            "name": "Shanghai",
-            "locality": "Shanghai",
-            "region": "Shanghai",
-            "country": "China",
-            "country_a": "CHN"
-          }
-        ]
-      }
-    },
-    {
       "id": 5,
       "status": "pass",
       "user": "Stephen",
@@ -131,90 +110,6 @@
             "locality": "Springfield",
             "country": "United States",
             "country_a": "USA"
-          }
-        ]
-      }
-    },
-    {
-      "id": 7,
-      "status": "pass",
-      "user": "Stephen",
-      "in": {
-        "text": "Città del Vaticano, Vatican",
-        "sources": "wof"
-      },
-      "expected": {
-        "properties": [
-          {
-            "layer": "locality",
-            "name": "Vatican City",
-            "locality": "Vatican City",
-            "region": "Vatican",
-            "country": "Vatican City",
-            "country_a": "VAT"
-          }
-        ]
-      }
-    },
-    {
-      "id": 8,
-      "status": "fail",
-      "issue": "https://github.com/pelias/acceptance-tests/issues/213",
-      "description": "returns the right result second, cause unknown",
-      "user": "Stephen",
-      "in": {
-        "text": "San Jaun, Puerto Rico",
-        "sources": "wof"
-      },
-      "expected": {
-        "properties": [
-          {
-            "locality": "San Juan",
-            "region": "Puerto Rico",
-            "region_a": "PRI",
-            "country": "United States",
-            "country_a": "USA",
-            "name": "San Juan"
-          }
-        ]
-      }
-    },
-    {
-      "id": 9,
-      "status": "pass",
-      "user": "Stephen",
-      "in": {
-        "text": "London, England",
-        "sources": "wof"
-      },
-      "expected": {
-        "properties": [
-          {
-            "macroregion": "England",
-            "name": "London",
-            "country": "United Kingdom",
-            "country_a": "GBR"
-          }
-        ]
-      }
-    },
-    {
-      "id": 10,
-      "status": "pass",
-      "user": "Stephen",
-      "description": "chosen for diacriticals + Münster Rebellion... YOLO!",
-      "in": {
-        "text": "Münster, DE",
-        "sources": "wof"
-      },
-      "expected": {
-        "properties": [
-          {
-            "layer": "locality",
-            "name": "Münster",
-            "region": "Nordrhein-Westfalen",
-            "country": "Germany",
-            "country_a": "DEU"
           }
         ]
       }
