@@ -1,4 +1,4 @@
-# Belgium area
+# Netherlands area
 
 This project is configured to download/prepare/build a complete Pelias installation for the Netherlands.
 
@@ -30,3 +30,4 @@ pelias compose up
 You can now make queries against your new Pelias build:
 
 <http://localhost:4000/v1/search?text=Amsterdam>
+§
