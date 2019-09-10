@@ -30,4 +30,3 @@ pelias compose up
 You can now make queries against your new Pelias build:
 
 <http://localhost:4000/v1/search?text=Amsterdam>
-§
