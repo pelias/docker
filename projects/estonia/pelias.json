@@ -29,6 +29,15 @@
     "defaultParameters": {
       "focus.point.lat": 58.671392,
       "focus.point.lon": 25.54665
+    },
+    "customBoosts": {
+      "layer": {
+        "venue": 5,
+        "street": 3
+      },
+      "source": {
+        "gtfsestonia": 2
+      }
     }
   },
   "imports": {
