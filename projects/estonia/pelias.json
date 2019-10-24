@@ -33,10 +33,10 @@
     "customBoosts": {
       "layer": {
         "venue": 5,
-        "street": 3
+        "street": 2
       },
       "source": {
-        "gtfsestonia": 2,
+        "gtfsestonia": 3,
         "openstreetmap": 0
       }
     }
