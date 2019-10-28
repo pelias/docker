@@ -24,7 +24,6 @@
     }
   },
   "api": {
-    "textAnalyzer": "libpostal",
     "services": {
       "pip": { "url": "http://pip:4200" },
       "libpostal": { "url": "http://libpostal:4400" },
@@ -63,7 +62,7 @@
 		"us/ca/city_of_cupertino.csv",
 		"us/ca/city_of_mountain_view.csv",
 		"us/ca/city_of_palo_alto.csv",
-		"us/ca/city_of_sunnyvale.csv"		
+		"us/ca/city_of_sunnyvale.csv"
       ]
     },
     "polyline": {
@@ -96,7 +95,7 @@
           "agencyId": "VTA",
           "agencyName": "VTA",
           "layerName": "Stop"
-        } 
+        }
        ]
       },
     "interpolation": {
