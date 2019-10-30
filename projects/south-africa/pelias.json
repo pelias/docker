@@ -24,7 +24,6 @@
     }
   },
   "api": {
-    "textAnalyzer": "libpostal",
     "services": {
       "pip": { "url": "http://pip:4200" },
       "libpostal": { "url": "http://libpostal:4400" },
