@@ -37,6 +37,7 @@
       },
       "source": {
         "gtfsestonia": 3,
+        "openaddresses": 5,
         "openstreetmap": 0
       }
     }
