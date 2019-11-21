@@ -46,3 +46,31 @@ function elastic_wait(){
 }
 
 register 'elastic' 'wait' 'wait for elasticsearch to start up' elastic_wait
+
+function elastic_info(){ curl -s "http://${ELASTIC_HOST:-localhost:9200}/"; }
+register 'elastic' 'info' 'display elasticsearch version and build info' elastic_info
+
+function elastic_stats(){
+  curl -s "http://${ELASTIC_HOST:-localhost:9200}/pelias/_search?request_cache=true&timeout=10s&pretty=true" \
+    -H 'Content-Type: application/json' \
+    -d '{
+          "aggs": {
+            "sources": {
+              "terms": {
+                "field": "source",
+                "size": 100
+              },
+              "aggs": {
+                "layers": {
+                  "terms": {
+                    "field": "layer",
+                    "size": 100
+                  }
+                }
+              }
+            }
+          },
+          "size": 0
+        }';
+}
+register 'elastic' 'stats' 'display a summary of doc counts per source/layer' elastic_stats
