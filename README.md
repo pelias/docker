@@ -161,7 +161,7 @@ This variable can take just a UID or a UID:GID combination such as `1000:1000`. 
 The following is a list of all supported CLI commands.
 
 ```bash
-$ pelias 
+$ pelias
 
 Usage: pelias [command] [action] [options]
 
@@ -186,6 +186,8 @@ Usage: pelias [command] [action] [options]
   elastic   stop                     stop elasticsearch server
   elastic   status                   HTTP status code of the elasticsearch service
   elastic   wait                     wait for elasticsearch to start up
+  elastic   info                     display elasticsearch version and build info
+  elastic   stats                    display a summary of doc counts per source/layer
   import    wof                      (re)import whosonfirst data
   import    oa                       (re)import openaddresses data
   import    osm                      (re)import openstreetmap data
@@ -262,6 +264,8 @@ pelias elastic start                    start elasticsearch server
 pelias elastic stop                     stop elasticsearch server
 pelias elastic status                   HTTP status code of the elasticsearch service
 pelias elastic wait                     wait for elasticsearch to start up
+pelias elastic info                     display elasticsearch version and build info
+pelias elastic stats                    display a summary of doc counts per source/layer
 ```
 
 ### Import commands
