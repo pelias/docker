@@ -19,7 +19,14 @@ register 'elastic' 'stop' 'stop elasticsearch server' elastic_stop
 
 # to use this function:
 # if test $(elastic_status) -ne 200; then
-function elastic_status(){ curl --output /dev/null --silent --write-out "%{http_code}" "http://${ELASTIC_HOST:-localhost:9200}" || true; }
+function elastic_status(){
+  curl \
+    --output /dev/null \
+    --silent \
+    --write-out "%{http_code}" \
+    "http://${ELASTIC_HOST:-localhost:9200}/_cluster/health?wait_for_status=yellow&timeout=1s" \
+      || true;
+}
 
 # the same function but with a trailing newline
 function elastic_status_newline(){ echo $(elastic_status); }
@@ -34,13 +41,17 @@ function elastic_wait(){
     if [[ $(elastic_status) -eq 200 ]]; then
       echo "Elasticsearch up!"
       exit 0
+    elif [[ $(elastic_status) -eq 408 ]]; then
+      # 408 indicates the server is up but not yet yellow status
+      printf ":"
+    else
+      printf "."
     fi
-    sleep 2
-    printf "."
+    sleep 1
     i=$(($i + 1))
   done
 
-  echo
+  echo -e "\n"
   echo "Elasticsearch did not come up, check configuration"
   exit 1
 }
