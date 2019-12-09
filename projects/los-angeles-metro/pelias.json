@@ -95,7 +95,7 @@
         },
         {
           "layerId": "stops",
-          "url": "https://gitlab.com/LACMTA/gtfs_bus/raw/master/gtfs_rail.zip",
+          "url": "https://gitlab.com/LACMTA/gtfs_rail/raw/master/gtfs_rail.zip",
           "filename": "stops.txt",
           "agencyId": "LA Metro",
           "agencyName": "LA Metro",
