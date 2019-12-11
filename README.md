@@ -13,7 +13,7 @@ Once you have successfully completed a small build you can use this as a base to
 
 ## Prerequisites
 
-You will need to have `docker` and `docker-compose` installed before continuing. If you are not using the latest version, please mention that in any bugs reports.
+You will need to have a [modern version of `docker`](https://docs.docker.com/engine/release-notes/) and a [modern version of `docker-compose`](https://github.com/docker/compose/blob/master/CHANGELOG.md) installed before continuing. If you are not using the latest version, please mention that in any bugs reports.
 
 This project supports Linux and Mac OSX operatings systems. Windows is currently [not supported](https://github.com/pelias/docker/issues/124).
 
