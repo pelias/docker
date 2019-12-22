@@ -14,6 +14,8 @@ Please refer to the instructions at https://github.com/pelias/docker in order to
 
 The minimum configuration required in order to run this project are [installing prerequisites](https://github.com/pelias/docker#prerequisites), [install the pelias command](https://github.com/pelias/docker#installing-the-pelias-command) and [configure the environment](https://github.com/pelias/docker#configure-environment).
 
+This build also requires [obtaining or generating a polylines file from Valhalla](https://github.com/pelias/polylines/wiki/Generating-polylines-from-Valhalla). Once you have the polylines file, you must move it to `polylines/extract.0sv`.
+
 Please ensure that's all working fine before continuing.
 
 # Run a Build
