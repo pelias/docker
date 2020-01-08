@@ -1,7 +1,7 @@
 # see: https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
 
 # base image
-FROM docker.elastic.co/elasticsearch/elasticsearch:7.4.2
+FROM docker.elastic.co/elasticsearch/elasticsearch:7.5.1
 USER root
 
 # environmental settings
