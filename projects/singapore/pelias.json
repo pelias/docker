@@ -9,9 +9,6 @@
       { "host": "elasticsearch" }
     ]
   },
-  "schema": {
-    "typeName": "_doc"
-  },
   "elasticsearch": {
     "settings": {
       "index": {
