@@ -41,12 +41,12 @@
     },
     "openstreetmap": {
       "download": [
-        { "sourceURL": "http://download.geofabrik.de/south-america/brazil-latest.osm.pbf" }
+        { "sourceURL": "http://download.geofabrik.de/south-america-latest.osm.pbf" }
       ],
       "leveldbpath": "/tmp",
       "datapath": "/data/openstreetmap",
       "import": [{
-        "filename": "brazil-latest.osm.pbf"
+        "filename": "south-america-latest.osm.pbf"
       }]
     },
     "openaddresses": {
@@ -78,7 +78,13 @@
         "br/sc/statewide.csv",
         "br/se/statewide.csv",
         "br/sp/statewide.csv",
-        "br/to/statewide.csv"
+        "br/to/statewide.csv",
+        "ar/c/city_of_buenos_aires.csv",
+        "cl/countrywide.csv",
+        "uy/countrywide.csv",
+        "uy/mo/montevideo.csv",
+        "co/ant/medellin.csv",
+        "co/bogota.csv"
       ]
     },
     "polyline": {
@@ -90,7 +96,7 @@
       "importVenues": true,
       "importPostalcodes": true,
       "importPlace": [
-        "85633009"
+        "102191577"
       ]
     }
   }
