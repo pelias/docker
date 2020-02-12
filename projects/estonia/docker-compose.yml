@@ -116,7 +116,7 @@ services:
     security_opt:
       - seccomp=unconfined
   pelias-gtfs:
-    image: peatusee/pelias-gtfs:latest
+    image: registry.mnt.ee/peatusee/pelias-gtfs:latest
     container_name: pelias_gtfs
     restart: on-failure
     user: "${DOCKER_USER}"
