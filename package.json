@@ -1,0 +1,27 @@
+{
+  "name": "docker",
+  "version": "1.0.0",
+  "description": "This repository contains a framework for downloading/preparing and building the [Pelias Geocoder](https://github.com/pelias/pelias) using Docker and [Docker Compose](https://github.com/docker/compose#docker-compose).",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pelias/docker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pelias/docker/issues"
+  },
+  "homepage": "https://github.com/pelias/docker#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "lodash": "^4.17.15",
+    "yargs": "^15.1.0"
+  }
+}
