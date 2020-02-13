@@ -31,4 +31,3 @@ register 'compose' 'kill' 'kill one or more docker-compose service(s)' compose_k
 
 function compose_down(){ docker-compose down; }
 register 'compose' 'down' 'stop all docker-compose service(s)' compose_down
-
