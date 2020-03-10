@@ -44,16 +44,9 @@
         "/data/blacklist/osm.txt"
       ]
     },
-    "csv": {
-      "datapath": "/data/csv",
-      "files": [],
-      "download": [
-        "https://raw.githubusercontent.com/pelias/csv-importer/master/data/example.csv"
-      ]
-    },
     "geonames": {
       "datapath": "/data/geonames",
-      "countryCode": "ALL"
+      "countryCode": "US"
     },
     "openstreetmap": {
       "download": [
@@ -80,7 +73,7 @@
       "importVenues": false,
       "importPostalcodes": true,
       "importPlace": [
-        "85688543"
+        "85977539"
       ]
     },
     "transit": {

@@ -5,42 +5,21 @@
   "tests": [
     {
       "id": 1,
-      "status": "fail",
-      "notes": "portland international should come up for PDX",
+      "status": "pass",
+      "notes": "John F. Kennedy International Airport should come up for JFK",
       "in": {
-        "text": "pdx"
+        "text": "JFK"
       },
       "expected": {
         "properties": [
           {
             "layer": "venue",
-            "name": "Portland International Airport",
+            "name": "John F. Kennedy International Airport",
             "country_a": "USA",
             "country": "United States",
-            "region": "Oregon",
-            "region_a": "OR",
-            "locality": "Portland"
-          }
-        ]
-      }
-    },
-    {
-      "id": 2,
-      "status": "fail",
-      "notes": "portland international should come up for PDX",
-      "in": {
-        "text": "pdx airport"
-      },
-      "expected": {
-        "properties": [
-          {
-            "layer": "venue",
-            "name": "Portland International Airport",
-            "country_a": "USA",
-            "country": "United States",
-            "region": "Oregon",
-            "region_a": "OR",
-            "locality": "Portland"
+            "region": "New York",
+            "region_a": "NY",
+            "locality": "New York"
           }
         ]
       }
