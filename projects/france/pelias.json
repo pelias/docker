@@ -57,10 +57,11 @@
       "files": [ "extract.0sv" ]
     },
     "whosonfirst": {
+      "countries": "fr",
       "datapath": "/data/whosonfirst",
       "importVenues": false,
       "importPostalcodes": true,
-      "importPlace": [ "136253037", "85633147" ]
+      "sqlite": true
     }
   }
 }

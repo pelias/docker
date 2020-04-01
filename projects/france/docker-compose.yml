@@ -36,7 +36,7 @@ services:
       - "${DATA_DIR}:/data"
       - "./blacklist/:/data/blacklist"
   whosonfirst:
-    image: pelias/whosonfirst:master
+    image: pelias/whosonfirst:joxit-data-geocode-earth
     container_name: pelias_whosonfirst
     user: "${DOCKER_USER}"
     volumes:
