@@ -31,32 +31,34 @@ At least 8GB RAM is required.
 
 The following shell script can be used to quickly get started with a Pelias build.
 
-Feel free to modify the code and data locations to suit your needs.
-
 ```bash
 #!/bin/bash
 set -x
 
-# create directories
-mkdir /code /data
+# change directory to the where you would like to install Pelias
+# cd /path/to/install
 
-# set proper permissions. make sure the user matches your `DOCKER_USER` setting in `.env`
-chown 1000:1000 /code /data
-
-# clone repo
-cd /code
-git clone https://github.com/pelias/docker.git
-cd docker
+# clone this repository
+git clone https://github.com/pelias/docker.git && cd docker
 
 # install pelias script
 ln -s "$(pwd)/pelias" /usr/local/bin/pelias
 
-# cwd
+# cd into the project directory
 cd projects/portland-metro
 
-# configure environment
+# create a directory to store Pelias data files
+# see: https://github.com/pelias/docker#variable-data_dir
+# note: use 'gsed' instead of 'sed' on a Mac
+mkdir ./data
 sed -i '/DATA_DIR/d' .env
-echo 'DATA_DIR=/data' >> .env
+echo 'DATA_DIR=./data' >> .env
+
+# configure docker to write files as your local user
+# see: https://github.com/pelias/docker#variable-docker_user
+# note: use 'gsed' instead of 'sed' on a Mac
+sed -i '/DOCKER_USER/d' .env
+echo "DOCKER_USER=$(id -u)" >> .env
 
 # run build
 pelias compose pull
@@ -71,7 +73,6 @@ pelias compose up
 # optionally run tests
 pelias test run
 ```
-
 
 ## Installing the Pelias helper script
 
