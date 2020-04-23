@@ -58,8 +58,8 @@
     },
     "whosonfirst": {
       "datapath": "/data/whosonfirst",
-      "importVenues": false,
       "importPostalcodes": true,
+      "countryCode": "FR",
       "importPlace": [ "136253037", "85633147" ]
     }
   }
