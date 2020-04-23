@@ -60,10 +60,9 @@
       "files": [ "extract.0sv" ]
     },
     "whosonfirst": {
-      "sqlite": true,
       "datapath": "/data/whosonfirst",
-      "importVenues": false,
       "importPostalcodes": true,
+      "countryCode": "SG",
       "importPlace": [
         "85632605"
       ]

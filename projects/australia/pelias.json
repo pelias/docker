@@ -61,7 +61,7 @@
     },
     "whosonfirst": {
       "datapath": "/data/whosonfirst",
-      "importVenues": false,
+      "countryCode": "AU",
       "importPostalcodes": true,
       "importPlace": [
         "85632793"

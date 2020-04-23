@@ -1833,6 +1833,7 @@
     "whosonfirst": {
       "datapath": "/data/whosonfirst",
       "importPostalcodes": true,
+      "countryCode": ["CA", "MX", "US"],
       "importPlace": "102191575"
     },
     "interpolation": {

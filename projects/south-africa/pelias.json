@@ -65,8 +65,8 @@
     },
     "whosonfirst": {
       "datapath": "/data/whosonfirst",
-      "importVenues": false,
       "importPostalcodes": true,
+      "countryCode": "ZA",
       "importPlace": [
         "85633813"
       ]

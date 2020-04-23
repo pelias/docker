@@ -60,7 +60,6 @@
     },
     "whosonfirst": {
       "datapath": "/data/whosonfirst",
-      "importVenues": false,
       "importPostalcodes": true
     },
     "interpolation": {

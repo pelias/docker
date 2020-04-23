@@ -93,8 +93,8 @@
     },
     "whosonfirst": {
       "datapath": "/data/whosonfirst",
-      "importVenues": true,
       "importPostalcodes": true,
+      "countryCode": [ "AR", "BO", "BR", "CL", "GF", "EC", "GY", "PY", "PE", "SR", "UY", "VE" ],
       "importPlace": [
         "102191577"
       ]

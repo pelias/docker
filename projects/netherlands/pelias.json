@@ -58,7 +58,7 @@
     },
     "whosonfirst": {
       "datapath": "/data/whosonfirst",
-      "importVenues": false,
+      "countryCode": "NL",
       "importPostalcodes": true,
       "importPlace": [ "85633337" ]
     }
