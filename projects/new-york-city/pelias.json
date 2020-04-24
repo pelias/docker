@@ -70,8 +70,8 @@
     },
     "whosonfirst": {
       "datapath": "/data/whosonfirst",
-      "importVenues": false,
       "importPostalcodes": true,
+      "countryCode": "NY",
       "importPlace": [
         "85977539"
       ]
