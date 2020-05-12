@@ -14,7 +14,7 @@
       "index": {
         "refresh_interval": "10s",
         "number_of_replicas": "0",
-        "number_of_shards": "3"
+        "number_of_shards": "1"
       }
     }
   },
@@ -29,30 +29,39 @@
       "pip": { "url": "http://pip:4200" },
       "interpolation": { "url": "http://interpolation:4300" },
       "libpostal": { "url": "http://libpostal:4400" }
+    },
+    "defaultParameters": {
+      "focus.point.lat": 45.52,
+      "focus.point.lon": -122.67
     }
   },
   "imports": {
     "adminLookup": {
       "enabled": true
     },
+    "blacklist": {
+      "files": [
+        "/data/blacklist/osm.txt"
+      ]
+    },
     "geonames": {
       "datapath": "/data/geonames",
-      "countryCode": "AU"
+      "countryCode": "US"
     },
     "openstreetmap": {
       "download": [
-        { "sourceURL": "http://download.geofabrik.de/australia-oceania/australia-latest.osm.pbf" }
+        { "sourceURL": "https://s3.amazonaws.com/metro-extracts.nextzen.org/new-york_new-york.osm.pbf" }
       ],
       "leveldbpath": "/tmp",
       "datapath": "/data/openstreetmap",
       "import": [{
-        "filename": "australia-latest.osm.pbf"
+        "filename": "new-york_new-york.osm.pbf"
       }]
     },
     "openaddresses": {
       "datapath": "/data/openaddresses",
       "files": [
-        "au/countrywide.csv"
+        "us/ny/city_of_new_york.csv"
       ]
     },
     "polyline": {
@@ -61,10 +70,23 @@
     },
     "whosonfirst": {
       "datapath": "/data/whosonfirst",
-      "countryCode": "AU",
       "importPostalcodes": true,
+      "countryCode": "NY",
       "importPlace": [
-        "85632793"
+        "85977539"
+      ]
+    },
+    "transit": {
+      "datapath": "/data/transit",
+      "feeds": [
+        {
+          "layerId": "stops",
+          "url": "http://web.mta.info/developers/data/nyct/subway/google_transit.zip",
+          "filename": "NYC-subway-stops.txt",
+          "agencyId": "MTA NYCT",
+          "agencyName": "MTA NYCT",
+          "layerName": "Stop"
+        }
       ]
     },
     "interpolation": {
@@ -72,7 +94,12 @@
         "tiger": {
           "datapath": "/data/tiger",
           "states": [
-            { "state_code": 53, "county_code": 11, "name": "Clark County, WA" }
+            { "state_code": 36, "county_code": 81, "name": "Queens County, NY" },
+            { "state_code": 36, "county_code": 85, "name": "Richmond County, NY" },
+            { "state_code": 36, "county_code": 61, "name": "New York County, NY" },
+            { "state_code": 36, "county_code": 47, "name": "Kings County, NY" },
+            { "state_code": 36, "county_code": 5, "name": "Bronx County, NY" }
+
           ]
         }
       }

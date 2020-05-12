@@ -41,7 +41,7 @@
     },
     "geonames": {
       "datapath": "/data/geonames",
-      "countryCode": "ALL"
+      "countryCode": "US"
     },
     "openstreetmap": {
       "download": [
@@ -71,8 +71,8 @@
     },
     "whosonfirst": {
       "datapath": "/data/whosonfirst",
-      "importVenues": false,
       "importPostalcodes": true,
+      "countryCode": "US",
       "importPlace": [
         "1360665447"
       ]

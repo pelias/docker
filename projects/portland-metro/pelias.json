@@ -85,6 +85,7 @@
       "datapath": "/data/whosonfirst",
       "importVenues": false,
       "importPostalcodes": true,
+      "countryCode": "US",
       "importPlace": [
         "85688513",
         "85688623"

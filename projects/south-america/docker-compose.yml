@@ -59,22 +59,6 @@ services:
       - "./pelias.json:/code/pelias.json"
       - "${DATA_DIR}:/data"
       - "./blacklist/:/data/blacklist"
-  geonames:
-    image: pelias/geonames:master
-    container_name: pelias_geonames
-    user: "${DOCKER_USER}"
-    volumes:
-      - "./pelias.json:/code/pelias.json"
-      - "${DATA_DIR}:/data"
-      - "./blacklist/:/data/blacklist"
-  csv-importer:
-    image: pelias/csv-importer:master
-    container_name: pelias_csv_importer
-    user: "${DOCKER_USER}"
-    volumes:
-      - "./pelias.json:/code/pelias.json"
-      - "${DATA_DIR}:/data"
-      - "./blacklist/:/data/blacklist"
   transit:
     image: pelias/transit:master
     container_name: pelias_transit

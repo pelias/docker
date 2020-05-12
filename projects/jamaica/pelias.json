@@ -61,7 +61,7 @@
     },
     "whosonfirst": {
       "datapath": "/data/whosonfirst",
-      "importVenues": true,
+      "countryCode": "JM",
       "importPostalcodes": true,
       "importPlace": [
         "85632215"

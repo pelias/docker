@@ -37,22 +37,54 @@
     },
     "geonames": {
       "datapath": "/data/geonames",
-      "countryCode": "AU"
+      "countryCode": "BR"
     },
     "openstreetmap": {
       "download": [
-        { "sourceURL": "http://download.geofabrik.de/australia-oceania/australia-latest.osm.pbf" }
+        { "sourceURL": "http://download.geofabrik.de/south-america-latest.osm.pbf" }
       ],
       "leveldbpath": "/tmp",
       "datapath": "/data/openstreetmap",
       "import": [{
-        "filename": "australia-latest.osm.pbf"
+        "filename": "south-america-latest.osm.pbf"
       }]
     },
     "openaddresses": {
       "datapath": "/data/openaddresses",
       "files": [
-        "au/countrywide.csv"
+        "br/ac/statewide.csv",
+        "br/al/statewide.csv",
+        "br/am/statewide.csv",
+        "br/ap/statewide.csv",
+        "br/ba/statewide.csv",
+        "br/ce/statewide.csv",
+        "br/df/statewide.csv",
+        "br/es/statewide.csv",
+        "br/go/statewide.csv",
+        "br/ma/statewide.csv",
+        "br/mg/statewide.csv",
+        "br/ms/statewide.csv",
+        "br/mt/statewide.csv",
+        "br/pa/statewide.csv",
+        "br/pb/statewide.csv",
+        "br/pe/statewide.csv",
+        "br/pi/statewide.csv",
+        "br/pr/statewide.csv",
+        "br/rj/statewide.csv",
+        "br/rn/statewide.csv",
+        "br/ro/statewide.csv",
+        "br/rr/statewide.csv",
+        "br/rs/statewide.csv",
+        "br/sc/statewide.csv",
+        "br/se/statewide.csv",
+        "br/sp/statewide.csv",
+        "br/to/statewide.csv",
+        "ar/c/city_of_buenos_aires.csv",
+        "cl/countrywide.csv",
+        "uy/countrywide.csv",
+        "uy/mo/montevideo.csv",
+        "co/ant/medellin.csv",
+        "co/bogota.csv"
       ]
     },
     "polyline": {
@@ -61,21 +93,11 @@
     },
     "whosonfirst": {
       "datapath": "/data/whosonfirst",
-      "countryCode": "AU",
       "importPostalcodes": true,
+      "countryCode": [ "AR", "BO", "BR", "CL", "GF", "EC", "GY", "PY", "PE", "SR", "UY", "VE" ],
       "importPlace": [
-        "85632793"
+        "102191577"
       ]
-    },
-    "interpolation": {
-      "download": {
-        "tiger": {
-          "datapath": "/data/tiger",
-          "states": [
-            { "state_code": 53, "county_code": 11, "name": "Clark County, WA" }
-          ]
-        }
-      }
     }
   }
 }
