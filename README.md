@@ -108,8 +108,14 @@ You can find the `pelias` file in the root of this repository.
 Advanced users may have a preference how this is done on their system, but a basic example would be to do something like:
 
 ```bash
-git clone https://github.com/pelias/docker.git ~/pelias
-ln -s ~/pelias/pelias /usr/local/bin/pelias
+# change directory to the where you would like to install Pelias
+# cd /path/to/install
+
+# clone this repository
+git clone https://github.com/pelias/docker.git && cd docker
+
+# install pelias script
+ln -s "$(pwd)/pelias" /usr/local/bin/pelias
 ```
 
 Once the command is correctly installed you should be able to run the following command to confirm the pelias command is available on your path:
