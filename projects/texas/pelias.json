@@ -24,7 +24,6 @@
     }
   },
   "api": {
-    "textAnalyzer": "libpostal",
     "services": {
       "placeholder": { "url": "http://placeholder:4100" },
       "pip": { "url": "http://pip:4200" },
@@ -201,8 +200,6 @@
     },
     "whosonfirst": {
       "datapath": "/data/whosonfirst",
-      "importVenues": false,
-      "importPostalcodes": true,
       "countryCode": "US",
       "importPlace": [
         "85688753"
