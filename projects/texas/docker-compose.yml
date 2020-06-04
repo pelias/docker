@@ -10,7 +10,7 @@ services:
     restart: always
     ports: [ "4400:4400" ]
   schema:
-    image: pelias/schema:elasticsearch-5-schema
+    image: pelias/schema:master
     container_name: pelias_schema
     user: "${DOCKER_USER}"
     volumes:
@@ -102,7 +102,7 @@ services:
       - "./pelias.json:/code/pelias.json"
       - "${DATA_DIR}:/data"
   elasticsearch:
-    image: pelias/elasticsearch
+    image: pelias/elasticsearch:7.5.1
     container_name: pelias_elasticsearch
     restart: always
     ports: [ "9200:9200", "9300:9300" ]
