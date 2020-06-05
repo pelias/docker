@@ -8,7 +8,7 @@ function import_osm(){ compose_run 'openstreetmap' './bin/start'; }
 function import_polylines(){ compose_run 'polylines' './bin/start'; }
 function import_geonames(){ compose_run 'geonames' './bin/start'; }
 function import_transit(){ compose_run 'transit' './bin/start'; }
-function import_csv(){ compose_run 'csv-importer' './bin/start'; }
+function import_csv(){ compose_run 'csv-importer' './bin/parallel' ${CSV_PARALLELISM:-1}; }
 
 register 'import' 'wof' '(re)import whosonfirst data' import_wof
 register 'import' 'oa' '(re)import openaddresses data' import_oa
