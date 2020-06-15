@@ -83,7 +83,6 @@
     },
     "whosonfirst": {
       "datapath": "/data/whosonfirst",
-      "importVenues": false,
       "importPostalcodes": true,
       "countryCode": "US",
       "importPlace": [
