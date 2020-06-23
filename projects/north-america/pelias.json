@@ -35,6 +35,12 @@
     "adminLookup": {
       "enabled": true
     },
+    "csv": {
+      "datapath": "/data/csv",
+      "files": [],
+      "download": [
+      ]
+    },
     "geonames": {
       "datapath": "/data/geonames",
       "countryCode": "US"
