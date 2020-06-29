@@ -14,7 +14,7 @@
   "tests": [
     {
       "id": 1,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "777 NE MLK Blvd, Portland, OR"
       },
@@ -31,7 +31,7 @@
     },
     {
       "id": 2,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "777 NE MLK Blvd, Portland, Oregon"
       },
@@ -48,7 +48,7 @@
     },
     {
       "id": 3,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "777 NE MLK Blvd Portland OR"
       },
@@ -65,7 +65,7 @@
     },
     {
       "id": 4,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "777 NE MLK Blvd Portland Oregon"
       },
@@ -82,7 +82,7 @@
     },
     {
       "id": 5,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "777 NE MLK Jr Blvd, Portland, OR"
       },
@@ -99,7 +99,7 @@
     },
     {
       "id": 6,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "777 NE MLK Jr Blvd, Portland, Oregon"
       },
@@ -116,7 +116,7 @@
     },
     {
       "id": 7,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "777 NE MLK Jr Blvd Portland OR"
       },
@@ -133,7 +133,7 @@
     },
     {
       "id": 8,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "777 NE MLK Jr Blvd Portland Oregon"
       },
@@ -150,7 +150,7 @@
     },
     {
       "id": 9,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "777 NE ML King Blvd, Portland, OR"
       },
@@ -167,7 +167,7 @@
     },
     {
       "id": 10,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "777 NE ML King Blvd, Portland, Oregon"
       },
@@ -184,7 +184,7 @@
     },
     {
       "id": 11,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "777 NE ML King Blvd Portland OR"
       },
@@ -201,7 +201,7 @@
     },
     {
       "id": 12,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "777 NE ML King Blvd Portland Oregon"
       },
@@ -235,7 +235,7 @@
     },
     {
       "id": 13,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "4004 SW BH Hwy, Portland, OR"
       },
@@ -252,7 +252,7 @@
     },
     {
       "id": 14,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "4004 SW BH Hwy, Portland, Oregon"
       },
@@ -269,7 +269,7 @@
     },
     {
       "id": 15,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "4004 SW BH Hwy Portland OR"
       },
@@ -286,7 +286,7 @@
     },
     {
       "id": 16,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "4004 SW BH Hwy Portland Oregon"
       },
@@ -303,7 +303,7 @@
     },
     {
       "id": 17,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "4004 SW BHH, Portland, OR"
       },
@@ -320,7 +320,7 @@
     },
     {
       "id": 18,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "4004 SW BHH, Portland, Oregon"
       },
@@ -337,7 +337,7 @@
     },
     {
       "id": 19,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "4004 SW BHH Portland OR"
       },
@@ -354,7 +354,7 @@
     },
     {
       "id": 20,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "4004 SW BHH Portland Oregon"
       },
@@ -575,7 +575,8 @@
     },
     {
       "id": 33,
-      "status": "pass",
+      "status": "fail",
+      "description": "address is in beaverton",
       "in": {
         "text": "17175 SW TV Hwy, aloha, OR"
       },
@@ -592,7 +593,8 @@
     },
     {
       "id": 34,
-      "status": "pass",
+      "status": "fail",
+      "description": "address is in beaverton",
       "in": {
         "text": "17175 SW TV Hwy, aloha, Oregon"
       },
@@ -609,7 +611,8 @@
     },
     {
       "id": 35,
-      "status": "pass",
+      "status": "fail",
+      "description": "address is in beaverton",
       "in": {
         "text": "17175 SW TV Hwy aloha OR"
       },
@@ -626,7 +629,8 @@
     },
     {
       "id": 36,
-      "status": "pass",
+      "status": "fail",
+      "description": "address is in beaverton",
       "in": {
         "text": "17175 SW TV Hwy aloha Oregon"
       },
@@ -643,7 +647,8 @@
     },
     {
       "id": 37,
-      "status": "pass",
+      "status": "fail",
+      "description": "address is in beaverton",
       "in": {
         "text": "17175 SW TVH, aloha, OR"
       },
@@ -660,7 +665,8 @@
     },
     {
       "id": 38,
-      "status": "pass",
+      "status": "fail",
+      "description": "address is in beaverton",
       "in": {
         "text": "17175 SW TVH, aloha, Oregon"
       },
@@ -677,7 +683,8 @@
     },
     {
       "id": 39,
-      "status": "pass",
+      "status": "fail",
+      "description": "address is in beaverton",
       "in": {
         "text": "17175 SW TVH aloha OR"
       },
@@ -694,7 +701,8 @@
     },
     {
       "id": 40,
-      "status": "pass",
+      "status": "fail",
+      "description": "address is in beaverton",
       "in": {
         "text": "17175 SW TVH aloha Oregon"
       },
@@ -4791,7 +4799,8 @@
     },
     {
       "id": 281,
-      "status": "pass",
+      "status": "fail",
+      "description": "there is no NE Broadway St, road name is SE Broadway",
       "in": {
         "text": "1231 NE BROADWAY ST, Portland, OR"
       },
@@ -4808,7 +4817,8 @@
     },
     {
       "id": 282,
-      "status": "pass",
+      "status": "fail",
+      "description": "there is no NE Broadway St, road name is SE Broadway",
       "in": {
         "text": "1231 NE BROADWAY ST, Portland, Oregon"
       },
@@ -4825,7 +4835,8 @@
     },
     {
       "id": 283,
-      "status": "pass",
+      "status": "fail",
+      "description": "there is no NE Broadway St, road name is SE Broadway",
       "in": {
         "text": "1231 NE BROADWAY ST Portland OR"
       },
@@ -4842,7 +4853,8 @@
     },
     {
       "id": 284,
-      "status": "pass",
+      "status": "fail",
+      "description": "there is no NE Broadway St, road name is SE Broadway",
       "in": {
         "text": "1231 NE BROADWAY ST Portland Oregon"
       },
@@ -6933,7 +6945,7 @@
     },
     {
       "id": 407,
-      "status": "fail",
+      "status": "pass",
       "in": {
         "text": "OREGON ZOO Portland OR"
       },
@@ -6950,7 +6962,7 @@
     },
     {
       "id": 408,
-      "status": "fail",
+      "status": "pass",
       "in": {
         "text": "OREGON ZOO Portland Oregon"
       },
@@ -7375,7 +7387,7 @@
     },
     {
       "id": 433,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "1000 SW BROADWAY ST, Portland, OR"
       },
@@ -7392,7 +7404,7 @@
     },
     {
       "id": 434,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "1000 SW BROADWAY ST, Portland, Oregon"
       },
@@ -7409,7 +7421,7 @@
     },
     {
       "id": 435,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "1000 SW BROADWAY ST Portland OR"
       },
@@ -7426,7 +7438,7 @@
     },
     {
       "id": 436,
-      "status": "pass",
+      "status": "fail",
       "in": {
         "text": "1000 SW BROADWAY ST Portland Oregon"
       },

@@ -26,7 +26,7 @@
     },
     {
       "id": 2,
-      "status": "fail",
+      "status": "pass",
       "notes": "portland international should come up for PDX",
       "in": {
         "text": "pdx airport"
