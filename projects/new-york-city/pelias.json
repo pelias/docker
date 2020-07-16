@@ -71,7 +71,7 @@
     "whosonfirst": {
       "datapath": "/data/whosonfirst",
       "importPostalcodes": true,
-      "countryCode": "NY",
+      "countryCode": "US",
       "importPlace": [
         "85977539"
       ]
