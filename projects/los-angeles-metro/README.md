@@ -11,6 +11,8 @@ The minimum configuration required in order to run this project are [installing 
 
 Please ensure that's all working fine before continuing.
 
+This project requires about 30 GB of disk space.
+
 # Run a Build
 
 To run a complete build, execute the following commands:
