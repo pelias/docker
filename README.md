@@ -40,6 +40,11 @@ You will need to have a [modern version of `docker`](https://docs.docker.com/eng
 
 This project supports Linux and Mac OSX operatings systems. Windows is currently [not supported](https://github.com/pelias/docker/issues/124).
 
+## Requirements for Linux
+- Install `util-linux` using your distribution's package manager
+  - Alpine Linux: `sudo apk add util-linux`
+  - Debian/Ubuntu: `sudo apt-get install util-linux` 
+
 ## Requirements for Mac OSX
 - install GNU coreutils with [Homebrew](https://brew.sh/): `brew install coreutils`.
 - Max-out Docker computing resources( `Memory-RAM and CPUs-Cores` ) dedicated to Docker in `Docker > Preferences > Advanced`.
