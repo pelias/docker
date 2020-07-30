@@ -59,6 +59,7 @@ services:
       - "./pelias.json:/code/pelias.json"
       - "${DATA_DIR}:/data"
       - "./blacklist/:/data/blacklist"
+      - "./admin-lookup:/code/pelias/openaddresses/node_modules/pelias-wof-admin-lookup:cached"
   transit:
     image: pelias/transit:master
     container_name: pelias_transit
