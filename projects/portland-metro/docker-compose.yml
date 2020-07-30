@@ -91,16 +91,6 @@ services:
     volumes:
       - "./pelias.json:/code/pelias.json"
       - "${DATA_DIR}:/data"
-  pip:
-    image: pelias/pip-service:master
-    container_name: pelias_pip-service
-    user: "${DOCKER_USER}"
-    restart: always
-    environment: [ "PORT=4200" ]
-    ports: [ "4200:4200" ]
-    volumes:
-      - "./pelias.json:/code/pelias.json"
-      - "${DATA_DIR}:/data"
   spatial:
     image: pelias/spatial:pip_beta
     container_name: pelias_spatial
