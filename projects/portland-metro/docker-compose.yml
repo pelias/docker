@@ -101,6 +101,16 @@ services:
     volumes:
       - "./pelias.json:/code/pelias.json"
       - "${DATA_DIR}:/data"
+  spatial:
+    image: pelias/spatial:pip_beta
+    container_name: pelias_spatial
+    user: "${DOCKER_USER}"
+    restart: always
+    environment: [ "PORT=4770" ]
+    ports: [ "4770:4770" ]
+    command: [ "server", "--db=/data/spatial/docker.spatial.db" ]
+    volumes:
+      - "${DATA_DIR}:/data:cached"
   elasticsearch:
     image: pelias/elasticsearch:7.5.1
     container_name: pelias_elasticsearch
