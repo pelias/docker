@@ -1,31 +1,20 @@
 const _ = require('lodash');
-const transform = require('parallel-transform');
-const parallelism = 16
+const through = require('through2');
+// const transform = require('parallel-transform');
+// const parallelism = 16
 const logger = require('pelias-logger').get('admin-lookup');
 const streamOptions = { highwaterMark: 200, ordered: false  }
 
-const pmw = require('pelias-microservice-wrapper');
-class SpatialServiceConfig extends pmw.ServiceConfiguration {
-  constructor(){
-    super('spatial', {
-      url: 'http://spatial:4770/'
-    })
-  }
-  getUrl() {
-    return `${this.baseUrl}query/pip/beta`;
-  }
-  getParameters(params) {
-    return params;
-  }
-  isEnabled() {
-    return true
-  }
-};
+// network client
+// const SpatialServiceConfig = require('./SpatialServiceConfig');
+// const client = new SpatialServiceConfig().createClient()
 
-const client = pmw.service(new SpatialServiceConfig())
+// local client
+const client = require('./localClient')
 
 function create(adminLayers){
-  return transform(parallelism, streamOptions, (doc, next) => {
+  return through.obj(streamOptions, (doc, enc, next) => {
+  // return transform(parallelism, streamOptions, (doc, next) => {
 
     const centroid = doc.getCentroid()
     const query = {

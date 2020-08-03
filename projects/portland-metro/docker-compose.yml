@@ -53,6 +53,9 @@ services:
       - "./blacklist/:/data/blacklist"
   openaddresses:
     image: pelias/openaddresses:master
+    build:
+      context: .
+      dockerfile: Dockerfile.oa.plus.spatial
     container_name: pelias_openaddresses
     user: "${DOCKER_USER}"
     volumes:

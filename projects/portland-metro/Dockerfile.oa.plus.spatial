@@ -1,0 +1,8 @@
+FROM pelias/spatial:pip_beta AS spatial
+FROM pelias/openaddresses:master
+
+# copy spatial runtime
+COPY --from=spatial --chown=pelias /opt/spatial /opt/spatial
+
+# copy spatial code
+COPY --from=spatial --chown=pelias /code /code/spatial
