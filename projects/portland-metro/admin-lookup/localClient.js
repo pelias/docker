@@ -1,8 +1,9 @@
 const _ = require('lodash')
+const codec = require('./codec')
 const cpuCount = require('os').cpus().length
 const Pool = require('worker-thread-pool');
 
-const threads = require('worker_threads')
+// // const threads = require('worker_threads')
 // const worker = new threads.Worker('./node_modules/pelias-wof-admin-lookup/queryServiceWorkerThread.js', {
 //   workerData: {
 //     readonly: true,
@@ -16,16 +17,18 @@ const pool = new Pool({
   path: './node_modules/pelias-wof-admin-lookup/queryServiceWorkerThread.js'
 })
 
-function lookup(query, cb){
-
+function lookup(message, cb){
   // console.error('lookup', query)
+  message.doc = codec.marshal(message.doc)
 
-  pool.run({ query })
-    .then((result) => {
-      cb(null, result)
+  pool.run(message)
+    .then(({ err, doc }) => {
+      doc = codec.unmarshal(doc)
+      cb({ err, doc })
     })
-    .catch((err) => {
-      cb(err)
+    .catch(({ err }) => {
+      // console.error(message)
+      cb({ err })
     })
 }
 
