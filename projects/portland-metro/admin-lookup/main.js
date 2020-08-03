@@ -13,19 +13,18 @@ const streamOptions = { highwaterMark: 2000, ordered: false  }
 // local client
 const client = require('./localClient')
 
-function create(adminLayers){
+function create(){
   // return through.obj(streamOptions, (doc, enc, next) => {
   return transform(parallelism, streamOptions, (doc, next) => {
-
-    client({doc, adminLayers}, ({err, doc}) => {
+    client(doc, ({ err }) => {
       if (err) {
         console.error('PIP error', err)
 
         // if there's an error, just log it and move on
         logger.error(`PIP server failed: ${(err.message || JSON.stringify(err))}`, {
           id: doc.getGid(),
-          lat: doc.getCentroid().lat,
-          lon: doc.getCentroid().lon
+          lat: centroid.lat,
+          lon: centroid.lon
         });
 
         // don't pass the unmodified doc along

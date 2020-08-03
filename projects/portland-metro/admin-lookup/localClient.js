@@ -17,14 +17,24 @@ const pool = new Pool({
   path: './node_modules/pelias-wof-admin-lookup/queryServiceWorkerThread.js'
 })
 
-function lookup(message, cb){
+function lookup(doc, cb){
   // console.error('lookup', query)
-  message.doc = codec.marshal(message.doc)
+  // message.doc = codec.marshal(message.doc)
 
-  pool.run(message)
-    .then(({ err, doc }) => {
-      doc = codec.unmarshal(doc)
-      cb({ err, doc })
+  // const crypto = require('crypto')
+  // const token = crypto.randomBytes(64).toString('hex').substr(0, 8);
+
+  pool.run({ centroid: doc.getCentroid() })
+    .then((message) => {
+      // doc = codec.unmarshal(doc)
+      // console.error('worker message', message)
+
+      message.addParent.forEach(ap => {
+        // console.error('addParent', ap)
+        doc.addParent(...ap)
+      })
+
+      cb()
     })
     .catch(({ err }) => {
       // console.error(message)
