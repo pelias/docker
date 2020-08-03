@@ -53,12 +53,16 @@ services:
       - "./blacklist/:/data/blacklist"
   openaddresses:
     image: pelias/openaddresses:master
+    build:
+      context: .
+      dockerfile: Dockerfile.oa.plus.spatial
     container_name: pelias_openaddresses
     user: "${DOCKER_USER}"
     volumes:
       - "./pelias.json:/code/pelias.json"
       - "${DATA_DIR}:/data"
       - "./blacklist/:/data/blacklist"
+      - "./admin-lookup:/code/pelias/openaddresses/node_modules/pelias-wof-admin-lookup:cached"
   transit:
     image: pelias/transit:master
     container_name: pelias_transit
@@ -91,16 +95,16 @@ services:
     volumes:
       - "./pelias.json:/code/pelias.json"
       - "${DATA_DIR}:/data"
-  pip:
-    image: pelias/pip-service:master
-    container_name: pelias_pip-service
+  spatial:
+    image: pelias/spatial:pip_beta
+    container_name: pelias_spatial
     user: "${DOCKER_USER}"
     restart: always
-    environment: [ "PORT=4200" ]
-    ports: [ "4200:4200" ]
+    environment: [ "PORT=4770" ]
+    ports: [ "4770:4770" ]
+    command: [ "server", "--db=/data/spatial/docker.spatial.db" ]
     volumes:
-      - "./pelias.json:/code/pelias.json"
-      - "${DATA_DIR}:/data"
+      - "${DATA_DIR}:/data:cached"
   elasticsearch:
     image: pelias/elasticsearch:7.5.1
     container_name: pelias_elasticsearch

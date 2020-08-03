@@ -1,0 +1,6 @@
+{
+  "main": "./main.js",
+  "dependencies": {
+    "worker-thread-pool": "^1.0.0"
+  }
+}
