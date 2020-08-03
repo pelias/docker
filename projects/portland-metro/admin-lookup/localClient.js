@@ -1,23 +1,32 @@
 const _ = require('lodash')
-const QueryService = require('/code/spatial/service/QueryService')
-const middleware = require('/code/spatial/server/routes/pip_beta')
+const cpuCount = require('os').cpus().length
+const Pool = require('worker-thread-pool');
 
-const service = new QueryService({
-  readonly: true,
-  filename: '/data/spatial/docker.spatial.db'
+const threads = require('worker_threads')
+// const worker = new threads.Worker('./node_modules/pelias-wof-admin-lookup/queryServiceWorkerThread.js', {
+//   workerData: {
+//     readonly: true,
+//     filename: '/data/spatial/docker.spatial.db'
+//   }
+// });
+
+
+const pool = new Pool({
+  size: cpuCount,
+  path: './node_modules/pelias-wof-admin-lookup/queryServiceWorkerThread.js'
 })
 
 function lookup(query, cb){
 
-  const req = {}
-  _.set(req, 'app.locals.service', service)
-  _.set(req, 'query', query)
+  // console.error('lookup', query)
 
-  const res = {}
-  res.status = () => res
-  res.json = (data) => cb(null, data)
-
-  middleware(req, res)
+  pool.run({ query })
+    .then((result) => {
+      cb(null, result)
+    })
+    .catch((err) => {
+      cb(err)
+    })
 }
 
 module.exports = lookup

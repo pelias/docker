@@ -1,7 +1,8 @@
-const _ = require('lodash');
-const through = require('through2');
-// const transform = require('parallel-transform');
-// const parallelism = 16
+const _ = require('lodash')
+const cpuCount = require('os').cpus().length
+// const through = require('through2');
+const transform = require('parallel-transform');
+const parallelism = cpuCount
 const logger = require('pelias-logger').get('admin-lookup');
 const streamOptions = { highwaterMark: 200, ordered: false  }
 
@@ -13,8 +14,8 @@ const streamOptions = { highwaterMark: 200, ordered: false  }
 const client = require('./localClient')
 
 function create(adminLayers){
-  return through.obj(streamOptions, (doc, enc, next) => {
-  // return transform(parallelism, streamOptions, (doc, next) => {
+  // return through.obj(streamOptions, (doc, enc, next) => {
+  return transform(parallelism, streamOptions, (doc, next) => {
 
     const centroid = doc.getCentroid()
     const query = {
