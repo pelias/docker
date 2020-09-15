@@ -55,6 +55,18 @@ Scripts can easily download tens of GB of geographic data, so ensure you have en
 
 At least 8GB RAM is required.
 
+## How long will it take?
+
+You should be able to get started with the default Portland-metro area build in under an hour with a fast internet connection.
+
+On a machine with ~32 CPU cores, a full planet build can be done in under a day with the right settings.
+
+The interpolation build (`pelias prepare interpolation`), which is [single threaded](https://github.com/pelias/interpolation/issues/264) will take 6+ days
+for the full planet. We generally recommend skipping it when you are first
+getting started.
+
+For more info on time estimates and hardware requirements for large build see our [full planet considerations](https://github.com/pelias/documentation/blob/master/full_planet_considerations.md) documentation.
+
 ## Quickstart build script
 
 The following shell script can be used to quickly get started with a Pelias build.
