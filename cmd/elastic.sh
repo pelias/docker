@@ -18,9 +18,10 @@ function elastic_start(){
 
   # check permissions, and if $DOCKER_USER cannot read the data dir, quit with error
   if [[ "$desired_owner_uid" != "$elasticsearch_owner_uid" ]]; then
-    echo "user $DOCKER_USER cannot access elasticsearch directory at $DATA_DIR"
-    echo "please run 'sudo chown $DOCKER_USER $DATA_DIR/elasticsearch'"
-    exit 1
+    cmd="sudo chown $DOCKER_USER $DATA_DIR/elasticsearch"
+    echo "User $DOCKER_USER cannot access elasticsearch directory at $DATA_DIR"
+    echo "attempting to fix permissins by running '$cmd'. You may be asked for your password."
+    $cmd
   fi
   compose_exec up -d elasticsearch
 }
