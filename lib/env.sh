@@ -4,8 +4,26 @@ set -e;
 # disable verbose logging
 ENV_DISPLAY_WARNINGS=false
 
+# ensure docker runs containers as the current user (even when running with sudo)
+# note: SUDO_USER is not portable to all systems but its the best we've got.
+function set_docker_user(){
+  CURRENT_USER=$(id -u ${SUDO_USER-${USER}}):$(id -g ${SUDO_USER-${USER}})
+  if [ ! -z "${DOCKER_USER}" ] && [ "${DOCKER_USER}" != "${CURRENT_USER}" ]; then
+    2>&1 printf "WARNING: The DOCKER_USER env var is deprecated, using %s.\n" ${CURRENT_USER}
+    2>&1 echo "Remove the DOCKER_USER line from your .env file to silence this message."
+  fi
+  export DOCKER_USER="${CURRENT_USER}";
+}
+
 # ensure the user environment is correctly set up
 function env_check(){
+  if [ "${DOCKER_USER}" = "0:0" ]; then
+    echo "You are running as root"
+    echo "This is insecure and not supported by Pelias."
+    echo "Please try again as a non-root user."
+    exit 1
+  fi
+
   if [ -z "${DATA_DIR}" ]; then
     echo "You must set the DATA_DIR env var to a valid directory on your local machine."
     echo
@@ -48,6 +66,8 @@ function env_load_stream(){
 #     export COMPOSE_FILE="${BASEDIR}/docker-compose.yml"
 #   fi
 # fi
+
+set_docker_user
 
 # ensure the user env is correctly set up
 env_check
