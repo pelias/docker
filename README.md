@@ -95,12 +95,6 @@ mkdir ./data
 sed -i '/DATA_DIR/d' .env
 echo 'DATA_DIR=./data' >> .env
 
-# configure docker to write files as your local user
-# see: https://github.com/pelias/docker#variable-docker_user
-# note: use 'gsed' instead of 'sed' on a Mac
-sed -i '/DOCKER_USER/d' .env
-echo "DOCKER_USER=$(id -u)" >> .env
-
 # run build
 pelias compose pull
 pelias elastic start
@@ -183,7 +177,6 @@ Then use your text editor to modify the `.env` file to reflect your new path, it
 ```bash
 COMPOSE_PROJECT_NAME=pelias
 DATA_DIR=/tmp/pelias
-DOCKER_USER=1000
 ```
 
 You can then list the environment variables to ensure they have been correctly set:
@@ -200,9 +193,7 @@ Note: changing the `COMPOSE_PROJECT_NAME` variable is not advisable unless you k
 
 ### Variable: DOCKER_USER
 
-All processes in Pelias containers are run as non-root users. By default, the UID of the processes will be `1000`, which is the first user ID on _most_ Linux systems and is likely to be a good option. However, if restricting file permissions in your data directory to a different user or group is important, this can be overridden by setting the `DOCKER_USER` variable.
-
-This variable can take just a UID or a UID:GID combination such as `1000:1000`. See the [docker-compose](https://docs.docker.com/compose/compose-file/#domainname-hostname-ipc-mac_address-privileged-read_only-shm_size-stdin_open-tty-user-working_dir) and [docker run](https://docs.docker.com/engine/reference/run/#user) documentation on controlling Docker container users for more information.
+This variable is no longer used, and will be ignored. If you still have it in your `.env` file, you can safely remove it.
 
 ## CLI commands
 
