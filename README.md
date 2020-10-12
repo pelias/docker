@@ -40,6 +40,12 @@ You will need to have a [modern version of `docker`](https://docs.docker.com/eng
 
 This project supports Linux and Mac OSX operatings systems. Windows is currently [not supported](https://github.com/pelias/docker/issues/124).
 
+### Permissions
+
+In order to ensure security, Pelias docker containers, and the `pelias` helper script, will not run as a root user!
+
+Be sure you are running as a non-root user and that this user can execute `docker` commands. See the Docker documentation article [Manage Docker as a non-root user](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user) to do this.
+
 ## Requirements for Linux
 - Install `util-linux` using your distribution's package manager
   - Alpine Linux: `sudo apk add util-linux`
