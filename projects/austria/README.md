@@ -1,6 +1,6 @@
-# Belgium area
+# Austrian area
 
-This project is configured to download/prepare/build a complete Pelias installation for Belgium.
+This project is configured to download/prepare/build a complete Pelias installation for Austria.
 
 # Setup
 
