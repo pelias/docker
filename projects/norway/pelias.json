@@ -24,10 +24,6 @@
       "libpostal": { "url": "http://libpostal:4400" },
       "placeholder": { "url": "http://placeholder:4100" },
       "interpolation": { "url": "http://interpolation:4300" }
-    },
-    "defaultParameters": {
-      "focus.point.lat": 60.47, 
-      "focus.point.lon": 6.83
     }
   },
   "imports": {
