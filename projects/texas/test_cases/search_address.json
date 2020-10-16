@@ -1,4 +1,4 @@
-{
+{expected
   "name": "/v1/search address",
   "description": "addresses in Portland, OR",
   "priorityThresh": 1,
