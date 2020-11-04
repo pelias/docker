@@ -24,16 +24,9 @@
       "libpostal": { "url": "http://libpostal:4400" },
       "placeholder": { "url": "http://placeholder:4100" },
       "interpolation": { "url": "http://interpolation:4300" }
-    },
-    "defaultParameters": {
-      "focus.point.lat": 51.9,
-      "focus.point.lon": 10.26
     }
   },
   "imports": {
-    "adminLookup": {
-      "enabled": true
-    },
     "geonames": {
       "datapath": "/data/geonames",
       "countryCode": "DE"
@@ -55,11 +48,6 @@
     "polyline": {
       "datapath": "/data/polylines",
       "files": [ "extract.0sv" ]
-    },
-    "transit": {
-      "datapath": "/data/transit",
-      "feeds": [
-      ]
     },
     "whosonfirst": {
       "datapath": "/data/whosonfirst",
