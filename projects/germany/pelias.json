@@ -52,7 +52,7 @@
     "whosonfirst": {
       "datapath": "/data/whosonfirst",
       "countryCode": "DE",
-      "importPostalcodes": true,
+      "importPostalcodes": false,
       "importPlace": [ "85633111" ]
     }
   }
