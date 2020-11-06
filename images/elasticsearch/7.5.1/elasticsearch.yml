@@ -6,3 +6,4 @@ node.data: true
 thread_pool:
   write:
     queue_size: 1000
+indices.query.bool.max_clause_count: 4000
