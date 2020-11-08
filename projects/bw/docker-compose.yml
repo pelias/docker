@@ -1,6 +1,7 @@
-version: '3'
+version: '3.7'
 networks:
-  default:
+  backend:
+    name: bw_network
     driver: bridge
 services:
   libpostal:
@@ -9,12 +10,16 @@ services:
     user: "${DOCKER_USER}"
     restart: always
     ports: [ "4400:4400" ]
+    networks:
+      - backend
   schema:
     image: pelias/schema:master
     container_name: pelias_schema
     user: "${DOCKER_USER}"
     volumes:
       - "./pelias.json:/code/pelias.json"
+    networks:
+      - backend
   api:
     image: pelias/api:master
     container_name: pelias_api
@@ -24,6 +29,8 @@ services:
     ports: [ "4000:4000" ]
     volumes:
       - "./pelias.json:/code/pelias.json"
+    networks:
+      - backend
   placeholder:
     image: pelias/placeholder:master
     container_name: pelias_placeholder
@@ -35,6 +42,8 @@ services:
       - "./pelias.json:/code/pelias.json"
       - "${DATA_DIR}:/data"
       - "./blacklist/:/data/blacklist"
+    networks:
+      - backend
   whosonfirst:
     image: pelias/whosonfirst:master
     container_name: pelias_whosonfirst
@@ -43,6 +52,8 @@ services:
       - "./pelias.json:/code/pelias.json"
       - "${DATA_DIR}:/data"
       - "./blacklist/:/data/blacklist"
+    networks:
+      - backend
   openstreetmap:
     image: pelias/openstreetmap:master
     container_name: pelias_openstreetmap
@@ -51,6 +62,8 @@ services:
       - "./pelias.json:/code/pelias.json"
       - "${DATA_DIR}:/data"
       - "./blacklist/:/data/blacklist"
+    networks:
+      - backend
   geonames:
     image: pelias/geonames:master
     container_name: pelias_geonames
@@ -59,14 +72,16 @@ services:
       - "./pelias.json:/code/pelias.json"
       - "${DATA_DIR}:/data"
       - "./blacklist/:/data/blacklist"
-  openaddresses:
-    image: pelias/openaddresses:master
-    container_name: pelias_openaddresses
-    user: "${DOCKER_USER}"
-    volumes:
-      - "./pelias.json:/code/pelias.json"
-      - "${DATA_DIR}:/data"
-      - "./blacklist/:/data/blacklist"
+    networks:
+      - backend
+  #  openaddresses:
+  #    image: pelias/openaddresses:master
+  #    container_name: pelias_openaddresses
+  #    user: "${DOCKER_USER}"
+  #    volumes:
+  #      - "./pelias.json:/code/pelias.json"
+  #      - "${DATA_DIR}:/data"
+  #      - "./blacklist/:/data/blacklist"
   transit:
     image: pelias/transit:master
     container_name: pelias_transit
@@ -74,6 +89,8 @@ services:
     volumes:
       - "./pelias.json:/code/pelias.json"
       - "${DATA_DIR}:/data"
+    networks:
+      - backend
   csv-importer:
     image: pelias/csv-importer:master
     container_name: pelias_csv_importer
@@ -82,6 +99,8 @@ services:
       - "./pelias.json:/code/pelias.json"
       - "${DATA_DIR}:/data"
       - "./blacklist/:/data/blacklist"
+    networks:
+      - backend
   polylines:
     image: pelias/polylines:master
     container_name: pelias_polylines
@@ -89,6 +108,8 @@ services:
     volumes:
       - "./pelias.json:/code/pelias.json"
       - "${DATA_DIR}:/data"
+    networks:
+      - backend
   interpolation:
     image: pelias/interpolation:master
     container_name: pelias_interpolation
@@ -99,6 +120,8 @@ services:
     volumes:
       - "./pelias.json:/code/pelias.json"
       - "${DATA_DIR}:/data"
+    networks:
+      - backend
   pip:
     image: pelias/pip-service:master
     container_name: pelias_pip-service
@@ -109,6 +132,8 @@ services:
     volumes:
       - "./pelias.json:/code/pelias.json"
       - "${DATA_DIR}:/data"
+    networks:
+      - backend
   elasticsearch:
     image: pelias/elasticsearch:7.5.1
     container_name: pelias_elasticsearch
@@ -126,6 +151,8 @@ services:
         soft: 65536
         hard: 65536
     cap_add: [ "IPC_LOCK" ]
+    networks:
+      - backend
   fuzzy-tester:
     image: pelias/fuzzy-tester:master
     container_name: pelias_fuzzy_tester
@@ -135,3 +162,5 @@ services:
     volumes:
       - "./pelias.json:/code/pelias.json"
       - "./test_cases:/code/pelias/fuzzy-tester/test_cases"
+    networks:
+      - backend
