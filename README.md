@@ -416,3 +416,5 @@ Once all the importers have completed and the Pelias services are running, you c
 - OpenStreetMap
 - OpenAddresses
 - Polyline (extracted OpenStreetMap)
+
+## Installation
