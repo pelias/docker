@@ -405,3 +405,16 @@ Once all the importers have completed and the Pelias services are running, you c
 ### Interpolation
 
 - http://localhost:4300/demo/#13/45.5465/-122.6351
+
+
+## Possible Importers
+
+- CSV
+- Transit (like GTFS or bikeshares)
+- Interpolation
+- Geonames
+- OpenStreetMap
+- OpenAddresses
+- Polyline (extracted OpenStreetMap)
+
+## Installation
