@@ -43,7 +43,7 @@
     },
     "openaddresses": {
       "datapath": "/data/openaddresses",
-      "files": ["de/berlin.csv", "de/he/city_of_frankfurtammain.csv", "de/he/city_of_kassel.csv", "de/hh/statewide.csv", "de/ni/bentheim.csv", "de/nw/city_of_cologne.csv", "de/nw/city_of_wesel.csv", "de/nw/city_of_wuppertal.csv", "de/nw/statewide.csv", "de/sn/statewide.csv", "de/th/statewide.csv"]
+      "files": ["de/berlin.csv", "de/he/city_of_frankfurtammain.csv", "de/he/city_of_kassel.csv", "de/hh/statewide.csv", "de/ni/bentheim.csv", "de/nw/city_of_cologne.csv", "de/nw/city_of_wesel.csv", "de/nw/city_of_wuppertal.csv", "de/nw/kreis_viersen.csv", "de/nw/statewide.csv", "de/sn/statewide.csv", "de/th/statewide.csv"]
     },
     "polyline": {
       "datapath": "/data/polylines",
