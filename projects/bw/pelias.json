@@ -69,7 +69,7 @@
       "feeds": [
         {
           "layerId": "stops",
-          "url": "https://www.nvbw.de/index.php?eID=dumpFile&t=f&f=287&token=72d1e6be4d57dba4087cfde9b2d1259d93e48b14",
+          "url": "https://www.nvbw.de/fileadmin/user_upload/service/open_data/fahrplandaten_mit_liniennetz/sbg.zip",
           "filename": "stops.txt",
           "agencyId": "1",
           "agencyName": "SBG",
