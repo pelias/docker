@@ -212,13 +212,6 @@
       "datapath": "/data/whosonfirst",
       "importPostalcodes": true,
       "importPlace": [ "102191581" ]
-    },
-    "interpolation": {
-      "download": {
-        "tiger": {
-          "datapath": "/data/tiger"
-        }
-      }
     }
   }
 }
