@@ -14,7 +14,7 @@
       "index": {
         "refresh_interval": "10s",
         "number_of_replicas": "0",
-        "number_of_shards": "4"
+        "number_of_shards": "1"
       }
     }
   },
@@ -29,6 +29,10 @@
   "imports": {
     "adminLookup": {
       "enabled": true
+    },
+    "geonames": {
+      "datapath": "/data/geonames",
+      "countryCode": "ALL"
     },
     "openstreetmap": {
       "download": [
@@ -208,6 +212,13 @@
       "datapath": "/data/whosonfirst",
       "importPostalcodes": true,
       "importPlace": [ "102191581" ]
+    },
+    "interpolation": {
+      "download": {
+        "tiger": {
+          "datapath": "/data/tiger"
+        }
+      }
     }
   }
 }
