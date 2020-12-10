@@ -47,6 +47,7 @@
     "openaddresses": {
       "datapath": "/data/openaddresses",
       "files": [
+        "de/berlin.csv"
       ]
     },
     "polyline": {
