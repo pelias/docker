@@ -15,6 +15,7 @@ Please ensure that's all working fine before continuing.
 To run a complete build, execute the following commands:
 
 ```bash
+cp pelias-download.json pelias.json
 pelias compose pull
 pelias elastic start
 pelias elastic wait
@@ -32,6 +33,7 @@ rm /tmp/europe.zip
 ```
 
 ```bash
+cp pelias-prepare-import.json pelias.json
 pelias prepare all
 pelias import all
 pelias compose up
