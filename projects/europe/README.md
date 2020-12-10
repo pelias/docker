@@ -20,6 +20,18 @@ pelias elastic start
 pelias elastic wait
 pelias elastic create
 pelias download all
+```
+
+Download OpenAddresses full Europe :
+```bash
+data_dir=...
+mkdir ${data_dir}/openaddresses
+curl -s -L -X GET -o /tmp/europe.zip https://data.openaddresses.io/openaddr-collected-europe.zip
+unzip -o -qq -d ${data_dir}/openaddresses /tmp/europe.zip
+rm /tmp/europe.zip
+```
+
+```bash
 pelias prepare all
 pelias import all
 pelias compose up
