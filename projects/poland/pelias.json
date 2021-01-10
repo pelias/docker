@@ -1,0 +1,99 @@
+{
+  "logger": {
+    "level": "debug",
+    "timestamp": false
+  },
+  "esclient": {
+    "apiVersion": "7.5",
+    "hosts": [
+      {
+        "host": "elasticsearch"
+      }
+    ]
+  },
+  "elasticsearch": {
+    "settings": {
+      "index": {
+        "refresh_interval": "10s",
+        "number_of_replicas": "0",
+        "number_of_shards": "1"
+      }
+    }
+  },
+  "acceptance-tests": {
+    "endpoints": {
+      "docker": "http://api:4000/v1/"
+    }
+  },
+  "api": {
+    "services": {
+      "pip": {
+        "url": "http://pip:4200"
+      },
+      "libpostal": {
+        "url": "http://libpostal:4400"
+      },
+      "placeholder": {
+        "url": "http://placeholder:4100"
+      },
+      "interpolation": {
+        "url": "http://interpolation:4300"
+      }
+    }
+  },
+  "imports": {
+    "geonames": {
+      "datapath": "/data/geonames",
+      "countryCode": "PL"
+    },
+    "openstreetmap": {
+      "download": [
+        {
+          "sourceURL": "http://download.geofabrik.de/europe/poland-latest.osm.pbf"
+        }
+      ],
+      "leveldbpath": "/tmp",
+      "datapath": "/data/openstreetmap",
+      "import": [
+        {
+          "filename": "poland-latest.osm.pbf"
+        }
+      ]
+    },
+    "openaddresses": {
+      "datapath": "/data/openaddresses",
+      "files": [
+        "pl/dolnoslaskie.csv",
+        "pl/kujawsko-pomorskie.csv",
+        "pl/lodzkie.csv",
+        "pl/lubelskie.csv",
+        "pl/lubuskie.csv",
+        "pl/malopolskie.csv",
+        "pl/mazowieckie.csv",
+        "pl/opolskie.csv",
+        "pl/podkarpackie.csv",
+        "pl/podlaskie.csv",
+        "pl/pomorskie.csv",
+        "pl/slaskie.csv",
+        "pl/swietokrzyskie.csv",
+        "pl/warminsko-mazurskie.csv",
+        "pl/wielkopolskie.csv",
+        "pl/zachodniopomorskie.csv"
+      ]
+    },
+    "polyline": {
+      "datapath": "/data/polylines",
+      "files": [
+        "extract.0sv"
+      ]
+    },
+    "whosonfirst": {
+      "datapath": "/data/whosonfirst",
+      "countryCode": "PL",
+      "importPostalcodes": false,
+      "importPlace": [
+        "85633723"
+      ]
+    }
+  }
+}
