@@ -1,0 +1,32 @@
+{
+  "name": "/v1/search address",
+  "description": "addresses in Poland",
+  "priorityThresh": 1,
+  "normalizers": {
+    "name": [
+      "toUpperCase",
+      "removeOrdinals",
+      "stripPunctuation",
+      "abbreviateDirectionals",
+      "abbreviateStreetSuffixes"
+    ]
+  },
+  "tests": [
+    {
+      "id": 1,
+      "status": "pass",
+      "in": {
+        "text": "sulejówek"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "SULEJWEK",
+            "locality": "Sulejówek",
+            "country_a": "POL"
+          }
+        ]
+      }
+    }
+  ]
+}
