@@ -115,7 +115,7 @@ services:
     user: "${DOCKER_USER}"
     restart: always
     environment: [ "ES_JAVA_OPTS=-Xmx8g" ]
-    ports: [ "9200:9200", "9300:9300" ]
+    ports: [ "9200", "9300:9300" ]
     volumes:
       - "${DATA_DIR}/elasticsearch:/usr/share/elasticsearch/data"
     ulimits:
