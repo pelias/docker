@@ -3,10 +3,26 @@ set -e;
 
 function elastic_schema_drop(){ compose_run 'schema' node scripts/drop_index "$@" || true; }
 function elastic_schema_create(){ compose_run 'schema' ./bin/create_index; }
+
+# perform pre-start checks and start the elasticsearch container
 function elastic_start(){
   mkdir -p $DATA_DIR/elasticsearch
   # attemp to set proper permissions if running as root
   chown $DOCKER_USER $DATA_DIR/elasticsearch 2>/dev/null || true
+
+  # record the owner of the Elasticsearch directory
+  elasticsearch_owner_uid=$($CMD_STAT --format '%u' $DATA_DIR/elasticsearch)
+
+  # grab just the first part of the $DOCKER_USER variable which may have format uid:gid (or just uid)
+  desired_owner_uid=(${DOCKER_USER//:/ })
+
+  # check permissions, and if $DOCKER_USER cannot read the data dir, quit with error
+  if [[ "$desired_owner_uid" != "$elasticsearch_owner_uid" ]]; then
+    cmd="sudo chown $DOCKER_USER $DATA_DIR/elasticsearch"
+    echo "User $DOCKER_USER cannot access elasticsearch directory at $DATA_DIR"
+    echo "attempting to fix permissins by running '$cmd'. You may be asked for your password."
+    $cmd
+  fi
   compose_exec up -d elasticsearch
 }
 
