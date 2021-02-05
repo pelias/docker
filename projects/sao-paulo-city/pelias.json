@@ -1,0 +1,80 @@
+{
+  "logger": {
+    "level": "info",
+    "timestamp": false
+  },
+  "esclient": {
+    "apiVersion": "7.5",
+    "hosts": [
+      { "host": "elasticsearch" }
+    ]
+  },
+  "elasticsearch": {
+    "settings": {
+      "index": {
+        "refresh_interval": "10s",
+        "number_of_replicas": "0",
+        "number_of_shards": "1"
+      }
+    }
+  },
+  "acceptance-tests": {
+    "endpoints": {
+      "docker": "http://api:4000/v1/"
+    }
+  },
+  "api": {
+    "services": {
+      "placeholder": { "url": "http://placeholder:4100" },
+      "pip": { "url": "http://pip:4200" },
+      "interpolation": { "url": "http://interpolation:4300" },
+      "libpostal": { "url": "http://libpostal:4400" }
+    },
+    "defaultParameters": {
+      "focus.point.lat": -23.54549,
+      "focus.point.lon": -46.63524
+    }
+  },
+  "imports": {
+    "adminLookup": {
+      "enabled": true
+    },
+    "blacklist": {
+      "files": [
+        "/data/blacklist/osm.txt"
+      ]
+    },
+    "geonames": {
+      "datapath": "/data/geonames",
+      "countryCode": "BR"
+    },
+    "openstreetmap": {
+      "download": [
+        { "sourceURL": "https://download.openstreetmap.fr/extracts/south-america/brazil/southeast/sao-paulo-latest.osm.pbf" }
+      ],
+      "leveldbpath": "/tmp",
+      "datapath": "/data/openstreetmap",
+      "import": [{
+        "filename": "sao-paulo-latest.osm.pbf"
+      }]
+    },
+    "openaddresses": {
+      "datapath": "/data/openaddresses",
+      "files": [
+        "br/sp/statewide.csv" 
+      ]
+    },
+    "polyline": {
+      "datapath": "/data/polylines",
+      "files": [ "extract.0sv" ]
+    },
+    "whosonfirst": {
+      "datapath": "/data/whosonfirst",
+      "importPostalcodes": true,
+      "countryCode": "BR",
+      "importPlace": [
+        "101965533"
+      ]
+    }
+  }
+}
