@@ -47,12 +47,12 @@
     },
     "openstreetmap": {
       "download": [
-        { "sourceURL": "https://download.geofabrik.de/europe/germany/baden-wuerttemberg-latest.osm.pbf" }
+        { "sourceURL": "https://download.geofabrik.de/europe/germany/baden-wuerttemberg/freiburg-regbez-latest.osm.pbf" }
       ],
       "leveldbpath": "/tmp",
       "datapath": "/data/openstreetmap",
       "import": [{
-        "filename": "baden-wuerttemberg-latest.osm.pbf"
+        "filename": "freiburg-regbez-latest.osm.pbf"
       }]
     },
     "polyline": {

@@ -36,8 +36,8 @@ docker-compose run --rm schema ./bin/create_index
 echo "(re)download whosonfirst data"
 docker-compose run --rm whosonfirst ./bin/download
 
-echo "(re)download openaddresses data"
-docker-compose run --rm openaddresses ./bin/download
+#echo "(re)download openaddresses data"
+#docker-compose run --rm openaddresses ./bin/download
 
 echo "(re)download openstreetmap data"
 docker-compose run --rm openstreetmap ./bin/download
@@ -73,8 +73,8 @@ docker-compose run --rm interpolation bash ./docker_build.sh
 echo "(re)import whosonfirst data"
 docker-compose run --rm whosonfirst ./bin/start
 
-echo "(re)import openaddresses data"
-docker-compose run --rm openaddresses ./bin/start
+#echo "(re)import openaddresses data"
+#docker-compose run --rm openaddresses ./bin/start
 
 echo "(re)import openstreetmap data"
 docker-compose run --rm openstreetmap ./bin/start
