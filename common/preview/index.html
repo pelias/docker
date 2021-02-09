@@ -11,7 +11,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-geocoder-mapzen/1.9.4/leaflet-geocoder-mapzen.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-geocoder-mapzen/1.9.4/leaflet-geocoder-mapzen.js"></script>
   <style>
-    #map{ height: 800px; }
+           html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
   </style>
 </head>
 <body>
@@ -19,14 +24,14 @@
 
   <script>
     var map = L.map('map', {
-      center:[42.35, -71.08],
-      zoom: 3,
-      minZoom:2,
-      scrollWheelZoom: false
+      center:[-23.54514, -46.63584],
+      zoom: 12,
+      minZoom:10,
+      scrollWheelZoom: true
     });
 
     var geocodingOptions = {
-      url: 'http://localhost:4000/v1',
+      url: 'http://geocodesampa.ddns.net:4000/v1',
       expanded: true,
       attribution: '<a href="https://openstreetmap.org/copyright">OpenStreetMap</a> and <a href="    https://geocode.earth/guidelines">others</a>'
     };
