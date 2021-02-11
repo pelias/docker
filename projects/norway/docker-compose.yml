@@ -8,7 +8,7 @@ services:
     container_name: pelias_libpostal
     user: "${DOCKER_USER}"
     restart: always
-    ports: [ "0.0.0.0:4400:4400" ]
+    ports: [ "127.0.0.1:4400:4400" ]
   schema:
     image: pelias/schema:master
     container_name: pelias_schema
@@ -21,7 +21,7 @@ services:
     user: "${DOCKER_USER}"
     restart: always
     environment: [ "PORT=4000" ]
-    ports: [ "0.0.0.0:4000:4000" ]
+    ports: [ "127.0.0.1:4000:4000" ]
     volumes:
       - "./pelias.json:/code/pelias.json"
   placeholder:
@@ -30,7 +30,7 @@ services:
     user: "${DOCKER_USER}"
     restart: always
     environment: [ "PORT=4100" ]
-    ports: [ "0.0.0.0:4100:4100" ]
+    ports: [ "127.0.0.1:4100:4100" ]
     volumes:
       - "./pelias.json:/code/pelias.json"
       - "${DATA_DIR}:/data"
@@ -77,7 +77,7 @@ services:
     user: "${DOCKER_USER}"
     restart: always
     environment: [ "PORT=4300" ]
-    ports: [ "0.0.0.0:4300:4300" ]
+    ports: [ "127.0.0.1:4300:4300" ]
     volumes:
       - "./pelias.json:/code/pelias.json"
       - "${DATA_DIR}:/data"
@@ -87,7 +87,7 @@ services:
     user: "${DOCKER_USER}"
     restart: always
     environment: [ "PORT=4200" ]
-    ports: [ "0.0.0.0:4200:4200" ]
+    ports: [ "127.0.0.1:4200:4200" ]
     volumes:
       - "./pelias.json:/code/pelias.json"
       - "${DATA_DIR}:/data"
@@ -96,7 +96,7 @@ services:
     container_name: pelias_elasticsearch
     user: "${DOCKER_USER}"
     restart: always
-    ports: [ "0.0.0.0:9200:9200", "0.0.0.0:9300:9300" ]
+    ports: [ "127.0.0.1:9200:9200", "127.0.0.1:9300:9300" ]
     volumes:
       - "./elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro"
       - "${DATA_DIR}/elasticsearch:/usr/share/elasticsearch/data"
