@@ -50,7 +50,7 @@
     },
     "openstreetmap": {
       "download": [
-        { "sourceURL": "https://download.openstreetmap.fr/extracts/south-america/brazil/southeast/sao-paulo-latest.osm.pbf" }
+        { "sourceURL": "https://export.hotosm.org/downloads/2eee22f6-3f79-482a-80b9-d017c9f8aa59/S%C3%A3o_Paulo_Municipality.osm.pbf" }
       ],
       "leveldbpath": "/tmp",
       "datapath": "/data/openstreetmap",
