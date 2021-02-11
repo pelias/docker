@@ -4,3 +4,5 @@ alameda, al, al.
 vila, vl, vl., vla, vla.
 de, d, di, do, de, da
 praça, praca, pca, pça
+general, gal., gal, gnr, genrl
+são, sao, s., s, st., san 
