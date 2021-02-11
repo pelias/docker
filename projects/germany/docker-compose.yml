@@ -21,7 +21,7 @@ services:
     user: "${DOCKER_USER}"
     restart: always
     environment: [ "PORT=4000" ]
-    ports: [ "127.0.0.1:4000:4000" ]
+    ports: [ "0.0.0.0:4000:4000" ]
     volumes:
       - "./pelias.json:/code/pelias.json"
   placeholder:
