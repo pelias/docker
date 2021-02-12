@@ -1,8 +1,8 @@
-av, av., avenida, avn, avn.
-rua, r., r
-alameda, al, al.
-vila, vl, vl., vla, vla.
-de, d, di, do, de, da
-praça, praca, pca, pça
-general, gal., gal, gnr, genrl
-são, sao, s., s, st., san 
+av,av.,avenida,avn,avn.
+rua,r.,r
+alameda,al,al.
+vila,vl,vl.,vla,vla.
+de,d,di,do,de,da
+praça,praca,pca,pça
+general,gal.,gal,gnr,genrl
+são,sao,s.,s,st.,san 

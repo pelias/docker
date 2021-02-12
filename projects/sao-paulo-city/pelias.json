@@ -55,7 +55,7 @@
       "leveldbpath": "/tmp",
       "datapath": "/data/openstreetmap",
       "import": [{
-        "filename": "sao-paulo-latest.osm.pbf"
+        "filename": "S%C3%A3o_Paulo_Municipality.osm.pbf"
       }]
     },
     "openaddresses": {
