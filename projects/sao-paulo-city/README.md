@@ -1,9 +1,9 @@
 
-# Portland Metro Area
+# City of São Paulo
 
-This project is configured to download/prepare/build a complete Pelias installation for Portland, Oregon.
+This project is configured to download/prepare/build a complete Pelias installation for São Paulo city in Brazil. 
 
-It is intended as an example for other projects, feel free to copy->paste these files to a new project directory to kick-start your own project.
+GeoSampa is the official GeoPortal of the municipality of São Paulo city, maintained by the Coordination of Production and Information Analysis (GeoInfo) of the Municipal Department of Urbanism and Licensing and is in process of implemention a Pelias server. A test version is accessible on the link http://geocodesampa.ddns.net/
 
 # Setup
 
@@ -31,6 +31,6 @@ pelias test run
 
 # Make an Example Query
 
-You can now make queries against your new Pelias build:
+You can now make queries against your new Pelias build, for example searching for MASP (Museu de Arte de São Paulo):
 
-http://localhost:4000/v1/search?text=pdx
+http://localhost:4000/v1/search?text=MASP
