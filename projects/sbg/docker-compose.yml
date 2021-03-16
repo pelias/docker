@@ -1,7 +1,7 @@
 version: '3.7'
 networks:
   dravelops:
-    name: bw_network
+    name: sbg_network
     driver: bridge
 services:
   libpostal:
