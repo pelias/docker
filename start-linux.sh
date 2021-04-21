@@ -24,6 +24,7 @@ echo 'DATA_DIR=./data' >> .env
 # run build
 pelias compose pull
 pelias elastic start
+sleep 30
 pelias elastic wait
 pelias elastic create
 pelias download all

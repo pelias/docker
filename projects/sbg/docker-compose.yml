@@ -80,6 +80,8 @@ services:
       - "./pelias.json:/code/pelias.json"
       - "${DATA_DIR}:/data"
       - "./blacklist/:/data/blacklist"
+    networks:
+      - dravelops
   transit:
     image: pelias/transit:master
     container_name: pelias_transit
@@ -135,6 +137,7 @@ services:
     container_name: pelias_elasticsearch
     user: "${DOCKER_USER}"
     restart: always
+    ports: [ "9200:9200", "9300:9300" ]
     environment: [ "ES_JAVA_OPTS=-Xmx2g" ]
     volumes:
       - "${DATA_DIR}/elasticsearch:/usr/share/elasticsearch/data"
