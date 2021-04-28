@@ -21,14 +21,23 @@ mkdir ./data
 sed -i '/DATA_DIR/d' .env
 echo 'DATA_DIR=./data' >> .env
 
-# run build
+# This section updates all docker images
 pelias compose pull
+# This section creates an elasticsearch database
 pelias elastic start
+# This section waites until elastic search docker container has started
+sleep 30
+# This section makes a http call to verify the elastic search database exists
 pelias elastic wait
+# This section creates an index for pelias
 pelias elastic create
+# This section downloads all data
 pelias download all
+# This section prepares data for polylines, placeholder and interpolation
 pelias prepare all
+# This section imports the data into elasticsearch
 pelias import all
+# This section starts pelias
 pelias compose up
 
 # optionally run tests
