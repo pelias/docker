@@ -1,7 +1,7 @@
 version: '3.7'
 networks:
   dravelops:
-    name: sbg_network
+    name: hvv_network
     driver: bridge
 services:
   libpostal:
