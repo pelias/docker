@@ -1,0 +1,81 @@
+{
+  "logger": {
+    "level": "info",
+    "timestamp": false
+  },
+  "esclient": {
+    "apiVersion": "7.5",
+    "hosts": [
+      { "host": "elasticsearch" }
+    ]
+  },
+  "elasticsearch": {
+    "settings": {
+      "index": {
+        "refresh_interval": "10s",
+        "number_of_replicas": "0",
+        "number_of_shards": "1"
+      }
+    }
+  },
+  "acceptance-tests": {
+    "endpoints": {
+      "docker": "http://api:4000/v1/"
+    }
+  },
+  "api": {
+    "services": {
+      "pip": { "url": "http://pip:4200" },
+      "libpostal": { "url": "http://libpostal:4400" },
+      "placeholder": { "url": "http://placeholder:4100" },
+      "interpolation": { "url": "http://interpolation:4300" }
+    },
+    "autocomplete.exclude_address_length": 0,
+    "indexName": "pelias"
+  },
+  "imports": {
+    "adminLookup": {
+      "enabled": true
+    },
+    "openaddresses": {
+      "datapath": "/data/openaddresses",
+      "files": []
+    },
+    "geonames": {
+      "datapath": "/data/geonames",
+      "countryCode": "DE"
+    },
+    "openstreetmap": {
+      "download": [
+        { "sourceURL": "https://download.geofabrik.de/europe/germany/hamburg-latest.osm.pbf" }
+      ],
+      "leveldbpath": "/tmp",
+      "datapath": "/data/openstreetmap",
+      "import": [{
+        "filename": "hamburg-latest.osm.pbf"
+      }]
+    },
+    "polyline": {
+      "datapath": "/data/polylines",
+      "files": [ "extract.0sv" ]
+    },
+    "whosonfirst": {
+      "datapath": "/data/whosonfirst",
+      "countryCode": "DE",
+      "importPostalcodes": true
+    },
+    "transit": {
+      "datapath": "/data/transit",
+      "feeds": [
+        {
+          "layerId": "stops",
+          "url": "http://daten.transparenz.hamburg.de/Dataport.HmbTG.ZS.Webservice.GetRessource100/GetRessource100.svc/cba27ff1-ee81-448c-a266-3de320e4c88c/Upload__HVV_Rohdaten_GTFS_Fpl_20210512.zip",
+          "filename": "stops.txt",
+          "agencyId": "26",
+          "agencyName": "Hamburger Verkehrsverbund (HVV)",
+          "layerName": "Stop"
+        }
+      ]
+    }
+  }
+}
