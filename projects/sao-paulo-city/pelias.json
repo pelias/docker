@@ -37,7 +37,7 @@
   },
   "imports": {
     "adminLookup": {
-      "enabled": true
+      "enabled": false
     },
     "blacklist": {
       "files": [
@@ -50,7 +50,7 @@
     },
     "openstreetmap": {
       "download": [
-        { "sourceURL": "https://export.hotosm.org/downloads/2eee22f6-3f79-482a-80b9-d017c9f8aa59/S%C3%A3o_Paulo_Municipality.osm.pbf" }
+        { "sourceURL": "https://export.hotosm.org/downloads/1d986dfc-7a88-46c6-97fb-860dc725b51f/S%C3%A3o_Paulo_Municipality.osm.pbf" }
       ],
       "leveldbpath": "/tmp",
       "datapath": "/data/openstreetmap",
@@ -61,7 +61,7 @@
     "openaddresses": {
       "datapath": "/data/openaddresses",
       "files": [
-        "br/sp/statewide.csv" 
+        "br/sp/sao-paulo.csv" 
       ]
     },
     "polyline": {
@@ -75,6 +75,10 @@
       "importPlace": [
         "102062255"
       ]
+    },
+    "csv": {
+      "datapath": "/data/csv",
+      "files": ["sao-paulo.csv"]
     }
   }
 }
