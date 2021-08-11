@@ -1,10 +1,41 @@
-av,av.,avenida,avn,avn.
-rua,r.,r
-alameda,al,al.
-vila,vl,vl.,vla,vla.
+av,avenida,avn
+rua,r
+alameda,al
+vila,vl,vla
 de,d,di,do,de,da
 praça,praca,pca,pça
-general,gal.,gal,gnr,genrl
-são,sao,s.,s,st.,san
+general,gal,gnr,genrl
+são,sao,s,san
 pais,paes
 morais,moraes,mourais,mouraes
+doutor,dr, doutora, dra
+José, Jose, Joze, Jozé
+tv, travessa, travs
+maria, m
+santo, st, santa, sta
+alves, alvez
+eng, engenheiro
+luiz, luis
+lucas, luccas
+brigadeiro, brig, brg
+campos, cps
+junior, jr, jn
+ministro, ministra, min
+franco, fco
+senador, senadora, sen
+marechal, mal
+major, maj
+cesar, cezar
+artur, arthur
+desembargador, desemb 
+porto, prt, prto
+conde, cd
+comandante, cmdte, cmd
+tenente, ten
+nossa, nsa, nssa
+novo, nova, nv, nvo, nva
+nosso, nso
+dona, dna
+advogado, adv
+arquiteto, arquiteta, arq
+jornalista, jorn
