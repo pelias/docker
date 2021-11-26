@@ -238,6 +238,7 @@ Usage: pelias [command] [action] [options]
   import    osm                      (re)import openstreetmap data
   import    polylines                (re)import polylines data
   import    transit                  (re)import transit data
+  import    csv                      (re)import csv data
   import    all                      (re)import all data
   prepare   polylines                export road network from openstreetmap into polylines format
   prepare   interpolation            build interpolation sqlite databases
