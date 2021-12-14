@@ -1,0 +1,24 @@
+name: Build Docker Images
+on:
+  push:
+    paths:
+      - "images/elasticsearch/**"
+      - ".github/workflows/**"
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        elastic-version:
+          - "7.17.15"
+    env:
+      DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+      DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 100
+      - name: "Build elasticsearch@${{ matrix.elastic-version }}"
+        run: |
+          cd images/elasticsearch/${{ matrix.elastic-version }}
+          curl "https://raw.githubusercontent.com/pelias/ci-tools/master/build-docker-images.sh" | bash -
