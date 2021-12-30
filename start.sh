@@ -22,14 +22,15 @@ docker-compose up -d
 
 # Here we could implement a http call to check if service started
 echo "wait for elasticsearch to start up"
-sleep 30
+sleep 15
 
 
 
 # This section creates an index for pelias
 echo "create elasticsearch index with pelias mapping"
 docker-compose run --rm schema ./bin/create_index
-
+echo "wait for index..."
+sleep 15
 
 
 # This section downloads all data
