@@ -95,7 +95,7 @@
       "feeds": [
         {
           "layerId": "bikeshare",
-          "url": "http://biketownpdx.socialbicycles.com/opendata/station_information.json",
+          "url": "https://gbfs.biketownpdx.com/gbfs/en/station_information.json",
           "filename": "BIKETOWN-hubs.json",
           "agencyId": "BIKETOWN",
           "agencyName": "BIKETOWN",
