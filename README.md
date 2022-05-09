@@ -406,3 +406,7 @@ Once all the importers have completed and the Pelias services are running, you c
 ### Interpolation
 
 - http://localhost:4300/demo/#13/45.5465/-122.6351
+
+### Libpostal
+
+- http://localhost:4400/parse?address=1730+ne+26th+ave,+portland,+or
