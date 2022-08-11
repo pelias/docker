@@ -34,10 +34,6 @@
       "interpolation": {
         "url": "http://interpolation:4300"
       }
-    },
-    "defaultParameters": {
-      "focus.point.lat": 32.055145,
-      "focus.point.lon": 34.756369
     }
   },
   "imports": {
@@ -47,13 +43,6 @@
     "geonames": {
       "datapath": "/data/geonames",
       "countryCode": "IL"
-    },
-          "csv": {
-      "datapath": "/data/csv",
-      "files": [],
-      "download": [
-        "https://raw.githubusercontent.com/pelias/csv-importer/master/data/example.csv"
-      ]
     },
     "openstreetmap": {
       "download": [
