@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+set -e
+
+# export PORT="4200"
+
+# bin/configgen --spec=/deliveryhero/secrets/spec.yaml --template=pelias.json.tpl --output=/home/pelias/pelias.json
+# export `cat .env | xargs`
+
+# bin/logger -kind geocoder-pelias-pip -cmd npm -args "run download"
+# bin/logger -kind geocoder-pelias-pip -cmd bin/start
+
+PELIAS_CONFIG_FILE="pelias.json"
+# DATA_PATH=$(cat $PELIAS_CONFIG_FILE | jq -r '.imports.whosonfirst.datapath')
+DATA_PATH="data/wof"
+WHOSONFIRST_S3_PATH="s3://pd-geocoder-pelias-staging/wof" # assuming this value will come from enn
+
+count=`jq '.imports.whosonfirst.countryCode | length' $PELIAS_CONFIG_FILE`
+
+for ((i=0; i<$count; i++)); do   
+    name=`jq -r '.imports.whosonfirst.countryCode['$i']' $PELIAS_CONFIG_FILE | tr '[:upper:]' '[:lower:]'`
+    aws s3 --endpoint-url=http://localhost:4566 cp $WHOSONFIRST_S3_PATH/whosonfirst-data-admin-$name-latest.db $DATA_PATH/
+    aws s3 --endpoint-url=http://localhost:4566 cp $WHOSONFIRST_S3_PATH/whosonfirst-data-postalcode-$name-latest.db $DATA_PATH/
+    echo "download done"
+done
