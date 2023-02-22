@@ -1,0 +1,59 @@
+{
+  "logger": {
+    "level": "debug",
+    "timestamp": false
+  },
+  "esclient": {
+    "apiVersion": "7.5",
+    "hosts": [
+      { "host": "elasticsearch" }
+    ]
+  },
+  "elasticsearch": {
+    "settings": {
+      "index": {
+        "refresh_interval": "10s",
+        "number_of_replicas": "0",
+        "number_of_shards": "1"
+      }
+    }
+  },
+  "api": {
+    "services": {
+      "pip": { "url": "http://pip:4200" },
+      "libpostal": { "url": "http://libpostal:4400" },
+      "placeholder": { "url": "http://placeholder:4100" },
+      "interpolation": { "url": "http://interpolation:4300" }
+    }
+  },
+  "imports": {
+    "geonames": {
+      "datapath": "/data/geonames",
+      "countryCode": "LT"
+    },
+    "openstreetmap": {
+      "download": [
+        { "sourceURL": "http://download.geofabrik.de/europe/lithuania-latest.osm.pbf" }
+      ],
+      "leveldbpath": "/tmp",
+      "datapath": "/data/openstreetmap",
+      "import": [{
+        "filename": "lithuania-latest.osm.pbf"
+      }]
+    },
+    "openaddresses": {
+      "datapath": "/data/openaddresses",
+      "files": ["lt/countrywide.csv", "lt/city_of_vilnius.csv"]
+    },
+    "polyline": {
+      "datapath": "/data/polylines",
+      "files": [ "extract.0sv" ]
+    },
+    "whosonfirst": {
+      "datapath": "/data/whosonfirst",
+      "countryCode": "LT",
+      "importPostalcodes": false,
+      "importPlace": [ "85633269" ]
+    }
+  }
+}
