@@ -58,7 +58,7 @@ function env_load_stream(){
 
 # load DATA_DIR and other vars from docker-compose .env file
 # note: strips comments and empty lines
-[ -f .env ] && env_load_stream < <(grep -v '^$\|^\s*$\#' .env)
+[ -f .env ] && env_load_stream < <(grep -v '^$\|^\s*$#' .env)
 
 # use the default compose file unless one was specified
 # if [ -z "${COMPOSE_FILE}" ]; then
