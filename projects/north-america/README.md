@@ -38,4 +38,4 @@ pelias test run
 
 You can now make queries against your new Pelias build:
 
-[http://localhost:4000/v1/search?text=empire state building](http://localhost:4000/v1/search?text=empire state building)
+[http://localhost:4000/v1/search?text=empire state building](http://localhost:4000/v1/search?text=empire%20state%20building)
