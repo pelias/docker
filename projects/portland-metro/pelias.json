@@ -57,7 +57,7 @@
     },
     "openstreetmap": {
       "download": [
-        { "sourceURL": "https://s3.amazonaws.com/metro-extracts.nextzen.org/portland_oregon.osm.pbf" }
+        { "sourceURL": "https://data.geocode.earth/archive/portland-metro/2022-06-20/portland_oregon.osm.pbf" }
       ],
       "leveldbpath": "/tmp",
       "datapath": "/data/openstreetmap",
@@ -111,7 +111,7 @@
         },
         {
           "layerId": "stops",
-          "url": "http://www.c-tran.com/images/Google/GoogleTransitUpload.zip",
+          "url": "https://data.geocode.earth/archive/portland-metro/2022-06-20/C-TRAN.zip",
           "filename": "C-TRAN-stops.txt",
           "agencyId": "C-TRAN",
           "agencyName": "C-TRAN",

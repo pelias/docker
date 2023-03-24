@@ -14,7 +14,7 @@ Please refer to the instructions at https://github.com/pelias/docker in order to
 
 The minimum configuration required in order to run this project are [installing prerequisites](https://github.com/pelias/docker#prerequisites), [install the pelias command](https://github.com/pelias/docker#installing-the-pelias-command) and [configure the environment](https://github.com/pelias/docker#configure-environment).
 
-This build also requires [obtaining or generating a polylines file from Valhalla](https://github.com/pelias/polylines/wiki/Generating-polylines-from-Valhalla). Once you have the polylines file, you must move it to `polylines/extract.0sv`.
+This build also requires [obtaining or generating a polylines file from Valhalla](https://github.com/pelias/polylines/wiki/Generating-polylines-from-Valhalla). Once you have the polylines file, you must move it to `polylines/extract.0sv`. You can also download the latest `north-america-valhalla.polylines.0sv.gz`, move and rename from: https://geocode.earth/data/
 
 Please ensure that's all working fine before continuing.
 
@@ -38,4 +38,4 @@ pelias test run
 
 You can now make queries against your new Pelias build:
 
-[http://localhost:4000/v1/search?text=empire state building](http://localhost:4000/v1/search?text=empire state building)
+[http://localhost:4000/v1/search?text=empire state building](http://localhost:4000/v1/search?text=empire%20state%20building)
