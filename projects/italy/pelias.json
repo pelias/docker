@@ -1,0 +1,100 @@
+{
+  "logger": {
+    "level": "debug",
+    "timestamp": false
+  },
+  "esclient": {
+    "apiVersion": "7.5",
+    "hosts": [
+      { "host": "elasticsearch" }
+    ]
+  },
+  "elasticsearch": {
+    "settings": {
+      "index": {
+        "refresh_interval": "10s",
+        "number_of_replicas": "0",
+        "number_of_shards": "1"
+      }
+    }
+  },
+  "api": {
+    "services": {
+      "pip": { "url": "http://pip:4200" },
+      "libpostal": { "url": "http://libpostal:4400" },
+      "placeholder": { "url": "http://placeholder:4100" },
+      "interpolation": { "url": "http://interpolation:4300" }
+    }
+  },
+  "imports": {
+    "geonames": {
+      "datapath": "/data/geonames",
+      "countryCode": "IT"
+    },
+    "openstreetmap": {
+      "download": [
+        { "sourceURL": "http://download.geofabrik.de/europe/italy-latest.osm.pbf" }
+      ],
+      "leveldbpath": "/tmp",
+      "datapath": "/data/openstreetmap",
+      "import": [{
+        "filename": "italy-latest.osm.pbf"
+      }]
+    },
+    "openaddresses": {
+      "datapath": "/data/openaddresses",
+      "files": [
+	"it/04/acerra.csv",
+	"it/21/city_of_biella.csv",
+	"it/21/statewide.csv",
+	"it/21/torino.csv",
+	"it/25/bg.csv",
+	"it/25/bs.csv",
+	"it/25/co.csv",
+	"it/25/cr.csv",
+	"it/25/lc.csv",
+	"it/25/lo.csv",
+	"it/25/mb.csv",
+	"it/25/mi.csv",
+	"it/25/mn.csv",
+	"it/25/pv.csv",
+	"it/25/so.csv",
+	"it/25/va.csv",
+	"it/32/south-tyrol-de.csv",
+	"it/32/south-tyrol-it.csv",
+	"it/32/south-tyrol-lld.csv",
+	"it/34/city_of_verona.csv",
+	"it/34/venice.csv",
+	"it/36/statewide.csv",
+	"it/42/statewide.csv",
+	"it/45/bo.csv",
+	"it/45/bologna.csv",
+	"it/45/fc.csv",
+	"it/45/fe.csv",
+	"it/45/ferrara.csv",
+	"it/45/mo.csv",
+	"it/45/pc.csv",
+	"it/45/pr.csv",
+	"it/45/ra.csv",
+	"it/45/re.csv",
+	"it/45/rn.csv",
+	"it/52/firenze.csv",
+	"it/52/statewide.csv",
+	"it/55/statewide.csv",
+	"it/82/statewide.csv",
+	"it/88/statewide.csv",
+	"it/countrywide.csv"
+    ]
+    },
+    "polyline": {
+      "datapath": "/data/polylines",
+      "files": [ "extract.0sv" ]
+    },
+    "whosonfirst": {
+      "datapath": "/data/whosonfirst",
+      "countryCode": "IT",
+      "importPostalcodes": false,
+      "importPlace": [ "85633253" ]
+    }
+  }
+}
