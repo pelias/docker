@@ -17,18 +17,30 @@ register 'compose' 'ps' 'list containers' compose_ps
 function compose_top(){ compose_exec top $@; }
 register 'compose' 'top' 'display the running processes of a container' compose_top
 
-function compose_exec(){ docker-compose $@; }
+function compose_exec(){ compose_switch; $compose_version $@; }
 register 'compose' 'exec' 'execute an arbitrary docker-compose command' compose_exec
 
-function compose_run(){ net_init; docker-compose run --rm $@; }
+function compose_run(){ net_init; compose_switch; $compose_version run --rm $@; }
 register 'compose' 'run' 'execute a docker-compose run command' compose_run
 
-function compose_up(){ docker-compose up -d $@; }
+function compose_up(){ compose_switch; $compose_version up -d $@; }
 register 'compose' 'up' 'start one or more docker-compose service(s)' compose_up
 
-function compose_kill(){ docker-compose kill $@; }
+function compose_kill(){ compose_switch; $compose_version kill $@; }
 register 'compose' 'kill' 'kill one or more docker-compose service(s)' compose_kill
 
-function compose_down(){ docker-compose down; }
+function compose_down(){ compose_switch; $compose_version down; }
 register 'compose' 'down' 'stop all docker-compose service(s)' compose_down
-
+compose_version="";
+function compose_switch(){
+  if [ $(docker compose version >/dev/null 2>&1 ; echo $?) -ne 0 ];
+  then
+     compose_version="docker compose"
+  elif [ $(docker compose-version >/dev/null 2>&1 ; echo $?) -ne 0 ];
+  then
+    compose_version="docker-compose"
+  else
+    echo "No docker compose version found"
+    exit 127
+  fi
+}
