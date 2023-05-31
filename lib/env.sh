@@ -56,7 +56,7 @@ function env_load_stream(){
 # ensure locale is correctly set?
 # export LC_ALL=en_US.UTF-8
 
-# load DATA_DIR and other vars from docker-compose .env file
+# load DATA_DIR and other vars from docker compose .env file
 # note: strips comments and empty lines
 [ -f .env ] && env_load_stream < <(grep -v '^$\|^\s*$\#' .env)
 
