@@ -24,7 +24,7 @@ We think open data, open source, and open strategy win over proprietary solution
 
 # Pelias in Docker
 
-This repository contains a framework for downloading/preparing and building the [Pelias Geocoder](https://github.com/pelias/pelias) using Docker and [Docker Compose](https://github.com/docker/compose#docker-compose).
+This repository contains a framework for downloading/preparing and building the [Pelias Geocoder](https://github.com/pelias/pelias) using Docker and [Docker Compose](https://github.com/docker/compose#docker-compose-v2).
 
 ## Projects
 
@@ -36,7 +36,7 @@ Once you have successfully completed a small build you can use this as a base to
 
 ## Prerequisites
 
-You will need to have a [modern version of `docker`](https://docs.docker.com/engine/release-notes/) and a [modern version of `docker-compose`](https://github.com/docker/compose/blob/master/CHANGELOG.md) installed before continuing. If you are not using the latest version, please mention that in any bugs reports.
+You will need to have a [modern version of `docker`](https://docs.docker.com/engine/release-notes/) and a [modern version of `docker compose`](https://github.com/docker/compose/releases) installed before continuing. If you are not using the latest version, please mention that in any bugs reports.
 
 This project supports Linux and Mac OSX operatings systems. Windows is currently [not supported](https://github.com/pelias/docker/issues/124).
 
@@ -214,11 +214,11 @@ Usage: pelias [command] [action] [options]
   compose   logs                     display container logs
   compose   ps                       list containers
   compose   top                      display the running processes of a container
-  compose   exec                     execute an arbitrary docker-compose command
-  compose   run                      execute a docker-compose run command
-  compose   up                       start one or more docker-compose service(s)
-  compose   kill                     kill one or more docker-compose service(s)
-  compose   down                     stop all docker-compose service(s)
+  compose   exec                     execute an arbitrary docker compose command
+  compose   run                      execute a docker compose run command
+  compose   up                       start one or more docker compose service(s)
+  compose   kill                     kill one or more docker compose service(s)
+  compose   down                     stop all docker compose service(s)
   download  wof                      (re)download whosonfirst data
   download  oa                       (re)download openaddresses data
   download  osm                      (re)download openstreetmap data
@@ -251,20 +251,20 @@ Usage: pelias [command] [action] [options]
 
 ### Compose commands
 
-The compose commands are available as a shortcut to running `docker-compose` directly, they will also ensure that your environment is correctly configured.
+The compose commands are available as a shortcut to running `docker compose` directly, they will also ensure that your environment is correctly configured.
 
-See the docker-compose documentation for more info: https://docs.docker.com/compose/overview/
+See the docker compose documentation for more info: https://docs.docker.com/compose/overview/
 
 ```bash
 pelias compose pull                     update all docker images
 pelias compose logs                     display container logs
 pelias compose ps                       list containers
 pelias compose top                      display the running processes of a container
-pelias compose exec                     execute an arbitrary docker-compose command
-pelias compose run                      execute a docker-compose run command
-pelias compose up                       start one or more docker-compose service(s)
-pelias compose kill                     kill one or more docker-compose service(s)
-pelias compose down                     stop all docker-compose service(s)
+pelias compose exec                     execute an arbitrary docker compose command
+pelias compose run                      execute a docker compose run command
+pelias compose up                       start one or more docker compose service(s)
+pelias compose kill                     kill one or more docker compose service(s)
+pelias compose down                     stop all docker compose service(s)
 ```
 
 ### Download commands
