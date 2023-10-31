@@ -4,7 +4,7 @@ This project is configured to download/prepare/build a complete Pelias installat
 
 As a fairly large build, this will require significant resources to complete quickly. It can still run on a personal computer with 8GB+ RAM, but will take a while. It will require 300GB or so of disk space.
 
-Running an interpolation build of this side would also take many days
+Running an interpolation build of this size would also take many days
 
 Additionally, it requires a polylines file generated with [Valhalla](https://github.com/valhalla).
 
