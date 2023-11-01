@@ -42,13 +42,19 @@ function env_check(){
 # loads environment vars from a stream (such as a file)
 # example: env_load_stream < .env
 function env_load_stream(){
-  [[ -n $DATA_DIR ]] && printf "DATA_DIR is already set to '$DATA_DIR' - this may cause the DATA_DIR specified in the .env to be ignored\n"
+  [[ -n $DATA_DIR ]] && printf 'DATA_DIR is already set to "%s" - this may cause the DATA_DIR specified in the .env to be ignored\n' "$DATA_DIR"
+  # split line into $key and $value by first occurrence of =
   while IFS='=' read -r key value; do
-    ([ -z $key ] || [ -z $value ]) && printf 'Invalid environment var "%s=%s"\n' $key $value && exit 1
-    if [ -z ${!key} ]; then
+    # assert that the line has characters before and after = by checking if $key or $value is empty
+    if [ -z "$key" ] || [ -z "$value" ]; then
+      printf 'Invalid environment var "%s=%s"\n' "$key" "$value"
+      exit 1
+    fi
+    if [ -z "${!key}" ]; then
+      # this wil fail if $key starts with whitespace characters
       export "${key}=${value}"
     elif $ENV_DISPLAY_WARNINGS; then
-      printf '[warn] skip setting environment var "%s=%s", already set "%s=%s"\n' $key $value $key ${!key}
+      printf '[warn] skip setting environment var "%s=%s", already set "%s=%s"\n' "$key" "$value" "$key" "${!key}"
     fi
   done
 }
@@ -57,8 +63,8 @@ function env_load_stream(){
 # export LC_ALL=en_US.UTF-8
 
 # load DATA_DIR and other vars from docker-compose .env file
-# note: strips comments and empty lines
-[ -f .env ] && env_load_stream < <(grep -v '^$\|^\s*$\#' .env)
+# note: strips line comments ('\s*#') and blank lines ('^$')
+[ -f .env ] && env_load_stream < <(grep -v '^$\|^\s*#' .env)
 
 # use the default compose file unless one was specified
 # if [ -z "${COMPOSE_FILE}" ]; then
