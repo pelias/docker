@@ -17,10 +17,15 @@ register 'compose' 'ps' 'list containers' compose_ps
 function compose_top(){ compose_exec top $@; }
 register 'compose' 'top' 'display the running processes of a container' compose_top
 
+# the 'docker compose' subcommand is now the recommended method of calling compose.
+# if not available, we fallback to the legacy 'docker-compose' command.
 function compose_exec(){
-  # fall back to legacy `docker-compose` when modern `docker compose` invocation isn't available
-  local _compose_exec=$(docker compose > /dev/null 2>&1 && echo "docker compose" || echo "docker-compose")
-  $_compose_exec $@;
+  NATIVE_COMPOSE_VERSION=$(docker compose version 2> /dev/null || true)
+  if [ -z "$NATIVE_COMPOSE_VERSION" ]; then
+    docker-compose $@;
+  else
+    docker compose $@;
+  fi
 }
 register 'compose' 'exec' 'execute an arbitrary `docker compose` command' compose_exec
 
