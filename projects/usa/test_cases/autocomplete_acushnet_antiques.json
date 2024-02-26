@@ -1,0 +1,81 @@
+{
+  "name": "autocomplete acushnet antiques",
+  "notes": "https://github.com/pelias/pelias/issues/271",
+  "endpoint": "autocomplete",
+  "priorityThresh": 1,
+  "tests": [
+    {
+      "id": "1",
+      "status": "pass",
+      "user": "missinglink",
+      "description": [
+        "the venue should be retrieved using only a few characters due to the focus",
+        "point being directly on top of the venue"
+      ],
+      "in": {
+        "focus.point.lat": "41.652889",
+        "focus.point.lon": "-70.922898",
+        "text": "acus"
+      },
+      "expected": {
+        "properties": [{
+            "name": "Acushnet River Antiques Showroom"
+        }]
+      }
+    },
+    {
+      "id": "2",
+      "status": "pass",
+      "user": "missinglink",
+      "description": [
+        "as above except using a prefix of 'antique'"
+      ],
+      "in": {
+        "focus.point.lat": "41.652889",
+        "focus.point.lon": "-70.922898",
+        "text": "antiq"
+      },
+      "expected": {
+        "properties": [{
+            "name": "Acushnet River Antiques Showroom"
+        }]
+      }
+    },
+    {
+      "id": "3",
+      "status": "pass",
+      "user": "missinglink",
+      "description": [
+        "as above except using the full token of the stem of 'antiques'"
+      ],
+      "in": {
+        "focus.point.lat": "41.652889",
+        "focus.point.lon": "-70.922898",
+        "text": "antique"
+      },
+      "expected": {
+        "properties": [{
+            "name": "Acushnet River Antiques Showroom"
+        }]
+      }
+    },
+    {
+      "id": "4",
+      "status": "pass",
+      "user": "missinglink",
+      "description": [
+        "no focus point, this test assumes the name is unique globally",
+        "at time of writing only one document is returned, this test may need to",
+        "be updated if another document is added to the index with a similar name"
+      ],
+      "in": {
+        "text": "acushnet an"
+      },
+      "expected": {
+        "properties": [{
+            "name": "Acushnet River Antiques Showroom"
+        }]
+      }
+    }
+  ]
+}

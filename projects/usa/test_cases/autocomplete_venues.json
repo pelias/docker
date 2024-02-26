@@ -1,0 +1,23 @@
+{
+  "name": "autocomplete",
+  "priorityThresh": 5,
+  "endpoint": "autocomplete",
+  "tests": [
+    {
+      "id": 1,
+      "status": "pass",
+      "user": "Diana",
+      "type": "dev",
+      "in": {
+        "text": "DiDi Dumpling"
+      },
+      "expected": {
+        "properties": [
+          {
+            "label": "DiDi Dumpling, Manhattan, New York, NY, USA"
+          }
+        ]
+      }
+    }
+  ]
+}

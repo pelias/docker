@@ -1,0 +1,117 @@
+{
+  "name": "Autocomplete POI",
+  "notes": "For testing POI autocomplete responses",
+  "endpoint": "autocomplete",
+  "priorityThresh": 5,
+  "tests": [
+    {
+      "id": "1-1",
+      "status": "fail",
+      "description": "@nvkelso couldn't find Target in Eureka while visiting home",
+      "issue": "https://github.com/pelias/pelias/issues/185",
+      "user": "riordan",
+      "priorityThresh": 1,
+      "in": {
+        "text": "Target Eureka CA"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "venue",
+            "name": "Target",
+            "locality": "Eureka",
+            "region": "California"
+          }
+        ]
+      }
+    },
+    {
+      "id": "1-2",
+      "status": "fail",
+      "description": "@nvkelso couldn't find Target in Eureka while visiting home",
+      "issue": "https://github.com/pelias/pelias/issues/185",
+      "user": "riordan",
+      "priorityThresh": 1,
+      "in": {
+        "text": "Target Eureka California"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "venue",
+            "name": "Target",
+            "locality": "Eureka",
+            "region": "California"
+          }
+        ]
+      }
+    },
+    {
+      "id": "1-3",
+      "status": "pass",
+      "description": "Searching with focus on",
+      "issue": "https://github.com/pelias/pelias/issues/185",
+      "user": "riordan",
+      "priorityThresh": 1,
+      "in": {
+        "text": "Target",
+        "focus.point.lat": "40.801944",
+        "focus.point.lon": "-124.163611"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "venue",
+            "name": "Target",
+            "locality": "Eureka",
+            "region": "California"
+          }
+        ]
+      }
+    },
+    {
+      "id": "1-4",
+      "status": "fail",
+      "description": "Searching with focus on",
+      "issue": "https://github.com/pelias/pelias/issues/185",
+      "user": "riordan",
+      "priorityThresh": 1,
+      "in": {
+        "text": "Target Eureka",
+        "focus.point.lat": "40.801944",
+        "focus.point.lon": "-124.163611"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "venue",
+            "name": "Target",
+            "locality": "Eureka",
+            "region": "California"
+          }
+        ]
+      }
+    },
+    {
+      "id": "2",
+      "status": "pass",
+      "description": "https://github.com/pelias/api/issues/287",
+      "user": "missinglink",
+      "priorityThresh": 5,
+      "in": {
+        "text": "didi",
+        "focus.point.lat": "40.744243",
+        "focus.point.lon": "-73.990342"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "venue",
+            "name": "DiDi Dumpling",
+            "region": "New York"
+          }
+        ]
+      }
+    }
+  ]
+}
