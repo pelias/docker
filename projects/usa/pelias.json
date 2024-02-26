@@ -6,7 +6,9 @@
   "esclient": {
     "apiVersion": "7.5",
     "hosts": [
-      { "host": "elasticsearch" }
+      {
+        "host": "elasticsearch"
+      }
     ]
   },
   "elasticsearch": {
@@ -25,10 +27,18 @@
   },
   "api": {
     "services": {
-      "placeholder": { "url": "http://placeholder:4100" },
-      "pip": { "url": "http://pip:4200" },
-      "interpolation": { "url": "http://interpolation:4300" },
-      "libpostal": { "url": "http://libpostal:4400" }
+      "placeholder": {
+        "url": "http://placeholder:4100"
+      },
+      "pip": {
+        "url": "http://pip:4200"
+      },
+      "interpolation": {
+        "url": "http://interpolation:4300"
+      },
+      "libpostal": {
+        "url": "http://libpostal:4400"
+      }
     },
     "defaultParameters": {
       "focus.point.lat": 45.52,
@@ -50,13 +60,17 @@
     },
     "openstreetmap": {
       "download": [
-        { "sourceURL": "https://s3.amazonaws.com/metro-extracts.nextzen.org/new-york_new-york.osm.pbf" }
+        {
+          "sourceURL": "http://download.geofabrik.de/north-america-latest.osm.pbf"
+        }
       ],
       "leveldbpath": "/tmp",
       "datapath": "/data/openstreetmap",
-      "import": [{
-        "filename": "new-york_new-york.osm.pbf"
-      }]
+      "import": [
+        {
+          "filename": "north-america-latest.osm.pbf"
+        }
+      ]
     },
     "openaddresses": {
       "datapath": "/data/openaddresses",
@@ -66,7 +80,9 @@
     },
     "polyline": {
       "datapath": "/data/polylines",
-      "files": [ "extract.0sv" ]
+      "files": [
+        "extract.0sv"
+      ]
     },
     "whosonfirst": {
       "datapath": "/data/whosonfirst",
@@ -94,12 +110,31 @@
         "tiger": {
           "datapath": "/data/tiger",
           "states": [
-            { "state_code": 36, "county_code": 81, "name": "Queens County, NY" },
-            { "state_code": 36, "county_code": 85, "name": "Richmond County, NY" },
-            { "state_code": 36, "county_code": 61, "name": "New York County, NY" },
-            { "state_code": 36, "county_code": 47, "name": "Kings County, NY" },
-            { "state_code": 36, "county_code": 5, "name": "Bronx County, NY" }
-
+            {
+              "state_code": 36,
+              "county_code": 81,
+              "name": "Queens County, NY"
+            },
+            {
+              "state_code": 36,
+              "county_code": 85,
+              "name": "Richmond County, NY"
+            },
+            {
+              "state_code": 36,
+              "county_code": 61,
+              "name": "New York County, NY"
+            },
+            {
+              "state_code": 36,
+              "county_code": 47,
+              "name": "Kings County, NY"
+            },
+            {
+              "state_code": 36,
+              "county_code": 5,
+              "name": "Bronx County, NY"
+            }
           ]
         }
       }
