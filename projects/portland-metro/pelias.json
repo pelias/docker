@@ -6,7 +6,9 @@
   "esclient": {
     "apiVersion": "7.5",
     "hosts": [
-      { "host": "elasticsearch" }
+      {
+        "host": "elasticsearch"
+      }
     ]
   },
   "elasticsearch": {
@@ -25,10 +27,18 @@
   },
   "api": {
     "services": {
-      "placeholder": { "url": "http://placeholder:4100" },
-      "pip": { "url": "http://pip:4200" },
-      "interpolation": { "url": "http://interpolation:4300" },
-      "libpostal": { "url": "http://libpostal:4400" }
+      "placeholder": {
+        "url": "http://placeholder:4100"
+      },
+      "pip": {
+        "url": "http://pip:4200"
+      },
+      "interpolation": {
+        "url": "http://interpolation:4300"
+      },
+      "libpostal": {
+        "url": "http://libpostal:4400"
+      }
     },
     "defaultParameters": {
       "focus.point.lat": 45.52,
@@ -46,7 +56,9 @@
     },
     "csv": {
       "datapath": "/data/csv",
-      "files": [],
+      "files": [
+        "markerr-properties.csv"
+      ],
       "download": [
         "https://raw.githubusercontent.com/pelias/csv-importer/master/data/example.csv"
       ]
@@ -57,13 +69,17 @@
     },
     "openstreetmap": {
       "download": [
-        { "sourceURL": "https://data.geocode.earth/archive/portland-metro/2022-06-20/portland_oregon.osm.pbf" }
+        {
+          "sourceURL": "https://data.geocode.earth/archive/portland-metro/2022-06-20/portland_oregon.osm.pbf"
+        }
       ],
       "leveldbpath": "/tmp",
       "datapath": "/data/openstreetmap",
-      "import": [{
-        "filename": "portland_oregon.osm.pbf"
-      }]
+      "import": [
+        {
+          "filename": "portland_oregon.osm.pbf"
+        }
+      ]
     },
     "openaddresses": {
       "datapath": "/data/openaddresses",
@@ -79,7 +95,9 @@
     },
     "polyline": {
       "datapath": "/data/polylines",
-      "files": [ "extract.0sv" ]
+      "files": [
+        "extract.0sv"
+      ]
     },
     "whosonfirst": {
       "datapath": "/data/whosonfirst",
@@ -156,13 +174,41 @@
         "tiger": {
           "datapath": "/data/tiger",
           "states": [
-            { "state_code": 41, "county_code": 67, "name": "Washington County, OR" },
-            { "state_code": 41, "county_code": 51, "name": "Multnomah County, OR" },
-            { "state_code": 41, "county_code": 5,  "name": "Clackamas County, OR" },
-            { "state_code": 41, "county_code": 71, "name": "Yamhill County, OR" },
-            { "state_code": 41, "county_code": 47, "name": "Marion County, OR" },
-            { "state_code": 41, "county_code": 53, "name": "Polk County, OR" },
-            { "state_code": 53, "county_code": 11, "name": "Clark County, WA" }
+            {
+              "state_code": 41,
+              "county_code": 67,
+              "name": "Washington County, OR"
+            },
+            {
+              "state_code": 41,
+              "county_code": 51,
+              "name": "Multnomah County, OR"
+            },
+            {
+              "state_code": 41,
+              "county_code": 5,
+              "name": "Clackamas County, OR"
+            },
+            {
+              "state_code": 41,
+              "county_code": 71,
+              "name": "Yamhill County, OR"
+            },
+            {
+              "state_code": 41,
+              "county_code": 47,
+              "name": "Marion County, OR"
+            },
+            {
+              "state_code": 41,
+              "county_code": 53,
+              "name": "Polk County, OR"
+            },
+            {
+              "state_code": 53,
+              "county_code": 11,
+              "name": "Clark County, WA"
+            }
           ]
         }
       }
