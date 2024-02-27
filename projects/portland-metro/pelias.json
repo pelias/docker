@@ -45,9 +45,7 @@
       "focus.point.lon": -122.67
     },
     "targets": {
-      "csv": [
-        "address"
-      ]
+      "auto_discover": true
     }
   },
   "imports": {
