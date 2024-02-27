@@ -1,7 +1,7 @@
 {
   "logger": {
-    "level": "info",
-    "timestamp": false
+    "level": "debug",
+    "timestamp": true
   },
   "esclient": {
     "apiVersion": "7.5",
@@ -43,6 +43,11 @@
     "defaultParameters": {
       "focus.point.lat": 45.52,
       "focus.point.lon": -122.67
+    },
+    "targets": {
+      "csv": [
+        "address"
+      ]
     }
   },
   "imports": {
