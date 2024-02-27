@@ -5,7 +5,7 @@ This project is configured to download/prepare/build a complete Pelias installat
 
 # Setup
 
-Please refer to the instructions at https://github.com/pelias/docker in order to install and configure your docker environment.
+Please refer to the instructions at <https://github.com/pelias/docker> in order to install and configure your docker environment.
 
 The minimum configuration required in order to run this project are [installing prerequisites](https://github.com/pelias/docker#prerequisites), [install the pelias command](https://github.com/pelias/docker#installing-the-pelias-command) and [configure the environment](https://github.com/pelias/docker#configure-environment).
 
@@ -31,4 +31,4 @@ pelias test run
 
 You can now make queries against your new Pelias build:
 
-http://localhost:4000/v1/search?text=111+8th+ave+nyc
+<http://localhost:4000/v1/search?text=111+8th+ave+nyc>
