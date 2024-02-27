@@ -60,6 +60,7 @@
     "csv": {
       "datapath": "/data/csv",
       "files": [
+        "clark.csv",
         "markerr-properties.csv"
       ],
       "download": [
