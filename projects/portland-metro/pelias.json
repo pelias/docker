@@ -64,7 +64,8 @@
         "example.csv",
         "clark-alt.csv",
         "markerr-properties.csv",
-        "markerr-properties-v2.csv"
+        "markerr-properties-v2.csv",
+        "property-details-000000000000.csv"
       ],
       "download": [
         "https://raw.githubusercontent.com/pelias/csv-importer/master/data/example.csv"
