@@ -1,0 +1,717 @@
+{
+  "name": "/v1/search address",
+  "description": "addresses in Las Vegas, NV metro area",
+  "priorityThresh": 1,
+  "normalizers": {
+    "name": [
+      "toUpperCase",
+      "removeOrdinals",
+      "stripPunctuation",
+      "abbreviateDirectionals",
+      "abbreviateStreetSuffixes"
+    ]
+  },
+  "tests": [
+    {
+      "id": 1,
+      "status": "fail",
+      "in": {
+        "text": "1920 N MLK Blvd, Las Vegas, NV"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "1920 North Martin Luther King Boulevard",
+            "locality": "Las Vegas",
+            "region": "Nevada",
+            "region_a": "NV"
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "status": "fail",
+      "in": {
+        "text": "1920 N MLK Blvd, Las Vegas, Nevada"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "1920 North Martin Luther King Boulevard",
+            "locality": "Las Vegas",
+            "region": "Nevada",
+            "region_a": "NV"
+          }
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "status": "fail",
+      "in": {
+        "text": "1920 N MLK Blvd Las Vegas NV"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "1920 North Martin Luther King Boulevard",
+            "locality": "Las Vegas",
+            "region": "Nevada",
+            "region_a": "NV"
+          }
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "status": "fail",
+      "in": {
+        "text": "1920 N MLK Blvd Las Vegas Nevada"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "1920 North Martin Luther King Boulevard",
+            "locality": "Las Vegas",
+            "region": "Nevada",
+            "region_a": "NV"
+          }
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "status": "fail",
+      "in": {
+        "text": "1920 N MLK Jr Blvd, Las Vegas, NV"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "1920 North Martin Luther King Boulevard",
+            "locality": "Las Vegas",
+            "region": "Nevada",
+            "region_a": "NV"
+          }
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "status": "fail",
+      "in": {
+        "text": "1920 N MLK Jr Blvd, Las Vegas, Nevada"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "1920 North Martin Luther King Boulevard",
+            "locality": "Las Vegas",
+            "region": "Nevada",
+            "region_a": "NV"
+          }
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "status": "fail",
+      "in": {
+        "text": "1920 N MLK Jr Blvd Las Vegas NV"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "1920 North Martin Luther King Boulevard",
+            "locality": "Las Vegas",
+            "region": "Nevada",
+            "region_a": "NV"
+          }
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "status": "fail",
+      "in": {
+        "text": "1920 N MLK Jr Blvd Las Vegas Nevada"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "1920 North Martin Luther King Boulevard",
+            "locality": "Las Vegas",
+            "region": "Nevada",
+            "region_a": "NV"
+          }
+        ]
+      }
+    },
+    {
+      "id": 9,
+      "status": "fail",
+      "in": {
+        "text": "1920 N ML King Blvd, Las Vegas, NV"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "1920 North Martin Luther King Boulevard",
+            "locality": "Las Vegas",
+            "region": "Nevada",
+            "region_a": "NV"
+          }
+        ]
+      }
+    },
+    {
+      "id": 10,
+      "status": "fail",
+      "in": {
+        "text": "1920 N ML King Blvd, Las Vegas, Nevada"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "1920 North Martin Luther King Boulevard",
+            "locality": "Las Vegas",
+            "region": "Nevada",
+            "region_a": "NV"
+          }
+        ]
+      }
+    },
+    {
+      "id": 11,
+      "status": "fail",
+      "in": {
+        "text": "1920 N ML King Blvd Las Vegas NV"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "1920 North Martin Luther King Boulevard",
+            "locality": "Las Vegas",
+            "region": "Nevada",
+            "region_a": "NV"
+          }
+        ]
+      }
+    },
+    {
+      "id": 12,
+      "status": "fail",
+      "in": {
+        "text": "1920 N ML King Blvd Las Vegas Nevada"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "1920 North Martin Luther King Boulevard",
+            "locality": "Las Vegas",
+            "region": "Nevada",
+            "region_a": "NV"
+          }
+        ]
+      }
+    },
+    {
+      "id": 12.1,
+      "status": "pass",
+      "in": {
+        "text": "1920 N martin luther king Las Vegas Nevada"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "1920 North Martin Luther King Boulevard",
+            "locality": "Las Vegas",
+            "region": "Nevada",
+            "region_a": "NV"
+          }
+        ]
+      }
+    },
+    {
+      "id": 13,
+      "status": "fail",
+      "in": {
+        "text": "2000 S LV Blvd, Las Vegas, NV"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "2000 South Las Vegas Boulevard",
+            "locality": "Las Vegas",
+            "region": "Nevada",
+            "region_a": "NV"
+          }
+        ]
+      }
+    },
+    {
+      "id": 14,
+      "status": "fail",
+      "in": {
+        "text": "2000 S LV Blvd, Las Vegas, Nevada"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "2000 South Las Vegas Boulevard",
+            "locality": "Las Vegas",
+            "region": "Nevada",
+            "region_a": "NV"
+          }
+        ]
+      }
+    },
+    {
+      "id": 15,
+      "status": "fail",
+      "in": {
+        "text": "2000 S LV Blvd Las Vegas NV"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "2000 South Las Vegas Boulevard",
+            "locality": "Las Vegas",
+            "region": "Nevada",
+            "region_a": "NV"
+          }
+        ]
+      }
+    },
+    {
+      "id": 16,
+      "status": "fail",
+      "in": {
+        "text": "2000 S LV Blvd Las Vegas Nevada"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "2000 South Las Vegas Boulevard",
+            "locality": "Las Vegas",
+            "region": "Nevada",
+            "region_a": "NV"
+          }
+        ]
+      }
+    },
+    {
+      "id": 17,
+      "status": "fail",
+      "in": {
+        "text": "2000 S LVBLVD, Las Vegas, NV"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "2000 South Las Vegas Boulevard",
+            "locality": "Las Vegas",
+            "region": "Nevada",
+            "region_a": "NV"
+          }
+        ]
+      }
+    },
+    {
+      "id": 18,
+      "status": "fail",
+      "in": {
+        "text": "2000 S LVBLVD, Las Vegas, Nevada"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "2000 South Las Vegas Boulevard",
+            "locality": "Las Vegas",
+            "region": "Nevada",
+            "region_a": "NV"
+          }
+        ]
+      }
+    },
+    {
+      "id": 19,
+      "status": "fail",
+      "in": {
+        "text": "2000 S LVBLVD Las Vegas NV"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "2000 South Las Vegas Boulevard",
+            "locality": "Las Vegas",
+            "region": "Nevada",
+            "region_a": "NV"
+          }
+        ]
+      }
+    },
+    {
+      "id": 20,
+      "status": "fail",
+      "in": {
+        "text": "2000 S LVBLVD Las Vegas Nevada"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "2000 South Las Vegas Boulevard",
+            "locality": "Las Vegas",
+            "region": "Nevada",
+            "region_a": "NV"
+          }
+        ]
+      }
+    },
+    {
+      "id": 21,
+      "status": "pass",
+      "in": {
+        "text": "2000 S Las Vegas Blvd, Las Vegas, NV"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "2000 South Las Vegas Boulevard",
+            "locality": "Las Vegas",
+            "region": "Nevada",
+            "region_a": "NV"
+          }
+        ]
+      }
+    },
+    {
+      "id": 22,
+      "status": "pass",
+      "in": {
+        "text": "2000 S Las Vegas Blvd, Las Vegas, Nevada"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "2000 South Las Vegas Boulevard",
+            "locality": "Las Vegas",
+            "region": "Nevada",
+            "region_a": "NV"
+          }
+        ]
+      }
+    },
+    {
+      "id": 23,
+      "status": "pass",
+      "in": {
+        "text": "2000 S Las Vegas Blvd Las Vegas NV"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "2000 South Las Vegas Boulevard",
+            "locality": "Las Vegas",
+            "region": "Nevada",
+            "region_a": "NV"
+          }
+        ]
+      }
+    },
+    {
+      "id": 24,
+      "status": "pass",
+      "in": {
+        "text": "2000 S Las Vegas Blvd Las Vegas Nevada"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "2000 South Las Vegas Boulevard",
+            "locality": "Las Vegas",
+            "region": "Nevada",
+            "region_a": "NV"
+          }
+        ]
+      }
+    },
+    {
+      "id": 25,
+      "status": "fail",
+      "description": "address is in North Las Vegas",
+      "in": {
+        "text": "3100 Thomas Ave, Las Vegas, NV"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "3100 Thomas Avenue",
+            "locality": "Las Vegas",
+            "region": "Nevada",
+            "region_a": "NV"
+          }
+        ]
+      }
+    },
+    {
+      "id": 26,
+      "status": "fail",
+      "description": "address is in North Las Vegas",
+      "in": {
+        "text": "3100 Thomas Ave, Las Vegas, Nevada"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "3100 Thomas Avenue",
+            "locality": "Las Vegas",
+            "region": "Nevada",
+            "region_a": "NV"
+          }
+        ]
+      }
+    },
+    {
+      "id": 27,
+      "status": "fail",
+      "description": "address is in North Las Vegas",
+      "in": {
+        "text": "3100 Thomas Ave Las Vegas NV"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "3100 Thomas Avenue",
+            "locality": "Las Vegas",
+            "region": "Nevada",
+            "region_a": "NV"
+          }
+        ]
+      }
+    },
+    {
+      "id": 28,
+      "status": "fail",
+      "description": "address is in North Las Vegas",
+      "in": {
+        "text": "3100 Thomas Ave Las Vegas Nevada"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "3100 Thomas Avenue",
+            "locality": "Las Vegas",
+            "region": "Nevada",
+            "region_a": "NV"
+          }
+        ]
+      }
+    },
+    {
+      "id": 29,
+      "status": "pass",
+      "in": {
+        "text": "3100 Thomas Ave, North Las Vegas, NV"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "3100 Thomas Avenue",
+            "locality": "North Las Vegas",
+            "region": "Nevada",
+            "region_a": "NV"
+          }
+        ]
+      }
+    },
+    {
+      "id": 30,
+      "status": "pass",
+      "in": {
+        "text": "3100 Thomas Ave, North Las Vegas, Nevada"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "3100 Thomas Avenue",
+            "locality": "North Las Vegas",
+            "region": "Nevada",
+            "region_a": "NV"
+          }
+        ]
+      }
+    },
+    {
+      "id": 31,
+      "status": "pass",
+      "in": {
+        "text": "317 N 6TH ST, Las Vegas, Nevada"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "317 North 6th Street",
+            "locality": "Las Vegas",
+            "region": "Nevada",
+            "region_a": "NV"
+          }
+        ]
+      }
+    },
+    {
+      "id": 32,
+      "status": "pass",
+      "in": {
+        "text": "317 N 6TH ST, Las Vegas, NV"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "317 North 6th Street",
+            "locality": "Las Vegas",
+            "region": "Nevada",
+            "region_a": "NV"
+          }
+        ]
+      }
+    },
+    {
+      "id": 33,
+      "status": "pass",
+      "in": {
+        "text": "317 N 6th St, Las Vegas, Nevada"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "317 North 6th Street",
+            "locality": "Las Vegas",
+            "region": "Nevada",
+            "region_a": "NV"
+          }
+        ]
+      }
+    },
+    {
+      "id": 34,
+      "status": "pass",
+      "in": {
+        "text": "317 N 6th St, Las Vegas, NV"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "317 North 6th Street",
+            "locality": "Las Vegas",
+            "region": "Nevada",
+            "region_a": "NV"
+          }
+        ]
+      }
+    },
+    {
+      "id": 35,
+      "status": "pass",
+      "in": {
+        "text": "317 North 6th St, Las Vegas, Nevada"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "317 North 6th Street",
+            "locality": "Las Vegas",
+            "region": "Nevada",
+            "region_a": "NV"
+          }
+        ]
+      }
+    },
+    {
+      "id": 36,
+      "status": "pass",
+      "in": {
+        "text": "317 North 6th St, Las Vegas, NV"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "317 North 6th Street",
+            "locality": "Las Vegas",
+            "region": "Nevada",
+            "region_a": "NV"
+          }
+        ]
+      }
+    },
+    {
+      "id": 37,
+      "status": "fail",
+      "in": {
+        "text": "317 N Sixth St, Las Vegas, Nevada"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "317 North 6th Street",
+            "locality": "Las Vegas",
+            "region": "Nevada",
+            "region_a": "NV"
+          }
+        ]
+      }
+    },
+    {
+      "id": 38,
+      "status": "fail",
+      "in": {
+        "text": "317 N Sixth St, Las Vegas, NV"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "317 North 6th Street",
+            "locality": "Las Vegas",
+            "region": "Nevada",
+            "region_a": "NV"
+          }
+        ]
+      }
+    },
+    {
+      "id": 39,
+      "status": "fail",
+      "in": {
+        "text": "317 North Sixth St, Las Vegas, Nevada"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "317 North 6th Street",
+            "locality": "Las Vegas",
+            "region": "Nevada",
+            "region_a": "NV"
+          }
+        ]
+      }
+    },
+    {
+      "id": 40,
+      "status": "fail",
+      "in": {
+        "text": "317 North Sixth St, Las Vegas, NV"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "317 North 6th Street",
+            "locality": "Las Vegas",
+            "region": "Nevada",
+            "region_a": "NV"
+          }
+        ]
+      }
+    }
+  ]
+}

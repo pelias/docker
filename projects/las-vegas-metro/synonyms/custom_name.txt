@@ -1,0 +1,25 @@
+
+shopping,store,shop,retail,grocery,mall
+
+# Transit Centers
+# Rail Stations
+# Misc Landmarks
+
+north, N
+south, S
+east, E
+west, W
+north west => northwest
+north east => northeast
+south west => southwest
+south east => southeast
+northwest, NW
+northeast, NE
+southwest, SW
+southeast, SE
+
+Int'l, international
+
+# street names
+MLK,M L King,Martin Luther King
+LV,Las Vegas

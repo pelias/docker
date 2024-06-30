@@ -1,0 +1,107 @@
+{
+  "logger": {
+    "level": "info",
+    "timestamp": false
+  },
+  "esclient": {
+    "apiVersion": "7.5",
+    "hosts": [
+      { "host": "elasticsearch" }
+    ]
+  },
+  "elasticsearch": {
+    "settings": {
+      "index": {
+        "refresh_interval": "10s",
+        "number_of_replicas": "0",
+        "number_of_shards": "1"
+      }
+    }
+  },
+  "acceptance-tests": {
+    "endpoints": {
+      "docker": "http://api:4000/v1/"
+    }
+  },
+  "api": {
+    "services": {
+      "placeholder": { "url": "http://placeholder:4100" },
+      "pip": { "url": "http://pip:4200" },
+      "interpolation": { "url": "http://interpolation:4300" },
+      "libpostal": { "url": "http://libpostal:4400" }
+    },
+    "defaultParameters": {
+      "focus.point.lat": 36.14737,
+      "focus.point.lon": -115.15546
+    }
+  },
+  "imports": {
+    "adminLookup": {
+      "enabled": true
+    },
+    "csv": {
+      "datapath": "/data/csv",
+      "files": [],
+      "download": [
+        "https://raw.githubusercontent.com/pelias/csv-importer/master/data/example.csv"
+      ]
+    },
+    "geonames": {
+      "datapath": "/data/geonames",
+      "countryCode": "ALL"
+    },
+    "openstreetmap": {
+      "download": [
+        { "sourceURL": "https://download.geofabrik.de/north-america/us/nevada-240702.osm.pbf" }
+      ],
+      "leveldbpath": "/tmp",
+      "datapath": "/data/openstreetmap",
+      "import": [{
+        "filename": "nevada-240702.osm.pbf"
+      }]
+    },
+    "openaddresses": {
+      "datapath": "/data/openaddresses",
+      "files": [
+        "us/nv/clark.csv",
+        "us/nv/henderson.csv",
+        "us/nv/las_vegas.csv"
+      ]
+    },
+    "polyline": {
+      "datapath": "/data/polylines",
+      "files": [ "extract.0sv" ]
+    },
+    "whosonfirst": {
+      "datapath": "/data/whosonfirst",
+      "importPostalcodes": true,
+      "countryCode": "US",
+      "importPlace": [
+        "85688531"
+      ]
+    },
+    "transit": {
+      "datapath": "/data/transit",
+      "feeds": [
+        {
+          "layerId": "stops",
+          "url": "https://developer.rtcsnv.com/transitData/google_transit.zip",
+          "filename": "stops.txt",
+          "agencyId": "RTCSNV",
+          "agencyName": "RTC Transit",
+          "layerName": "Stop"
+        }
+      ]
+    },
+    "interpolation": {
+      "download": {
+        "tiger": {
+          "datapath": "/data/tiger",
+          "states": [
+            { "state_code": 32, "county_code": 3, "name": "Clark County, NV" }
+          ]
+        }
+      }
+    }
+  }
+}

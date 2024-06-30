@@ -1,0 +1,70 @@
+{
+  "name": "/v1/search venues",
+  "priorityThresh": 1,
+  "endpoint": "search",
+  "tests": [
+    {
+      "id": 1,
+      "status": "pass",
+      "notes": "Stratosphere Tower should come up for Stratosphere",
+      "in": {
+        "text": "Stratosphere"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "venue",
+            "name": "Stratosphere Tower",
+            "country_a": "USA",
+            "country": "United States",
+            "region": "Nevada",
+            "region_a": "NV",
+            "locality": "Las Vegas"
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "status": "pass",
+      "notes": "Stratosphere Tower should come up for Stratosphere Hotel",
+      "in": {
+        "text": "Stratosphere Tower"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "venue",
+            "name": "Stratosphere Tower",
+            "country_a": "USA",
+            "country": "United States",
+            "region": "Nevada",
+            "region_a": "NV",
+            "locality": "Las Vegas"
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "status": "pass",
+      "notes": "Stratosphere Tower should come up for Stratosphere Tower",
+      "in": {
+        "text": "Stratosphere Hotel"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "venue",
+            "name": "Stratosphere Tower",
+            "country_a": "USA",
+            "country": "United States",
+            "region": "Nevada",
+            "region_a": "NV",
+            "locality": "Las Vegas"
+          }
+        ]
+      }
+    }
+  ]
+}
