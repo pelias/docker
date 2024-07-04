@@ -14,7 +14,7 @@ jewvi,juvi,juvenile
 first,1st
 second,2nd
 third,3rd
-forth,4th
+fourth,4th
 fifth,5th
 sixth,6th
 seventh,7th
