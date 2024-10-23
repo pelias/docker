@@ -1,11 +1,20 @@
 #!/bin/bash
 set -e;
 
+# Function to determine the Elasticsearch port with a fallback to the default port
+function get_elastic_port(){
+  if [[ -n "$1" ]]; then
+    echo "$1"
+  else
+    echo "9200"
+  fi
+}
+
 function elastic_schema_drop(){ compose_run 'schema' node scripts/drop_index "$@" || true; }
 function elastic_schema_create(){ compose_run 'schema' ./bin/create_index; }
 function elastic_start(){
   mkdir -p $DATA_DIR/elasticsearch
-  # attemp to set proper permissions if running as root
+  # Attempt to set proper permissions if running as root
   chown $DOCKER_USER $DATA_DIR/elasticsearch 2>/dev/null || true
   compose_exec up -d elasticsearch
 }
@@ -17,32 +26,35 @@ register 'elastic' 'create' 'create elasticsearch index with pelias mapping' ela
 register 'elastic' 'start' 'start elasticsearch server' elastic_start
 register 'elastic' 'stop' 'stop elasticsearch server' elastic_stop
 
-# to use this function:
-# if test $(elastic_status) -ne 200; then
+# Function to get HTTP status of Elasticsearch, with an optional port argument
 function elastic_status(){
+  local port=$(get_elastic_port "$1")
   curl \
     --output /dev/null \
     --silent \
     --write-out "%{http_code}" \
-    "http://${ELASTIC_HOST:-localhost:9200}/_cluster/health?wait_for_status=yellow&timeout=1s" \
+    "http://${ELASTIC_HOST:-localhost}:${port}/_cluster/health?wait_for_status=yellow&timeout=1s" \
       || true;
 }
 
-# the same function but with a trailing newline
-function elastic_status_newline(){ echo $(elastic_status); }
+# Function to get HTTP status with a trailing newline, using optional port
+function elastic_status_newline(){
+  echo $(elastic_status "$@")
+}
 register 'elastic' 'status' 'HTTP status code of the elasticsearch service' elastic_status_newline
 
 function elastic_wait(){
   echo 'waiting for elasticsearch service to come up';
   retry_count=30
+  local port=$(get_elastic_port "$1")
 
   i=1
   while [[ "$i" -le "$retry_count" ]]; do
-    if [[ $(elastic_status) -eq 200 ]]; then
-      echo "Elasticsearch up!"
+    if [[ $(elastic_status "$port") -eq 200 ]]; then
+      echo "Elasticsearch up on port $port!"
       exit 0
-    elif [[ $(elastic_status) -eq 408 ]]; then
-      # 408 indicates the server is up but not yet yellow status
+    elif [[ $(elastic_status "$port") -eq 408 ]]; then
+      # 408 indicates the server is up but has not reached yellow status yet
       printf ":"
     else
       printf "."
@@ -58,11 +70,17 @@ function elastic_wait(){
 
 register 'elastic' 'wait' 'wait for elasticsearch to start up' elastic_wait
 
-function elastic_info(){ curl -s "http://${ELASTIC_HOST:-localhost:9200}/"; }
+# Function to get Elasticsearch version and build info with an optional port argument
+function elastic_info(){
+  local port=$(get_elastic_port "$1")
+  curl -s "http://${ELASTIC_HOST:-localhost}:${port}/";
+}
 register 'elastic' 'info' 'display elasticsearch version and build info' elastic_info
 
+# Function to display a summary of document counts per source/layer with optional port
 function elastic_stats(){
-  curl -s "http://${ELASTIC_HOST:-localhost:9200}/pelias/_search?request_cache=true&timeout=10s&pretty=true" \
+  local port=$(get_elastic_port "$1")
+  curl -s "http://${ELASTIC_HOST:-localhost}:${port}/pelias/_search?request_cache=true&timeout=10s&pretty=true" \
     -H 'Content-Type: application/json' \
     -d '{
           "aggs": {
