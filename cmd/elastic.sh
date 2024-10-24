@@ -1,15 +1,6 @@
 #!/bin/bash
 set -e;
 
-# Function to determine the Elasticsearch port with a fallback to the default port
-function get_elastic_port(){
-  if [[ -n "$1" ]]; then
-    echo "$1"
-  else
-    echo "9200"
-  fi
-}
-
 function elastic_schema_drop(){ compose_run 'schema' node scripts/drop_index "$@" || true; }
 function elastic_schema_create(){ compose_run 'schema' ./bin/create_index; }
 function elastic_start(){
@@ -28,12 +19,11 @@ register 'elastic' 'stop' 'stop elasticsearch server' elastic_stop
 
 # Function to get HTTP status of Elasticsearch, with an optional port argument
 function elastic_status(){
-  local port=$(get_elastic_port "$1")
   curl \
     --output /dev/null \
     --silent \
     --write-out "%{http_code}" \
-    "http://${ELASTIC_HOST:-localhost}:${port}/_cluster/health?wait_for_status=yellow&timeout=1s" \
+    "http://${ELASTIC_HOST:-localhost}:${ELASTIC_PORT:-9200}/_cluster/health?wait_for_status=yellow&timeout=1s" \
       || true;
 }
 
@@ -46,14 +36,13 @@ register 'elastic' 'status' 'HTTP status code of the elasticsearch service' elas
 function elastic_wait(){
   echo 'waiting for elasticsearch service to come up';
   retry_count=30
-  local port=$(get_elastic_port "$1")
 
   i=1
   while [[ "$i" -le "$retry_count" ]]; do
-    if [[ $(elastic_status "$port") -eq 200 ]]; then
-      echo "Elasticsearch up on port $port!"
+    if [[ $(elastic_status") -eq 200 ]]; then
+      echo "Elasticsearch up on port ${ELASTIC_PORT:-9200}!"
       exit 0
-    elif [[ $(elastic_status "$port") -eq 408 ]]; then
+    elif [[ $(elastic_status") -eq 408 ]]; then
       # 408 indicates the server is up but has not reached yellow status yet
       printf ":"
     else
@@ -72,15 +61,13 @@ register 'elastic' 'wait' 'wait for elasticsearch to start up' elastic_wait
 
 # Function to get Elasticsearch version and build info with an optional port argument
 function elastic_info(){
-  local port=$(get_elastic_port "$1")
-  curl -s "http://${ELASTIC_HOST:-localhost}:${port}/";
+  curl -s "http://${ELASTIC_HOST:-localhost}:${ELASTIC_PORT:-9200}/";
 }
 register 'elastic' 'info' 'display elasticsearch version and build info' elastic_info
 
 # Function to display a summary of document counts per source/layer with optional port
 function elastic_stats(){
-  local port=$(get_elastic_port "$1")
-  curl -s "http://${ELASTIC_HOST:-localhost}:${port}/pelias/_search?request_cache=true&timeout=10s&pretty=true" \
+  curl -s "http://${ELASTIC_HOST:-localhost}:${ELASTIC_PORT:-9200}/pelias/_search?request_cache=true&timeout=10s&pretty=true" \
     -H 'Content-Type: application/json' \
     -d '{
           "aggs": {
