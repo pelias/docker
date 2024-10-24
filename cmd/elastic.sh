@@ -17,7 +17,8 @@ register 'elastic' 'create' 'create elasticsearch index with pelias mapping' ela
 register 'elastic' 'start' 'start elasticsearch server' elastic_start
 register 'elastic' 'stop' 'stop elasticsearch server' elastic_stop
 
-# Function to get HTTP status of Elasticsearch, with an optional port argument
+# to use this function:
+# if test $(elastic_status) -ne 200; then
 function elastic_status(){
   curl \
     --output /dev/null \
@@ -28,9 +29,7 @@ function elastic_status(){
 }
 
 # Function to get HTTP status with a trailing newline, using optional port
-function elastic_status_newline(){
-  echo $(elastic_status "$@")
-}
+function elastic_status_newline(){ echo $(elastic_status); }
 register 'elastic' 'status' 'HTTP status code of the elasticsearch service' elastic_status_newline
 
 function elastic_wait(){
@@ -60,9 +59,7 @@ function elastic_wait(){
 register 'elastic' 'wait' 'wait for elasticsearch to start up' elastic_wait
 
 # Function to get Elasticsearch version and build info with an optional port argument
-function elastic_info(){
-  curl -s "http://${ELASTIC_HOST:-localhost}:${ELASTIC_PORT:-9200}/";
-}
+function elastic_info(){ curl -s "http://${ELASTIC_HOST:-localhost}:${ELASTIC_PORT:-9200}/"; }
 register 'elastic' 'info' 'display elasticsearch version and build info' elastic_info
 
 # Function to display a summary of document counts per source/layer with optional port
