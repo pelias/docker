@@ -39,10 +39,10 @@ function elastic_wait(){
 
   i=1
   while [[ "$i" -le "$retry_count" ]]; do
-    if [[ $(elastic_status") -eq 200 ]]; then
+    if [[ $(elastic_status) -eq 200 ]]; then
       echo "Elasticsearch up on port ${ELASTIC_PORT:-9200}!"
       exit 0
-    elif [[ $(elastic_status") -eq 408 ]]; then
+    elif [[ $(elastic_status) -eq 408 ]]; then
       # 408 indicates the server is up but has not reached yellow status yet
       printf ":"
     else
