@@ -79,17 +79,18 @@ The following shell script can be used to quickly get started with a Pelias buil
 
 ```bash
 #!/bin/bash
-set -x
+set -xe
 
 # change directory to the where you would like to install Pelias
 # cd /path/to/install
 
 # clone this repository
-git clone https://github.com/pelias/docker.git && cd docker
+git clone https://github.com/pelias/docker.git
+cd docker
 
 # install pelias script
 # this is the _only_ setup command that should require `sudo`
-sudo ln -s "$(pwd)/pelias" /usr/local/bin/pelias
+export PATH=$PATH:`pwd`
 
 # cd into the project directory
 cd projects/portland-metro
