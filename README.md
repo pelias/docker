@@ -89,8 +89,11 @@ git clone https://github.com/pelias/docker.git
 cd docker
 
 # install pelias script
-# this is the _only_ setup command that should require `sudo`
-export PATH=$PATH:`pwd`
+read -p "Would you like to install pelias in your system (needs sudo)? (y/n)?" choice
+case "$choice" in 
+  y|Y ) sudo ln -s "$(pwd)/pelias" /usr/local/bin/pelias;;
+  * ) export PATH=$PATH:`pwd`;;
+esac
 
 # cd into the project directory
 cd projects/portland-metro
