@@ -4,7 +4,7 @@
     "timestamp": false
   },
   "esclient": {
-    "apiVersion": "7.5",
+    "apiVersion": "7.x",
     "hosts": [
       { "host": "elasticsearch" }
     ]
@@ -16,7 +16,44 @@
         "number_of_replicas": "0",
         "number_of_shards": "1"
       }
+    },
+    "accessLog": "common",
+    "host": "http://maps.druckplanet24.de/",
+    "indexName": "pelias",
+    "version": "1.0",
+    "targets": {
+      "auto_discover": true,
+      "canonical_sources": ["whosonfirst", "openstreetmap", "openaddresses", "geonames"],
+      "layers_by_source": {
+        "openstreetmap": [ "address", "venue", "street" ],
+        "openaddresses": [ "address" ],
+        "geonames": [
+          "country", "macroregion", "region", "county", "localadmin", "locality", "borough",
+          "neighbourhood", "venue"
+        ],
+        "whosonfirst": [
+          "continent", "empire", "country", "dependency", "macroregion", "region", "locality",
+          "localadmin", "macrocounty", "county", "macrohood", "borough", "neighbourhood",
+          "microhood", "disputed", "venue", "postalcode", "ocean", "marinearea"
+        ]
+      },
+      "source_aliases": {
+        "osm": [ "openstreetmap" ],
+        "oa":  [ "openaddresses" ],
+        "gn":  [ "geonames" ],
+        "wof": [ "whosonfirst" ]
+      },
+      "layer_aliases": {
+        "coarse": [
+          "continent", "empire", "country", "dependency", "macroregion", "region", "locality",
+          "localadmin", "macrocounty", "county", "macrohood", "borough", "neighbourhood",
+          "microhood", "disputed", "postalcode", "ocean", "marinearea"
+        ]
+      }
     }
+  },
+  "schema": {
+    "indexName": "pelias"
   },
   "api": {
     "services": {
@@ -52,7 +89,7 @@
     "whosonfirst": {
       "datapath": "/data/whosonfirst",
       "countryCode": "DE",
-      "importPostalcodes": false,
+      "importPostalcodes": true,
       "importPlace": [ "85633111" ]
     }
   }
