@@ -16,7 +16,8 @@ Please ensure that's all working fine before continuing.
 
 To run a complete build, execute 
 ```
-generate.sh
+chmod +x generate.sh
+./generate.sh
 ```
 
 # Make an Example Query
