@@ -14,7 +14,10 @@ Please ensure that's all working fine before continuing.
 
 # Run a Build
 
-To run a complete build, execute `generate.sh`
+To run a complete build, execute 
+```
+generate.sh
+```
 
 # Make an Example Query
 
