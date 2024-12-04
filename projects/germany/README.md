@@ -14,18 +14,7 @@ Please ensure that's all working fine before continuing.
 
 # Run a Build
 
-To run a complete build, execute the following commands:
-
-```bash
-pelias compose pull
-pelias elastic start
-pelias elastic wait
-pelias elastic create
-pelias download all
-pelias prepare all
-pelias import all
-pelias compose up
-```
+To run a complete build, execute `generate.sh`
 
 # Make an Example Query
 
