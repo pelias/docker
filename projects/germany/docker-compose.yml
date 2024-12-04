@@ -1,7 +1,8 @@
-version: '3'
 networks:
   default:
     driver: bridge
+  shared-net:
+    external: true  # Dies gibt an, dass es sich um ein externes Netzwerk handelt
 services:
   libpostal:
     image: pelias/libpostal-service
@@ -9,12 +10,18 @@ services:
     user: "${DOCKER_USER}"
     restart: always
     ports: [ "127.0.0.1:4400:4400" ]
+    networks:
+      - default
+      - shared-net
   schema:
     image: pelias/schema:master
     container_name: pelias_schema
     user: "${DOCKER_USER}"
     volumes:
       - "./pelias.json:/code/pelias.json"
+    networks:
+      - default
+      - shared-net
   api:
     image: pelias/api:master
     container_name: pelias_api
@@ -24,6 +31,9 @@ services:
     ports: [ "0.0.0.0:4000:4000" ]
     volumes:
       - "./pelias.json:/code/pelias.json"
+    networks:
+      - default
+      - shared-net
   placeholder:
     image: pelias/placeholder:master
     container_name: pelias_placeholder
@@ -35,6 +45,9 @@ services:
       - "./pelias.json:/code/pelias.json"
       - "${DATA_DIR}:/data"
       - "./blacklist/:/data/blacklist"
+    networks:
+      - default
+      - shared-net
   whosonfirst:
     image: pelias/whosonfirst:master
     container_name: pelias_whosonfirst
@@ -42,6 +55,9 @@ services:
     volumes:
       - "./pelias.json:/code/pelias.json"
       - "${DATA_DIR}:/data"
+    networks:
+      - default
+      - shared-net
   openstreetmap:
     image: pelias/openstreetmap:master
     container_name: pelias_openstreetmap
@@ -49,6 +65,9 @@ services:
     volumes:
       - "./pelias.json:/code/pelias.json"
       - "${DATA_DIR}:/data"
+    networks:
+      - default
+      - shared-net
   openaddresses:
     image: pelias/openaddresses:master
     container_name: pelias_openaddresses
@@ -56,6 +75,9 @@ services:
     volumes:
       - "./pelias.json:/code/pelias.json"
       - "${DATA_DIR}:/data"
+    networks:
+      - default
+      - shared-net
   csv-importer:
     image: pelias/csv-importer:master
     container_name: pelias_csv_importer
@@ -64,6 +86,9 @@ services:
       - "./pelias.json:/code/pelias.json"
       - "${DATA_DIR}:/data"
       - "./blacklist/:/data/blacklist"
+    networks:
+      - default
+      - shared-net
   polylines:
     image: pelias/polylines:master
     container_name: pelias_polylines
@@ -71,6 +96,9 @@ services:
     volumes:
       - "./pelias.json:/code/pelias.json"
       - "${DATA_DIR}:/data"
+    networks:
+      - default
+      - shared-net
   interpolation:
     image: pelias/interpolation:master
     container_name: pelias_interpolation
@@ -81,6 +109,9 @@ services:
     volumes:
       - "./pelias.json:/code/pelias.json"
       - "${DATA_DIR}:/data"
+    networks:
+      - default
+      - shared-net
   pip:
     image: pelias/pip-service:master
     container_name: pelias_pip-service
@@ -91,6 +122,9 @@ services:
     volumes:
       - "./pelias.json:/code/pelias.json"
       - "${DATA_DIR}:/data"
+    networks:
+      - default
+      - shared-net
   elasticsearch:
     image: pelias/elasticsearch:7.16.1
     container_name: pelias_elasticsearch
@@ -110,3 +144,6 @@ services:
     cap_add: [ "IPC_LOCK" ]
     security_opt:
       - seccomp=unconfined
+    networks:
+      - default
+      - shared-net
