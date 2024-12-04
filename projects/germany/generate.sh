@@ -10,7 +10,7 @@ exec > >(tee -a $LOGFILE) 2>&1
 MAX_RETRIES=3
 
 # Standardmäßig werden alle Schritte ausgeführt
-SKIP_DOWNLOAD=true
+SKIP_DOWNLOAD=false
 SKIP_PREPARE=false
 SKIP_IMPORT=false
 
