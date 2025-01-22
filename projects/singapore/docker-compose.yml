@@ -97,7 +97,7 @@ services:
       - "./pelias.json:/code/pelias.json"
       - "${DATA_DIR}:/data"
   elasticsearch:
-    image: pelias/elasticsearch:7.16.1
+    image: pelias/elasticsearch:7.17.27
     container_name: pelias_elasticsearch
     user: "${DOCKER_USER}"
     restart: always
