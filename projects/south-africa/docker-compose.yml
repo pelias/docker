@@ -109,7 +109,7 @@ services:
     volumes:
       - "../../common/preview:/usr/share/nginx/html"
   elasticsearch:
-    image: pelias/elasticsearch:7.16.1
+    image: pelias/elasticsearch:7.17.27
     container_name: pelias_elasticsearch
     user: "${DOCKER_USER}"
     restart: always
