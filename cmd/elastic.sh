@@ -61,34 +61,5 @@ register 'elastic' 'wait' 'wait for elasticsearch to start up' elastic_wait
 function elastic_info(){ curl -s "http://${ELASTIC_HOST:-localhost:9200}/"; }
 register 'elastic' 'info' 'display elasticsearch version and build info' elastic_info
 
-function elastic_stats(){
-  #Extract the API section from the pelias.json
-  api_section=$(cat "$DATA_DIR/../pelias.json" | sed -n '/"api": {/,/}/p')
-  #Extract the value of api.indexName
-  index_name=$(echo "$api_section" | grep '"indexName"' | sed 's/.*"indexName": "\(.*\)".*/\1/')
-  #Add info which index is queried
-  echo "Results for index \"${index_name:-"pelias"}\":"
-  #Query the index in question or use the default name (pelias)
-  curl -s "http://${ELASTIC_HOST:-localhost:9200}/${index_name:-"pelias"}/_search?request_cache=true&timeout=10s&pretty=true" \
-    -H 'Content-Type: application/json' \
-    -d '{
-          "aggs": {
-            "sources": {
-              "terms": {
-                "field": "source",
-                "size": 100
-              },
-              "aggs": {
-                "layers": {
-                  "terms": {
-                    "field": "layer",
-                    "size": 100
-                  }
-                }
-              }
-            }
-          },
-          "size": 0
-        }';
-}
+function elastic_stats(){ compose_run 'schema' node scripts/check_stats; }
 register 'elastic' 'stats' 'display a summary of doc counts per source/layer' elastic_stats
