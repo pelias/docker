@@ -62,7 +62,14 @@ function elastic_info(){ curl -s "http://${ELASTIC_HOST:-localhost:9200}/"; }
 register 'elastic' 'info' 'display elasticsearch version and build info' elastic_info
 
 function elastic_stats(){
-  curl -s "http://${ELASTIC_HOST:-localhost:9200}/pelias/_search?request_cache=true&timeout=10s&pretty=true" \
+  #Extract the API section from the pelias.json
+  api_section=$(cat "$DATA_DIR/../pelias.json" | sed -n '/"api": {/,/}/p')
+  #Extract the value of api.indexName
+  index_name=$(echo "$api_section" | grep '"indexName"' | sed 's/.*"indexName": "\(.*\)".*/\1/')
+  #Add info which index is queried
+  echo "Results for index\" ${index_name:-"pelias"}\":"
+  #Query the index in question or use the default name (pelias)
+  curl -s "http://${ELASTIC_HOST:-localhost:9200}/${index_name:-"pelias"}/_search?request_cache=true&timeout=10s&pretty=true" \
     -H 'Content-Type: application/json' \
     -d '{
           "aggs": {
