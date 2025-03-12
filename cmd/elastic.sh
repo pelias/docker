@@ -62,7 +62,7 @@ function elastic_info(){ curl -s "http://${ELASTIC_HOST:-localhost:9200}/"; }
 register 'elastic' 'info' 'display elasticsearch version and build info' elastic_info
 
 function elastic_stats(){
-  curl -s "http://${ELASTIC_HOST:-localhost:9200}/pelias/_search?request_cache=true&timeout=10s&pretty=true" \
+  curl -s "http://${ELASTIC_HOST:-localhost:9200}/${ELASTIC_INDEX:-pelias}/_search?request_cache=true&timeout=10s&pretty=true" \
     -H 'Content-Type: application/json' \
     -d '{
           "aggs": {
