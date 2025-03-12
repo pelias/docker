@@ -61,5 +61,5 @@ register 'elastic' 'wait' 'wait for elasticsearch to start up' elastic_wait
 function elastic_info(){ curl -s "http://${ELASTIC_HOST:-localhost:9200}/"; }
 register 'elastic' 'info' 'display elasticsearch version and build info' elastic_info
 
-function elastic_stats(){ compose_run 'schema' node scripts/check_stats; }
+function elastic_stats(){ compose_run 'schema' node scripts/check_stats "$@"; }
 register 'elastic' 'stats' 'display a summary of doc counts per source/layer' elastic_stats
