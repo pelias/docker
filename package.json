@@ -22,6 +22,6 @@
   "dependencies": {
     "dotenv": "^8.2.0",
     "lodash": "^4.17.15",
-    "yargs": "^15.1.0"
+    "yargs": "^17.7.2"
   }
 }
