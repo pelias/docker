@@ -5,6 +5,6 @@ module.exports = {
   command: 'down',
   describe: 'stop all docker-compose service(s)',
   handler: (argv) => {
-    child.spawnSync('docker-compose', ['down'], options)
+    child.spawnSync(oldOrNewCompose(), ['down'], options)
   }
 }

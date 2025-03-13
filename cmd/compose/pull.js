@@ -1,10 +1,11 @@
 const child = require('child_process')
-const options = { stdio: 'inherit' }
+const oldOrNewCompose = require('./oldOrNewCompose')
+const options = { stdio: 'inherit' , shell: true}
 
 module.exports = {
   command: 'pull',
   describe: 'update all docker images',
   handler: (argv) => {
-    child.spawnSync('docker-compose', ['pull'], options)
+    child.spawnSync(oldOrNewCompose(), ['pull'], options)
   }
 }

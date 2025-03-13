@@ -1,0 +1,93 @@
+{
+  "logger": {
+    "level": "debug",
+    "timestamp": false
+  },
+  "esclient": {
+    "apiVersion": "7.5",
+    "hosts": [
+      {
+        "host": "elasticsearch"
+      }
+    ]
+  },
+  "elasticsearch": {
+    "settings": {
+      "index": {
+        "refresh_interval": "10s",
+        "number_of_replicas": "0",
+        "number_of_shards": "1"
+      }
+    }
+  },
+  "api": {
+    "indexName": "pelias-2025-03-13",
+    "exposeInternalDebugTools": true,
+    "services": {
+      "pip": {
+        "url": "http://pip:4200"
+      },
+      "libpostal": {
+        "url": "http://libpostal:4400"
+      },
+      "placeholder": {
+        "url": "http://placeholder:4100"
+      },
+      "interpolation": {
+        "url": "http://interpolation:4300"
+      }
+    }
+  },
+  "imports": {
+    "openstreetmap": {
+      "download": [
+        {
+          "sourceURL": "https://download.geofabrik.de/europe/germany/nordrhein-westfalen-latest.osm.pbf"
+        }
+      ],
+      "leveldbpath": "/tmp",
+      "datapath": "/data/openstreetmap",
+      "import": [
+        {
+          "filename": "nordrhein-westfalen-latest.osm.pbf"
+        }
+      ]
+    },
+    "openaddresses": {
+      "datapath": "/data/openaddresses",
+      "files": [
+        "de/nw/city_of_cologne.csv",
+        "de/nw/city_of_wesel.csv",
+        "de/nw/city_of_wuppertal.csv",
+        "de/nw/kreis_viersen.csv",
+        "de/nw/statewide.csv"
+      ]
+    },
+    "polyline": {
+      "datapath": "/data/polylines",
+      "files": [
+        "extract.0sv"
+      ]
+    },
+    "whosonfirst": {
+      "datapath": "/data/whosonfirst",
+      "countryCode": "DE",
+      "importPostalcodes": true,
+      "importPlace": [
+        "85682513"
+      ]
+    },
+    "csv": {
+      "datapath": "/data/csv-import",
+      "files": [
+        "haltestellen_ready.csv"
+      ]
+    },
+    "adminLookup": {
+      "enabled": true
+    }
+  },
+  "schema": {
+    "indexName": "pelias-new"
+  }
+}

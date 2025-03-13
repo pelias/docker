@@ -1,10 +1,11 @@
 const child = require('child_process')
-const options = { stdio: 'inherit' }
+const oldOrNewCompose = require('./oldOrNewCompose')
+const options = { stdio: 'inherit' , shell: true}
 
 module.exports = {
   command: 'top',
   describe: 'display the running processes of a container',
   handler: (argv) => {
-    child.spawnSync('docker-compose', argv._.slice(1), options)
+    child.spawnSync(oldOrNewCompose(), argv._.slice(1), options)
   }
 }
