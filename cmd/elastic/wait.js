@@ -6,14 +6,16 @@ const retry_count = 30;
 module.exports = {
     command: 'wait',
     describe: 'wait for elasticsearch to start up',
-    handler: () => {
+    handler: async () => {
         console.log('waiting for elasticsearch service to come up');
         for (let i = 0; i < retry_count; i++) {
-            if (status_helper == 200) {
+            let status = await status_helper.getStatus();
+            if (status.statusCode == 200) {
                 console.log('Elasticsearch up!');
                 return;
             }
-            else if (status_helper === 408) {
+            //408 indicates the server is up but not yet yellow status
+            else if (status.statusCode === 408) {
                 //Use process.stdout to avoid a forced newline
                 process.stdout.write(':')
             }

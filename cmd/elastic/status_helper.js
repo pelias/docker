@@ -9,14 +9,24 @@ const options = {
 };
 module.exports = { getStatus };
 
-function getStatus() {
-    const req = http.get(options, res => {
-        res.destroy();
-        return ({ "statusCode": res.statusCode })
+async function getStatus() {
+    return new Promise((resolve, reject) => {
+        const req = http.get(options, res => {
+            res.on('data', () => { });
+            res.on('end', () => {
+                resolve({ "statusCode": res.statusCode });
+            });
+        });
+
+        req.on('error', (err) => {
+            //If we don't resolve the promise it will trigger the default help message from yargs
+            resolve({ "statusCode": '000' });
+        });
+
+        req.on('timeout', () => {
+            req.destroy();
+            //If we don't resolve the promise it will trigger the default help message from yargs
+            resolve({ "statusCode": '000' });
+        });
     });
-    req.on('timeout', () => {
-        req.destroy();
-    });
-    //Js interprets leading zeros as octal representation
-    return ({ "statusCode": '000' });
 }
