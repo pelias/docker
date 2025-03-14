@@ -1,8 +1,9 @@
 const http = require('http');
 
 const options = {
+    //TODO: Allow custom values via System variable
     host: 'localhost',
-    port: 9201,
+    port: 9200,
     path: '_cluster/health?wait_for_status=yellow&timeout=1s',
     method: 'GET',
     timeout: 1000
