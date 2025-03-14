@@ -2,7 +2,7 @@ const http = require('http');
 
 const options = {
     hostname: process.env.ELASTIC_HOST || 'localhost',
-    port: 9201,
+    port: 9200,
     path: `/${process.env.ELASTIC_INDEX || 'pelias'}/_search?request_cache=true&timeout=10s&pretty=true`,
     method: 'POST',
     headers: {
