@@ -7,7 +7,12 @@ module.exports = {
     describe: 'ensure the system is correctly configured',
     handler: () => {
         if (platform == "win32") {
-            //TODO: Find a solid way to determine the admin status in windows (cmd&pwsh working)
+            exec('(net session >nul 2>&1 & echo %ERRORLEVEL%)', function (err, stdout) {
+                if(!err||stdout.includes("0")){
+                    console.error("You are running as root\nhis is insecure and not supported by Pelias.\nPlease try again as a non-root user.")
+                    process.exit(1);
+                }
+            });
         }
         //Assuming that ever other platform is *nix related
         else {
@@ -24,7 +29,7 @@ module.exports = {
             console.error("Alternatively, you can set the variable in your environment using a command such as 'export DATA_DIR=/tmp'.")
             process.exit(1);
         }
-        if (!fs.existsSync(!env().DATA_DIR)) {
+        if (!fs.existsSync(env().DATA_DIR)) {
             console.error(`The directory specified by DATA_DIR does not exist:\n ${env().DATA_DIR}`);
             console.error("Edit the '.env' file in this repository, update the DATA_DIR to a valid path and try again.");
             console.error("Alternatively, you can set the variable in your environment using a command such as 'export DATA_DIR=/tmp'.");
