@@ -8,8 +8,8 @@ module.exports = {
     handler: () => {
         if (platform == "win32") {
             exec('(net session >nul 2>&1 & echo %ERRORLEVEL%)', function (err, stdout) {
-                if(!err||stdout.includes("0")){
-                    console.error("You are running as root\nhis is insecure and not supported by Pelias.\nPlease try again as a non-root user.")
+                if(err||!stdout.includes("0")){
+                    console.error("You are running as root\nThis is insecure and not supported by Pelias.\nPlease try again as a non-root user.")
                     process.exit(1);
                 }
             });
@@ -18,7 +18,7 @@ module.exports = {
         else {
             exec('echo $(id -u ${SUDO_USER-${USER}}):$(id -g ${SUDO_USER-${USER}})', function (err, stdout, stderror) {
                 if (stdout == "0:0") {
-                    console.error("You are running as root\nhis is insecure and not supported by Pelias.\nPlease try again as a non-root user.")
+                    console.error("You are running as root\nThis is insecure and not supported by Pelias.\nPlease try again as a non-root user.")
                     process.exit(1);
                 }
             })
