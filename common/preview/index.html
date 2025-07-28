@@ -58,8 +58,8 @@
     el.addEventListener('select', ({ detail, currentTarget }) => {
       console.log('select', currentTarget)
       console.log(detail)
+      map.setView([detail.geometry.coordinates[1], detail.geometry.coordinates[0]], 14);
 
-      document.querySelector('#result').innerHTML = JSON.stringify(detail, undefined, 4)
     })
 
     el.addEventListener('error', ({ detail, currentTarget }) => {
