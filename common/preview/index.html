@@ -2,21 +2,16 @@
 <head>
   <title>pelias autocomplete demo</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-    crossorigin=""/>>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-   crossorigin=""></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-geocoder-mapzen/1.9.4/leaflet-geocoder-mapzen.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-geocoder-mapzen/1.9.4/leaflet-geocoder-mapzen.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <style>
-    #map{ height: 800px; }
+    #map{ height: 100%; }
   </style>
 </head>
 <body>
   <div id="map"></div>
 
+  <script type="module" src="/bundle.js"></script>
   <script>
     var map = L.map('map', {
       center:[42.35, -71.08],
@@ -29,6 +24,48 @@
       maxZoom: 17,
       minZoom: 1
     }).addTo(map);
+
+    L.Control.searchbar = L.Control.extend({
+      onAdd: function (map) {
+        let container = L.DomUtil.create('div');
+        //For some reasons you need to insert a syntacially correct api_key. Otherwise it won't work and throws weird error messages about missing functions
+        container.innerHTML = `<div class="box">
+    <ge-autocomplete api_key='ge-0000000000000000'></ge-autocomplete>
+    <pre id="result"></pre>
+  </div>`
+        return container;
+      },
+      onRemove: function (map) { }
+    });
+    L.control.searchbar = function (opts) {
+      return new L.Control.searchbar(opts);
+    };
+    L.control.searchbar({ position: 'topleft' }).addTo(map);
+
+
+    const el = document.querySelector('ge-autocomplete')
+
+    el.addEventListener('change', ({ detail, currentTarget }) => {
+      console.log('change', currentTarget)
+      console.log(detail)
+    })
+
+    el.addEventListener('features', ({ detail, currentTarget }) => {
+      console.log('features', currentTarget)
+      console.log(detail)
+    })
+
+    el.addEventListener('select', ({ detail, currentTarget }) => {
+      console.log('select', currentTarget)
+      console.log(detail)
+
+      document.querySelector('#result').innerHTML = JSON.stringify(detail, undefined, 4)
+    })
+
+    el.addEventListener('error', ({ detail, currentTarget }) => {
+      console.log('error', currentTarget)
+      console.error(detail)
+    });
   </script>
   </body>
 </html>
