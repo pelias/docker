@@ -24,16 +24,7 @@
       minZoom:2,
       scrollWheelZoom: false
     });
-
-    var geocodingOptions = {
-      url: 'http://localhost:4000/v1',
-      expanded: true,
-      attribution: '<a href="https://openstreetmap.org/copyright">OpenStreetMap</a> and <a href="    https://geocode.earth/guidelines">others</a>'
-    };
-
-    L.control.geocoder(null, geocodingOptions).addTo(map);
-
-    L.tileLayer('http://tile.stamen.com/toner/{z}/{x}/{y}.png', {
+    L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_toner/{z}/{x}/{y}.png', {
       attribution: 'Tiles by <a href="http://stamen.com">Stamen Design</a>',
       maxZoom: 17,
       minZoom: 1
