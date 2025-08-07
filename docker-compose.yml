@@ -114,7 +114,7 @@ services:
     container_name: pelias_elasticsearch
     user: "${DOCKER_USER}"
     restart: always
-    ports: [ "127.0.0.1:9200:9200", "127.0.0.1:9300:9300" ]
+    ports: [ "127.0.0.1:${PELIAS_ELASTIC_PORT:-9200}:9200", "127.0.0.1:${PELIAS_ELASTIC_NODE_PORT:-9300}:9300" ]
     volumes:
       - "./${peliasRegion}/${DATA_DIR}/elasticsearch:/usr/share/elasticsearch/data"
     ulimits:
