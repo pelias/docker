@@ -8,7 +8,7 @@ services:
     container_name: pelias_libpostal
     user: "${DOCKER_USER}"
     restart: always
-    ports: [ "127.0.0.1:4400:4400" ]
+    ports: [ "127.0.0.1:${PELIAS_LIBPOSTAL_PORT:-4400}:4400" ]
   schema:
     image: pelias/schema:master
     container_name: pelias_schema
@@ -20,8 +20,8 @@ services:
     container_name: pelias_api
     user: "${DOCKER_USER}"
     restart: always
-    environment: [ "PORT=4000" ]
-    ports: [ "0.0.0.0:4000:4000" ]
+    environment: [ "PORT=${PELIAS_API_PORT:-4000}" ]
+    ports: [ "0.0.0.0:${PELIAS_API_PORT:-4000}:${PELIAS_API_PORT:-4000}" ]
     volumes:
       - "./${peliasRegion}/pelias.json:/code/pelias.json"
   placeholder:
@@ -29,8 +29,8 @@ services:
     container_name: pelias_placeholder
     user: "${DOCKER_USER}"
     restart: always
-    environment: [ "PORT=4100" ]
-    ports: [ "127.0.0.1:4100:4100" ]
+    environment: [ "PORT=${PELIAS_PLACEHOLDER_PORT:-4100}" ]
+    ports: [ "127.0.0.1:${PELIAS_PLACEHOLDER_PORT:-4100}:${PELIAS_PLACEHOLDER_PORT:-4100}" ]
     volumes:
       - "./${peliasRegion}/pelias.json:/code/pelias.json"
       - "./${peliasRegion}/${DATA_DIR}:/data"
@@ -94,8 +94,8 @@ services:
     container_name: pelias_interpolation
     user: "${DOCKER_USER}"
     restart: always
-    environment: [ "PORT=4300" ]
-    ports: [ "127.0.0.1:4300:4300" ]
+    environment: [ "PORT=${PELIAS_INTERPOLATION_PORT:-4300}" ]
+    ports: [ "127.0.0.1:${PELIAS_INTERPOLATION_PORT:-4300}:${PELIAS_INTERPOLATION_PORT:-4300}" ]
     volumes:
       - "./${peliasRegion}/pelias.json:/code/pelias.json"
       - "./${peliasRegion}/${DATA_DIR}:/data"
@@ -104,8 +104,8 @@ services:
     container_name: pelias_pip-service
     user: "${DOCKER_USER}"
     restart: always
-    environment: [ "PORT=4200" ]
-    ports: [ "127.0.0.1:4200:4200" ]
+    environment: [ "PORT=${PELIAS_PIP_PORT:-4200}" ]
+    ports: [ "127.0.0.1:${PELIAS_PIP_PORT:-4200}:${PELIAS_PIP_PORT:-4200}" ]
     volumes:
       - "./${peliasRegion}/pelias.json:/code/pelias.json"
       - "./${peliasRegion}/${DATA_DIR}:/data"
