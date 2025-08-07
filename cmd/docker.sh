@@ -19,25 +19,21 @@ register 'compose' 'top' 'display the running processes of a container' compose_
 
 function compose_exec(){
   # Check if a local compose file exists. If not use the global one.
+  composeFilePath="./docker-compose.yml"
   if [ ! -f docker-compose.yml ];then
     echo "No local file. Using global compose file."
-    globalComposeFile="1"
     export peliasRegion="projects/$(basename $(pwd))"
-    cd ../..;
+    composeFilePath="../../docker-compose.yml"
   fi
   # the 'docker compose' subcommand is now the recommended method of calling compose.
   # if not available, we fallback to the legacy 'docker-compose' command.
   NATIVE_COMPOSE_VERSION=$(docker compose version 2> /dev/null || true)
   if [ -z "$NATIVE_COMPOSE_VERSION" ]; then
-    docker-compose $@;
+    docker-compose -f $composeFilePath $@;
   else
-    docker compose $@;
+    docker compose -f $composeFilePath $@;
   fi
-  if [ $globalComposeFile ] ;then
-    echo "Going back to $peliasRegion"
-    cd "./$peliasRegion"
-    unset $globalComposeFile
-  fi
+  unset $peliasRegion
 }
 register 'compose' 'exec' 'execute an arbitrary `docker compose` command' compose_exec
 
