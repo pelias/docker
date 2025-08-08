@@ -14,7 +14,7 @@ services:
     container_name: pelias_schema
     user: "${DOCKER_USER}"
     volumes:
-      - "./pelias.json:/code/pelias.json"
+      - "./${peliasRegion}/pelias.json:/code/pelias.json"
   api:
     image: pelias/api:master
     container_name: pelias_api
@@ -23,7 +23,7 @@ services:
     environment: [ "PORT=4000" ]
     ports: [ "0.0.0.0:4000:4000" ]
     volumes:
-      - "./pelias.json:/code/pelias.json"
+      - "./${peliasRegion}/pelias.json:/code/pelias.json"
   placeholder:
     image: pelias/placeholder:master
     container_name: pelias_placeholder
@@ -32,63 +32,63 @@ services:
     environment: [ "PORT=4100" ]
     ports: [ "127.0.0.1:4100:4100" ]
     volumes:
-      - "./pelias.json:/code/pelias.json"
-      - "${DATA_DIR}:/data"
-      - "./blacklist/:/data/blacklist"
+      - "./${peliasRegion}/pelias.json:/code/pelias.json"
+      - "./${peliasRegion}/${DATA_DIR}:/data"
+      - "./${peliasRegion}/blacklist/:/data/blacklist"
   whosonfirst:
     image: pelias/whosonfirst:master
     container_name: pelias_whosonfirst
     user: "${DOCKER_USER}"
     volumes:
-      - "./pelias.json:/code/pelias.json"
-      - "${DATA_DIR}:/data"
-      - "./blacklist/:/data/blacklist"
+      - "./${peliasRegion}/pelias.json:/code/pelias.json"
+      - "./${peliasRegion}/${DATA_DIR}:/data"
+      - "./${peliasRegion}/blacklist/:/data/blacklist"
   openstreetmap:
     image: pelias/openstreetmap:master
     container_name: pelias_openstreetmap
     user: "${DOCKER_USER}"
     volumes:
-      - "./pelias.json:/code/pelias.json"
-      - "${DATA_DIR}:/data"
-      - "./blacklist/:/data/blacklist"
+      - "./${peliasRegion}/pelias.json:/code/pelias.json"
+      - "./${peliasRegion}/${DATA_DIR}:/data"
+      - "../${peliasRegion}/blacklist/:/data/blacklist"
   openaddresses:
     image: pelias/openaddresses:master
     container_name: pelias_openaddresses
     user: "${DOCKER_USER}"
     volumes:
-      - "./pelias.json:/code/pelias.json"
-      - "${DATA_DIR}:/data"
-      - "./blacklist/:/data/blacklist"
+      - "./${peliasRegion}/pelias.json:/code/pelias.json"
+      - "./${peliasRegion}/${DATA_DIR}:/data"
+      - "./${peliasRegion}/blacklist/:/data/blacklist"
   geonames:
     image: pelias/geonames:master
     container_name: pelias_geonames
     user: "${DOCKER_USER}"
     volumes:
-      - "./pelias.json:/code/pelias.json"
-      - "${DATA_DIR}:/data"
-      - "./blacklist/:/data/blacklist"
+      - "./${peliasRegion}/pelias.json:/code/pelias.json"
+      - "./${peliasRegion}/${DATA_DIR}:/data"
+      - "./${peliasRegion}/blacklist/:/data/blacklist"
   transit:
     image: pelias/transit:master
     container_name: pelias_transit
     user: "${DOCKER_USER}"
     volumes:
-      - "./pelias.json:/code/pelias.json"
-      - "${DATA_DIR}:/data"
+      - "./${peliasRegion}/pelias.json:/code/pelias.json"
+      - "./${peliasRegion}/${DATA_DIR}:/data"
   csv-importer:
     image: pelias/csv-importer:master
     container_name: pelias_csv_importer
     user: "${DOCKER_USER}"
     volumes:
-      - "./pelias.json:/code/pelias.json"
-      - "${DATA_DIR}:/data"
-      - "./blacklist/:/data/blacklist"
+      - "./${peliasRegion}/pelias.json:/code/pelias.json"
+      - "./${peliasRegion}/${DATA_DIR}:/data"
+      - "./${peliasRegion}/blacklist/:/data/blacklist"
   polylines:
     image: pelias/polylines:master
     container_name: pelias_polylines
     user: "${DOCKER_USER}"
     volumes:
-      - "./pelias.json:/code/pelias.json"
-      - "${DATA_DIR}:/data"
+      - "./${peliasRegion}/pelias.json:/code/pelias.json"
+      - "./${peliasRegion}/${DATA_DIR}:/data"
   interpolation:
     image: pelias/interpolation:master
     container_name: pelias_interpolation
@@ -97,8 +97,8 @@ services:
     environment: [ "PORT=4300" ]
     ports: [ "127.0.0.1:4300:4300" ]
     volumes:
-      - "./pelias.json:/code/pelias.json"
-      - "${DATA_DIR}:/data"
+      - "./${peliasRegion}/pelias.json:/code/pelias.json"
+      - "./${peliasRegion}/${DATA_DIR}:/data"
   pip:
     image: pelias/pip-service:master
     container_name: pelias_pip-service
@@ -107,8 +107,8 @@ services:
     environment: [ "PORT=4200" ]
     ports: [ "127.0.0.1:4200:4200" ]
     volumes:
-      - "./pelias.json:/code/pelias.json"
-      - "${DATA_DIR}:/data"
+      - "./${peliasRegion}/pelias.json:/code/pelias.json"
+      - "./${peliasRegion}/${DATA_DIR}:/data"
   elasticsearch:
     image: pelias/elasticsearch:7.17.27
     container_name: pelias_elasticsearch
@@ -116,7 +116,7 @@ services:
     restart: always
     ports: [ "127.0.0.1:9200:9200", "127.0.0.1:9300:9300" ]
     volumes:
-      - "${DATA_DIR}/elasticsearch:/usr/share/elasticsearch/data"
+      - "./${peliasRegion}/${DATA_DIR}/elasticsearch:/usr/share/elasticsearch/data"
     ulimits:
       memlock:
         soft: -1
@@ -132,5 +132,5 @@ services:
     restart: "no"
     command: "--help"
     volumes:
-      - "./pelias.json:/code/pelias.json"
-      - "./test_cases:/code/pelias/fuzzy-tester/test_cases"
+      - "./${peliasRegion}/pelias.json:/code/pelias.json"
+      - "./${peliasRegion}/test_cases:/code/pelias/fuzzy-tester/test_cases"
