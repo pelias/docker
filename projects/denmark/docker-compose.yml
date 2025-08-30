@@ -109,3 +109,10 @@ services:
     cap_add: [ "IPC_LOCK" ]
     security_opt:
       - seccomp=unconfined
+  preview:
+    image: nginx
+    container_name: pelias_preview
+    restart: always
+    ports: [ "127.0.0.1:3000:80" ]
+    volumes:
+      - "../../common/preview:/usr/share/nginx/html"
