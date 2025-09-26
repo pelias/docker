@@ -61,7 +61,7 @@
     "openaddresses": {
       "datapath": "/data/openaddresses",
       "files": [
-        "us/ny/city_of_new_york.csv"
+        "us/ny/city_of_new_york"
       ]
     },
     "polyline": {

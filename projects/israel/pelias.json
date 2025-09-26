@@ -61,7 +61,7 @@
     "openaddresses": {
       "datapath": "/data/openaddresses",
       "files": [
-        "il/city_of_tel_aviv.csv"
+        "il/city_of_tel_aviv"
       ]
     },
     "polyline": {

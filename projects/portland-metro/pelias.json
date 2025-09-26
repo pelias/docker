@@ -68,13 +68,13 @@
     "openaddresses": {
       "datapath": "/data/openaddresses",
       "files": [
-        "us/or/portland_metro.csv",
-        "us/or/city_of_salem.csv",
-        "us/or/marion_and_polk.csv",
-        "us/or/marion.csv",
-        "us/or/hood_river.csv",
-        "us/wa/city_of_richland.csv",
-        "us/wa/clark.csv"
+        "us/or/portland_metro",
+        "us/or/city_of_salem",
+        "us/or/marion_and_polk",
+        "us/or/marion",
+        "us/or/hood_river",
+        "us/wa/city_of_richland",
+        "us/wa/clark"
       ]
     },
     "polyline": {

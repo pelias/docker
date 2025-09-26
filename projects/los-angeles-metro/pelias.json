@@ -56,7 +56,7 @@
     "openaddresses": {
       "datapath": "/data/openaddresses",
       "files": [
-        "us/ca/los_angeles.csv"
+        "us/ca/los_angeles"
       ]
     },
     "polyline": {

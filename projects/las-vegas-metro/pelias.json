@@ -63,9 +63,9 @@
     "openaddresses": {
       "datapath": "/data/openaddresses",
       "files": [
-        "us/nv/clark.csv",
-        "us/nv/henderson.csv",
-        "us/nv/las_vegas.csv"
+        "us/nv/clark",
+        "us/nv/henderson",
+        "us/nv/las_vegas"
       ]
     },
     "polyline": {

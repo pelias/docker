@@ -52,11 +52,11 @@
     "openaddresses": {
       "datapath": "/data/openaddresses",
       "files": [
-        "za/ec/nelson_mandela_bay.csv",
-        "za/gt/ekurhuleni.csv",
-        "za/gt/tshwane.csv",
-        "za/nl/ethekwini.csv",
-        "za/wc/cape_town.csv"
+        "za/ec/nelson_mandela_bay",
+        "za/gt/ekurhuleni",
+        "za/gt/tshwane",
+        "za/nl/ethekwini",
+        "za/wc/cape_town"
       ]
     },
     "polyline": {

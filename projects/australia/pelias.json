@@ -52,7 +52,7 @@
     "openaddresses": {
       "datapath": "/data/openaddresses",
       "files": [
-        "au/countrywide.csv"
+        "au/countrywide"
       ]
     },
     "polyline": {
