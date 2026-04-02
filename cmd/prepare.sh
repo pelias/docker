@@ -3,7 +3,7 @@ set -e;
 
 # per-source prepares
 function prepare_polylines(){ compose_run -T 'polylines' bash ./docker_extract.sh; }
-function prepare_interpolation(){ compose_run -T 'interpolation' bash ./docker_build.sh; }
+function prepare_interpolation(){ compose_run -T 'interpolation' bash ./docker_build.sh "$@"; }
 function prepare_placeholder(){
   compose_run -T 'placeholder' ./cmd/extract.sh;
   compose_run -T 'placeholder' ./cmd/build.sh;
