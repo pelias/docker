@@ -57,7 +57,7 @@
     },
     "openstreetmap": {
       "download": [
-        { "sourceURL": "https://data.geocode.earth/archive/portland-metro/2022-06-20/portland_oregon.osm.pbf" }
+        { "sourceURL": "https://data.geocode.earth/archive/portland-metro/2026-11-24/portland_oregon.osm.pbf" }
       ],
       "leveldbpath": "/tmp",
       "datapath": "/data/openstreetmap",
