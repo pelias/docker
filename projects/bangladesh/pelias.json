@@ -1,0 +1,87 @@
+{
+  "logger": {
+    "level": "info",
+    "timestamp": false
+  },
+  "esclient": {
+    "apiVersion": "7.5",
+    "hosts": [
+      { "host": "elasticsearch" }
+    ]
+  },
+  "elasticsearch": {
+    "settings": {
+      "index": {
+        "refresh_interval": "10s",
+        "number_of_replicas": "0",
+        "number_of_shards": "1"
+      }
+    }
+  },
+  "acceptance-tests": {
+    "endpoints": {
+      "docker": "http://api:4000/v1/"
+    }
+  },
+  "api": {
+    "services": {
+      "placeholder": { "url": "http://placeholder:4100" },
+      "pip": { "url": "http://pip:4200" },
+      "interpolation": { "url": "http://interpolation:4300" },
+      "libpostal": { "url": "http://libpostal:4400" }
+    },
+    "defaultParameters": {
+      "focus.point.lat": 23.78,
+      "focus.point.lon": 90.34
+    }
+  },
+  "imports": {
+    "adminLookup": {
+      "enabled": true
+    },
+    "blacklist": {
+      "files": [
+      ]
+    },
+    "csv": {
+      "datapath": "/data/csv",
+      "files": [],
+      "download": [
+      ]
+    },
+    "geonames": {
+      "datapath": "/data/geonames",
+      "countryCode": "BD"
+    },
+    "openstreetmap": {
+      "download": [
+        { "sourceURL": "https://download.geofabrik.de/asia/bangladesh-latest.osm.pbf" }
+      ],
+      "leveldbpath": "/tmp",
+      "datapath": "/data/openstreetmap",
+      "import": [{
+        "filename": "bangladesh-latest.osm.pbf"
+      }]
+    },
+    "openaddresses": {
+      "datapath": "/data/openaddresses",
+      "files": [
+      ]
+    },
+    "polyline": {
+      "datapath": "/data/polylines",
+      "files": [ "extract.0sv" ]
+    },
+    "whosonfirst": {
+      "datapath": "/data/whosonfirst",
+      "importPostalcodes": true,
+      "countryCode": "BD",
+      "importPlace": [
+      ]
+    },
+    "interpolation": {
+      "download": {
+      }
+    }
+  }
+}
