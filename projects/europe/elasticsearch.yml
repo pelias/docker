@@ -1,0 +1,4 @@
+network.host: 0.0.0.0
+bootstrap.memory_lock: true
+indices.breaker.fielddata.limit: 85%
+indices.fielddata.cache.size: 75%
