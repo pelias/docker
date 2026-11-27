@@ -5,9 +5,11 @@ set -e
 # compatible with the linux tools. Force OSX users to install the GNU
 # compatible versions (prefixed with 'g', such as 'greadlink', 'gsed' etc.).
 export CMD_READLINK='readlink'
+export CMD_STAT='stat'
 if [[ "$OSTYPE" == "darwin"* ]]; then
   if [ -x "$(command -v greadlink)" ]; then
     CMD_READLINK='greadlink';
+    CMD_STAT='gstat';
   else
     2>&1 echo 'OSX: you must install the gnu standard tooling using:'
     2>&1 echo 'brew install coreutils'
